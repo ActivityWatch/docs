@@ -26,12 +26,13 @@ A longer guide to git submodules can be found `here <https://medium.com/@portene
 Making a release
 ----------------
 
-1. Ensure that all the tests pass: :code:`make test && make test-integration`
-2. Test the latest build and check that it works correctly
-3. Write a changelog entry in :code:`docs/changelog.rst`
-4. Sign the commit: :code:`git commit -a -S -m "bumped version"`
-5. Create a signed tag: :code:`git tag -s v0.7.1`
-6. Push the commit and tag: :code:`git push origin refs/tags/v0.7.1`
-7. Create a release on GitHub
-8. Wait for the builds to finish
-9. Post about it online: Twitter, the forum, mailinglist (if major)
+#. Close `milestone on GitHub <https://github.com/ActivityWatch/activitywatch/milestones>`_ if one exists.
+#. Ensure that all the tests pass: :code:`make test && make test-integration`
+#. Test the latest build and check that it works correctly
+#. Write a changelog entry in :code:`docs/changelog.rst`
+#. Sign the commit: :code:`git commit -a -S -m "bumped version"`
+#. Create a signed tag: :code:`git tag -s v0.7.1`
+#. Push the commit and tag: :code:`git push origin refs/tags/v0.7.1`
+#. Create a release on GitHub
+#. Wait for the builds to finish
+#. Post about it online: Twitter, the forum, mailinglist (if major)
