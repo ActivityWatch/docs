@@ -22,3 +22,16 @@ Working with submodules comes with some complexity, here are a few neat tricks t
  - If you want to ensured you've pushed all commits in the submodules, use: :code:`git submodule foreach 'git push'`
 
 A longer guide to git submodules can be found `here <https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407>`_.
+
+Making a release
+----------------
+
+1. Ensure that all the tests pass: :code:`make test && make test-integration`
+2. Test the latest build and check that it works correctly
+3. Write a changelog entry in :code:`docs/changelog.rst`
+4. Sign the commit: :code:`git commit -a -S -m "bumped version"`
+5. Create a signed tag: :code:`git tag -s v0.7.1`
+6. Push the commit and tag: :code:`git push origin refs/tags/v0.7.1`
+7. Create a release on GitHub
+8. Wait for the builds to finish
+9. Post about it online: Twitter, the forum, mailinglist (if major)
