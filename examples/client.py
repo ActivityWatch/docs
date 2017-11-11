@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 from time import sleep
 from datetime import datetime, timedelta, timezone
 
@@ -29,6 +30,7 @@ client.create_bucket(bucket_id, event_type="test")
 # Asynchronous loop example
 with client:
     # This context manager starts the queue dispatcher thread and stops it when done, always use it when setting queued=True.
+    # Alternatively you can use client.connect() and client.disconnect() instead if you prefer that
 
     # Create a sample event to send as heartbeat
     heartbeat_data = {"label": "heartbeat"}
