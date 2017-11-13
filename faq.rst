@@ -21,6 +21,19 @@ between input activity. If there is, we consider you not-AFK.  If more than 3 mi
 passes without any input, we consider that as if you were AFK from the last input
 until the next input occurs.
 
+Why is the active window logged as "unknown" when using Wayland?
+----------------------------------------------------------------
+
+The Wayland protocol does not have a notion of an active window, and it is unlikely to ever have.
+Wayland is also developed in security in mind, so access should be handed out on an app-by-app basis.
+This is a good idea, any application shouldn't just give that privacy-sensitive information away freely.
+
+Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all to get the current window, this leaves the window watcher completely disabled in Wayland.
+
+*Solution:* Switch to using X11 (the best option), and if you can't: bother the developer of your Wayland compositor.
+
+You can see the general status of the ability of `getting the active window in Wayland on StackOverflow <https://stackoverflow.com/questions/45465016/how-do-i-get-the-active-window-on-gnome-wayland>`_ or follow `the issue for ActivityWatch tracking the problem <https://github.com/ActivityWatch/activitywatch/issues/92>`_.
+
 How do I programmatically use ActivityWatch?
 --------------------------------------------
 
