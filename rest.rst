@@ -39,6 +39,8 @@ Buckets are data containers used to group data together which shares some metada
 Get
 ^^^
 
+Will return 404 if bucket does not exist
+
 .. code-block:: shell
 
     GET /api/0/buckets/<bucket_id>
@@ -52,6 +54,8 @@ List
 
 Create
 ^^^^^^
+
+Will return 304 if bucket already exists
 
 .. code-block:: shell
 

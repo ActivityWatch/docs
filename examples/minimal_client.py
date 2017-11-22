@@ -13,6 +13,7 @@ event_type = "dummydata"
 client.create_bucket(bucket_id, event_type="test")
 
 shutdown_data = {"label": "some interesting data"}
+now = datetime.now(timezone.utc)
 shutdown_event = Event(timestamp=now, data=shutdown_data)
 inserted_event = client.insert_event(bucket_id, shutdown_event)
 
