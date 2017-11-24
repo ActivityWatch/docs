@@ -36,10 +36,10 @@ You need to ensure you have:
 Using a virtualenv
 ------------------
 
-You might want to set up a virtualenv so we don't install everything system-wide.
+It is recommended to use a virtualenv in order to avoid polluting your system with ActivityWatch-specific packages Python packages. It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
 
 .. note::
-   This is currently required, but can be avoided with some minor modifications since some commands (notably those installing Python packages) will need root if not run in a virtualenv (sorry for not making it easier).
+   If you don't want to use a virtualenv you could instead set the environment variable :code:`PIP_USER=true` when building. This will install ActivityWatch for your user only instead of trying to install it system-wide (which would fail since it requires root). If you do this, make sure that the folder :code:`~/.local/bin` (on Linux) or :code:`~/Library/Python/<version>/bin` (on macOS) is in your PATH so that you can run the programs once installed.
 
 .. code-block:: sh
 
@@ -65,10 +65,13 @@ Build and install everything into the virtualenv:
 
     make build
 
+.. note::
+   If you are going to develop we suggest building/installing using :code:`make build DEV=true` which installs all Python packages with pip's handy :code:`--editable` flag. By doing this you wont have to reinstall everything whenever you want to try out a code change.
+
 Running
 -------
 
-Now you should be able to start ActivityWatch **from the terminal where you've activated the virtualenv**.
+Now you should be able to start ActivityWatch **from the terminal where you've activated the virtualenv**. Or, if you were using the :code:`PIP_USER` trick, from any terminal with a correctly configured PATH.
 You have two options:
 
 1. Use the trayicon manager (Recommended for normal use)
