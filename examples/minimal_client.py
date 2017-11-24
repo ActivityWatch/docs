@@ -6,11 +6,12 @@ from datetime import datetime, timedelta, timezone
 from aw_core.models import Event
 from aw_client import ActivityWatchClient
 
+# We'll run with testing=True so we don't mess up any production instance.
+# Make sure you've started aw-server with the `--testing` flag as well.
 client = ActivityWatchClient("test-client", testing=True)
-bucket_id = "{}_{}".format("test-client-bucket", client.hostname)
-event_type = "dummydata"
 
-client.create_bucket(bucket_id, event_type="test")
+bucket_id = "{}_{}".format("test-client-bucket", client.hostname
+client.create_bucket(bucket_id, event_type="dummydata")
 
 shutdown_data = {"label": "some interesting data"}
 shutdown_event = Event(timestamp=now, data=shutdown_data)
