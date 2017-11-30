@@ -19,11 +19,6 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../aw-server'))
-sys.path.insert(0, os.path.abspath('../aw-core'))
-sys.path.insert(0, os.path.abspath('../aw-client'))
-sys.path.insert(0, os.path.abspath('../aw-watcher-afk'))
-sys.path.insert(0, os.path.abspath('../aw-watcher-window'))
 
 # Other imports
 

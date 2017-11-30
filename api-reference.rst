@@ -54,7 +54,7 @@ aw_server
 aw_server.api
 ^^^^^^^^^^^^^
 
-The `ServerAPI` class contains the basic API methods, these methods are primarily called from RPC layers such as the one found in :code:`aw_server.rest`.
+The :code:`ServerAPI` class contains the basic API methods, these methods are primarily called from RPC layers such as the one found in :code:`aw_server.rest`.
 
 .. automodule:: aw_server.api
    :members: ServerAPI

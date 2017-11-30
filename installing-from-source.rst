@@ -43,7 +43,6 @@ It is recommended to use a virtualenv in order to avoid polluting your system wi
 
 .. code-block:: sh
 
-    pip3 install --user virtualenv  # Assuming you don't already have it, you might want to use your systems package manager instead.
     python3 -m venv venv
 
 Now activate the virtualenv in your current shell session:
