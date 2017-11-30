@@ -1,5 +1,10 @@
 # Requirements for ReadTheDocs
 
+# activitywatch repos
+git+https://github.com/ActivityWatch/aw-core.git@master#egg=aw-core
+git+https://github.com/ActivityWatch/aw-server.git@master#egg=aw-server
+git+https://github.com/ActivityWatch/aw-client.git@master#egg=aw-client
+
 # aw-core
 appdirs
 python-json-logger

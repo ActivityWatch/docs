@@ -36,8 +36,8 @@ Buckets API
 The most common API used by ActivityWatch clients is the API providing read and append access buckets.
 Buckets are data containers used to group data together which shares some metadata (such as client type, hostname or location).
 
-Get
-^^^
+Get Bucket Metadata
+^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: shell
 
