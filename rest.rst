@@ -91,10 +91,7 @@ The heartbeat API is one of the most useful endpoints for writing watchers.
 
     POST /api/0/buckets/<bucket_id>/heartbeat
 
-View API
+Query API
 ~~~~~~~~~~~~~
 
-.. warning::
-   This API should not be relied on. It's messy and has a bunch of issues that we hope to resolve by designing it.
-
-No documentation here, because you shouldn't use it (yet).
+**TODO: Add link to writing queries once that page is done**

@@ -66,4 +66,4 @@ v0.7.2 (planned)
 
 - New query2 API for querying and transforming data
 - Web UI now has a view for the most-visited domains
-
+- Web UI now has a button for removing buckets

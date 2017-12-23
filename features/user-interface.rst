@@ -9,6 +9,8 @@ ActivityWatch comes with a web interface which currently has the following featu
  - Activity overview
     - Most used applications by day
     - Timeline
+    - Most time spent on a website
+      *(requires the ActivityWatch browser extension)*
  - Bucket overview
     - When a bucket was last updated
     - Listing of the latest events
