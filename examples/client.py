@@ -60,7 +60,7 @@ with client:
 # Synchronous example, insert an event
 event_data = {"label": "non-heartbeat event"}
 now = datetime.now(timezone.utc)
-event = Event(timestamp=now, data=shutdown_data)
+event = Event(timestamp=now, data=event_data)
 inserted_event = client.insert_event(bucket_id, event)
 
 # The event returned from insert_event has been assigned an id by aw-server
