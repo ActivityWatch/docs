@@ -65,7 +65,7 @@ Will return 304 if bucket already exists
 Events API
 ~~~~~~~~~~
 
-The most common API used by ActivityWatch clients is the API providing read and append `Events <event-model>` to buckets.
+The most common API used by ActivityWatch clients is the API providing read and append `Events <buckets-and-events>` to buckets.
 Buckets are data containers used to group data together which shares some metadata (such as client type, hostname or location).
 
 Get events

@@ -45,7 +45,7 @@ aw-core
 
 The aw-core library contains many of the essential parts of ActivityWatch, notably:
 
- - The `event-model`
+ - The `buckets-and-events`
  - The datastore layer
  - Utilities (configuration, logging, decorators)
 

@@ -28,7 +28,7 @@ Welcome to the ActivityWatch documentation!
 
    development
    architecture
-   event-model
+   buckets-and-events
    installing-from-source
    api-reference
    writing-watchers
