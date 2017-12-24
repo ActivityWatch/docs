@@ -30,6 +30,7 @@ Welcome to the ActivityWatch documentation!
    architecture
    buckets-and-events
    writing-watchers
+   querying-buckets
    installing-from-source
    api-reference
    rest
