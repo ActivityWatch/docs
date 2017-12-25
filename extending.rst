@@ -25,4 +25,4 @@ If you want to fetch data from aw-server for visualization, exporting, backup or
 
 * `Exporting a Bucket <features/exporting-data.html>` If you want a complete dump of all events of bucket
 * `Bucket REST API <./rest.html#get-events>`_ If you want to export raw events in a specific time interval from a bucket
-* `Writing a Query <./querying-buckets.html#writing-a-query>`_ If you want to summarize/aggregate one or more buckets into more easily readable data
+* `Writing a Query <./querying-data.html#writing-a-query>`_ If you want to summarize/aggregate one or more buckets into more easily readable data
