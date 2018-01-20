@@ -3,7 +3,7 @@ Writing your first watcher
 
 Writing watchers for ActivityWatch is pretty easy, all you need is the :code:`aw-client` library.
 
-**NOTE:** These examples runs the client in *testing* mode, which means that it will try to connect to a aw-server in testing mode on the port 5666 instead of the normal 5600.
+.. note:: These examples runs the client in *testing* mode, which means that it will try to connect to a aw-server in testing mode on the port 5666 instead of the normal 5600.
 
 Minimal client
 --------------

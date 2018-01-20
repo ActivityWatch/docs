@@ -10,12 +10,11 @@ Collecting more data
 --------------------
 
 ActivityWatch is written to be flexible to be able to gather most types of data.
-Except for the included aw-watcher-window and aw-watcher-afk which tracks your application usage and are included by default in ActivityWatch, there are additional so-called :doc:`watchers` for activitywatch.
+Except for the included aw-watcher-window and aw-watcher-afk which tracks your application usage, there are additional so-called :doc:`watchers` for activitywatch.
+Watchers are small programs that collect data and send it off to the server.
+The only requirement for what kind of data is sent to aw-server as an event is that it has to contain a starttime (and preferably a duration aswell) so it can fit on a timeline.
 
-If there is some kind of data you would want to track but are not
-To do this you'd want to write a so-called watcher. Watchers are small programs that collect data and send it off to the server.
-
-See :doc:`writing-watchers`.
+If you want to write a watcher of your own, see :doc:`writing-watchers`.
 
 
 Fetching Data
