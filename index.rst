@@ -18,7 +18,6 @@ Welcome to the ActivityWatch documentation!
    faq
    features
    watchers
-   extending
 
 
 .. _dev-docs:
@@ -26,12 +25,14 @@ Welcome to the ActivityWatch documentation!
    :maxdepth: 3
    :caption: Developer documentation
 
+   extending
    development
    architecture
-   event-model
+   buckets-and-events
+   writing-watchers
+   querying-data
    installing-from-source
    api-reference
-   writing-watchers
    rest
    changelog
 

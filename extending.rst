@@ -9,25 +9,19 @@ We've tried to make things easy for you (and ourselves) so here's some advice on
 Collecting more data
 --------------------
 
-To do this you'd want to write a so-called watcher. Watchers are small programs that collect data and send it off to the server.
+ActivityWatch is written to be flexible to be able to gather most types of data.
+Except for the included aw-watcher-window and aw-watcher-afk which tracks your application usage, there are additional so-called :doc:`watchers` for activitywatch.
+Watchers are small programs that collect data and send it off to the server.
+The only requirement for what kind of data is sent to aw-server as an event is that it has to contain a starttime (and preferably a duration aswell) so it can fit on a timeline.
 
-See :doc:`writing-watchers`.
-
-
-Exporting data programatically
-------------------------------
-
-Exporting data is as simple as:
-
-TODO
+If you want to write a watcher of your own, see :doc:`writing-watchers`.
 
 
-Writing visualizers
--------------------
+Fetching Data
+-------------
 
-Right now, the best way to do this is to simply export the data and transform it yourself to fit the data format you need for your visualization.
-In the future however, we will provide a Python library for common transforms to make things easier for you.
+If you want to fetch data from aw-server for visualization, exporting, backup or something we have not yet thought of, there are a few ways you can do this:
 
-
-
-
+* `Exporting a Bucket <features/exporting-data.html>` If you want a complete dump of all events of bucket
+* `Bucket REST API <./rest.html#get-events>`_ If you want to export raw events in a specific time interval from a bucket
+* `Writing a Query <./querying-data.html#writing-a-query>`_ If you want to summarize/aggregate one or more buckets into more easily readable data

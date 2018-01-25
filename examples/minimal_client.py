@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-from time import sleep
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 from aw_core.models import Event
 from aw_client import ActivityWatchClient
@@ -14,6 +13,7 @@ bucket_id = "{}_{}".format("test-client-bucket", client.hostname
 client.create_bucket(bucket_id, event_type="dummydata")
 
 shutdown_data = {"label": "some interesting data"}
+now = datetime.now(timezone.utc)
 shutdown_event = Event(timestamp=now, data=shutdown_data)
 inserted_event = client.insert_event(bucket_id, shutdown_event)
 

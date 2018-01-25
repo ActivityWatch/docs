@@ -42,7 +42,7 @@ See the documentation for `extending` or checkout the aw-client repository.
 How do I understand the data that is stored?
 --------------------------------------------
 
-All ActivityWatch data is represented using the `event-model`.
+All ActivityWatch data is represented using `buckets-and-events`.
 
 All events from have the fields :code:`timestamp` (ISO 8601 formatted), :code:`duration` (in seconds), and :code:`data` (a JSON object).
 

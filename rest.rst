@@ -39,6 +39,8 @@ Buckets are data containers used to group data together which shares some metada
 Get Bucket Metadata
 ^^^^^^^^^^^^^^^^^^^
 
+Will return 404 if bucket does not exist
+
 .. code-block:: shell
 
     GET /api/0/buckets/<bucket_id>
@@ -53,6 +55,8 @@ List
 Create
 ^^^^^^
 
+Will return 304 if bucket already exists
+
 .. code-block:: shell
 
     POST /api/0/buckets/<bucket_id>
@@ -61,7 +65,7 @@ Create
 Events API
 ~~~~~~~~~~
 
-The most common API used by ActivityWatch clients is the API providing read and append `Events <event-model>` to buckets.
+The most common API used by ActivityWatch clients is the API providing read and append `Events <buckets-and-events>` to buckets.
 Buckets are data containers used to group data together which shares some metadata (such as client type, hostname or location).
 
 Get events
@@ -87,10 +91,7 @@ The heartbeat API is one of the most useful endpoints for writing watchers.
 
     POST /api/0/buckets/<bucket_id>/heartbeat
 
-View API
+Query API
 ~~~~~~~~~~~~~
 
-.. warning::
-   This API should not be relied on. It's messy and has a bunch of issues that we hope to resolve by designing it.
-
-No documentation here, because you shouldn't use it (yet).
+**TODO: Add link to writing queries once that page is done**
