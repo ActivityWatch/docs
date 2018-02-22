@@ -9,7 +9,7 @@ from aw_client import ActivityWatchClient
 # Make sure you've started aw-server with the `--testing` flag as well.
 client = ActivityWatchClient("test-client", testing=True)
 
-bucket_id = "{}_{}".format("test-client-bucket", client.hostname
+bucket_id = "{}_{}".format("test-client-bucket", client.hostname)
 client.create_bucket(bucket_id, event_type="dummydata")
 
 shutdown_data = {"label": "some interesting data"}
