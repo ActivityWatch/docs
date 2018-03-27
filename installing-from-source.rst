@@ -88,7 +88,8 @@ Check out the web UI at http://localhost:5600/
 
 If anything doesn't work, let us know!
 
-On linux, if you want to run from source using a `.desktop` file launcher. [See this issue.](https://github.com/ActivityWatch/activitywatch/issues/176)
+.. note::
+   On Linux, if you want to run from source using a :code:`.desktop` file launcher, see `this issue <https://github.com/ActivityWatch/activitywatch/issues/176>`_.
 
 Updating from source
 --------------------
