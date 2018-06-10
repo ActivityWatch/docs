@@ -52,6 +52,7 @@ Currently the primary client library is written in Python (known simply as aw-cl
 
  - `aw-client <https://github.com/ActivityWatch/aw-client>`_ (Python)
  - `aw-client-js <https://github.com/ActivityWatch/aw-client-js>`_ (JavaScript, work in progress)
+ - `aw-client-rust <https://github.com/ActivityWatch/aw-client-rust>`_ (Rust, work in progress)
 
 aw-analysis
 ^^^^^^^^^^^
