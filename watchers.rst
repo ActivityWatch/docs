@@ -13,6 +13,14 @@ ActivityWatch comes bundled with two watchers by default:
  - `aw-watcher-afk <https://github.com/ActivityWatch/aw-watcher-afk>`_ - Watches for mouse & keyboard activity to detect if the user is active.
  - `aw-watcher-window <https://github.com/ActivityWatch/aw-watcher-window>`_ - Watches the active window and its title.
 
+Editor
+------
+
+Editor watchers for watching coding activity
+
+ - `aw-watcher-vim <https://github.com/ActivityWatch/aw-watcher-vim>`_ - (Beta) A vim extension that watches your editor activity
+ - `aw-watcher-vscode <https://github.com/Otto-AA/aw-watcher-vscode>`_ - (Unofficial) A Visual Studio Code extension that watches your editor activity
+
 Others
 ------
 
