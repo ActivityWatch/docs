@@ -57,6 +57,16 @@ web.tab.current
         icognito: bool,
     }
 
+app.editor.activity
+
+.. code-block:: javascript
+
+    {
+        file: string, (full path to file)
+        project: string, (full path of cwd)
+        language: string, (name of language of the file)
+    }
+
 
 currentwindow
 
@@ -84,14 +94,4 @@ afkstatus
 
     {
         status: string ("afk" or "not-afk")
-    }
-
-
-app.editor.activity
-
-.. code-block:: javascript
-
-    {
-        filename: string,
-        workdir: string,
     }
