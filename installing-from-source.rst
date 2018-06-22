@@ -36,10 +36,12 @@ You need to ensure you have:
 Using a virtualenv
 ------------------
 
-It is recommended to use a virtualenv in order to avoid polluting your system with ActivityWatch-specific packages Python packages. It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
-
 .. note::
-   If you don't want to use a virtualenv you could instead set the environment variable :code:`PIP_USER=true` when building. This will install ActivityWatch for your user only instead of trying to install it system-wide (which would fail since it requires root). If you do this, make sure that the folder :code:`~/.local/bin` (on Linux) or :code:`~/Library/Python/<version>/bin` (on macOS) is in your PATH so that you can run the programs once installed.
+   If you don't want to use a virtualenv you could instead set the environment variable :code:`PIP_USER=true` when building in the next step.
+   But make sure that the folder :code:`~/.local/bin` (on Linux) or :code:`~/Library/Python/<version>/bin` (on macOS) is in your PATH.
+
+It is recommended to use a virtualenv in order to avoid polluting your system with ActivityWatch-specific Python packages.
+It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
 
 .. code-block:: sh
 
@@ -65,7 +67,8 @@ Build and install everything into the virtualenv:
     make build
 
 .. note::
-   If you are going to develop we suggest building/installing using :code:`make build DEV=true` which installs all Python packages with pip's handy :code:`--editable` flag. By doing this you wont have to reinstall everything whenever you want to try out a code change.
+   If you're building from source to develop we suggest building/installing using :code:`make build DEV=true` which installs all Python packages with pip's handy :code:`--editable` flag.
+   By doing this you wont have to reinstall everything whenever you want to try out a code change.
 
 Running
 -------
