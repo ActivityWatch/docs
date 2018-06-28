@@ -2,11 +2,34 @@
 Changelog
 =========
 
-.. warning::
-    We haven't gotten to the point where we keep a flawless changelog yet. Please refer to the git history for more detail and certainty.
+v0.8.0b1
+--------
 
-Released
-========
+Server:
+
+- New query2 API for querying and transforming data
+- Added :code:`version` field to :code:`/info` endpoint
+- Set stricter allowed CORS origins in testing mode
+- Added :code:`--cors-origins` CLI argument
+
+Web UI:
+
+- Added datepicker to the activity view
+- Moved the today/clock visualization into the activity view
+- New visualization for most-visited domains
+- New visualization for previous days active time
+- New query explorer
+- Now displays version and hostname in bottom-right corner
+- Now uses aw-client-js for all API calls
+
+Watchers:
+
+- Improved stability of client event queues (`see this PR <https://github.com/ActivityWatch/aw-client/pull/28>`_)
+
+Other:
+
+- Windows: Console window and taskbar icon now hidden by default (`issue #139 <https://github.com/ActivityWatch/activitywatch/issues/139>`_)
+- All issues assigned to the v0.8 milestone can be found `on GitHub <https://github.com/ActivityWatch/activitywatch/milestone/1>`_
 
 v0.7.1
 --------
@@ -18,7 +41,7 @@ v0.7.0b4
 --------
 
 - The ActivityWatch WebExtension is now supported from this version forward, see the announcement `on the forum <https://forum.activitywatch.net/t/you-can-now-track-your-web-browsing-with-activitywatch/28>`_.
-- (Not really, see v0.7.0b5) Fixed pesky timezone issue in web UI (`issue #117 <https://github.com/ActivityWatch/activitywatch/issues/117>`_).
+- (Not really, see v0.7.1) Fixed pesky timezone issue in web UI (`issue #117 <https://github.com/ActivityWatch/activitywatch/issues/117>`_).
 - Fixed bug on macOS where keyboard activity would not be used to detect AFK state.
 - Fixed packaging bugs (macOS, PyInstaller).
 - The web extension now has a better look and notifies if connection to server failed.
@@ -61,7 +84,7 @@ Upcoming
 .. warning::
     **Unreleased**: These are planned changelogs and will therefore change when plans change.
 
-v0.7.2 (planned)
+v0.9.1? (planned)
 ----------------
 
 - New query2 API for querying and transforming data
