@@ -40,6 +40,7 @@ The aw-core library contains many of the essential parts of ActivityWatch, notab
 
  - The `buckets-and-events`
  - The datastore layer
+ - Event transformation and queries
  - Utilities (configuration, logging, decorators)
 
 aw-client
@@ -51,7 +52,8 @@ A client could both be a watcher which sends data as well as a visualizer which 
 Currently the primary client library is written in Python (known simply as aw-client) but a client library written in JavaScript is on the way and is expected to have the same level of support in the future.
 
  - `aw-client <https://github.com/ActivityWatch/aw-client>`_ (Python)
- - `aw-client-js <https://github.com/ActivityWatch/aw-client-js>`_ (JavaScript, work in progress)
+ - `aw-client-js <https://github.com/ActivityWatch/aw-client-js>`_ (JavaScript, beta)
+ - `aw-client-rust <https://github.com/ActivityWatch/aw-client-rust>`_ (Rust, work in progress)
 
 aw-analysis
 ^^^^^^^^^^^
