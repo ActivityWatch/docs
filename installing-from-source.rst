@@ -53,8 +53,11 @@ Now activate the virtualenv in your current shell session:
 
     # For bash/zsh users:
     source ./venv/bin/activate
+    # For Windows git bash users:
+    source ./venv/Scripts/activate
     # For fish users:
     source ./venv/bin/activate.fish
+    
 
 
 Building and installing
