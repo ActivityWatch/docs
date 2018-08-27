@@ -77,16 +77,3 @@ v0.6.0 and older
 ----------------
 
 We haven't been keeping track of changes very well for older versions. Please refer to the git history.
-
-Upcoming
-========
-
-.. warning::
-    **Unreleased**: These are planned changelogs and will therefore change when plans change.
-
-v0.9.1? (planned)
-----------------
-
-- New query2 API for querying and transforming data
-- Web UI now has a view for the most-visited domains
-- Web UI now has a button for removing buckets
