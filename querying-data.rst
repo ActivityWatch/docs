@@ -46,8 +46,8 @@ The query intersects the not-afk events from the afk bucket with the events from
 
     window_events = query_bucket("window_bucket");
     not_afk_events = query_bucket("afk_bucket");
-    not_afk_events = filter_keyvals(not_afk_events, "status", "not-afk");
-    window_events = filter_period_intersect(window_events, afk_events);
+    not_afk_events = filter_keyvals(not_afk_events, "status", ["not-afk"]);
+    window_events = filter_period_intersect(window_events, not_afk_events);
     events = merge_events_by_keys(window_events, "appname");
     events = sort_by_duration(events);
     RETURN = events;
