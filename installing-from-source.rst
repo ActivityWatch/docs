@@ -46,7 +46,7 @@ It also makes it easier to uninstall since all you have to do is remove the virt
 .. code-block:: sh
 
     python3 -m venv venv
-
+      
 Now activate the virtualenv in your current shell session:
 
 .. code-block:: sh
@@ -58,7 +58,11 @@ Now activate the virtualenv in your current shell session:
     # For fish users:
     source ./venv/bin/activate.fish
     
+Be sure to install Wheel before building
 
+.. code-block:: sh
+   
+   pip3 install wheel
 
 Building and installing
 -----------------------
