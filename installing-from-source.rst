@@ -105,3 +105,23 @@ First pull the latest version of the repo with :code:`git pull` then get the upd
 If it doesn't work, you can first try to run :code:`make uninstall` and then do a fresh :code:`make build`. If that fails as well, remove the virtualenv and start over.
 
 Please report all issues you might have so we can make things easier for future users.
+
+Packaging your changes
+----------------------
+
+If you made some changes and want to run your code as you would normally do outside of the development environment you will need to install pyinstaller and python3-dev and package activitywatch
+
+.. code-block:: sh
+
+   pip3 install pyinstaller
+   apt install python3-dev
+   
+Then package it
+
+.. code-block:: sh
+   
+   make package
+   
+When the packaging is done you will have :code:`./dist` folder where you can find a zipped version and an unzipped :code:`activitywatch` folder, you can move or copy that folder anywhere you need and set :code:aw-qt to run from startup.
+
+
