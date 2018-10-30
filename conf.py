@@ -39,7 +39,15 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
     'sphinx.ext.graphviz',
+    'sphinx.ext.extlinks',
 ]
+
+extlinks = {
+    'issue': ('https://github.com/Activity/issues/%s', 'issue #'),
+    'gh': ('https://github.com/%s', ''),
+    'gh-user': ('https://github.com/%s', '@'),
+    'gh-aw': ('https://github.com/ActivityWatch/%s', ''),
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
