@@ -3,6 +3,13 @@ Architecture
 
 Here we hope to clarify the architecture of ActivityWatch for you. Please file an issue or pull request if you think something is missing.
 
+Dependency graph
+----------------
+
+The below is a graph of the fundamental dependencies between projects, these do not reflect the folder structure.
+
+.. graphviz:: dependency.dot
+
 Server
 ------
 
@@ -10,14 +17,14 @@ Known as aw-server, it handles storage and retrieval of all activities/entries i
 
 The server also hosts the Web UI (aw-webui) which does all communication with the server using the REST API.
 
-Watchers
---------
+Clients (watchers, importers, and observers)
+--------------------------------------------
 
 Since aw-server doesn't do any data collection on it's own, we need watchers that observe the world and sent the data off to aw-server for storage.
 
 These utilize the :doc:`aw-client` library for making requests to the aw-server.
 
-For a list of watchers, see :doc:`watchers`.
+For a list of watchers, see :doc:`watchers`. For a list of importers see :doc:`importers`.
 
 
 User interfaces
@@ -25,13 +32,13 @@ User interfaces
 
 ActivityWatch currently has two user interfaces, aw-qt and aw-webui.
 
- - `aw-qt <https://github.com/ActivityWatch/aw-qt>`_ - Manages the server and watchers to make ActivityWatch easy to use for end-users.
- - `aw-webui <https://github.com/ActivityWatch/aw-webui>`_ - Offers visualization and an overview of the database. Hosted by aw-server in the bundle.
+ - :gh-aw:`aw-qt` - Manages the server and watchers to make ActivityWatch easy to use for end-users.
+ - :gh-aw:`aw-webui` - Offers visualization and an overview of the database. Hosted by aw-server in the bundle.
 
 Libraries
 ---------
 
-Some of the logic of ActivityWatch is shared across the server and clients, for these cases we moved some logic into seperate libraries.
+Some of the logic of ActivityWatch is shared across the server and clients, for these cases we moved some logic into separate libraries.
 
 aw-core
 ^^^^^^^

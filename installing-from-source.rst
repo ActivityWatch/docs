@@ -4,7 +4,7 @@ Installing from source
 Here's the guide to installing ActivityWatch from source. If you are just looking to try it out, see the getting started guide instead.
 
 .. note::
-   This is written for Linux and macOS. For Windows the build process is more complicated and we therefore suggest using the pre-built packages instead on that operating system.
+   This is written for Linux and macOS. For Windows the build process is more complicated and we therefore suggest using the pre-built packages instead on that operating system (but if you really have to, see :doc:`this guide <installing-from-source-on-windows>`).
 
 Cloning the submodules
 ----------------------
@@ -57,7 +57,7 @@ Now activate the virtualenv in your current shell session:
     source ./venv/Scripts/activate
     # For fish users:
     source ./venv/bin/activate.fish
-    
+
 
 
 Building and installing
@@ -109,19 +109,18 @@ Please report all issues you might have so we can make things easier for future 
 Packaging your changes
 ----------------------
 
-If you made some changes and want to run your code as you would normally do outside of the development environment you will need to install pyinstaller and python3-dev and package activitywatch
+If you made some changes and want to create a proper build with portable executables (like normal ActivityWatch releases) you need to install :code:`pyinstaller` (and on Debian-like distros :code:`python3-dev`).
 
 .. code-block:: sh
 
-   pip3 install pyinstaller
-   apt install python3-dev
-   
-Then package it
+   apt install python3-dev  # Or equivalent for your Linux distribution
+   pip3 install --user pyinstaller
+
+Then simply run the following to package it:
 
 .. code-block:: sh
-   
+
    make package
-   
-When the packaging is done you will have :code:`./dist` folder where you can find a zipped version and an unzipped :code:`activitywatch` folder, you can move or copy that folder anywhere you need and set :code:aw-qt to run from startup.
 
+When the packaging is done you will have :code:`./dist` folder where you can find a zipped version and an unzipped :code:`activitywatch` folder, you can move or copy that folder anywhere you need and set :code:`aw-qt` to run from startup.
 
