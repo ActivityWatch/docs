@@ -58,12 +58,12 @@ A client could both be a watcher which sends data as well as a visualizer which 
 
 Currently the primary client library is written in Python (known simply as aw-client) but a client library written in JavaScript is on the way and is expected to have the same level of support in the future.
 
- - `aw-client <https://github.com/ActivityWatch/aw-client>`_ (Python)
- - `aw-client-js <https://github.com/ActivityWatch/aw-client-js>`_ (JavaScript, beta)
- - `aw-client-rust <https://github.com/ActivityWatch/aw-client-rust>`_ (Rust, work in progress)
+ - :gh-aw:`aw-client` (Python)
+ - :gh-aw:`aw-client-js` (TypeScript/JavaScript, beta)
+ - :gh-aw:`aw-client-rust` (Rust, work in progress)
 
 aw-analysis
 ^^^^^^^^^^^
 
-There are also plans to create a library called `aw-analysis <https://github.com/ActivityWatch/aw-analysis>`_ to aid in
+There are also plans to create a library called :gh-aw:`aw-analysis` to aid in
 different types of analysis and transformation one might want to make using ActivityWatch data.
