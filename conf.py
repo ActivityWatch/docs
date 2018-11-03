@@ -43,7 +43,7 @@ extensions = [
 ]
 
 extlinks = {
-    'issue': ('https://github.com/Activity/issues/%s', 'issue #'),
+    'issue': ('https://github.com/ActivityWatch/activitywatch/issues/%s', 'issue #'),
     'gh': ('https://github.com/%s', ''),
     'gh-user': ('https://github.com/%s', '@'),
     'gh-aw': ('https://github.com/ActivityWatch/%s', ''),
