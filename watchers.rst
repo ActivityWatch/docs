@@ -26,6 +26,7 @@ Watches the actively edited file and associated metadata like , project name (fo
  - :gh-aw:`aw-watcher-vim` - vim extension, by :gh-user:`johan-bjareholt` and :gh-user:`ahnlabb`.
  - :gh-aw:`aw-watcher-vscode` - Visual Studio Code extension, by :gh-user:`Otto-AA`.
  - :gh:`pauldub/activity-watch-mode` - emacs mode forked from wakatime-mode, by :gh-user:`pauldub`.
+ - :gh:`OlivierMary/aw-watcher-jetbrains` - JetBrains IntelliJ plugin, by :gh-user:`OlivierMary`.
 
 Media watchers
 --------------
