@@ -1,42 +1,41 @@
 History
 =======
 
-This section is dedicated to the past, present, and future of ActivityWatch.
+It all started in 2013 when I, the founder of this project, was just about to start university. I had been soaked in hacker and transhumanism culture for most of my adolescent life, and was eager to put my programming abilities to good use. I had many interests, among others in neuroscience, biohacking, and Quantified Self. A pivotal moment in my interest was when when I one day, long after first reading about `brain computer interfaces <https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface>`_, suddenly realized the implications of the future generations of the technology: We would be able to record our own thoughts and frictionlessly communicate them to others. I wrote a private note to myself, stating an intent that once the field has advanced sufficiently for research to start getting interesting I should make it a priority to contribute as much as I can.
 
-.. We aren't (yet) able to record what we think, but we can approximate by asking: What did we pay attention to?
+Around the same time, I was obsessively collecting data on my behavior (then known as `lifelogging <https://en.wikipedia.org/wiki/Lifelog>`_, now more commonly known as `Quantified Self <https://en.wikipedia.org/wiki/Quantified_Self>`_). This included automated time-trackers (like ActivityWatch), a massive spreadsheet, a diary, location tracking, a step/sleep-tracker (Fitbit at the time), extensive use of version control, etc.
 
-We aren't (yet) able to automatically record our own thoughts, but with ActivityWatch we can record what were thinking about, What projects we worked on, which ideas we read about, the culture we enjoyed, and who created that culture.
+While unexpected, the similarities between brain computer interfaces and the behavioral aspects of Quantified Self became apparent over time. After all, the best approximation of our thoughts is our behavior. While we aren't yet able to automatically record our own thoughts, we are able to record our behaviors and what occupies our attention, such as which projects we work on, the ideas we read about, and the culture we consume.
 
-We've thought a lot about what ActivityWatch could be, and what that could lead to. We unfortunately haven't made as great a job of writing things down as we should have but here's an attempt.
+So on Dec 30th, 2014, I started building a prototype. In April 2016 I started working on a rewrite (that included the client-server model) which became the foundation for what ActivityWatch is today. Some time in 2016, my brother :gh-user:`johan-bjareholt` became a regular contributor, and has since become the second largest contributor to the project by a wide margin.
 
-We believe that studying our own behavior can also help us identify and get rid of bad habits.
 
-We believe that open source tools like ActivityWatch can be used to crowdsource an open set of research data, enabling entirely new research possibilities regarding the effect of different activities on human psychology and behavior.
+Present
+-------
 
-Past
-----
+Development is slowly but steadily moving forward as lead developer Erik Bjäreholt finishes his degree.
 
-It was 2013, I was just about to start university and had been soaked in transhumanist ideas and hacker culture for most of my adolescent life. I had been reading a bit about brain computer interfaces, and in a moment of clarity I realized its potentially enormous impact. I wrote a private note to myself about my realization and that I should definitely join in on making it a reality when the right time comes.
-
-During the same time, I was obsessively logging what I did using: automated time-trackers (like ActivityWatch), a great spreadsheet, a diary, the GPS in my phone (RIP battery), a step/sleep-tracker (Fitbit at the time), version control, etc.
-
-:gh-user:`ErikBjare` started building a prototype on Dec 30, 2014. In April 2016 he started working on a rewrite (that included the client-server model) that then became the foundation for ActivityWatch is today. :gh-user:`johan-bjareholt` became a regular contributor some time later in 2016, and has since been the second largest contributor to the project by a wide margin.
-
-Now
----
-
-We're building it, and we've only just begun.
+Focus currently lies on building tools for data exploration, building an `Android app <https://github.com/ActivityWatch/aw-android>`_, as well as making it easier to import and export data to and from ActivityWatch.
 
 
 Future
 ------
 
+There's much to be said here, and while the future is inherently unpredictable we've slowly started outlining `our vision for ActivityWatch <https://github.com/ActivityWatch/activitywatch/issues/236>`_.
+
+Among other things, we're trying to `secure funding to ensure financial sustainability and accelerate development <https://github.com/ActivityWatch/activitywatch/issues/259>`_. In the meanwhile, we get some support from our wonderful users through `donations <https://activitywatch.net/donate/>`_.
+
+
 Building new types of privacy-aware services which require data collection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If a lot is collected by the user, new applications could be developed that utilize that data.
+Many services rely on the collection of data in order to function, but the more data they need to collect the greater the privacy implications. One way to get around this is to never have a third party get access to the data at all, and keep the user in exclusive control of their data.
 
-See for example :gh:`Thankful <SuperuserLabs/thankful>`. Or my proposal for a `self-hosted aggregated newsfeed, with a highly customizable recommendation engine <https://erik.bjareholt.com/wiki/importance-of-open-recommendation-systems/>`_.
+Examples:
+
+ - :gh:`Thankful <SuperuserLabs/thankful>`, an application that tracks the users culture consumption, and allows them to automatically donate cryptocurrency to the creators of it.
+ - Proposal for a `self-hosted newsfeed aggregator, with a highly customizable recommendation engine <https://erik.bjareholt.com/wiki/importance-of-open-recommendation-systems/>`_.
+
 
 Ubiquitous recording for meaningful information about the past
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
