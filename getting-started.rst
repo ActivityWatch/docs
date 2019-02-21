@@ -43,8 +43,7 @@ Configuration files for ActivityWatch can be found at the following default loca
 
 - Unix: :code:`~/.config/activitywatch` or the path defined by the :code:`$XDG_CONFIG_HOME` environment variable.
 - Mac OS X: :code:`~/Library/Application\ Support/activitywatch/`
-- Windows Vista+: :code:`%LocalAppData%\activitywatch\activitywatch`
-- Windows XP: :code:`%USERPROFILE%\Application Data\activitywatch\activitywatch`
+- Windows: :code:`%LocalAppData%\activitywatch\activitywatch`
 
 Config options for the server, client, and default watchers are listed below:
 
