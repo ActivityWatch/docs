@@ -29,6 +29,9 @@ You should now also have the web interface running at `<localhost:5600>`_ and wi
 .. note::
     If you want more advanced ways to run ActivityWatch (including running it without aw-qt), check out the "Running" section of `installing-from-source`.
 
+.. note::
+   If you are using a proxy, activitywatch will not work by default. To circumvent this you can set the environment variable HTTP_PROXY before starting aw-qt. How to set an environment variable depends on your operating system, use Google if you are unsure how to do this.
+
 Autostart
 =========
 
