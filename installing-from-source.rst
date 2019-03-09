@@ -27,10 +27,10 @@ Or afterwards (if you've already cloned normally) using:
 Checking dependencies
 ---------------------
 
-You need to ensure you have:
+You need:
 
-- Python 3.5 or later, check with :code:`python3 -V` (required to build the core components)
-- Node 5 or higher, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
+- Python 3.6 or later, check with :code:`python3 -V` (required to build the core components)
+- Node 8 or higher, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
 
 
 Using a virtualenv

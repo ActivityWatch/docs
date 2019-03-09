@@ -2,6 +2,22 @@
 Changelog
 =========
 
+v0.8.0b8
+--------
+
+.. note::
+   Changelog incomplete
+
+General:
+
+ - The lowest version of Python supported for building ActivityWatch is now 3.6
+ - Fixed PyInstaller-built releases on Windows
+
+v0.8.0b2 - v0.8.0b7
+-------------------
+
+No changelog written.
+
 v0.8.0b1
 --------
 
