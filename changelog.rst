@@ -8,9 +8,19 @@ v0.8.0b8
 .. note::
    Changelog incomplete
 
-General:
+Server:
 
- - The lowest version of Python supported for building ActivityWatch is now 3.6
+ - Import and export APIs are now usable
+
+Web UI:
+
+ - Added Stopwatch functionality
+ - Added ability to import buckets from export
+ - Bucket export button now does a full export that includes metedata
+
+Other:
+
+ - The lowest version of Python supported for building ActivityWatch is now 3.6.
  - Fixed PyInstaller-built releases on Windows
 
 v0.8.0b2 - v0.8.0b7
