@@ -68,7 +68,7 @@ master_doc = 'index'
 # General information about the project.
 project = 'ActivityWatch'
 author = 'Erik Bjäreholt, Johan Bjäreholt and contributors'
-copyright = '2016-2017 by {}'.format(author)
+copyright = '2016-2019 by {}'.format(author)
 
 # TODO: Automatically detect version (possibly using git tags)
 # The version info for the project you're documenting, acts as replacement for
