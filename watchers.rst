@@ -28,6 +28,7 @@ Watches the actively edited file and associated metadata like path, language, an
  - :gh:`pauldub/activity-watch-mode` - emacs mode forked from wakatime-mode, by :gh-user:`pauldub`.
  - :gh:`OlivierMary/aw-watcher-jetbrains` - JetBrains IntelliJ plugin, by :gh-user:`OlivierMary`.
  - :gh:`LaggAt/ActivityWatchVS` - Visual Studio extension, by :gh-user:`LaggAt`
+ - :gh:`pascalwhoop/aw-idea` - (WIP) JetBrains IntelliJ IDEA/PyCharm/WebStorm/etc extension forked from wakatime, by :gh-user:`pascalwhoop`
 
 Media watchers
 --------------
