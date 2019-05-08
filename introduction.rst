@@ -36,7 +36,7 @@ use, improve and extend it.
 Data philosophy
 ---------------
 
-Data in it's raw form is always the most valuable.
+Data in its raw form is always the most valuable.
 
 Quantified self data doesn't take much space by todays standards, but for services such as RescueTime which have over
 than thousand of customers, every megabyte per user counts.
