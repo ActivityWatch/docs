@@ -22,6 +22,6 @@ Fetching Data
 
 If you want to fetch data from aw-server for visualization, exporting, backup or something we have not yet thought of, there are a few ways you can do this:
 
-* `Exporting a Bucket <features/exporting-data>`_ If you want a complete dump of all events of bucket
-* `Bucket REST API <get-events>`_ If you want to export raw events in a specific time interval from a bucket
-* `Writing a Query <writing-a-query>`_ If you want to summarize/aggregate one or more buckets into more easily readable data
+* `Exporting a Bucket <features/exporting-data>` If you want a complete dump of all events of bucket
+* `Bucket REST API <api-reference>` If you want to export raw events in a specific time interval from a bucket
+* `Writing a Query <querying-data>` If you want to summarize/aggregate one or more buckets into more easily readable data
