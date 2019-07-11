@@ -35,6 +35,7 @@ Welcome to the ActivityWatch documentation!
    writing-watchers
    querying-data
    installing-from-source
+   installing-from-source-on-windows
    rest
    changelog
 

@@ -19,43 +19,48 @@ Writing a Query
 Queries are the easiest yet advanced way to get events from aw-server buckets in a format which fits most needs.
 Queries can be done by doing a POST request to aw-server either manually or with the aw-client library.
 
+For an incomplete API reference of the transform functions, see the API reference for `aw_transform` and `aw_analysis`.
+
 In a query you start by getting events from a bucket and assign that collection of events to a variable, then there are multiple transform functions which you can use to for example filter, limit, sort, and merge events from a bucket.
 After that you assign what you want to receive from the request to the RETURN variable.
 
-Minimal query which only gets events from a bucket and returns it
+Minimal example:
+    Minimal query which only gets events from a bucket and returns it:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    events = query_bucket("my_bucket");
-    RETURN = events;
-
-
-A query which merges events from a bucket in a key1->key2 hierarchy
-
-.. code-block:: bash
-
-    events = query_bucket("my_bucket");
-    events = merge_events_by_keys(events, "merged_key1", "merged_key2");
-    RETURN = events;
+        events = query_bucket("my_bucket");
+        RETURN = events;
 
 
-A simplified query example of how to summarize what programs used while not afk.
-The query intersects the not-afk events from the afk bucket with the events from the window bucket, merges keys from the result and sorts by duration.
+Example which arranges a hierarchy:
+    A query which merges events from a bucket in a key1->key2 hierarchy:
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    window_events = query_bucket("window_bucket");
-    not_afk_events = query_bucket("afk_bucket");
-    not_afk_events = filter_keyvals(not_afk_events, "status", ["not-afk"]);
-    window_events = filter_period_intersect(window_events, not_afk_events);
-    events = merge_events_by_keys(window_events, "appname");
-    events = sort_by_duration(events);
-    RETURN = events;
+        events = query_bucket("my_bucket");
+        events = merge_events_by_keys(events, "merged_key1", "merged_key2");
+        RETURN = events;
 
-This is an example of how you can do analysis and aggregation with the query method in python with aw-client
 
-.. literalinclude:: examples/query_client.py
+Example combining window and AFK events:
+    A simplified query example of how to summarize what programs used while not afk.
+    The query intersects the not-afk events from the afk bucket with the events from the window bucket, merges keys from the result and sorts by duration.
 
+    .. code-block:: bash
+
+        window_events = query_bucket("window_bucket");
+        not_afk_events = query_bucket("afk_bucket");
+        not_afk_events = filter_keyvals(not_afk_events, "status", ["not-afk"]);
+        window_events = filter_period_intersect(window_events, not_afk_events);
+        events = merge_events_by_keys(window_events, "appname");
+        events = sort_by_duration(events);
+        RETURN = events;
+
+Example including aw-client:
+    This is an example of how you can do analysis and aggregation with the query method in python with aw-client
+
+    .. literalinclude:: examples/query_client.py
 
 Fetching Raw Events
 -------------------

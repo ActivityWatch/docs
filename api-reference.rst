@@ -43,6 +43,31 @@ The aw_client package contains a programmer-friendly wrapper around the servers 
    :members: ActivityWatchClient
    :undoc-members:
 
+aw_transform
+------------
+
+The aw_transform package contains transforms used in the query language.
+
+.. note:: Their function signatures and return types may deviate from how the transforms are actually implemented in the query language. For more details, see `aw_analysis.query2_functions`
+
+.. automodule:: aw_transform
+   :members:
+   :undoc-members:
+
+aw_analysis
+-----------
+
+The `aw_analysis` package specifies the functions available in query2. They are often based on an underlying function in `aw_transform`.
+
+.. automodule:: aw_analysis
+   :members:
+   :undoc-members:
+
+.. automodule:: aw_analysis.query2_functions
+   :members:
+   :exclude-members: q2_function, TQueryFunction
+   :undoc-members:
+
 
 aw_server
 ---------
