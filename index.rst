@@ -32,6 +32,7 @@ Welcome to the ActivityWatch documentation!
    api-reference
    development
    extending
+   syncing
    writing-watchers
    querying-data
    installing-from-source

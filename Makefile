@@ -54,13 +54,16 @@ html:
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-.PHONY: dependency-graph
-dependency-graph:
-	dot -Tps dependency.dot -o dependency.pdf
-	convert -density 300 dependency.pdf dependency.png
-	rm dependency.pdf
+_build/html/_images/dependency.png: dependency.dot
 	mkdir -p _build/html/_images
-	mv dependency.png _build/html/_images
+	dot -Tpng dependency.dot -o _build/html/_images/dependency.png
+
+_build/html/_images/syncing.png: syncing.dot
+	mkdir -p _build/html/_images
+	dot -Tpng syncing.dot -o_build/html/_images/syncing.png
+
+graphs: _build/html/_images/syncing.png _build/html/_images/dependency.png
+
 
 .PHONY: dirhtml
 dirhtml:

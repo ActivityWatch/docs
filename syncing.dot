@@ -1,0 +1,60 @@
+digraph {
+    newrank=true;
+    rankdir = LR;
+    node [shape=cylinder style=filled fillcolor=white fontsize=10 margin=0.05];
+
+    subgraph cluster_sync {
+        rankdir = LR;
+        label="Sync folder \n(Syncthing, Dropbox, etc.)";
+        d_a_window_sync[label="window from A" fillcolor=yellow];
+        d_b_window_sync[label="window from B" fillcolor=yellow];
+        d_c_window_sync[label="window from C" fillcolor=yellow];
+    }
+
+    subgraph cluster_a {
+        label="Device A";
+        d_a_window[label="window" fillcolor=green];
+    }
+
+    subgraph cluster_a_dest {
+        label="Device A";
+        d_b_window_at_a[label="window from B" fillcolor=gray];
+        d_c_window_at_a[label="window from C" fillcolor=gray];
+    }
+
+    subgraph cluster_b {
+        label="Device B";
+        d_b_window[label="window" fillcolor=green];
+    }
+
+    subgraph cluster_b_dest {
+        label="Device B";
+        d_a_window_at_b[label="window from A" fillcolor=gray];
+        d_c_window_at_b[label="window from C" fillcolor=gray];
+    }
+
+    subgraph cluster_c {
+        label="Device C";
+        d_c_window[label="window" fillcolor=green];
+    }
+
+    subgraph cluster_c_dest {
+        label="Device C";
+        d_a_window_at_c[label="window from A" fillcolor=gray];
+        d_b_window_at_c[label="window from B" fillcolor=gray];
+    }
+
+    d_a_window -> d_a_window_sync[color=green,penwidth=2];
+    d_b_window -> d_b_window_sync[color=green, penwidth=2];
+    d_c_window -> d_c_window_sync[color=green, penwidth=2];
+
+    d_a_window_sync -> d_a_window_at_b[color=orange, penwidth=2];
+    d_a_window_sync -> d_a_window_at_c[color=orange, penwidth=2];
+    d_b_window_sync -> d_b_window_at_a[color=orange, penwidth=2];
+    d_b_window_sync -> d_b_window_at_c[color=orange, penwidth=2];
+    d_c_window_sync -> d_c_window_at_a[color=orange, penwidth=2];
+    d_c_window_sync -> d_c_window_at_b[color=orange, penwidth=2];
+
+    { rank=same; d_a_window; d_b_window; d_c_window; }
+    { rank=same; d_a_window_sync; d_b_window_sync; d_c_window_sync; }
+}
