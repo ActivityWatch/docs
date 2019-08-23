@@ -33,6 +33,7 @@ Welcome to the ActivityWatch documentation!
    development
    extending
    syncing
+   security
    writing-watchers
    querying-data
    installing-from-source
