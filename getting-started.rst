@@ -70,4 +70,5 @@ Config options for the server, client, and default watchers are listed below:
 - aw-watcher-window:
 
  - :code:`poll_time` Time in seconds between window checks.
+ - :code:`exclude_title` Don't track window titles
  - :code:`update_time` Not yet implemented.
