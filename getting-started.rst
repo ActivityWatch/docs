@@ -22,7 +22,12 @@ Usage
 
 The aw-qt application is the easiest way to use ActivityWatch. It creates a trayicon and automatically starts the server and the default watchers.
 
-Simply run the :code:`./aw-qt` binary in the installation directory (either from your terminal or on Windows by double-clicking). You now should see an icon appear in your system tray (unless you're running Gnome 3, where there is no system tray).
+Simply **run the :code:`./aw-qt` binary in the installation directory** (either from your terminal or on Windows by double-clicking). You now should see an icon appear in your system tray.
+
+.. note::
+   If you are running GNOME 3 or another desktop that does not support system trays, or if for some reason Qt can't be used on your machine, have a look at the *Installing from GNOME* section below.
+
+
 
 You should now also have the web interface running at `<localhost:5600>`_ and will in a few minutes be able to view your data under the Activity section!
 
@@ -70,4 +75,64 @@ Config options for the server, client, and default watchers are listed below:
 - aw-watcher-window:
 
  - :code:`poll_time` Time in seconds between window checks.
+ - :code:`exclude_title` Don't track window titles
  - :code:`update_time` Not yet implemented.
+ 
+Installing on GNOME
+======
+
+As an alternative for users of GNOME 3 and other DEs that don't support app trays, or simply to avoid depending on Qt, you can place two simple workaround scripts in your ActivityWatch install folder:
+
+:code:`start.sh`:
+::
+  #!/bin/bash
+
+  cd ~/.local/opt/activitywatch         # Put your ActivityWatch install folder here
+
+  ./aw-server &
+  ./aw-watcher-afk & 
+  ./aw-watcher-window &                 # you can add --exclude-title here to exclude window title tracking for this session only
+
+  notify-send "ActivityWatch started"   # Optional, sends a notification when ActivityWatch is started
+
+
+:code:`kill.sh`:
+::
+
+  #!/bin/bash
+  pkill aw-
+  notify-send "ActivityWatch killed"    # Optional, sends a notification when ActivityWatch is killed
+
+
+Don't forget to :code:`chmod +x start.sh` and :code:`chmod +x kill.sh`.
+
+Then you can create two desktop files for these scripts to show up among your apps:
+
+:code:`~/.local/share/applications/aw-start.desktop`:
+::
+
+  [Desktop Entry]
+  Name=Start ActivityWatch
+  Comment=Start AW
+  Exec=~/.local/opt/activitywatch/start.sh
+  Hidden=false
+  Terminal=false
+  Type=Application
+  Version=1.0
+  Icon=activitywatch
+  Categories=Utility;
+
+
+:code:`~/.local/share/applications/aw-kill.desktop`:
+::
+
+  [Desktop Entry]
+  Name=Kill ActivityWatch
+  Comment=Kill AW
+  Exec=~/.local/opt/activitywatch/kill.sh
+  Hidden=false
+  Terminal=false
+  Type=Application
+  Version=1.0
+  Icon=activitywatch
+  Categories=Utility;
