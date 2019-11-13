@@ -77,20 +77,21 @@ Config options for the server, client, and default watchers are listed below:
  - :code:`poll_time` Time in seconds between window checks.
  - :code:`exclude_title` Don't track window titles
  - :code:`update_time` Not yet implemented.
- 
+
 Installing on GNOME
-======
+===================
 
 As an alternative for users of GNOME 3 and other DEs that don't support app trays, or simply to avoid depending on Qt, you can place two simple workaround scripts in your ActivityWatch install folder:
 
 :code:`start.sh`:
 ::
+
   #!/bin/bash
 
   cd ~/.local/opt/activitywatch         # Put your ActivityWatch install folder here
 
   ./aw-server &
-  ./aw-watcher-afk & 
+  ./aw-watcher-afk &
   ./aw-watcher-window &                 # you can add --exclude-title here to exclude window title tracking for this session only
 
   notify-send "ActivityWatch started"   # Optional, sends a notification when ActivityWatch is started
