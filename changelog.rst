@@ -2,6 +2,24 @@
 Changelog
 =========
 
+v0.8.3
+------
+
+Released 2019-11-13 (yes, the same day as v0.8.2)
+
+ - Fixes the Windows builds
+
+v0.8.2
+------
+
+Released 2019-11-13
+
+Just minor fixes to the v0.8.1 that was released the day before.
+
+ - Added a Windows installer
+ - :strike:`Fixes the Windows builds` (it did not)
+ - Fixes a bug in the web UI where weeks didn't always start on Mondays and months didn't always start on the first
+
 v0.8.1
 ------
 
