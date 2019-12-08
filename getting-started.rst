@@ -90,9 +90,9 @@ As an alternative for users of GNOME 3 and other DEs that don't support app tray
 
   cd ~/.local/opt/activitywatch         # Put your ActivityWatch install folder here
 
-  ./aw-server &
-  ./aw-watcher-afk &
-  ./aw-watcher-window &                 # you can add --exclude-title here to exclude window title tracking for this session only
+  ./aw-server/aw-server &
+  ./aw-watcher-afk/aw-watcher-afk &
+  ./aw-watcher-window/aw-watcher-window &                 # you can add --exclude-title here to exclude window title tracking for this session only
 
   notify-send "ActivityWatch started"   # Optional, sends a notification when ActivityWatch is started
 
