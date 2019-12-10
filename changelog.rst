@@ -4,6 +4,15 @@
 Changelog
 =========
 
+v0.8.4
+------
+
+Released 2019-12-10
+
+ - Adds the ability to filter the activity view by category.
+ - Fixes a bug where setting rule for a category to 'None' breaks the UI :issue:`313`.
+ - Fixes the broken favicon for aw-webui.
+
 v0.8.3
 ------
 
@@ -87,9 +96,11 @@ v0.8.0b7
 Released 2018-11-03
 
 Web UI:
+
   - Fix broken editor bucket visualization
 
 Misc:
+
   - CI Improvements
 
 v0.8.0b2 - v0.8.0b6
