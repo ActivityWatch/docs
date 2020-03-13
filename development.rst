@@ -29,5 +29,7 @@ Making a release
 #. Create a signed tag: :code:`git tag -s v0.7.1`
 #. Push the commit and tag: :code:`git push origin refs/tags/v0.7.1`
 #. Create a release on GitHub
+    - Generate commit changelog with scripts/release_notes.sh
+    - Read it from commit_summary.txt and clean it a bit (remove non-user-affecting changes, merge commits etc)
 #. Wait for the builds to finish
 #. Post about it online: Twitter, the forum, mailinglist (if major)
