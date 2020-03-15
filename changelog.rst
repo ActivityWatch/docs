@@ -8,43 +8,51 @@ v0.9.0
 ------
 
 Released 2020-03-15
+
  - add Rust server as an option. It has better performance and will be the main supported server soon.
  - Almost all python components have been moved to poetry / pyproject.toml from old pip / setup.py building.
 
-[Main repo]( ActivityWatch/activitywatch )
+main activitywatch
+
  - Add aw-server-rust binary to pyinstaller bundles (a567003)
  - Automatic stale issue detection / closing (issues marked as stale after 180 days of inactivity, closed after 14 stale days)
  - Added aw-server-rust
  - Add .app and .dmg building
 
 aw-client:
+
  - switched to using pyproject/poetry (d66f319)
  - Change default limit from 100 to return all by default (d35449a)
 
 aw-core:
+
  - added strict-rfc3339 (c5e9d34)
  - upgraded jsonschema (a803443)
 
 aw-qt
+
  - Use manager to stop all modules (ac40452)
-Make aw-qt less annoying:
  - Remove confirm dialog on exit (246ff05)
  - Remove startup notification (#45) (b1f66c3)
  - added aw-server-rust to possible modules (b4e9411)
  - Add dark mode detection to MacOS logo logic (502b77d)
 
 aw-server
+
  - migrated from flask-restplus to flask-restx, updated submodule (36e970e)
  - Makefile improvements: use pip3 (47a208b), fixed make build DEV=true (817723b)
 
 aw-server-rust:
+
  - Added in this release. 
 
 aw-watcher-window
+
  - readded script that disappeared in previous PR (1e424e4)
  - revise exclude_title logic (b1bd00d)
 
 aw-webui:
+
  - added ability to edit start and end in EventEditor, added ability to edit events from Bucket view (10dc80f)
  - Add vuex support for editor activity (47fed8b)
  - added setting for 'show last' duration default value (20ca6fa)
