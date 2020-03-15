@@ -3,9 +3,7 @@
 Welcome to the ActivityWatch documentation!
 ===========================================
 
-.. note::
-    ActivityWatch is currently under development and
-    should not be considered stable software, yet.
+If you are new to ActivityWatch, check out the :ref:`Getting started guide <getting-started>`.
 
 
 .. _user-docs:

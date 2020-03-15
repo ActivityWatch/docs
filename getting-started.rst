@@ -1,51 +1,64 @@
+.. _getting-started:
+
 ***************
 Getting started
 ***************
 
-.. note::
-    We're currently working on improving the installation experience by creating proper installers and packages,
-    but for now we offer standalone archives containing everything you need.
+Getting started with ActivityWatch is as easy as installing, starting it, and setting up autostart (if your installation method doesn't do it for you).
 
 Installation
 ============
 
+Windows
+-------
+
+Download and run the Windows installer for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_.
+
+macOS
+-----
+
 .. note::
-    The prebuilt packages are known to sometimes have issues on Linux.
-    If they don't work for you, please create an issue and consider `installing-from-source`.
+    macOS 10.15 (Catalina) introduced some complications for running ActivityWatch on macOS, see :issue:`334`.
 
-1. First, grab the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_ for your operating system.
+Download the ``.dmg`` for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_ and drag the ``.app`` to your Applications folder as usual, then add it to your autostart applications.
 
-2. Unzip the archive into an appropriate directory and you're done!
+Linux
+-----
+
+.. note::
+    If you are using Arch Linux you can install ActivityWatch directly from `the AUR <https://aur.archlinux.org/packages/activitywatch-bin/>`_.
+
+Download the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_, unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
 
 Usage
 =====
 
 The aw-qt application is the easiest way to use ActivityWatch. It creates a trayicon and automatically starts the server and the default watchers.
 
-Simply **run the :code:`./aw-qt` binary in the installation directory** (either from your terminal or on Windows by double-clicking). You now should see an icon appear in your system tray.
+If you've installed by extracting a zip archive, simply run the ``./aw-qt`` binary in the installation directory (either from your terminal or on Windows by double-clicking). You now should see an icon appear in your system tray.
+
+You should now also have the web interface running at `<localhost:5600>`_ and will in a few minutes be able to view your data in the Activity view!
+
+If you want more advanced ways to run ActivityWatch (including running it without aw-qt), check out the "Running" section of `installing-from-source`.
 
 .. note::
-   If you are running GNOME 3 or another desktop that does not support system trays, or if for some reason Qt can't be used on your machine, have a look at the *Installing from GNOME* section below.
-
-
-
-You should now also have the web interface running at `<localhost:5600>`_ and will in a few minutes be able to view your data under the Activity section!
+   If you are running GNOME 3 or another desktop that does not support system trays, or if for some reason Qt can't be used on your machine, read the `Installing on GNOME` section.
 
 .. note::
-    If you want more advanced ways to run ActivityWatch (including running it without aw-qt), check out the "Running" section of `installing-from-source`.
-
-.. note::
-   If you are using a proxy, activitywatch will not work by default. To circumvent this you can set the environment variable HTTP_PROXY before starting aw-qt. How to set an environment variable depends on your operating system, use Google if you are unsure how to do this.
+   If you are using a proxy, activitywatch will not work by default. To circumvent this you can set the environment variable ``HTTP_PROXY`` before starting aw-qt. How to set an environment variable depends on your operating system, use Google if you are unsure how to do this.
 
 Autostart
 =========
 
-You might want to make :code:`aw-qt` start automatically on login.
+.. note::
+    Autostart is set up automatically by the Windows installer and for Arch Linux by the AUR package (if your desktop environment supports `XDG Autostart <https://wiki.archlinux.org/index.php/XDG_Autostart>`_).
+
+You might want to make ``aw-qt`` start automatically on login using the
 We hope to automate this for you in the future but for now you'll have to do it yourself.
 Searching the web for "autostart application <your operating system>" should get you some good results that don't take long.
 
 Config
-=========
+======
 
 Configuration files for ActivityWatch can be found at the following default locations:
 
