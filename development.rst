@@ -24,6 +24,8 @@ Making a release
 #. Close `milestone on GitHub <https://github.com/ActivityWatch/activitywatch/milestones>`_ if one exists.
 #. Ensure that all the tests pass: :code:`make test && make test-integration`
 #. Test the latest build and check that it works correctly
+    - Travis artifacts are available in S3 at the base URL: https://activitywatch-builds.s3.amazonaws.com/
+    - Appveyor artifacts are available on Appveyor.
 #. Write a changelog entry in :code:`docs/changelog.rst`
 #. Sign the commit: :code:`git commit -a -S -m "bumped version"`
 #. Create a signed tag: :code:`git tag -s v0.7.1`
