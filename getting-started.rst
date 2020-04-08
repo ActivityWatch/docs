@@ -53,7 +53,7 @@ Autostart
 .. note::
     Autostart is set up automatically by the Windows installer and for Arch Linux by the AUR package (if your desktop environment supports `XDG Autostart <https://wiki.archlinux.org/index.php/XDG_Autostart>`_).
 
-You might want to make ``aw-qt`` start automatically on login using the
+You might want to make ``aw-qt`` start automatically on login using the .profile or .xinitrc files.
 We hope to automate this for you in the future but for now you'll have to do it yourself.
 Searching the web for "autostart application <your operating system>" should get you some good results that don't take long.
 
