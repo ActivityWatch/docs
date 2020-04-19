@@ -30,6 +30,7 @@ Watches the actively edited file and associated metadata like path, language, an
  - :gh:`LaggAt/ActivityWatchVS` - Visual Studio extension, by :gh-user:`LaggAt`
  - :gh:`pascalwhoop/aw-idea` - (WIP) JetBrains IntelliJ IDEA/PyCharm/WebStorm/etc extension forked from wakatime, by :gh-user:`pascalwhoop`
  - :gh:`kostasdizas/aw-watcher-sublime` - Sublime Text 3, by :gh-user:`kostasdizas`
+ - :gh:`NicoWeio/aw-watcher-atom` - Atom, by :gh-user:`NicoWeio`
 
 Media watchers
 --------------
