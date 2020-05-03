@@ -77,10 +77,6 @@ An event type for tracking the currently edited file.
 currentwindow
 ~~~~~~~~~~~~~
 
-.. note::
-	There are suggestions to improve/change this format
-	(see :issue:`201`)
-
 .. code-block:: javascript
 
     {
@@ -90,10 +86,6 @@ currentwindow
 
 afkstatus
 ~~~~~~~~~
-
-.. note::
-	There are suggestions to improve/change this format
-	(see :issue:`201`)
 
 .. code-block:: javascript
 
