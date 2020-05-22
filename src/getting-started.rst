@@ -53,9 +53,8 @@ Autostart
 .. note::
     Autostart is set up automatically by the Windows installer and for Arch Linux by the AUR package (if your desktop environment supports `XDG Autostart <https://wiki.archlinux.org/index.php/XDG_Autostart>`_).
 
-You might want to make ``aw-qt`` start automatically on login using the
-We hope to automate this for you in the future but for now you'll have to do it yourself.
-Searching the web for "autostart application <your operating system>" should get you some good results that don't take long.
+You probably want to make ActivityWatch start automatically on login using your operating systems autostart settings.
+For some installation methods (Windows installer, AUR package) this is done automatically, but if you don't use those methods you'll have to do it yourself. Searching the web for "autostart application <your operating system>" should get you some good results that don't take long. You want to start the ``aw-qt`` executable in the application directory.
 
 Config
 ======
