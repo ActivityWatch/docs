@@ -18,6 +18,7 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    history
    watchers
    importers
+   migrating
 
 
 .. _dev-docs:

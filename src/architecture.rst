@@ -22,7 +22,7 @@ Clients (watchers, importers, and observers)
 
 Since aw-server doesn't do any data collection on it's own, we need watchers that observe the world and sent the data off to aw-server for storage.
 
-These utilize the :doc:`aw-client` library for making requests to the aw-server.
+These utilize the aw-client library for making requests to the aw-server.
 
 For a list of watchers, see :doc:`watchers`. For a list of importers see :doc:`importers`.
 
