@@ -33,7 +33,6 @@ You need:
 - Node 8 or higher, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
 - (Optional) Rust nightly and cargo, check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
 
-
 Using a virtualenv
 ------------------
 
