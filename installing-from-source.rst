@@ -1,10 +1,14 @@
 Installing from source
 ======================
 
-Here's the guide to installing ActivityWatch from source. If you are just looking to try it out, see the getting started guide instead.
+Here's the guide to installing ActivityWatch from source. If you are just looking to try it out, see the :doc:`getting started guide <getting-started>` instead.
 
 .. note::
    This is written for Linux and macOS. For Windows the build process is more complicated and we therefore suggest using the pre-built packages instead on that operating system (but if you really have to, see :doc:`this guide <installing-from-source-on-windows>`).
+
+.. note::
+   Probably the easiest way to familiarize yourself with the build process is forking our `main repository <https://github.com/ActivityWatch/activitywatch>`_ and trying it out with your Travis and Github accounts like it is described `here <https://docs.travis-ci.com/user/tutorial/>`_. Check stati of the latest builds on our `CI dashboard <https://activitywatch.net/ci/>`_ to assure you haven't forked a failing commit.
+ 
 
 Cloning the submodules
 ----------------------
