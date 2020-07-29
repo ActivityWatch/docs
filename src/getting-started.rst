@@ -9,26 +9,33 @@ Getting started with ActivityWatch is as easy as installing, starting it, and se
 Installation
 ============
 
-Windows
--------
+.. tabs::
 
-Download and run the Windows installer for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_.
+   .. group-tab:: Windows
 
-macOS
------
+      Download and run the Windows installer for the `latest release on GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_.
 
-.. note::
-    macOS 10.15 (Catalina) introduced some complications for running ActivityWatch on macOS, see :issue:`334`.
+   .. group-tab:: macOS
 
-Download the ``.dmg`` for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_ and drag the ``.app`` to your Applications folder as usual, then add it to your autostart applications.
+      .. note::
+         macOS 10.15 (Catalina) introduced some complications for running ActivityWatch, see :issue:`334`.
 
-Linux
------
+      Download the ``.dmg`` for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_ and drag the ``.app`` to your Applications folder as usual, then add it to your autostart applications.
 
-.. note::
-    If you are using Arch Linux you can install ActivityWatch directly from `the AUR <https://aur.archlinux.org/packages/activitywatch-bin/>`_.
+   .. group-tab:: Linux
 
-Download the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_, unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
+      Download the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_, unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
+
+      .. note::
+         If you are using Arch Linux you can install ActivityWatch directly from `the AUR <https://aur.archlinux.org/packages/activitywatch-bin/>`_.
+
+   .. group-tab:: Android
+
+      Install it from the `Play Store <https://play.google.com/store/apps/details?id=net.activitywatch.android>`_ or using the APK from the `aw-android releases page <https://github.com/ActivityWatch/aw-android/releases>`_.
+
+      .. note::
+         Getting it to F-droid is a work-in-progress, see `this PR <https://gitlab.com/fdroid/fdroiddata/-/merge_requests/5502>`_.
+
 
 Usage
 =====
@@ -42,7 +49,7 @@ You should now also have the web interface running at `<localhost:5600>`_ and wi
 If you want more advanced ways to run ActivityWatch (including running it without aw-qt), check out the "Running" section of `installing-from-source`.
 
 .. note::
-   If you are running GNOME 3 or another desktop that does not support system trays, or if for some reason Qt can't be used on your machine, read the `Installing on GNOME` section.
+   If you are running GNOME 3 or another desktop environment that does not support system trays, or if for some reason Qt can't be used on your machine, read `Running on GNOME`.
 
 .. note::
    If you are using a proxy, activitywatch will not work by default. To circumvent this you can set the environment variable ``HTTP_PROXY`` before starting aw-qt. How to set an environment variable depends on your operating system, use Google if you are unsure how to do this.
@@ -71,7 +78,7 @@ Config options for the server, client, and default watchers are listed below:
 
  - :code:`host` Hostname to start the server on. Currently only :code:`localhost` or :code:`127.0.0.1` are supported.
  - :code:`port` Port number to start the server on.
- - :code:`storage` Type of storage for holding buckets and events. Supported types are :code:`memory`, :code:`mongodb`, or :code:`peewee`.
+ - :code:`storage` Type of storage for holding buckets and events. Supported types are :code:`peewee`, :code:`memory` (), or :code:`mongodb` (MongoDB support will be removed in a future version).
 
 - aw-client
 
@@ -89,63 +96,3 @@ Config options for the server, client, and default watchers are listed below:
  - :code:`poll_time` Time in seconds between window checks.
  - :code:`exclude_title` Don't track window titles
  - :code:`update_time` Not yet implemented.
-
-Installing on GNOME
-===================
-
-As an alternative for users of GNOME 3 and other DEs that don't support app trays, or simply to avoid depending on Qt, you can place two simple workaround scripts in your ActivityWatch install folder:
-
-:code:`start.sh`:
-::
-
-  #!/bin/bash
-
-  cd ~/.local/opt/activitywatch         # Put your ActivityWatch install folder here
-
-  ./aw-server/aw-server &
-  ./aw-watcher-afk/aw-watcher-afk &
-  ./aw-watcher-window/aw-watcher-window &                 # you can add --exclude-title here to exclude window title tracking for this session only
-
-  notify-send "ActivityWatch started"   # Optional, sends a notification when ActivityWatch is started
-
-
-:code:`kill.sh`:
-::
-
-  #!/bin/bash
-  pkill aw-
-  notify-send "ActivityWatch killed"    # Optional, sends a notification when ActivityWatch is killed
-
-
-Don't forget to :code:`chmod +x start.sh` and :code:`chmod +x kill.sh`.
-
-Then you can create two desktop files for these scripts to show up among your apps:
-
-:code:`~/.local/share/applications/aw-start.desktop`:
-::
-
-  [Desktop Entry]
-  Name=Start ActivityWatch
-  Comment=Start AW
-  Exec=~/.local/opt/activitywatch/start.sh
-  Hidden=false
-  Terminal=false
-  Type=Application
-  Version=1.0
-  Icon=activitywatch
-  Categories=Utility;
-
-
-:code:`~/.local/share/applications/aw-kill.desktop`:
-::
-
-  [Desktop Entry]
-  Name=Kill ActivityWatch
-  Comment=Kill AW
-  Exec=~/.local/opt/activitywatch/kill.sh
-  Hidden=false
-  Terminal=false
-  Type=Application
-  Version=1.0
-  Icon=activitywatch
-  Categories=Utility;

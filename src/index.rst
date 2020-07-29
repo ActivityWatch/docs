@@ -19,6 +19,7 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    watchers
    importers
    migrating
+   running-on-gnome
 
 
 .. _dev-docs:

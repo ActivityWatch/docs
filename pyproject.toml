@@ -15,6 +15,7 @@ recommonmark = "^0.6.0"
 aw-core = {git = "https://github.com/ActivityWatch/aw-core.git", rev = "master"}
 aw-server = {git = "https://github.com/ActivityWatch/aw-server.git", rev = "master"}
 aw-client = {git = "https://github.com/ActivityWatch/aw-client.git", rev = "master"}
+sphinx-tabs = "^1.1.13"
 
 [tool.poetry.dev-dependencies]
 

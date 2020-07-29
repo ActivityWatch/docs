@@ -61,6 +61,7 @@ requests = "^2.22.0"
 reference = "bd8a953a267fe0aec3a02be82605587db32ed6f9"
 type = "git"
 url = "https://github.com/ActivityWatch/aw-client.git"
+
 [[package]]
 category = "main"
 description = ""
@@ -534,6 +535,17 @@ sphinx = "*"
 
 [[package]]
 category = "main"
+description = "Tab views for Sphinx"
+name = "sphinx-tabs"
+optional = false
+python-versions = "*"
+version = "1.1.13"
+
+[package.dependencies]
+sphinx = ">=1.4"
+
+[[package]]
+category = "main"
 description = "sphinxcontrib-applehelp is a sphinx extension which outputs Apple help books"
 name = "sphinxcontrib-applehelp"
 optional = false
@@ -681,7 +693,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "aee28cd13fdade778ad93a446546bea033c7f3b52a2c9bc9eeceddda595b238f"
+content-hash = "c8fb0e7b13bbbf07c46ee49fd5841bfef14fad8e442911dfbc065e26b63e0090"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -886,6 +898,9 @@ sphinx-autobuild = [
 sphinx-rtd-theme = [
     {file = "sphinx_rtd_theme-0.4.3-py2.py3-none-any.whl", hash = "sha256:00cf895504a7895ee433807c62094cf1e95f065843bf3acd17037c3e9a2becd4"},
     {file = "sphinx_rtd_theme-0.4.3.tar.gz", hash = "sha256:728607e34d60456d736cc7991fd236afb828b21b82f956c5ea75f94c8414040a"},
+]
+sphinx-tabs = [
+    {file = "sphinx-tabs-1.1.13.tar.gz", hash = "sha256:7ad881daa4d18799b254db4aa7feeb9d30256cbccf7d4f3de746d9fcc14e0196"},
 ]
 sphinxcontrib-applehelp = [
     {file = "sphinxcontrib-applehelp-1.0.2.tar.gz", hash = "sha256:a072735ec80e7675e3f432fcae8610ecf509c5f1869d17e2eecff44389cdbc58"},
