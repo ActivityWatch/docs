@@ -17,6 +17,8 @@ This was a guide hastily written by :gh-user:`ErikBjare` when he had to build on
 
  - Install Python 3.5.4
 
+ - Install Poetry
+
  - Install PyInstaller
 
    - :code:`pip install pyinstaller`
