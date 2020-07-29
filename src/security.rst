@@ -41,7 +41,7 @@ We currently lack tests for it, so we don't actually know if they are (they shou
 CORS configuration
 ------------------
 
-CORS is configured such that origins can only be `localhost:5600` or match the ActivityWatch WebExtension URL for Chrome, or **any extension** on Firefox.
+CORS is configured such that origins can only be ``localhost:5600`` or match the ActivityWatch WebExtension URL for Chrome, or **any extension** on Firefox.
 
 This is due to that on Chrome, the origin of a WebExtension is always a fixed URL. In Firefox however the URL changes for each install, in order to prevent fingerprinting which extensions are installed. It's mentioned here: https://github.com/ActivityWatch/aw-server-rust/issues/24#issuecomment-520802579
 
