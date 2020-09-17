@@ -29,10 +29,9 @@ Checking dependencies
 
 You need:
 
-- Python 3.6 or later and Poetry, check with :code:`python3 -V` and :code:`poetry -V` (required to build the core components)
+- Python 3.6 or later and Poetry, check with :code:`python3 -V` and :code:`poetry -V` (required to build the core components, can be installed like this: :code:`python3 -m pip install poetry`)
 - Node 8 or higher, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
 - (Optional) Rust nightly and cargo, check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
-
 
 Using a virtualenv
 ------------------
