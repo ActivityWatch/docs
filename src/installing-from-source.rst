@@ -3,9 +3,6 @@ Installing from source
 
 Here's the guide to installing ActivityWatch from source. If you are just looking to try it out, see the getting started guide instead.
 
-.. note::
-   This is written for Linux and macOS. For Windows the build process is more complicated and we therefore suggest using the pre-built packages instead on that operating system (but if you really have to, see :doc:`this guide <installing-from-source-on-windows>`).
-
 Cloning the submodules
 ----------------------
 
@@ -28,11 +25,33 @@ Checking dependencies
 ---------------------
 
 You need:
+- `Git <https://git-scm.com/downloads>`_
+- `Python 3.6 or 3.7 <https://www.python.org/downloads/>`_ (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
+- `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
+- `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
+- `Rust nightly and cargo <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_, nightly can be installed using the following commands:
 
-- Python 3.6 or 3.7 (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
-- Poetry, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
-- Node 12 or higher, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
-- (Optional) Rust nightly and cargo, check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
+.. code-block:: sh
+
+   rustup install nightly
+   rustup default nightly
+
+check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
+
+**For Windows users:**
+You also need:
+- `gnuwin32 <http://gnuwin32.sourceforge.net/packages/make.htm>`_ that you can use the make command on Windows.
+- `7 Zip <https://www.7-zip.org/>`_
+- `Chocolatey <https://chocolatey.org/docs/installation>`_ for the choco command
+
+Also make sure that you have the following paths are inside the PATH variable:
+
+- :code:`C:\Program Files\Git\usr\bin` for the git command
+- :code:`C:\Program Files\7-Zip` for the 7z command
+- :code:`C:\Program Files (x86)\GnuWin32\bin` for the make command
+- :code:`C:\Users\User\AppData\Roaming\npm` for the npm command
+- :code:`C:\Users\User\.poetry\bin` for the poetry command
+- :code:`C:\Users\User\.cargo\bin` for the cargo command
 
 Using a virtualenv
 ------------------
