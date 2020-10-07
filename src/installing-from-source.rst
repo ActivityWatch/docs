@@ -29,29 +29,31 @@ You need:
 - `Python 3.6 or 3.7 <https://www.python.org/downloads/>`_ (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
 - `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
 - `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
-- `Rust nightly and cargo <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_, nightly can be installed using the following commands:
-
-.. code-block:: sh
-
-   rustup install nightly
-   rustup default nightly
-
-check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
+- `Rust nightly and cargo <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_, nightly can be installed using the following commands check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
 
 **For Windows users:**
-You also need:
+For packaging the binaries:
 - `gnuwin32 <http://gnuwin32.sourceforge.net/packages/make.htm>`_ that you can use the make command on Windows.
+
+For building the installer:
 - `7 Zip <https://www.7-zip.org/>`_
 - `Chocolatey <https://chocolatey.org/docs/installation>`_ for the choco command
 
-Also make sure that you have the following paths are inside the PATH variable:
+**Commands which should work before building:**
+- :code:`python -V`
+- :code:`git -v`
+- :code:`npm -v`
+- :code:`node -v`
+- :code:`poetry -v`
+- :code:`cargo -v`
+- :code:`rustc -V`
 
-- :code:`C:\Program Files\Git\usr\bin` for the git command
-- :code:`C:\Program Files\7-Zip` for the 7z command
-- :code:`C:\Program Files (x86)\GnuWin32\bin` for the make command
-- :code:`C:\Users\User\AppData\Roaming\npm` for the npm command
-- :code:`C:\Users\User\.poetry\bin` for the poetry command
-- :code:`C:\Users\User\.cargo\bin` for the cargo command
+For packaging the binaries:
+- :code:`make -v`
+
+For building the installer:
+- :code:`7z`
+- :code:`choco -v`
 
 Using a virtualenv
 ------------------
