@@ -83,8 +83,9 @@ Build and install everything into the virtualenv:
 Running
 -------
 
-Now you should be able to start ActivityWatch **from the terminal where you've activated the virtualenv**. Or, if you were using the :code:`PIP_USER` trick, from any terminal with a correctly configured PATH.
-You have two options:
+Now you should be able to start ActivityWatch **from the terminal where you've activated the virtualenv**.
+
+There are two ways to run ActivityWatch:
 
 1. Use the trayicon manager (Recommended for normal use)
 
