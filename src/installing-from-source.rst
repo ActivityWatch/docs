@@ -3,9 +3,6 @@ Installing from source
 
 Here's the guide to installing ActivityWatch from source. If you are just looking to try it out, see the getting started guide instead.
 
-.. note::
-   This is written for Linux and macOS. For Windows the build process is more complicated and we therefore suggest using the pre-built packages instead on that operating system (but if you really have to, see :doc:`this guide <installing-from-source-on-windows>`).
-
 Cloning the submodules
 ----------------------
 
@@ -28,11 +25,35 @@ Checking dependencies
 ---------------------
 
 You need:
+- `Git <https://git-scm.com/downloads>`_
+- `Python 3.6 or 3.7 <https://www.python.org/downloads/>`_ (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
+- `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
+- `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
+- `Rust nightly and cargo <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_, nightly can be installed using the following commands check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
 
-- Python 3.6 or 3.7 (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
-- Poetry, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
-- Node 12 or higher, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
-- (Optional) Rust nightly and cargo, check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
+**For Windows users:**
+For packaging the binaries:
+- `gnuwin32 <http://gnuwin32.sourceforge.net/packages/make.htm>`_ that you can use the make command on Windows.
+
+For building the installer:
+- `7 Zip <https://www.7-zip.org/>`_
+- `Chocolatey <https://chocolatey.org/docs/installation>`_ for the choco command
+
+**Commands which should work before building:**
+- :code:`python -V`
+- :code:`git -v`
+- :code:`npm -v`
+- :code:`node -v`
+- :code:`poetry -v`
+- :code:`cargo -v`
+- :code:`rustc -V`
+
+For packaging the binaries:
+- :code:`make -v`
+
+For building the installer:
+- :code:`7z`
+- :code:`choco -v`
 
 Using a virtualenv
 ------------------
