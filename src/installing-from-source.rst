@@ -1,69 +1,58 @@
 Installing from source
 ======================
 
-Here's the guide to installing ActivityWatch from source. If you are just looking to try it out, see the getting started guide instead.
+Here's the guide to building ActivityWatch from source. If you are just looking to try it out, see the `getting started guide <getting-started>` instead.
 
-Cloning the submodules
-----------------------
+Cloning the repository and submodules
+-------------------------------------
 
-Since the ActivityWatch bundlerepo uses submodules, you first need to clone the submodules.
+Since the main ActivityWatch repository uses git submodules to manage its modules, you first need to clone the repo and then the submodules.
 
-This can either be done at the cloning stage with:
+You can do both in one step with:
 
 .. code-block:: sh
 
    git clone --recursive https://github.com/ActivityWatch/activitywatch.git
 
-Or afterwards (if you've already cloned normally) using:
+Or, if you've already cloned normally, you can clone the submodules using:
 
 .. code-block:: sh
 
    git submodule update --init --recursive
 
-
 Checking dependencies
 ---------------------
 
 You need:
+
 - `Git <https://git-scm.com/downloads>`_
 - `Python 3.6 or 3.7 <https://www.python.org/downloads/>`_ (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
 - `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
 - `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
-- `Rust nightly and cargo <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_, nightly can be installed using the following commands check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
+- `Rust nightly <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_ (nightly can be installed using `rustup`), check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
 
 **For Windows users:**
-For packaging the binaries:
-- `gnuwin32 <http://gnuwin32.sourceforge.net/packages/make.htm>`_ that you can use the make command on Windows.
 
-For building the installer:
-- `7 Zip <https://www.7-zip.org/>`_
-- `Chocolatey <https://chocolatey.org/docs/installation>`_ for the choco command
+- `gnuwin32 <http://gnuwin32.sourceforge.net/packages/make.htm>`_, to get the make command on Windows.
+- (optional) `7 Zip <https://www.7-zip.org/>`_, for packaging the zip.
+- (optional) `InnoSetup 6 <https://chocolatey.org/packages/InnoSetup>`_, for packaging the installer, can be installed using `Chocolatey <https://chocolatey.org/docs/installation>`_.
 
 **Commands which should work before building:**
-- :code:`python -V`
+
 - :code:`git -v`
-- :code:`npm -v`
-- :code:`node -v`
-- :code:`poetry -v`
-- :code:`cargo -v`
-- :code:`rustc -V`
-
-For packaging the binaries:
 - :code:`make -v`
+- :code:`python -V`
+- :code:`poetry -v`
+- :code:`node -v` / :code:`npm -v`
+- :code:`rustc -V` / :code:`cargo -v`
+- :code:`7z` (optional)
 
-For building the installer:
-- :code:`7z`
-- :code:`choco -v`
+If any of these don't work, make sure you've correctly installed them and have them in your PATH variable.
 
 Using a virtualenv
 ------------------
 
-.. note::
-   If you don't want to use a virtualenv you could instead set the environment variable :code:`PIP_USER=true` when building in the next step.
-   But make sure that the folder :code:`~/.local/bin` (on Linux) or :code:`~/Library/Python/<version>/bin` (on macOS) is in your PATH.
-
-It is recommended to use a virtualenv in order to avoid polluting your system with ActivityWatch-specific Python packages.
-It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
+It is highly recommended to use a virtualenv in order to minimize problems and avoid polluting your system with ActivityWatch-specific Python packages. It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
 
 .. code-block:: sh
 
@@ -90,10 +79,6 @@ Build and install everything into the virtualenv:
 .. code-block:: sh
 
     make build
-
-.. note::
-   If you're building from source to develop we suggest building/installing using :code:`make build DEV=true` which installs all Python packages with pip's handy :code:`--editable` flag.
-   By doing this you wont have to reinstall everything whenever you want to try out a code change.
 
 Running
 -------
@@ -144,5 +129,9 @@ Then simply run the following to package it:
 
    make package
 
-When the packaging is done you will have :code:`./dist` folder where you can find a zipped version and an unzipped :code:`activitywatch` folder, you can move or copy that folder anywhere you need and set :code:`aw-qt` to run from startup.
+When the packaging is done you will have a :code:`./dist` folder where you can find:
+
+ - A :code:`activitywatch` folder, you can move or copy that folder anywhere you need and set :code:`aw-qt` to run from startup.
+ - A zipped version of the folder.
+ - (on Windows) An installer.
 
