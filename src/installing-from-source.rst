@@ -29,7 +29,7 @@ You need:
 - `Python 3.6 or 3.7 <https://www.python.org/downloads/>`_ (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
 - `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
 - `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
-- `Rust nightly <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_ (nightly can be installed using `rustup`), check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
+- `Rust nightly <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_ (nightly can be installed using :code:`rustup`), check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
 
 **For Windows users:**
 
