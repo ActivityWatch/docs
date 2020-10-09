@@ -41,6 +41,13 @@ If you want to more accurately track media consumption.
  - :gh-aw:`aw-watcher-chromecast` - (not working yet) Watches what is playing on you Chromecast device.
  - :gh-aw:`aw-watcher-openvr` - (not working yet) Watches active VR applications.
 
+Other watchers
+--------------
+
+Other watchers which are very useful too.
+
+ - :gh:`Alwinator/aw-watcher-table` - Monitors whether you have set your height-adjustable table to sitting or standing, by :gh-user:`Alwinator`
+
 Custom watchers
 ---------------
 
