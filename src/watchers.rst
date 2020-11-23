@@ -47,6 +47,7 @@ Other watchers
 Other watchers which are very useful too.
 
  - :gh:`Alwinator/aw-watcher-table` - Monitors whether you have set your height-adjustable table to sitting or standing, by :gh-user:`Alwinator`
+ - :gh-aw:`aw-watcher-input` - (WIP) Tracks the number of keypresses and distance that mouse is moved.
 
 Custom watchers
 ---------------
