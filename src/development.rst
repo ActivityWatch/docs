@@ -23,15 +23,20 @@ Making a release
 
 #. Close `milestone on GitHub <https://github.com/ActivityWatch/activitywatch/milestones>`_ if one exists.
 #. Ensure that all the tests pass: ``make test && make test-integration``
-#. Test the latest build and check that it works correctly
-    - Travis artifacts are available in S3 at the base URL: https://activitywatch-builds.s3.amazonaws.com/
-    - Appveyor artifacts are available on Appveyor.
+#. Test the latest build and check that it works correctly (use the nightly builds: :issue:`507`)
 #. Write a changelog entry in ``docs/changelog.rst``
 #. Sign the commit: ``git commit -a -S -m "bumped version"``
+
+    - NOTE: don't push it before the tag! (if you do, CI won't run on the tag)
+
 #. Create a signed tag: ``git tag -s v0.7.1``
 #. Push the commit and tag: ``git push origin refs/tags/v0.7.1``
-#. Create a release on GitHub
-    - Generate commit changelog with ``python3 scripts/build_changelog.py``
-    - Clean it a bit (remove non-user-affecting changes, merge commits etc)
+#. Create a draft release on GitHub
+
+    - Generate changelog with ``python3 scripts/build_changelog.py``
+    - Clean it up a bit (remove non-user-affecting changes, merge commits etc)
+
 #. Wait for the builds to finish
+#. Publish the release
 #. Post about it online: Twitter, the forum, mailinglist (if major)
+#. Update the `_data/downloads.yml` file in the :gh-aw:`activitywatch.github.io` repo.
