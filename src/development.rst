@@ -39,4 +39,3 @@ Making a release
 #. Wait for the builds to finish
 #. Publish the release
 #. Post about it online: Twitter, the forum, mailinglist (if major)
-#. Update the `_data/downloads.yml` file in the :gh-aw:`activitywatch.github.io` repo.
