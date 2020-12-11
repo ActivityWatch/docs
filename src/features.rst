@@ -8,3 +8,4 @@ Here we will document a few features.
    features/exporting-data
    features/pausing-logging
    features/filtering-data
+   features/categorization
