@@ -49,7 +49,7 @@ You can see the general status of the ability of `getting the active window in W
 What happens if it is down or crashes?
 --------------------------------------
 
-ActivityWatch consists of several processes running independently, so one thing crashing will have limited impact on the rest of the system as a whole.
+ActivityWatch consists of several processes running independently, so one thing crashing will have limited impact on the rest of the system.
 
 If the server crashes or is unavailable, watchers which use the `heartbeat <heartbeats>` queue will queue heartbeats until the server becomes available.
 
