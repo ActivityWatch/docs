@@ -14,5 +14,7 @@ private browser tabs).
 
 For the ones who believe they can adequately protect their data, they should be offered the option to disable the filter.
 
-Currently, the only way to do this is by manually `pausing logging <./pausing-logging.html>`_.
+While we figure out how to best implement this feature, here are some options:
 
+ - Manually `pausing logging <./pausing-logging.html>`_.
+ - Redacting sensitive events from the database using the ``redact_events.py`` example in :gh-aw:`aw-client`.

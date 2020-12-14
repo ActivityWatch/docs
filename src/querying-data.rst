@@ -19,7 +19,7 @@ Writing a Query
 Queries are the easiest yet advanced way to get events from aw-server buckets in a format which fits most needs.
 Queries can be done by doing a POST request to aw-server either manually or with the aw-client library.
 
-For an incomplete API reference of the transform functions, see the API reference for `aw_transform` and `aw_query`.
+For an incomplete API reference of the transform functions, see the API reference for :py:mod:`aw_transform` and :py:mod:`aw_query`.
 
 In a query you start by getting events from a bucket and assign that collection of events to a variable, then there are multiple transform functions which you can use to for example filter, limit, sort, and merge events from a bucket.
 After that you assign what you want to receive from the request to the RETURN variable.

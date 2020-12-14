@@ -1,7 +1,9 @@
 Installing from source
 ======================
 
-Here's the guide to building ActivityWatch from source. If you are just looking to try it out, see the `getting started guide <getting-started>` instead.
+Here's the guide to building ActivityWatch from source. If you are just looking to try it out, see the :doc:`getting started guide <getting-started>` instead.
+
+.. contents::
 
 Cloning the repository and submodules
 -------------------------------------

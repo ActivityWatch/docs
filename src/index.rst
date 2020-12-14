@@ -30,8 +30,8 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    installing-from-source
    architecture
    buckets-and-events
-   api-reference
    examples
+   api-reference
    security
    development
    changelog

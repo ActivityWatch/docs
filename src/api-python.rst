@@ -46,7 +46,7 @@ The aw_client package contains a programmer-friendly wrapper around the servers 
 aw_transform
 ------------
 
-The aw_transform package contains transforms used in the query language.
+The :py:mod:`aw_transform` package contains transforms used in the query language.
 
 .. note:: Their function signatures and return types may deviate from how the transforms are actually implemented in the query language. For more details, see `aw_query.functions`
 
@@ -57,7 +57,7 @@ The aw_transform package contains transforms used in the query language.
 aw_query
 -----------
 
-The `aw_query` package contains the interpreter for the query language and registers the standard functions, usually based on Python implementations of them available in `aw_transform`.
+The :py:mod:`aw_query` package contains the interpreter for the query language and registers the standard functions, usually based on Python implementations of them available in :py:mod:`aw_transform`.
 
 .. automodule:: aw_query
    :members:

@@ -4,11 +4,11 @@ Data model
 Buckets
 -------
 
-The fundamental datacontainer in ActivityWatch, a bucket contains events and common metadata for those events (such as which type of events they are, where they were collected, and by what).
+Each bucket contains a series of events and metadata for those events (such as their type and what collected them).
 
 It is recommended to have one bucket per watcher and host. A bucket should always receive data from the same source.
 
-For example, if we want to write a watcher that should track the currently active window we would first have it create a bucket named 'example-watcher-window_myhostname' and then start reporting events to that bucket (using heartbeats).
+For example, if we want to write a watcher that should track the currently active window we would first have it create a bucket named 'example-watcher-window_myhostname' and then start reporting events to that bucket (using :ref:`heartbeats`).
 
 .. code-block:: javascript
 
@@ -38,7 +38,16 @@ The event model used by ActivityWatch is pretty simple, here is the JSON represe
 
 It should be noted that all timestamps are stored as UTC. Timezone information (UTC offset) is currently discarded.
 
-The content in the "data" field could be any JSON object, but it is recommended that every event in a bucket should follow some format depending on the buckettype so the data is easy to analyze.
+The "data" field can be any JSON object, but it is recommended that every event in a bucket should follow some format according to the bucket type, so the data is easy to analyze.
+
+Heartbeats
+``````````
+
+Heartbeats is a method that merges adjacent events with identical data (within a ``pulsetime`` window). This is useful to save on storage space and disk IO, and it is recommended that watchers use it when sending events to the server.
+
+A merge of two events A and B is done if their ``data`` is identical and their timestamps are within the ``pulsetime`` window. The resulting event will have the earlier timestamp, and a duration to match the difference between the timestamps.
+
+See for example :py:meth:`aw_transform.heartbeat_merge` or the :ref:`heartbeat REST API <Heartbeat API>`.
 
 Event types
 ```````````
