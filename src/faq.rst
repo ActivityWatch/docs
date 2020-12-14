@@ -7,6 +7,21 @@ FAQ
 .. note::
    Some of these questions are technically not frequently asked.
 
+Where is my data stored?
+------------------------
+
+All your data is stored in a SQLite database in the :ref:`data directory <data-directory>`.
+
+How do I interpret the raw data?
+--------------------------------
+
+First, familiarize yourself with the `data model <buckets-and-events>`. After that, you might want to have a look at the `Examples`.
+
+How can I use ActivityWatch with my own code?
+---------------------------------------------
+
+See the `Examples` for different ways to use ActivityWatch programmatically.
+
 How does ActivityWatch know when I am AFK?
 ------------------------------------------
 
@@ -30,16 +45,6 @@ Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all
 *Solution:* Switch to using X11 (the best option), and if you can't: bother the developer of your Wayland compositor.
 
 You can see the general status of the ability of `getting the active window in Wayland on StackOverflow <https://stackoverflow.com/questions/45465016/how-do-i-get-the-active-window-on-gnome-wayland>`_ or follow `the issue for ActivityWatch tracking the problem <https://github.com/ActivityWatch/activitywatch/issues/92>`_.
-
-How do I programmatically use ActivityWatch?
---------------------------------------------
-
-See the `Examples` documentation.
-
-How do I understand the data that is stored?
---------------------------------------------
-
-First, familiarize yourself with the `data model <buckets-and-events>`. After that, you might also want to have a look at the `Examples`.
 
 What happens if it is down or crashes?
 --------------------------------------
