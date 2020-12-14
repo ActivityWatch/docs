@@ -13,6 +13,8 @@ If no such library yet exists for a given language, this document is meant to pr
     Part of the documentation might be outdated, you can get up-to-date API documentation
     in the API browser available from the web UI of your aw-server instance.
 
+.. contents::
+
 
 REST Security
 -------------
@@ -85,7 +87,7 @@ Create event
 Heartbeat API
 ~~~~~~~~~~~~~
 
-The heartbeat API is one of the most useful endpoints for writing watchers.
+The `heartbeat <heartbeats>` API is one of the most useful endpoints for writing watchers.
 
 .. code-block:: shell
 

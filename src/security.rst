@@ -1,9 +1,7 @@
 Security
 ========
 
-ActivityWatch deals with highly sensitive data, and the security of it is therefore of paramount importance.
-
-Unfortunately, we don't have a lot of resources, so things like security audits are currently out of reach for us.
+ActivityWatch deals with highly sensitive data, and the security of it is therefore of paramount importance. Unfortunately, we don't have a lot of resources, so things like security audits are currently out of reach for us.
 
 We do try our best to keep security in mind. In this section of the documentation we'll outline some important security considerations, including risks and possible improvements.
 
@@ -13,13 +11,15 @@ ActivityWatch is only as secure as your system
 
 Some things we can't protect against. Examples are malware running on the same host and anything that can access the database file.
 
+As an example, ActivityWatch is not secure on systems with multiple users (due to there being no API authentication).
+
 
 Deleting sensitive data
 -----------------------
 
 Some data may wish to be deleted/filtered/redacted, or simply never logged at all. Making this easy should be one of the most basic privacy features we can add.
 
-This is actually issue #1 in the ActivityWatch repository: https://github.com/ActivityWatch/activitywatch/issues/1
+This is actually :issue:`1` in the ActivityWatch repository. See `filtering data` for details.
 
 
 Encrypting data
@@ -43,7 +43,7 @@ CORS configuration
 
 CORS is configured such that origins can only be ``localhost:5600`` or match the ActivityWatch WebExtension URL for Chrome, or **any extension** on Firefox.
 
-This is due to that on Chrome, the origin of a WebExtension is always a fixed URL. In Firefox however the URL changes for each install, in order to prevent fingerprinting which extensions are installed. It's mentioned here: https://github.com/ActivityWatch/aw-server-rust/issues/24#issuecomment-520802579
+This is due to that on Chrome, the origin of a WebExtension is always a fixed URL. In Firefox however the URL changes for each install, in order to prevent fingerprinting which extensions are installed. It's mentioned here: :gh-aw:`aw-server-rust/issues/24#issuecomment-520802579`.
 
 This means that on Firefox, a malware WebExtension could easily fetch the entire datastore and do what it wants with it.
 
