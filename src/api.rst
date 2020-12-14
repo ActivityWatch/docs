@@ -2,5 +2,5 @@ API Reference
 =============
 
 .. toctree::
-    api-python
-    api-rest
+    api/python
+    api/rest

@@ -60,7 +60,7 @@ Example combining window and AFK events:
 Example including aw-client:
     This is an example of how you can do analysis and aggregation with the query method in python with aw-client
 
-    .. literalinclude:: examples/query_client.py
+    .. literalinclude:: query_client.py
 
 Fetching Raw Events
 -------------------

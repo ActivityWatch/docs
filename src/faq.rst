@@ -37,7 +37,7 @@ You can see the general status of the ability of `getting the active window in W
 How do I programmatically use ActivityWatch?
 --------------------------------------------
 
-See the documentation for `extending` or checkout the aw-client repository.
+See the `Examples` documentation.
 
 How do I understand the data that is stored?
 --------------------------------------------
