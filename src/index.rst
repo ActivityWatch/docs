@@ -31,7 +31,7 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    architecture
    buckets-and-events
    examples
-   api-reference
+   api
    security
    development
    changelog

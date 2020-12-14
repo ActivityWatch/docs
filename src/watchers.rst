@@ -52,6 +52,6 @@ Other watchers which are very useful too.
 Custom watchers
 ---------------
 
-For help on how to write your own watcher, see `writing-watchers`.
+For help on how to write your own watcher, see `examples/writing-watchers`.
 
 Have you written one yourself? Send us a PR to have it included!

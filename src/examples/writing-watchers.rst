@@ -16,7 +16,7 @@ This example will:
 * fetch an event from an aw-server bucket
 * delete the bucket again
 
-.. literalinclude:: examples/minimal_client.py
+.. literalinclude:: minimal_client.py
 
 
 Reference client
@@ -32,5 +32,5 @@ This example will describe how to:
 * fetch events from a aw-server bucket
 * delete buckets
 
-.. literalinclude:: examples/client.py
+.. literalinclude:: client.py
 
