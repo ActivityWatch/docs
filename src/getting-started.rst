@@ -62,37 +62,3 @@ Autostart
 
 You probably want to make ActivityWatch start automatically on login using your operating systems autostart settings.
 For some installation methods (Windows installer, AUR package) this is done automatically, but if you don't use those methods you'll have to do it yourself. Searching the web for "autostart application <your operating system>" should get you some good results that don't take long. You want to start the ``aw-qt`` executable in the application directory.
-
-Config
-======
-
-Configuration files for ActivityWatch can be found at the following default locations:
-
-- Unix: :code:`~/.config/activitywatch` or the path defined by the :code:`$XDG_CONFIG_HOME` environment variable.
-- Mac OS X: :code:`~/Library/Application\ Support/activitywatch/`
-- Windows: :code:`%LocalAppData%\activitywatch\activitywatch`
-
-Config options for the server, client, and default watchers are listed below:
-
-- aw-server
-
- - :code:`host` Hostname to start the server on. Currently only :code:`localhost` or :code:`127.0.0.1` are supported.
- - :code:`port` Port number to start the server on.
- - :code:`storage` Type of storage for holding buckets and events. Supported types are :code:`peewee`, :code:`memory` (), or :code:`mongodb` (MongoDB support will be removed in a future version).
-
-- aw-client
-
- - :code:`hostname` Hostname of the server to connect to.
- - :code:`port` Port number of the server to connect to.
-
-- aw-watcher-afk
-
- - :code:`timeout` Time in seconds with no activity required to become afk.
- - :code:`poll_time` Time in seconds between checks for activity.
- - :code:`update_time` Not yet implemented.
-
-- aw-watcher-window:
-
- - :code:`poll_time` Time in seconds between window checks.
- - :code:`exclude_title` Don't track window titles
- - :code:`update_time` Not yet implemented.

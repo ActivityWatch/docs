@@ -13,11 +13,12 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
 
    introduction
    getting-started
+   configuration
    features
-   faq
-   history
    watchers
    importers
+   faq
+   history
    migrating
    running-on-gnome
 
@@ -34,6 +35,7 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    api
    security
    development
+   directories
    changelog
 
 

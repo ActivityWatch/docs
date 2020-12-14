@@ -1,21 +1,13 @@
 History
 =======
 
-It all started in 2013 when I, the founder of this project, was just about to start university. I had been soaked in hacker and transhumanism culture for most of my adolescent life, and was eager to put my programming abilities to good use. I had many interests, among others in neuroscience, biohacking, and Quantified Self. A pivotal moment in my interest was when when I one day, long after first reading about `brain computer interfaces <https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface>`_, suddenly realized the implications of the future generations of the technology: We would be able to record our own thoughts and frictionlessly communicate them to others. I wrote a private note to myself, stating an intent that once the field has advanced sufficiently for research to start getting interesting I should make it a priority to contribute as much as I can.
+It all started in 2013 when I, the founder of this project, was just about to start university. I had been soaked in hacker and transhumanism culture for most of my adolescent life, and was eager to put my programming abilities to good use. I had many interests, including neuroscience, biohacking, and Quantified Self. A pivotal moment in my interest was when I, long after first reading about `brain computer interfaces <https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface>`_, suddenly realized the potential of the technology: To let us, without friction, record our own thoughts and communicate them instantly to others. I wrote a private note to myself, stating an intent that once the field has advanced sufficiently for research to start getting interesting I should make it a priority to contribute as much as I can.  (Update 2020: I'm now doing `my MSc thesis <https://github.com/ErikBjare/thesis>`_ which combines EEG and ActivityWatch data)
 
 Around the same time, I was obsessively collecting data on my behavior (then known as `lifelogging <https://en.wikipedia.org/wiki/Lifelog>`_, now more commonly known as `Quantified Self <https://en.wikipedia.org/wiki/Quantified_Self>`_). This included automated time-trackers (like ActivityWatch), a massive spreadsheet, a diary, location tracking, a step/sleep-tracker (Fitbit at the time), extensive use of version control, etc.
 
 While unexpected, the similarities between brain computer interfaces and the behavioral aspects of Quantified Self became apparent over time. After all, the best approximation of our thoughts is our behavior. While we aren't yet able to automatically record our own thoughts, we are able to record our behaviors and what occupies our attention, such as which projects we work on, the ideas we read about, and the culture we consume.
 
 So on Dec 30th, 2014, I started building a prototype. In April 2016 I started working on a rewrite (that included the client-server model) which became the foundation for what ActivityWatch is today. Some time in 2016, my brother :gh-user:`johan-bjareholt` became a regular contributor, and has since become the second largest contributor to the project by a wide margin.
-
-
-Present
--------
-
-Development is slowly but steadily moving forward as lead developer Erik Bjäreholt finishes his degree.
-
-Focus currently lies on building tools for data exploration, building an `Android app <https://github.com/ActivityWatch/aw-android>`_, as well as making it easier to import and export data to and from ActivityWatch.
 
 
 Future
