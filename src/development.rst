@@ -1,5 +1,5 @@
-Development
-===========
+Development Process
+===================
 
 .. note::
     This part is a work in progress, reach out to the maintainers if you have any questions!
