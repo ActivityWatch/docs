@@ -9,4 +9,4 @@ Here we will document a few features.
    features/pausing-logging
    features/filtering-data
    features/categorization
-   syncing
+   features/syncing
