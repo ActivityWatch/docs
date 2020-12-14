@@ -27,18 +27,13 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    :maxdepth: 3
    :caption: Developer documentation
 
+   installing-from-source
    architecture
    buckets-and-events
    api-reference
-   development
-   extending
-   syncing
+   examples
    security
-   writing-watchers
-   querying-data
-   installing-from-source
-   installing-from-source-on-windows
-   rest
+   development
    changelog
 
 
