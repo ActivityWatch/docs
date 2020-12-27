@@ -6,6 +6,8 @@ from datetime import datetime, timedelta, timezone
 from aw_core.models import Event
 from aw_client import ActivityWatchClient
 
+# We'll run with testing=True so we don't mess up any production instance.
+# Make sure you've started aw-server with the `--testing` flag as well.
 client = ActivityWatchClient("test-client", testing=True)
 
 now = datetime.now(timezone.utc)

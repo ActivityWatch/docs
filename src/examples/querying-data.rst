@@ -61,6 +61,8 @@ Example including aw-client:
     This is an example of how you can do analysis and aggregation with the query method in Python with aw-client.
     You probably need to install the client library by following the instructions in its `repository <https://github.com/ActivityWatch/aw-client>`_.
 
+	.. note:: This example runs the client in *testing* mode, which means that it will try to connect to an aw-server in testing mode on the port 5666 instead of the normal 5600.
+
     .. literalinclude:: query_client.py
 
 Fetching Raw Events
