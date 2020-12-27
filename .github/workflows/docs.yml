@@ -25,3 +25,8 @@ jobs:
     - name: Build docs
       run: |
         poetry run make html
+    - name: Upload build
+      uses: actions/upload-artifact@v2-preview
+      with:
+        name: build
+        path: _build
