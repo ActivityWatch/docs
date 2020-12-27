@@ -58,7 +58,8 @@ Example combining window and AFK events:
         RETURN = events;
 
 Example including aw-client:
-    This is an example of how you can do analysis and aggregation with the query method in python with aw-client
+    This is an example of how you can do analysis and aggregation with the query method in Python with aw-client.
+    You probably need to install the client library by following the instructions in its `repository <https://github.com/ActivityWatch/aw-client>`_.
 
     .. literalinclude:: query_client.py
 
