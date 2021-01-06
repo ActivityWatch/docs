@@ -78,8 +78,8 @@ An event type for tracking the currently edited file.
 .. code-block:: javascript
 
     {
-        file: string,     // full path to file
-        project: string,  // full path of cwd
+        file: string,     // full path to file, folders separated by forward slash
+        project: string,  // full path of cwd, folders separated by forward slash
         language: string, // name of language of the file
     }
 
