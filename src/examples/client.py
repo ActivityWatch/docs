@@ -14,7 +14,7 @@ client = ActivityWatchClient("test-client", testing=True)
 # The convention is to use client-name_hostname as bucket name,
 # but if you have multiple buckets in one client you can add a
 # suffix such as client-name-event-type or similar
-bucket_id = "{}_{}".format("test-client-bucket", client.hostname)
+bucket_id = "{}_{}".format("test-client-bucket", client.client_hostname)
 # A short and descriptive event type name
 # Will be used by visualizers (such as aw-webui) to detect what type and format the events are in
 # Can for example be "currentwindow", "afkstatus", "ping" or "currentsong"
@@ -28,29 +28,26 @@ event_type = "dummydata"
 client.create_bucket(bucket_id, event_type="test")
 
 # Asynchronous loop example
+# This context manager starts the queue dispatcher thread and stops it when done, always use it when setting queued=True.
+# Alternatively you can use client.connect() and client.disconnect() instead if you prefer that
 with client:
-    # This context manager starts the queue dispatcher thread and stops it when done, always use it when setting queued=True.
-    # Alternatively you can use client.connect() and client.disconnect() instead if you prefer that
-
-    # Create a sample event to send as heartbeat
-    heartbeat_data = {"label": "heartbeat"}
-    now = datetime.now(timezone.utc)
-    heartbeat_event = Event(timestamp=now, data=heartbeat_data)
-
     # Now we can send some events via heartbeats
     # This will send one heartbeat every second 5 times
     sleeptime = 1
     for i in range(5):
+        # Create a sample event to send as heartbeat
+        heartbeat_data = {"label": "heartbeat"}
+        now = datetime.now(timezone.utc)
+        heartbeat_event = Event(timestamp=now, data=heartbeat_data)
+
         # The duration between the heartbeats will be less than pulsetime, so they will get merged.
+        # The commit_interval=4.0 means that if heartmeats with the same data has a longer duration than 4 seconds it will be fored to be sent to aw-server
         # TODO: Make a section with an illustration on how heartbeats work and insert a link here
         print("Sending heartbeat {}".format(i))
-        client.heartbeat(bucket_id, heartbeat_event, pulsetime=sleeptime+1, queued=True)
+        client.heartbeat(bucket_id, heartbeat_event, pulsetime=sleeptime+1, queued=True, commit_interval=4.0)
 
         # Sleep a second until next heartbeat
         sleep(sleeptime)
-
-        # Update timestamp for next heartbeat
-        heartbeat_event.timestamp = datetime.now(timezone.utc)
 
     # Give the dispatcher thread some time to complete sending the last events.
     # If we don't do this the events might possibly queue up and be sent the
