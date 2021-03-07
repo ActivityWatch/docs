@@ -14,6 +14,7 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    introduction
    getting-started
    configuration
+   directories
    features
    watchers
    importers
@@ -21,6 +22,7 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    history
    migrating
    running-on-gnome
+   remote-server
 
 
 .. _dev-docs:
@@ -35,7 +37,6 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    api
    security
    development
-   directories
    changelog
 
 

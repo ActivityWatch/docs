@@ -8,9 +8,9 @@ Where things get stored depends on the platform you're using. All paths should f
 Data
 ----
 
- - Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
- - macOS: ``~/Library/Application Support/activitywatch``
- - Linux: ``~/.local/share/activitywatch``
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
+- macOS: ``~/Library/Application Support/activitywatch``
+- Linux: ``~/.local/share/activitywatch``
 
 .. _config-directory:
 
@@ -27,15 +27,15 @@ Config
 Logs
 ----
 
- - Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
- - macOS: ``~/Library/Logs/activitywatch``
- - Linux: ``~/.cache/activitywatch/log`` 
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
+- macOS: ``~/Library/Logs/activitywatch``
+- Linux: ``~/.cache/activitywatch/log`` 
 
 .. _cache-directory:
 
 Cache
 -----
 
- - Windows: TODO
- - macOS: TODO
- - Linux: ``~/.cache/activitywatch``
+- Windows: TODO
+- macOS: TODO
+- Linux: ``~/.cache/activitywatch``
