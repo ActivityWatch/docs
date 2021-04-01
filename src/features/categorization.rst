@@ -34,7 +34,7 @@ Regular expressions (RegEx)
 
 There are lots of great guides online where you can learn to write regular expressions. There are also sites like `regex101.com <https://regex101.com/>`_ where you can easily try out patterns.
 
-Note that some characters have special meaning in regular expressions, notably: ``.`` (period, acts as wildcard for any character), ``$`` (matches end of string), ``^`` (matches end of string), ``+``, ``*``, ``?``, and brackets of all kinds.
+Note that some characters have special meaning in regular expressions, notably: ``.`` (period, acts as wildcard for any character), ``$`` (matches end of string), ``^`` (matches start of string), ``+``, ``*``, ``?``, and brackets of all kinds.
 
 With some care, these can be escaped (often by wrapping them in a 'character class', like this: ``[.]``).
 
