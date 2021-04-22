@@ -23,6 +23,8 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    migrating
    running-on-gnome
    remote-server
+   updating
+   uninstalling
 
 
 .. _dev-docs:
