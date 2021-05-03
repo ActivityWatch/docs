@@ -54,7 +54,7 @@ If any of these don't work, make sure you've correctly installed them and have t
 Using a virtualenv
 ------------------
 
-It is highly recommended to use a virtualenv in order to minimize problems and avoid polluting your system with ActivityWatch-specific Python packages. It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
+It is highly recommended to use a virtualenv <https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/> in order to minimize problems and avoid polluting your system with ActivityWatch-specific Python packages. It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
 
 .. code-block:: sh
 
@@ -71,7 +71,7 @@ Now activate the virtualenv in your current shell session:
     # For fish users:
     source ./venv/bin/activate.fish
 
-
+All the modules need to be installed in the same env in order to avoid build issues. This is why creating a single venv for all activitywatch repos is important and why relying on poetry to setup a per-folder venv is not an option.
 
 Building and installing
 -----------------------
