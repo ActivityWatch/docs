@@ -153,7 +153,12 @@ html_theme_options = {
     "path_to_docs": "src",
     "use_repository_button": True,
     "use_edit_page_button": True,
-    "extra_navbar": "<p>Follow us on Twitter</p>",
+    "extra_navbar": """
+    <p>
+        Back to <a href="https://activitywatch.net">activitywatch.net</a>
+        <br>
+        Follow us on <a href="https://twitter.com/ActivityWatchIt">Twitter</a>
+    </p>""",
 }
 
 

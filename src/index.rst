@@ -2,6 +2,10 @@
 
 |
 
+.. include:: badges.rst
+
+|
+
 Welcome to the ActivityWatch documentation!
 ===========================================
 
