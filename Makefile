@@ -1,5 +1,19 @@
 # Makefile for Sphinx documentation
-#
+
+md_changelogs  := $(wildcard src/changelog/*.md)
+md_changelogs_output  = $(patsubst %.md, %.rst, $(md_changelogs))
+
+build: $(md_changelogs_output)
+	make html
+
+src/changelog/%.rst: src/changelog/%.md
+	pandoc $^ -f gfm -o $@
+
+_build/html:
+	make build
+
+open:
+	xdg-open _build/html/index.html
 
 # You can set these variables from the command line.
 SPHINXOPTS    =

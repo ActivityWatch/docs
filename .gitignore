@@ -1,3 +1,6 @@
 _build
 .*cache
 dist
+
+# generated from md by pandoc
+src/changelog/*.rst

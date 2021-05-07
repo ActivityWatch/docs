@@ -20,10 +20,6 @@
 import os
 import sys
 
-# Other imports
-
-from recommonmark.parser import CommonMarkParser
-
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -34,6 +30,8 @@ from recommonmark.parser import CommonMarkParser
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "m2r2",
+    # "myst_parser",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosectionlabel",
     "sphinx.ext.viewcode",
@@ -54,10 +52,10 @@ extlinks = {
 templates_path = ["_templates"]
 
 # The parser(s) and suffix(es) of source filenames.
-source_parsers = {
-    ".md": CommonMarkParser,
-}
-source_suffix = [".rst", ".md"]
+# source_parsers = {
+#     ".md": CommonMarkParser,
+# }
+# source_suffix = [".rst", ".md"]
 
 # The encoding of source files.
 #
@@ -142,12 +140,28 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-import sphinx_rtd_theme
+html_theme = "sphinx_book_theme"
+html_static_path = ["_static"]
 
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-html_theme_options = {"collapse_navigation": False, "navigation_depth": 4}
-using_rtd_theme = True
+html_title = ""
+html_logo = "../media/banners/banner.png"
+html_favicon = "../media/logo/logo.ico"
+
+
+html_theme_options = {
+    "repository_url": "https://github.com/ActivityWatch/docs",
+    "path_to_docs": "src",
+    "use_repository_button": True,
+    "use_edit_page_button": True,
+    "extra_navbar": "<p>Follow us on Twitter</p>",
+}
+
+
+# import sphinx_rtd_theme
+# html_theme = "sphinx_rtd_theme"
+# html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# html_theme_options = {"collapse_navigation": False, "navigation_depth": 4}
+# using_rtd_theme = True
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
@@ -199,9 +213,9 @@ html_css_files = [
 
 # Custom sidebar templates, maps document names to template names.
 #
-html_sidebars = {
-    "**": ["globaltoc.html", "relations.html", "sourcelink.html", "searchbox.html"],
-}
+# html_sidebars = {
+#    "**": ["globaltoc.html", "relations.html", "sourcelink.html", "searchbox.html"],
+# }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.

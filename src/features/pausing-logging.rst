@@ -6,5 +6,5 @@ You can do it easily by simply unchecking the watcher module you want to pause i
 
 So, if you for example want to pause the logging of window titles:
 
- - Click the ActivityWatch trayicon
- - Uncheck 'Modules -> aw-watcher-window'
+- Click the ActivityWatch trayicon
+- Uncheck 'Modules -> aw-watcher-window'

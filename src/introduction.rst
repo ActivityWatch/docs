@@ -6,15 +6,15 @@ Introduction
 ActivityWatch is a bundle of software that tracks your computer activity.
 You are, by default, the sole owner of your data.
 
-It also offers an ecosystem of software to work around it, including ways to collect more data and do different kinds of analysis,
+It also offers an ecosystem of tools to work with it and the data collected, including ways to collect more data and do different kinds of analysis.
 
-What ActivityWatch is
----------------------
+What is ActivityWatch?
+----------------------
 
- - A set of watchers that record relevant information about what you do and what happens on your computer (such as if you are AFK or not, or which window is currently active).
- - A way of storing data collected by the watchers.
- - A dataformat accomodating most logging needs due to its flexibility.
- - An ecosystem of tools to help users extend the software to fit their needs.
+- A set of watchers that record relevant information about what you do and what happens on your computer (such as if you are AFK or not, or which window is currently active).
+- A way of storing data collected by the watchers.
+- A dataformat accomodating most logging needs due to its flexibility.
+- An ecosystem of tools to help users extend the software to fit their needs.
 
 Reason for existence
 --------------------
