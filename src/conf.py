@@ -17,8 +17,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-import os
-import sys
+# import os
+# import sys
+from datetime import date
 
 # -- General configuration ------------------------------------------------
 
@@ -67,7 +68,7 @@ master_doc = "index"
 # General information about the project.
 project = "ActivityWatch"
 author = "Erik Bjäreholt, Johan Bjäreholt and contributors"
-copyright = "2016-2020 by {}".format(author)
+copyright = f"2016-{date.today().year} by {author}"
 description_short = "The free and open source automated time-tracker"
 
 # TODO: Automatically detect version (possibly using git tags)
