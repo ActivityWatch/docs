@@ -49,7 +49,7 @@ Other watchers which are very useful too.
 
  - :gh:`Alwinator/aw-watcher-table` - Monitors whether you have set your height-adjustable table to sitting or standing, by :gh-user:`Alwinator`
  - :gh-aw:`aw-watcher-input` - (WIP) Tracks the number of keypresses and distance that mouse is moved.
- - :gh:`akohlbecker/aw-watcher-tmux` - A plugin for [tmux](https://github.com/tmux/tmux/wiki) that allows monitoring activity in sessions and panes, by :gh-user:`akohlbecker`
+ - :gh:`akohlbecker/aw-watcher-tmux` - A plugin for tmux that allows monitoring activity in sessions and panes, by :gh-user:`akohlbecker`
  
 
 Custom watchers
