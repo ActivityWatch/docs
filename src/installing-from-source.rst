@@ -41,12 +41,12 @@ You need:
 
 **Commands which should work before building:**
 
-- :code:`git -v`
-- :code:`make -v`
-- :code:`python -V`
-- :code:`poetry -v`
-- :code:`node -v` / :code:`npm -v`
-- :code:`rustc -V` / :code:`cargo -v`
+- :code:`git -v` or :code:`git --version`
+- :code:`make -v` or :code:`make --version`
+- :code:`python -V` or :code:`python --version`
+- :code:`poetry -v` or :code:`poetry --version`
+- :code:`node -v` / :code:`npm -v` or :code:`node --version` / :code:`npm --version`
+- :code:`rustc -V` / :code:`cargo -v` or :code:`rustc --version` / :code:`cargo --version`
 - :code:`7z` (optional)
 
 If any of these don't work, make sure you've correctly installed them and have them in your PATH variable.
