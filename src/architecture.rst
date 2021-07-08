@@ -15,7 +15,7 @@ The illustration below is a graph of the fundamental dependencies between projec
 Server
 ------
 
-Known as aw-server, it handles storage and retrieval of all activities/entries in buckets. Usually there exists one bucket per watcher.
+Known as :gh-aw:`aw-server`, it handles storage and retrieval of all activities/entries in buckets. Usually there exists one bucket per watcher.
 
 The server also hosts the Web UI (aw-webui) which does all communication with the server using the REST API.
 
