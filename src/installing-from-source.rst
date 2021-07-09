@@ -41,12 +41,12 @@ You need:
 
 **Commands which should work before building:**
 
-- :code:`git -v` or :code:`git --version`
-- :code:`make -v` or :code:`make --version`
-- :code:`python -V` or :code:`python --version`
-- :code:`poetry -v` or :code:`poetry --version`
-- :code:`node -v` / :code:`npm -v` or :code:`node --version` / :code:`npm --version`
-- :code:`rustc -V` / :code:`cargo -v` or :code:`rustc --version` / :code:`cargo --version`
+- :code:`git --version`
+- :code:`make --version`
+- :code:`python --version`
+- :code:`poetry --version`
+- :code:`node --version` / :code:`npm --version`
+- :code:`rustc --version` / :code:`cargo --version`
 - :code:`7z` (optional)
 
 If any of these don't work, make sure you've correctly installed them and have them in your PATH variable.
@@ -137,4 +137,3 @@ When the packaging is done you will have a :code:`./dist` folder where you can f
  - A :code:`activitywatch` folder, you can move or copy that folder anywhere you need and set :code:`aw-qt` to run from startup.
  - A zipped version of the folder.
  - (on Windows) An installer.
-
