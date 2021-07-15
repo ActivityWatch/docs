@@ -3,17 +3,19 @@ Architecture
 
 Here we hope to clarify the architecture of ActivityWatch for you. Please file an issue or pull request if you think something is missing.
 
+.. contents::
+
 Dependency graph
 ----------------
 
-The below is a graph of the fundamental dependencies between projects, these do not reflect the folder structure.
+The illustration below is a graph of the fundamental dependencies between projects, these do not reflect the folder structure.
 
 .. graphviz:: dependency.dot
 
 Server
 ------
 
-Known as aw-server, it handles storage and retrieval of all activities/entries in buckets. Usually there exists one bucket per watcher.
+Known as :gh-aw:`aw-server`, it handles storage and retrieval of all activities/entries in buckets. Usually there exists one bucket per watcher.
 
 The server also hosts the Web UI (aw-webui) which does all communication with the server using the REST API.
 
