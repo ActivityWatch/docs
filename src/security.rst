@@ -5,6 +5,7 @@ ActivityWatch deals with highly sensitive data, and the security of it is theref
 
 We do try our best to keep security in mind. In this section of the documentation we'll outline some important security considerations, including risks and possible improvements.
 
+.. contents::
 
 ActivityWatch is only as secure as your system
 ----------------------------------------------
