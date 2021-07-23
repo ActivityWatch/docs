@@ -1,12 +1,12 @@
-Usage
-=====
+Intended Use of ActivityWatch
+=============================
 
 Here we hope to clarify the founder's designed usage of ActivityWatch.
 
 .. contents::
 
-Intended Use of ActivityWatch
------------------------------
+Vision and Usage of ActivityWatch
+---------------------------------
 
 The `vision <https://github.com/ActivityWatch/activitywatch/issues/236>`_ of ActivityWatch has always been for the betterment of the user.
 May it be for personal, business, or solely research.
