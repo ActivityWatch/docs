@@ -50,7 +50,7 @@ If you against these warnings decide to run a remote server that watchers report
 
 The benefits of using an SSH tunnel is that you don't need to expose aw-server directly to the network, and you don't need to change any of the default watcher configuration (although you do need to disable autostarting aw-server in aw-qt, if you use it).
 
-You can set up an SSH tunnel to the remote machine running SSH and aw-server with: :code:`ssh -L 5600:localhost:5600 <remote server IP>`
+You can set up an SSH tunnel to the remote machine running SSH and aw-server with: :code:`ssh -L 127.0.0.1:5600:localhost:5600 <remote server IP>`
 
 Known issues:
 
