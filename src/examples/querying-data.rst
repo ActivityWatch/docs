@@ -1,12 +1,12 @@
 Querying Data
 =============
 
-There are a couple of ways to query data in activitywatch.
+There are a couple of ways to query data in ActivityWatch.
 
 aw-server supplies a "/query" endpoint (also accessible via aw-client's query method) which supplies a basic scripting language which you can utilize to do transformations on the server-side.
 This option is good for basic analysis and for lightweight clients (such as aw-webui).
 
-Another option is to fetch events from the "/buckets/bucketname/events" endpoint (also accessible via aw-client's get_events method) and either program your own transformations or use transformation methods available in the aw-analysis python library (which includes all transformations available in the query endpoint). This require a lot of more work since you will likely have to reprogram transformations already available in the query API, but on the other hand it is much more flexible.
+Another option is to fetch events from the "/buckets/bucketname/events" endpoint (also accessible via aw-client's get_events method) and either program your own transformations or use transformation methods available in the aw-analysis python library (which includes all transformations available in the query endpoint). This requires a lot of more work since you will likely have to reprogram transformations already available in the query API, but on the other hand it is much more flexible.
 
 
 Writing a Query
@@ -58,7 +58,10 @@ Example combining window and AFK events:
         RETURN = events;
 
 Example including aw-client:
-    This is an example of how you can do analysis and aggregation with the query method in python with aw-client
+    This is an example of how you can do analysis and aggregation with the query method in Python with aw-client.
+    You probably need to install the client library by following the instructions in its `repository <https://github.com/ActivityWatch/aw-client>`_.
+
+	.. note:: This example runs the client in *testing* mode, which means that it will try to connect to an aw-server in testing mode on the port 5666 instead of the normal 5600.
 
     .. literalinclude:: query_client.py
 
