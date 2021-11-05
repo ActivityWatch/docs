@@ -1,10 +1,6 @@
 .. image:: ../media/banners/banner.png
 
-|
-
 .. include:: badges.rst
-
-|
 
 Welcome to the ActivityWatch documentation!
 ===========================================
