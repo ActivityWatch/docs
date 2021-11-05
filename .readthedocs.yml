@@ -3,6 +3,10 @@ version: 2
 sphinx:
   configuration: src/conf.py
 
+submodules:
+  include: all
+  recursive: true
+
 python:
   version: 3.8
   install:
