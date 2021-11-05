@@ -25,7 +25,7 @@ Making a release
 #. Ensure that all the tests pass: ``make test && make test-integration``
 #. Test the latest build and check that it works correctly (use the nightly builds: :issue:`507`)
 #. Write a changelog entry in ``docs/changelog.rst``
-#. Sign the commit: ``git commit -a -S -m "bumped version"``
+#. Sign the commit: ``git commit -S -m "bumped version"``
 
     - NOTE: don't push it before the tag! (if you do, CI won't run on the tag)
 

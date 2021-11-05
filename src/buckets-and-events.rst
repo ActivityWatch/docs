@@ -1,6 +1,8 @@
 Data model
 ==========
 
+.. contents::
+
 Buckets
 -------
 
@@ -87,8 +89,8 @@ currentwindow
 ~~~~~~~~~~~~~
 
 .. note::
-	There are suggestions to improve/change this format
-	(see :issue:`201`)
+    There are suggestions to improve/change this format
+    (see :issue:`201`)
 
 .. code-block:: javascript
 
@@ -101,8 +103,8 @@ afkstatus
 ~~~~~~~~~
 
 .. note::
-	There are suggestions to improve/change this format
-	(see :issue:`201`)
+    There are suggestions to improve/change this format
+    (see :issue:`201`)
 
 .. code-block:: javascript
 

@@ -28,7 +28,7 @@ Checking dependencies
 You need:
 
 - `Git <https://git-scm.com/downloads>`_
-- `Python 3.6 or 3.7 <https://www.python.org/downloads/>`_ (3.8+ not supported, see :gh-aw:`this comment <activitywatch/issues/433#issuecomment-653397090>`), check with :code:`python3 -V` (required to build the core components)
+- `Python 3.7 to 3.9 <https://www.python.org/downloads/>`_, check with :code:`python3 -V` (required to build the core components)
 - `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
 - `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
 - `Rust nightly <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_ (nightly can be installed using :code:`rustup`), check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
@@ -41,12 +41,12 @@ You need:
 
 **Commands which should work before building:**
 
-- :code:`git -v`
-- :code:`make -v`
-- :code:`python -V`
-- :code:`poetry -v`
-- :code:`node -v` / :code:`npm -v`
-- :code:`rustc -V` / :code:`cargo -v`
+- :code:`git --version`
+- :code:`make --version`
+- :code:`python --version`
+- :code:`poetry --version`
+- :code:`node --version` / :code:`npm --version`
+- :code:`rustc --version` / :code:`cargo --version`
 - :code:`7z` (optional)
 
 If any of these don't work, make sure you've correctly installed them and have them in your PATH variable.
@@ -54,7 +54,7 @@ If any of these don't work, make sure you've correctly installed them and have t
 Using a virtualenv
 ------------------
 
-It is highly recommended to use a virtualenv in order to minimize problems and avoid polluting your system with ActivityWatch-specific Python packages. It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
+It is highly recommended to use a virtualenv <https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/> in order to minimize problems and avoid polluting your system with ActivityWatch-specific Python packages. It also makes it easier to uninstall since all you have to do is remove the virtualenv folder.
 
 .. code-block:: sh
 
@@ -71,7 +71,7 @@ Now activate the virtualenv in your current shell session:
     # For fish users:
     source ./venv/bin/activate.fish
 
-
+All the modules need to be installed in the same env in order to avoid build issues. This is why creating a single venv for all activitywatch repos is important and why relying on poetry to setup a per-folder venv is not an option.
 
 Building and installing
 -----------------------
@@ -137,4 +137,3 @@ When the packaging is done you will have a :code:`./dist` folder where you can f
  - A :code:`activitywatch` folder, you can move or copy that folder anywhere you need and set :code:`aw-qt` to run from startup.
  - A zipped version of the folder.
  - (on Windows) An installer.
-
