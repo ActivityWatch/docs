@@ -4,6 +4,16 @@
 Changelog
 =========
 
+.. note:: These changelogs are badly formatted and may be incomplete (especially for old versions).
+
+You may find more information about a release on the `releases page <https://github.com/ActivityWatch/activitywatch/releases>`_.
+
+-------
+v0.11.0
+-------
+
+.. include:: changelog/v0_11.rst
+
 -------
 v0.10.0
 -------

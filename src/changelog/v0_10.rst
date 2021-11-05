@@ -1,0 +1,981 @@
+The changelog is written on a per-submodule basis. Look under the
+Feature subheaders for the most user-affecting changes.
+
+Summary
+-------
+
+-  ✨ New editable views
+-  ✨ Timeline (barchart) visualization
+-  ✨ Update checks
+-  🍎 Better support for macOS
+-  🪟 Support for Microsoft Edge
+-  🐛 Many bug fixes
+-  🕸️ The "sunburst clock" vis was removed (temporarily, see
+   https://github.com/ActivityWatch/activitywatch/issues/508#issuecomment-730396764)
+-  And a lot more...
+
+activitywatch (bundle repo)
+---------------------------
+
+.. _-features-1:
+
+✨ Features (1)
+^^^^^^^^^^^^^^
+
+-  feat: improved generation of changelog
+   (```7e6acf2`` <https://github.com/ActivityWatch/activitywatch/commit/7e6acf2>`__)
+
+.. raw:: html
+
+   <details><summary><b>🐛 Fixes (3)</b></summary>
+   <p>
+
+-  fix: fixed inclusion of aw-webui for use with aw-server-rust (fixes
+   `#441 <https://github.com/ActivityWatch/activitywatch/issues/441>`__)
+   (```2c3fe73`` <https://github.com/ActivityWatch/activitywatch/commit/2c3fe73>`__)
+-  fix: fixed generation of changelog for subsubmodules
+   (```77b39b5`` <https://github.com/ActivityWatch/activitywatch/commit/77b39b5>`__)
+-  fix: switched from biplist to plistlib (following dmgbuild's example)
+   (```5ddb5f6`` <https://github.com/ActivityWatch/activitywatch/commit/5ddb5f6>`__)
+
+.. raw:: html
+
+   </p></details>
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (12)</b></summary>
+   <p>
+
+-  docs: updated screenshot in README
+   (```42bf20c`` <https://github.com/ActivityWatch/activitywatch/commit/42bf20c>`__)
+-  docs: updated FUNDING.yml
+   (```c779d75`` <https://github.com/ActivityWatch/activitywatch/commit/c779d75>`__)
+-  Use git describe --tags --abbrev=0 to retrieve current activitywatch
+   version in aw.spec
+   (```47cd07e`` <https://github.com/ActivityWatch/activitywatch/commit/47cd07e>`__)
+-  docs: fixed stray end tag in README
+   (```b1a89d7`` <https://github.com/ActivityWatch/activitywatch/commit/b1a89d7>`__)
+-  README: Removed outdated statement that import is not supported
+   (```370b073`` <https://github.com/ActivityWatch/activitywatch/commit/370b073>`__)
+-  docs: fixed emoji in bug report issue template title
+   (```89d8a4f`` <https://github.com/ActivityWatch/activitywatch/commit/89d8a4f>`__)
+-  docs: updated issue templates
+   (`#429 <https://github.com/ActivityWatch/activitywatch/issues/429>`__)
+   (```5c139b9`` <https://github.com/ActivityWatch/activitywatch/commit/5c139b9>`__)
+-  docs: added commit message guidelines to CONTRIBUTING.md
+   (`#415 <https://github.com/ActivityWatch/activitywatch/issues/415>`__)
+   (```29ad429`` <https://github.com/ActivityWatch/activitywatch/commit/29ad429>`__)
+-  Merge pull request
+   `#401 <https://github.com/ActivityWatch/activitywatch/issues/401>`__
+   from gwynevans/docTweak
+   (```b1e8934`` <https://github.com/ActivityWatch/activitywatch/commit/b1e8934>`__)
+-  Add explanation of AFK acronym to README
+   (```5193cd1`` <https://github.com/ActivityWatch/activitywatch/commit/5193cd1>`__)
+-  docs: added new script to build changelog
+   (`#381 <https://github.com/ActivityWatch/activitywatch/issues/381>`__)
+   (```8ed9754`` <https://github.com/ActivityWatch/activitywatch/commit/8ed9754>`__)
+-  docs: added GitHub actions badge to README
+   (```b33711a`` <https://github.com/ActivityWatch/activitywatch/commit/b33711a>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-webui
+--------
+
+.. _-features-22:
+
+✨ Features (22)
+^^^^^^^^^^^^^^^
+
+-  feat: made timeline view full-width
+   (```bba8b35`` <https://github.com/ActivityWatch/aw-webui/commit/bba8b35>`__)
+-  feat: added stop time to timeline tooltip
+   (fixes[`#200 <https://github.com/ActivityWatch/aw-webui/issues/200>`__](https://github.com/ActivityWatch/aw-webui/issues/200)#issuecomment-674582218)
+   (```f0e8b4c`` <https://github.com/ActivityWatch/aw-webui/commit/f0e8b4c>`__)
+-  feat: refactored ActivityEditor into ActivityView, added better info
+   when missing data
+   (```94f0959`` <https://github.com/ActivityWatch/aw-webui/commit/94f0959>`__)
+-  feat: added new view modal
+   (```a0ec9a5`` <https://github.com/ActivityWatch/aw-webui/commit/a0ec9a5>`__)
+-  feat: added delete view and restore views to default
+   (```129fdd9`` <https://github.com/ActivityWatch/aw-webui/commit/129fdd9>`__)
+-  feat: implemented save/cancel when editing view
+   (```ef52f1e`` <https://github.com/ActivityWatch/aw-webui/commit/ef52f1e>`__)
+-  feat: added buttons to edit/save view, made ActivityView delegate to
+   ActivityEditor if view_id is 'editor'
+   (```1beade2`` <https://github.com/ActivityWatch/aw-webui/commit/1beade2>`__)
+-  feat: added ability to add new views and visualizations
+   (```6578e7f`` <https://github.com/ActivityWatch/aw-webui/commit/6578e7f>`__)
+-  feat: continued work on customizable views, fixing a few bugs
+   (```783733b`` <https://github.com/ActivityWatch/aw-webui/commit/783733b>`__)
+-  feat: started working on customizable views
+   (```382308f`` <https://github.com/ActivityWatch/aw-webui/commit/382308f>`__)
+-  feat: poll user satisfaction and calls to action
+   (`#229 <https://github.com/ActivityWatch/aw-webui/issues/229>`__)
+   (```f9e0bbf`` <https://github.com/ActivityWatch/aw-webui/commit/f9e0bbf>`__)
+-  feat: added options to WIP Calendar visualization
+   (```4e7303a`` <https://github.com/ActivityWatch/aw-webui/commit/4e7303a>`__)
+-  feat: check for new releases
+   (ActivityWatch/activitywatch\ `#114 <https://github.com/ActivityWatch/aw-webui/issues/114>`__)
+   (```b9fe58b`` <https://github.com/ActivityWatch/aw-webui/commit/b9fe58b>`__)
+-  feat: added proper timeline labeling for stopwatch events
+   (```5e1afd8`` <https://github.com/ActivityWatch/aw-webui/commit/5e1afd8>`__)
+-  feat: Add custom hovertext for editor summary and project
+   (```437a882`` <https://github.com/ActivityWatch/aw-webui/commit/437a882>`__)
+-  feat: Better user experience when importing buckets
+   (```d59cf32`` <https://github.com/ActivityWatch/aw-webui/commit/d59cf32>`__)
+-  feat: Add delete button to EventEditor modal
+   (```a4cd0b0`` <https://github.com/ActivityWatch/aw-webui/commit/a4cd0b0>`__)
+-  feat: started working on calendar visualization
+   (```2b6f6c3`` <https://github.com/ActivityWatch/aw-webui/commit/2b6f6c3>`__)
+-  feat: Add first/last event to Bucket view
+   (```915a4cf`` <https://github.com/ActivityWatch/aw-webui/commit/915a4cf>`__)
+-  feat: ported new Activity view to Android
+   (```13777cb`` <https://github.com/ActivityWatch/aw-webui/commit/13777cb>`__)
+-  feat: added support for Edge browser
+   (```d495f7f`` <https://github.com/ActivityWatch/aw-webui/commit/d495f7f>`__)
+-  feat: added active history data to demomode, removed excessive
+   logging
+   (```107ae4d`` <https://github.com/ActivityWatch/aw-webui/commit/107ae4d>`__)
+
+.. raw:: html
+
+   <details><summary><b>🐛 Fixes (35)</b></summary>
+   <p>
+
+-  fix: added chromium.exe to browser appnames
+   (fixes[`#503 <https://github.com/ActivityWatch/aw-webui/issues/503>`__](https://github.com/ActivityWatch/activitywatch/issues/503))
+   (```541e99c`` <https://github.com/ActivityWatch/aw-webui/commit/541e99c>`__)
+-  fix: improved border-color of events in timeline visualization
+   (```935354a`` <https://github.com/ActivityWatch/aw-webui/commit/935354a>`__)
+-  fix: added (commented out) sunburst_clock to
+   SelectableVisualization.vue
+   (```d4f2b3c`` <https://github.com/ActivityWatch/aw-webui/commit/d4f2b3c>`__)
+-  fix: fixed missing href, added Discord to links in Home.vue
+   (```6b5a67b`` <https://github.com/ActivityWatch/aw-webui/commit/6b5a67b>`__)
+-  fix: minor satisfaction poll fixes
+   (```392cf8c`` <https://github.com/ActivityWatch/aw-webui/commit/392cf8c>`__)
+-  fix: fixed invalid type
+   (```105afdc`` <https://github.com/ActivityWatch/aw-webui/commit/105afdc>`__)
+-  fix: added linting for tests and fixed lint issues
+   (```fc5cbe9`` <https://github.com/ActivityWatch/aw-webui/commit/fc5cbe9>`__)
+-  fix: changed sometimes missing unicode character to icon in
+   CategoryTree
+   (```50b3258`` <https://github.com/ActivityWatch/aw-webui/commit/50b3258>`__)
+-  fix: change button to only show for range
+   (`#449 <https://github.com/ActivityWatch/aw-webui/issues/449>`__ from
+   activitywatch)
+   (```0c36bbe`` <https://github.com/ActivityWatch/aw-webui/commit/0c36bbe>`__)
+-  fix: fix timeline updating before new range is selected
+   (`#449 <https://github.com/ActivityWatch/aw-webui/issues/449>`__ from
+   activitywatch)
+   (```444980a`` <https://github.com/ActivityWatch/aw-webui/commit/444980a>`__)
+-  fix: fix timeline updating before new range is selected
+   (`#449 <https://github.com/ActivityWatch/aw-webui/issues/449>`__ from
+   activitywatch)
+   (```d2ebb9c`` <https://github.com/ActivityWatch/aw-webui/commit/d2ebb9c>`__)
+-  fix: Update aw-client-js
+   (```1448792`` <https://github.com/ActivityWatch/aw-webui/commit/1448792>`__)
+-  fix: cleaned up queries, unifying more into canonicalQuery
+   (```03a1242`` <https://github.com/ActivityWatch/aw-webui/commit/03a1242>`__)
+-  fix: Fix incompatibility with aw-server-python
+   (```1d3bfd1`` <https://github.com/ActivityWatch/aw-webui/commit/1d3bfd1>`__)
+-  fix: Fix VisTimeline errors
+   (```61d2461`` <https://github.com/ActivityWatch/aw-webui/commit/61d2461>`__)
+-  fix: Fix previously broken ts types
+   (```2902651`` <https://github.com/ActivityWatch/aw-webui/commit/2902651>`__)
+-  fix: Fix previously broken ts types
+   (```e356b24`` <https://github.com/ActivityWatch/aw-webui/commit/e356b24>`__)
+-  fix: Fix linting issues
+   (```ccddac7`` <https://github.com/ActivityWatch/aw-webui/commit/ccddac7>`__)
+-  fix: Fix broken getBucketWithEvents
+   (```554f3f7`` <https://github.com/ActivityWatch/aw-webui/commit/554f3f7>`__)
+-  fix: Set headers on tables where they belong
+   (```f08a43b`` <https://github.com/ActivityWatch/aw-webui/commit/f08a43b>`__)
+-  fix: Fix 'Updated' field in buckets view for aw-server-rust
+   (```490901d`` <https://github.com/ActivityWatch/aw-webui/commit/490901d>`__)
+-  fix: reintroduced active events for barchart visualization
+   (```2acb3cb`` <https://github.com/ActivityWatch/aw-webui/commit/2acb3cb>`__)
+-  fix: fixed
+   `#206 <https://github.com/ActivityWatch/aw-webui/issues/206>`__,
+   incorrectly escaping backslashes in regex
+   (```554d05a`` <https://github.com/ActivityWatch/aw-webui/commit/554d05a>`__)
+-  fix: fixed bug where opening Activity view didn't correctly use today
+   as default date
+   (```903ad77`` <https://github.com/ActivityWatch/aw-webui/commit/903ad77>`__)
+-  fix: added 'Firefox-esr' to browser appnames, fixes
+   `#204 <https://github.com/ActivityWatch/aw-webui/issues/204>`__
+   (```b6f91e3`` <https://github.com/ActivityWatch/aw-webui/commit/b6f91e3>`__)
+-  fix: Merge window and browser queries
+   (```f9bcaed`` <https://github.com/ActivityWatch/aw-webui/commit/f9bcaed>`__)
+-  fix: Subview is now kept when changing date in Activity view
+   (```f31c75c`` <https://github.com/ActivityWatch/aw-webui/commit/f31c75c>`__)
+-  fix: fixed filter by category on Android
+   (```80479d2`` <https://github.com/ActivityWatch/aw-webui/commit/80479d2>`__)
+-  fix: fixed incorrect references to state
+   (```0ded48d`` <https://github.com/ActivityWatch/aw-webui/commit/0ded48d>`__)
+-  fix: Fixed very minor misplacement of button
+   (```a65623f`` <https://github.com/ActivityWatch/aw-webui/commit/a65623f>`__)
+-  fix: fixed use of wrong bucket
+   (```83d14ca`` <https://github.com/ActivityWatch/aw-webui/commit/83d14ca>`__)
+-  fix: readded active history caching
+   (```035d4cc`` <https://github.com/ActivityWatch/aw-webui/commit/035d4cc>`__)
+-  fix: Add notice to download browser watcher if no buckets exist
+   (```f167565`` <https://github.com/ActivityWatch/aw-webui/commit/f167565>`__)
+-  fix: See host if only editor buckets exist
+   (```59197ce`` <https://github.com/ActivityWatch/aw-webui/commit/59197ce>`__)
+-  fix: Make week start on Monday instead of Sunday
+   (```dd6abc4`` <https://github.com/ActivityWatch/aw-webui/commit/dd6abc4>`__)
+
+.. raw:: html
+
+   </p></details>
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (76)</b></summary>
+   <p>
+
+-  Merge pull request
+   `#233 <https://github.com/ActivityWatch/aw-webui/issues/233>`__ from
+   ActivityWatch/dev/customizable-views
+   (```8e886b4`` <https://github.com/ActivityWatch/aw-webui/commit/8e886b4>`__)
+-  refactor: split 'settings' Vuex store into 'categories' and 'views'
+   (```2788c14`` <https://github.com/ActivityWatch/aw-webui/commit/2788c14>`__)
+-  test: fixed e2e screenshot test
+   (```50e2c0d`` <https://github.com/ActivityWatch/aw-webui/commit/50e2c0d>`__)
+-  Merge pull request
+   `#167 <https://github.com/ActivityWatch/aw-webui/issues/167>`__ from
+   Mte90/patch-1
+   (```2c5a934`` <https://github.com/ActivityWatch/aw-webui/commit/2c5a934>`__)
+-  fix linting
+   (```526cfdc`` <https://github.com/ActivityWatch/aw-webui/commit/526cfdc>`__)
+-  remove trailing whitespaces
+   (```49f3e2e`` <https://github.com/ActivityWatch/aw-webui/commit/49f3e2e>`__)
+-  fix linting
+   (```894bf64`` <https://github.com/ActivityWatch/aw-webui/commit/894bf64>`__)
+-  Merge branch 'master' into patch-1
+   (```2e52832`` <https://github.com/ActivityWatch/aw-webui/commit/2e52832>`__)
+-  docs: fixed comment in PeriodUsage.vue
+   (`#230 <https://github.com/ActivityWatch/aw-webui/issues/230>`__)
+   (```7912a32`` <https://github.com/ActivityWatch/aw-webui/commit/7912a32>`__)
+-  Merge pull request
+   `#211 <https://github.com/ActivityWatch/aw-webui/issues/211>`__ from
+   ActivityWatch/dev/calendar
+   (```bfc24c9`` <https://github.com/ActivityWatch/aw-webui/commit/bfc24c9>`__)
+-  Merge branch 'master' into dev/calendar
+   (```376e44f`` <https://github.com/ActivityWatch/aw-webui/commit/376e44f>`__)
+-  Merge pull request
+   `#225 <https://github.com/ActivityWatch/aw-webui/issues/225>`__ from
+   billangli/dev/check-for-new-releases
+   (```707c45a`` <https://github.com/ActivityWatch/aw-webui/commit/707c45a>`__)
+-  clean up code
+   (```f8b876b`` <https://github.com/ActivityWatch/aw-webui/commit/f8b876b>`__)
+-  add aliasing to jest config
+   (```a8b35d9`` <https://github.com/ActivityWatch/aw-webui/commit/a8b35d9>`__)
+-  ignore screenshot.test.js from npm test script
+   (```81a6985`` <https://github.com/ActivityWatch/aw-webui/commit/81a6985>`__)
+-  Merge pull request
+   `#219 <https://github.com/ActivityWatch/aw-webui/issues/219>`__ from
+   billangli/dev/timeline-input-button
+   (```02a37cc`` <https://github.com/ActivityWatch/aw-webui/commit/02a37cc>`__)
+-  move initial request to be called from InputTimeInterval
+   (```050f700`` <https://github.com/ActivityWatch/aw-webui/commit/050f700>`__)
+-  Change select from v-bind to v-model
+   (```435896a`` <https://github.com/ActivityWatch/aw-webui/commit/435896a>`__)
+-  lint-fix
+   (```7a39a23`` <https://github.com/ActivityWatch/aw-webui/commit/7a39a23>`__)
+-  Merge branch 'dev/timeline-input-button' of
+   https://github.com/billangli/aw-webui into dev/timeline-input-button
+   (```6e1eedb`` <https://github.com/ActivityWatch/aw-webui/commit/6e1eedb>`__)
+-  style: fixed lints, applied prettier v2 style, removed old Log view
+   (```91878ee`` <https://github.com/ActivityWatch/aw-webui/commit/91878ee>`__)
+-  Merge pull request
+   `#218 <https://github.com/ActivityWatch/aw-webui/issues/218>`__ from
+   ActivityWatch/dev/settings-split
+   (```11245d7`` <https://github.com/ActivityWatch/aw-webui/commit/11245d7>`__)
+-  Merge pull request
+   `#217 <https://github.com/ActivityWatch/aw-webui/issues/217>`__ from
+   ActivityWatch/dev/summary-custom-hovertext
+   (```e0d26ec`` <https://github.com/ActivityWatch/aw-webui/commit/e0d26ec>`__)
+-  refactor: Split Settings into multiple views
+   (```ed37580`` <https://github.com/ActivityWatch/aw-webui/commit/ed37580>`__)
+-  Merge pull request
+   `#210 <https://github.com/ActivityWatch/aw-webui/issues/210>`__ from
+   ActivityWatch/dev/import-ux-enhancement
+   (```0038e50`` <https://github.com/ActivityWatch/aw-webui/commit/0038e50>`__)
+-  Merge pull request
+   `#214 <https://github.com/ActivityWatch/aw-webui/issues/214>`__ from
+   ActivityWatch/dev/move-delete-button
+   (```443528f`` <https://github.com/ActivityWatch/aw-webui/commit/443528f>`__)
+-  refactor: Move modal into EventEditor
+   (```9319fca`` <https://github.com/ActivityWatch/aw-webui/commit/9319fca>`__)
+-  Merge pull request
+   `#209 <https://github.com/ActivityWatch/aw-webui/issues/209>`__ from
+   ActivityWatch/dev/lint-fix
+   (```63d23f9`` <https://github.com/ActivityWatch/aw-webui/commit/63d23f9>`__)
+-  Merge pull request
+   `#208 <https://github.com/ActivityWatch/aw-webui/issues/208>`__ from
+   ActivityWatch/dev/vuex-fix
+   (```16e37ae`` <https://github.com/ActivityWatch/aw-webui/commit/16e37ae>`__)
+-  Merge pull request
+   `#202 <https://github.com/ActivityWatch/aw-webui/issues/202>`__ from
+   ActivityWatch/dev/last_updated_buckets_fix
+   (```4b08fbd`` <https://github.com/ActivityWatch/aw-webui/commit/4b08fbd>`__)
+-  Merge pull request
+   `#203 <https://github.com/ActivityWatch/aw-webui/issues/203>`__ from
+   ActivityWatch/dev/merge-window-and-browser-queries
+   (```09df952`` <https://github.com/ActivityWatch/aw-webui/commit/09df952>`__)
+-  Merge pull request
+   `#207 <https://github.com/ActivityWatch/aw-webui/issues/207>`__ from
+   ActivityWatch/dev/today-bug
+   (```7821419`` <https://github.com/ActivityWatch/aw-webui/commit/7821419>`__)
+-  Merge pull request
+   `#2 <https://github.com/ActivityWatch/aw-webui/issues/2>`__ from
+   skuzzymiglet/patch-1
+   (```4d81a09`` <https://github.com/ActivityWatch/aw-webui/commit/4d81a09>`__)
+-  Merge pull request
+   `#201 <https://github.com/ActivityWatch/aw-webui/issues/201>`__ from
+   ActivityWatch/dev/period-link-subview-fix
+   (```df5a625`` <https://github.com/ActivityWatch/aw-webui/commit/df5a625>`__)
+-  Fix bug with browser activity not showing "Loading..." when loading
+   (```9247aed`` <https://github.com/ActivityWatch/aw-webui/commit/9247aed>`__)
+-  Merge pull request
+   `#197 <https://github.com/ActivityWatch/aw-webui/issues/197>`__ from
+   ActivityWatch/dev/small-tweaks
+   (```1a969b3`` <https://github.com/ActivityWatch/aw-webui/commit/1a969b3>`__)
+-  improvement(design): more small design improvements
+   (```7a2693d`` <https://github.com/ActivityWatch/aw-webui/commit/7a2693d>`__)
+-  improvement(design): further fixes to design on small screens, added
+   links to watchers page in the docs whenmissing browser or editor
+   buckets
+   (```3dc3615`` <https://github.com/ActivityWatch/aw-webui/commit/3dc3615>`__)
+-  improvement(design): made improvements to the design of the Activity
+   view, including smaller tabs and placing the periodLength select in
+   between the 'previous' and 'next' buttons
+   (```06ccbbe`` <https://github.com/ActivityWatch/aw-webui/commit/06ccbbe>`__)
+-  Merge pull request
+   `#196 <https://github.com/ActivityWatch/aw-webui/issues/196>`__ from
+   ActivityWatch/dependabot/npm_and_yarn/jquery-3.5.0
+   (```7c9a7d5`` <https://github.com/ActivityWatch/aw-webui/commit/7c9a7d5>`__)
+-  Merge pull request
+   `#194 <https://github.com/ActivityWatch/aw-webui/issues/194>`__ from
+   ActivityWatch/dev/eslint-fix
+   (```4973c62`` <https://github.com/ActivityWatch/aw-webui/commit/4973c62>`__)
+-  Merge pull request
+   `#195 <https://github.com/ActivityWatch/aw-webui/issues/195>`__ from
+   ActivityWatch/dev/cleanups
+   (```7242bed`` <https://github.com/ActivityWatch/aw-webui/commit/7242bed>`__)
+-  refactor: Removed unnecessary prints
+   (```9c616e2`` <https://github.com/ActivityWatch/aw-webui/commit/9c616e2>`__)
+-  style: fixed eslint warnings
+   (```187c7e5`` <https://github.com/ActivityWatch/aw-webui/commit/187c7e5>`__)
+-  Merge pull request
+   `#183 <https://github.com/ActivityWatch/aw-webui/issues/183>`__ from
+   ActivityWatch/dev/android-update
+   (```c535835`` <https://github.com/ActivityWatch/aw-webui/commit/c535835>`__)
+-  refactor: cleanup and minor restyling of SelectableVisualization
+   (```b215d50`` <https://github.com/ActivityWatch/aw-webui/commit/b215d50>`__)
+-  Merge pull request
+   `#193 <https://github.com/ActivityWatch/aw-webui/issues/193>`__ from
+   ActivityWatch/dev/period-length-fix
+   (```51bab94`` <https://github.com/ActivityWatch/aw-webui/commit/51bab94>`__)
+-  refactor: removed old Android activity view
+   (```afdf0fc`` <https://github.com/ActivityWatch/aw-webui/commit/afdf0fc>`__)
+-  refactor: changed buckets.(type)_buckets to simply buckets.(type),
+   added androidBucketsByHost
+   (```f90c0af`` <https://github.com/ActivityWatch/aw-webui/commit/f90c0af>`__)
+-  Merge pull request
+   `#192 <https://github.com/ActivityWatch/aw-webui/issues/192>`__ from
+   NicoWeio/better-errors
+   (```0f9eb0c`` <https://github.com/ActivityWatch/aw-webui/commit/0f9eb0c>`__)
+-  remove dedupe "feature"; rewrite code for display message
+   (```3b1a22f`` <https://github.com/ActivityWatch/aw-webui/commit/3b1a22f>`__)
+-  bugfix: Inconsistency when changing period length
+   (```1704d71`` <https://github.com/ActivityWatch/aw-webui/commit/1704d71>`__)
+-  display error message from API requests if available
+   (```452ac82`` <https://github.com/ActivityWatch/aw-webui/commit/452ac82>`__)
+-  Merge pull request
+   `#190 <https://github.com/ActivityWatch/aw-webui/issues/190>`__ from
+   ActivityWatch/dev/selectable-activity-views
+   (```353634b`` <https://github.com/ActivityWatch/aw-webui/commit/353634b>`__)
+-  refactor: Rename ActivityDaily to just Activity
+   (```bc4e950`` <https://github.com/ActivityWatch/aw-webui/commit/bc4e950>`__)
+-  feature: Make views in summary selectable
+   (```c366500`` <https://github.com/ActivityWatch/aw-webui/commit/c366500>`__)
+-  Merge pull request
+   `#189 <https://github.com/ActivityWatch/aw-webui/issues/189>`__ from
+   ActivityWatch/dev/daily-activity-vuex-refactor2
+   (```a5a9e70`` <https://github.com/ActivityWatch/aw-webui/commit/a5a9e70>`__)
+-  refactor: Made activity_daily vuex more structured and easier to read
+   (```e30bad4`` <https://github.com/ActivityWatch/aw-webui/commit/e30bad4>`__)
+-  Merge pull request
+   `#186 <https://github.com/ActivityWatch/aw-webui/issues/186>`__ from
+   ActivityWatch/dev/make-queries-less-dependent
+   (```6379134`` <https://github.com/ActivityWatch/aw-webui/commit/6379134>`__)
+-  Merge pull request
+   `#185 <https://github.com/ActivityWatch/aw-webui/issues/185>`__ from
+   ActivityWatch/dev/monday-start-of-week
+   (```3451196`` <https://github.com/ActivityWatch/aw-webui/commit/3451196>`__)
+-  Merge pull request
+   `#182 <https://github.com/ActivityWatch/aw-webui/issues/182>`__ from
+   ActivityWatch/dev/demomode-active-history
+   (```fbcb5ab`` <https://github.com/ActivityWatch/aw-webui/commit/fbcb5ab>`__)
+-  Merge pull request
+   `#181 <https://github.com/ActivityWatch/aw-webui/issues/181>`__ from
+   ActivityWatch/dev/edge-browser
+   (```91bdb2c`` <https://github.com/ActivityWatch/aw-webui/commit/91bdb2c>`__)
+-  Merge pull request
+   `#179 <https://github.com/ActivityWatch/aw-webui/issues/179>`__ from
+   ActivityWatch/github-actions
+   (```ed6bed6`` <https://github.com/ActivityWatch/aw-webui/commit/ed6bed6>`__)
+-  Merge pull request
+   `#178 <https://github.com/ActivityWatch/aw-webui/issues/178>`__ from
+   ActivityWatch/dev/better-demomode
+   (```f3fcb20`` <https://github.com/ActivityWatch/aw-webui/commit/f3fcb20>`__)
+-  Merge branch 'dev/better-demomode' of
+   github.com:ActivityWatch/aw-webui into dev/better-demomode
+   (```fdd8052`` <https://github.com/ActivityWatch/aw-webui/commit/fdd8052>`__)
+-  docs: added more activities to demomode
+   (```cc5b437`` <https://github.com/ActivityWatch/aw-webui/commit/cc5b437>`__)
+-  added computation of demo data from single list of events
+   (```f0a06dd`` <https://github.com/ActivityWatch/aw-webui/commit/f0a06dd>`__)
+-  added computation of demo data from single list of events
+   (```1362f2d`` <https://github.com/ActivityWatch/aw-webui/commit/1362f2d>`__)
+-  Merge pull request
+   `#177 <https://github.com/ActivityWatch/aw-webui/issues/177>`__ from
+   ActivityWatch/dev/prettier
+   (```f9c0b40`` <https://github.com/ActivityWatch/aw-webui/commit/f9c0b40>`__)
+-  ran ``make lint-fix``
+   (```a1428a4`` <https://github.com/ActivityWatch/aw-webui/commit/a1428a4>`__)
+-  Merge pull request
+   `#176 <https://github.com/ActivityWatch/aw-webui/issues/176>`__ from
+   ActivityWatch/dev/demomode
+   (```553cceb`` <https://github.com/ActivityWatch/aw-webui/commit/553cceb>`__)
+-  added fully covered examples of data for demomode
+   (```5a47ebe`` <https://github.com/ActivityWatch/aw-webui/commit/5a47ebe>`__)
+-  added lint-fix to Makefile (eslint --fix), now also lints typescript
+   files
+   (```3ea66bb`` <https://github.com/ActivityWatch/aw-webui/commit/3ea66bb>`__)
+-  started working on demo mode
+   (```8f9af1c`` <https://github.com/ActivityWatch/aw-webui/commit/8f9af1c>`__)
+-  Combine aw-webui PR
+   `#173 <https://github.com/ActivityWatch/aw-webui/issues/173>`__
+   (```0b9da98`` <https://github.com/ActivityWatch/aw-webui/commit/0b9da98>`__)
+-  More software to categorize
+   (```755c6f0`` <https://github.com/ActivityWatch/aw-webui/commit/755c6f0>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-qt
+-----
+
+.. _-features-1-1:
+
+✨ Features (1)
+^^^^^^^^^^^^^^
+
+-  feat: switched to using click for the CLI, fixed bugs
+   (```682a73f`` <https://github.com/ActivityWatch/aw-qt/commit/682a73f>`__)
+
+.. raw:: html
+
+   <details><summary><b>🐛 Fixes (8)</b></summary>
+   <p>
+
+-  fix: fixed assumption about pathsep
+   (```b7da7c3`` <https://github.com/ActivityWatch/aw-qt/commit/b7da7c3>`__)
+-  fix: improved module detection, added comments
+   (```1924e3b`` <https://github.com/ActivityWatch/aw-qt/commit/1924e3b>`__)
+-  fix: fixed module detection and naming
+   (```063a00c`` <https://github.com/ActivityWatch/aw-qt/commit/063a00c>`__)
+-  fix: fixed bugs in bundled/system modules
+   (```83cc4db`` <https://github.com/ActivityWatch/aw-qt/commit/83cc4db>`__)
+-  fix: fixed typing checks
+   (```01378f1`` <https://github.com/ActivityWatch/aw-qt/commit/01378f1>`__)
+-  fix: minor cleanup
+   (```f6d26c7`` <https://github.com/ActivityWatch/aw-qt/commit/f6d26c7>`__)
+-  fix: made sip an explicit dependency
+   (see[`#433 <https://github.com/ActivityWatch/aw-qt/issues/433>`__](https://github.com/ActivityWatch/activitywatch/issues/433))
+   (```56cc28c`` <https://github.com/ActivityWatch/aw-qt/commit/56cc28c>`__)
+-  fix: replace webbrowser.open with xdg-open with original
+   LD_LIBRARY_PATH
+   (```bcd27a0`` <https://github.com/ActivityWatch/aw-qt/commit/bcd27a0>`__)
+
+.. raw:: html
+
+   </p></details>
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (32)</b></summary>
+   <p>
+
+-  manager: Fix issue with bundled modules not being detected
+   (```d887ca5`` <https://github.com/ActivityWatch/aw-qt/commit/d887ca5>`__)
+-  manager: Make matching of executables more accurate
+   (```1d421ba`` <https://github.com/ActivityWatch/aw-qt/commit/1d421ba>`__)
+-  Merge pull request
+   `#64 <https://github.com/ActivityWatch/aw-qt/issues/64>`__ from
+   ActivityWatch/dev/fix-module-name-and-filtering
+   (```9a569fa`` <https://github.com/ActivityWatch/aw-qt/commit/9a569fa>`__)
+-  docs: updated README with badges and minimal build instructions
+   (```3db74cd`` <https://github.com/ActivityWatch/aw-qt/commit/3db74cd>`__)
+-  Merge pull request
+   `#56 <https://github.com/ActivityWatch/aw-qt/issues/56>`__ from
+   xylix/dev/improved-module-detection
+   (```839c9fd`` <https://github.com/ActivityWatch/aw-qt/commit/839c9fd>`__)
+-  style: removed unused imports
+   (```157a546`` <https://github.com/ActivityWatch/aw-qt/commit/157a546>`__)
+-  Merge branch 'master' into dev/improved-module-detection
+   (```0a359bd`` <https://github.com/ActivityWatch/aw-qt/commit/0a359bd>`__)
+-  Merge pull request
+   `#59 <https://github.com/ActivityWatch/aw-qt/issues/59>`__ from
+   ActivityWatch/dev/fix-buggy-webbrowser-open
+   (```707b75b`` <https://github.com/ActivityWatch/aw-qt/commit/707b75b>`__)
+-  Get PATH using python's os module instead of getting environment
+   variable and manually splitting
+   (```68314f0`` <https://github.com/ActivityWatch/aw-qt/commit/68314f0>`__)
+-  Merge pull request
+   `#57 <https://github.com/ActivityWatch/aw-qt/issues/57>`__ from
+   xylix/dev/trayicon-color-fix
+   (```eadf39d`` <https://github.com/ActivityWatch/aw-qt/commit/eadf39d>`__)
+-  Let trayicon owning program handle coloring it with filters
+   (```5385d8b`` <https://github.com/ActivityWatch/aw-qt/commit/5385d8b>`__)
+-  Add some informative pydoc comments
+   (```2a6a8da`` <https://github.com/ActivityWatch/aw-qt/commit/2a6a8da>`__)
+-  Recursively find submodules in subdirectories
+   (```9a849ca`` <https://github.com/ActivityWatch/aw-qt/commit/9a849ca>`__)
+-  Remove unnecessary possible_modules config option
+   (```9e4b15e`` <https://github.com/ActivityWatch/aw-qt/commit/9e4b15e>`__)
+-  Add pip cache for macOS, should make pyobjc etc. installation
+   significantly faster
+   (```b14b1be`` <https://github.com/ActivityWatch/aw-qt/commit/b14b1be>`__)
+-  Improve autostart() input typing
+   (```8808f7c`` <https://github.com/ActivityWatch/aw-qt/commit/8808f7c>`__)
+-  Add pyqt type stubs to dev dependencies, nicer mypy output by default
+   (```a7c098c`` <https://github.com/ActivityWatch/aw-qt/commit/a7c098c>`__)
+-  Fix lambda parameter amount to allow termination on sigint / sigkill
+   (```ea9d196`` <https://github.com/ActivityWatch/aw-qt/commit/ea9d196>`__)
+-  Improve type safety and add some info logs / comments
+   (```d4e33cf`` <https://github.com/ActivityWatch/aw-qt/commit/d4e33cf>`__)
+-  Improve mypy typing
+   (```4403d19`` <https://github.com/ActivityWatch/aw-qt/commit/4403d19>`__)
+-  Merge remote-tracking branch 'xylix/dev/autodetect-modules' into
+   dev/improved-module-detection
+   (```2a05ba1`` <https://github.com/ActivityWatch/aw-qt/commit/2a05ba1>`__)
+-  remove 1 unused import, don't treat aw-server as a special case in
+   creating module menu
+   (```7a67423`` <https://github.com/ActivityWatch/aw-qt/commit/7a67423>`__)
+-  Add type hints to new code
+   (```94dc1df`` <https://github.com/ActivityWatch/aw-qt/commit/94dc1df>`__)
+-  rename QTSettings to AwQtSettings and add aw-server-rust
+   (```9dfea4b`` <https://github.com/ActivityWatch/aw-qt/commit/9dfea4b>`__)
+-  Store available and autostart modules lists as configuration. See
+   `#47 <https://github.com/ActivityWatch/aw-qt/issues/47>`__
+   (```a974e2c`` <https://github.com/ActivityWatch/aw-qt/commit/a974e2c>`__)
+-  actually check for module existence in manager
+   (```b7ed55a`` <https://github.com/ActivityWatch/aw-qt/commit/b7ed55a>`__)
+-  fixed typechecking and enabled on Travis
+   (```6db5435`` <https://github.com/ActivityWatch/aw-qt/commit/6db5435>`__)
+-  categorized module menu by location of module
+   (```70cca98`` <https://github.com/ActivityWatch/aw-qt/commit/70cca98>`__)
+-  fixed issue when location in PATH does not exist
+   (```4078647`` <https://github.com/ActivityWatch/aw-qt/commit/4078647>`__)
+-  fixed crash when module couldn't be started
+   (```ba88995`` <https://github.com/ActivityWatch/aw-qt/commit/ba88995>`__)
+-  fixed bundled modules
+   (```fbe3519`` <https://github.com/ActivityWatch/aw-qt/commit/fbe3519>`__)
+-  added basic module autodetection
+   (```53f7dd0`` <https://github.com/ActivityWatch/aw-qt/commit/53f7dd0>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-server
+---------
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (1)</b></summary>
+   <p>
+
+-  docs(README): updated outdated build instructions
+   (`#72 <https://github.com/ActivityWatch/aw-server/issues/72>`__)
+   (```7bab7f0`` <https://github.com/ActivityWatch/aw-server/commit/7bab7f0>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-server-rust
+--------------
+
+.. raw:: html
+
+   <details><summary><b>🐛 Fixes (13)</b></summary>
+   <p>
+
+-  fix: corrected non-standard log dir on macOS (fixes
+   `#187 <https://github.com/ActivityWatch/aw-server-rust/issues/187>`__)
+   (```623dfb4`` <https://github.com/ActivityWatch/aw-server-rust/commit/623dfb4>`__)
+-  fix: correct lookup of asset_path for .app bundles on macOS
+   (```9be9962`` <https://github.com/ActivityWatch/aw-server-rust/commit/9be9962>`__)
+-  fix: Drop single events if corrupted instead of failing whole import
+   (```96cbc9d`` <https://github.com/ActivityWatch/aw-server-rust/commit/96cbc9d>`__)
+-  fix: Replace serde_derive with serdes derive feature for all crates
+   (```5c68853`` <https://github.com/ActivityWatch/aw-server-rust/commit/5c68853>`__)
+-  fix: Set allocator to jemalloc
+   (```eabf9a1`` <https://github.com/ActivityWatch/aw-server-rust/commit/eabf9a1>`__)
+-  fix: Allow floods to merge same event multiple times
+   (```f5bf3cc`` <https://github.com/ActivityWatch/aw-server-rust/commit/f5bf3cc>`__)
+-  fix: Remove unnecessary clones
+   (```db720bf`` <https://github.com/ActivityWatch/aw-server-rust/commit/db720bf>`__)
+-  fix: Fix clippy issues in aw-transform
+   (```158cf60`` <https://github.com/ActivityWatch/aw-server-rust/commit/158cf60>`__)
+-  fix: dependency update needed for new Rust nightly (see
+   https://github.com/ActivityWatch/aw-android/pull/40#issuecomment-651328018)
+   (```ca905a8`` <https://github.com/ActivityWatch/aw-server-rust/commit/ca905a8>`__)
+-  fix: added limit parameter to the JNI wrapper for get_events
+   (```147a2d0`` <https://github.com/ActivityWatch/aw-server-rust/commit/147a2d0>`__)
+-  fix: fixed issue in compile-android.sh script
+   (```c101a87`` <https://github.com/ActivityWatch/aw-server-rust/commit/c101a87>`__)
+-  fix: removed stale .cargo/config and added to .gitignore
+   (```d7bfc23`` <https://github.com/ActivityWatch/aw-server-rust/commit/d7bfc23>`__)
+-  fix: changed cfg(debug_assertions) to is_testing for runtime checks
+   (```96bbb0e`` <https://github.com/ActivityWatch/aw-server-rust/commit/96bbb0e>`__)
+
+.. raw:: html
+
+   </p></details>
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (60)</b></summary>
+   <p>
+
+-  chore: bumped version number to v0.10.0
+   (```f1f5095`` <https://github.com/ActivityWatch/aw-server-rust/commit/f1f5095>`__)
+-  aw-transform: Optimize filter_period_intersect by pre-calculating
+   endtimes
+   (```ebb1fdd`` <https://github.com/ActivityWatch/aw-server-rust/commit/ebb1fdd>`__)
+-  aw-transform: Add benchmark for filter_period_intersect
+   (```4f00b19`` <https://github.com/ActivityWatch/aw-server-rust/commit/4f00b19>`__)
+-  aw-query: Refactor benchmark code
+   (```eabcf74`` <https://github.com/ActivityWatch/aw-server-rust/commit/eabcf74>`__)
+-  Cargo.lock: Update dependencies
+   (```2fc85f3`` <https://github.com/ActivityWatch/aw-server-rust/commit/2fc85f3>`__)
+-  aw-server: Test key_value of different types
+   (```70968e4`` <https://github.com/ActivityWatch/aw-server-rust/commit/70968e4>`__)
+-  Make settings value possibly any json type
+   (```6ecb206`` <https://github.com/ActivityWatch/aw-server-rust/commit/6ecb206>`__)
+-  aw-models: Add custom schema for tryparse
+   (```03fd9cd`` <https://github.com/ActivityWatch/aw-server-rust/commit/03fd9cd>`__)
+-  Cargo.lock: Update dependencies
+   (```7f2bf15`` <https://github.com/ActivityWatch/aw-server-rust/commit/7f2bf15>`__)
+-  aw-models: Add schemars support
+   (```e1131d6`` <https://github.com/ActivityWatch/aw-server-rust/commit/e1131d6>`__)
+-  aw-datastore: Add bucket_id to errors
+   (```5bdd6f3`` <https://github.com/ActivityWatch/aw-server-rust/commit/5bdd6f3>`__)
+-  aw-server: Add Into trait for DatastoreError to HttpErrorJson
+   (```7a19f34`` <https://github.com/ActivityWatch/aw-server-rust/commit/7a19f34>`__)
+-  aw-server: Fix compilation on android
+   (```d985c51`` <https://github.com/ActivityWatch/aw-server-rust/commit/d985c51>`__)
+-  aw-server: Replace all errors with HttpErrorJson
+   (```b14a173`` <https://github.com/ActivityWatch/aw-server-rust/commit/b14a173>`__)
+-  aw-server: Improve HTTP error handling
+   (```3b126cc`` <https://github.com/ActivityWatch/aw-server-rust/commit/3b126cc>`__)
+-  tests: Add more asserts of HTTP body
+   (```a5cbb0d`` <https://github.com/ActivityWatch/aw-server-rust/commit/a5cbb0d>`__)
+-  aw-server: Make UUID part of ServerState
+   (```7f6f63d`` <https://github.com/ActivityWatch/aw-server-rust/commit/7f6f63d>`__)
+-  aw-transform: Add documentation to transforms
+   (```b04d38b`` <https://github.com/ActivityWatch/aw-server-rust/commit/b04d38b>`__)
+-  Update aw-webui
+   (```cc437ea`` <https://github.com/ActivityWatch/aw-server-rust/commit/cc437ea>`__)
+-  Update Cargo.lock
+   (```f3c2ede`` <https://github.com/ActivityWatch/aw-server-rust/commit/f3c2ede>`__)
+-  aw-transform: fix: If events merge during flood, choose the longest
+   endtime
+   (```091362f`` <https://github.com/ActivityWatch/aw-server-rust/commit/091362f>`__)
+-  tests: Added another heartbeat test
+   (```2102597`` <https://github.com/ActivityWatch/aw-server-rust/commit/2102597>`__)
+-  query: Add VarEnv type alias
+   (```420d691`` <https://github.com/ActivityWatch/aw-server-rust/commit/420d691>`__)
+-  Merge pull request
+   `#137 <https://github.com/ActivityWatch/aw-server-rust/issues/137>`__
+   from ActivityWatch/dev/get_events-limit-jni
+   (```4c6dd98`` <https://github.com/ActivityWatch/aw-server-rust/commit/4c6dd98>`__)
+-  Merge pull request
+   `#135 <https://github.com/ActivityWatch/aw-server-rust/issues/135>`__
+   from ActivityWatch/dev/android-vendored-openssl
+   (```9e796b4`` <https://github.com/ActivityWatch/aw-server-rust/commit/9e796b4>`__)
+-  aw-webui: Update submodule
+   (```b3aa756`` <https://github.com/ActivityWatch/aw-server-rust/commit/b3aa756>`__)
+-  aw-query: Add function filter_keyvals_regex
+   (```132370b`` <https://github.com/ActivityWatch/aw-server-rust/commit/132370b>`__)
+-  aw-transform: Avoid cloning in filter_keyvals
+   (```5185b5d`` <https://github.com/ActivityWatch/aw-server-rust/commit/5185b5d>`__)
+-  aw-transform: Add filter_keyvals_regex
+   (```fa842f6`` <https://github.com/ActivityWatch/aw-server-rust/commit/fa842f6>`__)
+-  README: Fix broken build status badge
+   (```0dbd57f`` <https://github.com/ActivityWatch/aw-server-rust/commit/0dbd57f>`__)
+-  aw-server: Refactor dirs, add tests do dirs and logging
+   (```9b406fc`` <https://github.com/ActivityWatch/aw-server-rust/commit/9b406fc>`__)
+-  aw-query: Fix unnecessary lifetime parameter and references
+   (```826b78a`` <https://github.com/ActivityWatch/aw-server-rust/commit/826b78a>`__)
+-  aw-query: Add simple benchmarks
+   (```edc9b3f`` <https://github.com/ActivityWatch/aw-server-rust/commit/edc9b3f>`__)
+-  aw-query: Removed cloning from assigns
+   (```39cccb3`` <https://github.com/ActivityWatch/aw-server-rust/commit/39cccb3>`__)
+-  Cargo.lock: Update dependencies
+   (```9184a35`` <https://github.com/ActivityWatch/aw-server-rust/commit/9184a35>`__)
+-  aw-query: fix clippy error
+   (```882385f`` <https://github.com/ActivityWatch/aw-server-rust/commit/882385f>`__)
+-  chore: updated aw-webui
+   (```7ede519`` <https://github.com/ActivityWatch/aw-server-rust/commit/7ede519>`__)
+-  aw-server: rustfmt fix
+   (```c6cd1d5`` <https://github.com/ActivityWatch/aw-server-rust/commit/c6cd1d5>`__)
+-  aw-server: Remove unused catchers
+   (```0b75663`` <https://github.com/ActivityWatch/aw-server-rust/commit/0b75663>`__)
+-  aw-server: Set content type for more endpoints
+   (```00c001b`` <https://github.com/ActivityWatch/aw-server-rust/commit/00c001b>`__)
+-  codecov.yml: Set diff target to a low value
+   (```e15fe1c`` <https://github.com/ActivityWatch/aw-server-rust/commit/e15fe1c>`__)
+-  codecov.yml: Disable coverage requirement
+   (```7f98e25`` <https://github.com/ActivityWatch/aw-server-rust/commit/7f98e25>`__)
+-  Fix database location when running with --testing
+   (```642a531`` <https://github.com/ActivityWatch/aw-server-rust/commit/642a531>`__)
+-  cargo: Update dependencies
+   (```335417e`` <https://github.com/ActivityWatch/aw-server-rust/commit/335417e>`__)
+-  cargo: Remove some features from multipart to get fewer dependencies
+   (```ccff0e4`` <https://github.com/ActivityWatch/aw-server-rust/commit/ccff0e4>`__)
+-  aw-server: Clippy fixes
+   (```4ceb9c2`` <https://github.com/ActivityWatch/aw-server-rust/commit/4ceb9c2>`__)
+-  aw-client-rust: Clippy fixes
+   (```718ebfd`` <https://github.com/ActivityWatch/aw-server-rust/commit/718ebfd>`__)
+-  aw-datastore: Clippy fix and refactoring of worker
+   (```6f5200d`` <https://github.com/ActivityWatch/aw-server-rust/commit/6f5200d>`__)
+-  aw-datastore: Make reload test force commit
+   (```34d2dec`` <https://github.com/ActivityWatch/aw-server-rust/commit/34d2dec>`__)
+-  aw-datastore: Guarantee DB commit every 15 seconds
+   (```17dff67`` <https://github.com/ActivityWatch/aw-server-rust/commit/17dff67>`__)
+-  aw-server: Increase default log levels further
+   (```afbb70c`` <https://github.com/ActivityWatch/aw-server-rust/commit/afbb70c>`__)
+-  aw-server: Added option parsing and --testing option
+   (```c34b7f6`` <https://github.com/ActivityWatch/aw-server-rust/commit/c34b7f6>`__)
+-  aw-server: Pass AWConfig as a Rocket state
+   (```cd00f31`` <https://github.com/ActivityWatch/aw-server-rust/commit/cd00f31>`__)
+-  aw-query: Fix clippy issues
+   (```6f69b8b`` <https://github.com/ActivityWatch/aw-server-rust/commit/6f69b8b>`__)
+-  cleaned up testing/production detection
+   (```5b52961`` <https://github.com/ActivityWatch/aw-server-rust/commit/5b52961>`__)
+-  moved log directory to make it aw-qt compatible
+   (```6024d7d`` <https://github.com/ActivityWatch/aw-server-rust/commit/6024d7d>`__)
+-  reduced logging and simplified logging pipeline
+   (```d456981`` <https://github.com/ActivityWatch/aw-server-rust/commit/d456981>`__)
+-  Merge pull request
+   `#105 <https://github.com/ActivityWatch/aw-server-rust/issues/105>`__
+   from ActivityWatch/dev/github-actions
+   (```f2afa99`` <https://github.com/ActivityWatch/aw-server-rust/commit/f2afa99>`__)
+-  docs: updated README
+   (```62be9f4`` <https://github.com/ActivityWatch/aw-server-rust/commit/62be9f4>`__)
+-  Create rust.yml
+   (```d7e75dd`` <https://github.com/ActivityWatch/aw-server-rust/commit/d7e75dd>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-watcher-afk
+--------------
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (2)</b></summary>
+   <p>
+
+-  Merge pull request
+   `#40 <https://github.com/ActivityWatch/aw-watcher-afk/issues/40>`__
+   from ActivityWatch/doc/readme-update
+   (```32d7647`` <https://github.com/ActivityWatch/aw-watcher-afk/commit/32d7647>`__)
+-  doc: Update install instructions in README.md
+   (```c06bcab`` <https://github.com/ActivityWatch/aw-watcher-afk/commit/c06bcab>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-watcher-window
+-----------------
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (14)</b></summary>
+   <p>
+
+-  Merge pull request
+   `#41 <https://github.com/ActivityWatch/aw-watcher-window/issues/41>`__
+   from xylix/dev/macos-ask-for-permission
+   (```48491bc`` <https://github.com/ActivityWatch/aw-watcher-window/commit/48491bc>`__)
+-  Merge branch 'master' into dev/macos-ask-for-permission
+   (```724a3e2`` <https://github.com/ActivityWatch/aw-watcher-window/commit/724a3e2>`__)
+-  Merge pull request
+   `#44 <https://github.com/ActivityWatch/aw-watcher-window/issues/44>`__
+   from ActivityWatch/doc/readme-update
+   (```fbec7ed`` <https://github.com/ActivityWatch/aw-watcher-window/commit/fbec7ed>`__)
+-  doc: Add install instructions to README.md
+   (```bc33438`` <https://github.com/ActivityWatch/aw-watcher-window/commit/bc33438>`__)
+-  remove execution blocking from macos.py, move macos permission check
+   in main.py after logging has bene initialized
+   (```b829e04`` <https://github.com/ActivityWatch/aw-watcher-window/commit/b829e04>`__)
+-  Fix types in Process args, remove hardcoded development False
+   (```3ad2af6`` <https://github.com/ActivityWatch/aw-watcher-window/commit/3ad2af6>`__)
+-  Update lockfile post merge
+   (```04d8269`` <https://github.com/ActivityWatch/aw-watcher-window/commit/04d8269>`__)
+-  Merge branch 'master' into dev/macos-ask-for-permission
+   (```aa841c2`` <https://github.com/ActivityWatch/aw-watcher-window/commit/aa841c2>`__)
+-  Use multiprocessing for background perm check execution.
+   (```0943007`` <https://github.com/ActivityWatch/aw-watcher-window/commit/0943007>`__)
+-  Merge pull request
+   `#42 <https://github.com/ActivityWatch/aw-watcher-window/issues/42>`__
+   from ActivityWatch/dev/github-actions
+   (```620b52c`` <https://github.com/ActivityWatch/aw-watcher-window/commit/620b52c>`__)
+-  Start running perm dialog in a background thread
+   (```f032ed1`` <https://github.com/ActivityWatch/aw-watcher-window/commit/f032ed1>`__)
+-  Add accessibility settings link button
+   (```890b6d6`` <https://github.com/ActivityWatch/aw-watcher-window/commit/890b6d6>`__)
+-  Platform restrict pyobjc deps
+   (```6c2c1e5`` <https://github.com/ActivityWatch/aw-watcher-window/commit/6c2c1e5>`__)
+-  Use AppKit to figure if we have accessbility perms and pyobjc to ask
+   for them
+   (```82e90b2`` <https://github.com/ActivityWatch/aw-watcher-window/commit/82e90b2>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-client
+---------
+
+.. _-features-2:
+
+✨ Features (2)
+^^^^^^^^^^^^^^
+
+-  feat: added better output when overlapping events found
+   (```52937c4`` <https://github.com/ActivityWatch/aw-client/commit/52937c4>`__)
+-  feat: added merge_buckets.py example
+   (```5b9977f`` <https://github.com/ActivityWatch/aw-client/commit/5b9977f>`__)
+
+.. raw:: html
+
+   <details><summary><b>🐛 Fixes (1)</b></summary>
+   <p>
+
+-  fix: fixed minor things (docs, wrongly commented out code) in
+   examples/merge_buckets.py
+   (```839e1ba`` <https://github.com/ActivityWatch/aw-client/commit/839e1ba>`__)
+
+.. raw:: html
+
+   </p></details>
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (2)</b></summary>
+   <p>
+
+-  Merge pull request
+   `#49 <https://github.com/ActivityWatch/aw-client/issues/49>`__ from
+   ActivityWatch/doc/readme-update
+   (```bd8a953`` <https://github.com/ActivityWatch/aw-client/commit/bd8a953>`__)
+-  doc: Add install instructions to README.md
+   (```3a4367c`` <https://github.com/ActivityWatch/aw-client/commit/3a4367c>`__)
+
+.. raw:: html
+
+   </p></details>
+
+aw-core
+-------
+
+.. _-features-1-2:
+
+✨ Features (1)
+^^^^^^^^^^^^^^
+
+-  feat: log unhandled exceptions
+   (```6ba8f97`` <https://github.com/ActivityWatch/aw-core/commit/6ba8f97>`__)
+
+.. raw:: html
+
+   <details><summary><b>🐛 Fixes (2)</b></summary>
+   <p>
+
+-  fix: fixed bug when passing unsorted lists into
+   \_intersecting_eventpairs and added test for it
+   (```216e9fc`` <https://github.com/ActivityWatch/aw-core/commit/216e9fc>`__)
+-  fix: fixed case where heartbeat with similar timestamp could shorten
+   previous event
+   (```0444be3`` <https://github.com/ActivityWatch/aw-core/commit/0444be3>`__)
+
+.. raw:: html
+
+   </p></details>
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (10)</b></summary>
+   <p>
+
+-  style: fixed code formatting
+   (```8775e04`` <https://github.com/ActivityWatch/aw-core/commit/8775e04>`__)
+-  refactor: extracted TimePeriod class to timeslot repo
+   (```e4a2b53`` <https://github.com/ActivityWatch/aw-core/commit/e4a2b53>`__)
+-  test: added test for intersecting eventpairs
+   (```5f75f65`` <https://github.com/ActivityWatch/aw-core/commit/5f75f65>`__)
+-  test: changed categorization test to include backslash-metacharacter
+   (\w)
+   (```e83f3f8`` <https://github.com/ActivityWatch/aw-core/commit/e83f3f8>`__)
+-  docs: fixed CI badge, added better summary of contained modules
+   (```c38b814`` <https://github.com/ActivityWatch/aw-core/commit/c38b814>`__)
+-  style: formatted everything with Black
+   (```eda4ff6`` <https://github.com/ActivityWatch/aw-core/commit/eda4ff6>`__)
+-  tests: Add test for heartbeats with same timestamp
+   (```296647e`` <https://github.com/ActivityWatch/aw-core/commit/296647e>`__)
+-  Merge pull request
+   `#90 <https://github.com/ActivityWatch/aw-core/issues/90>`__ from
+   ActivityWatch/doc/readme-update
+   (```a6a9a9e`` <https://github.com/ActivityWatch/aw-core/commit/a6a9a9e>`__)
+-  doc: Add install instructions to README.md
+   (```e7e1b5b`` <https://github.com/ActivityWatch/aw-core/commit/e7e1b5b>`__)
+-  Merge pull request
+   `#89 <https://github.com/ActivityWatch/aw-core/issues/89>`__ from
+   ActivityWatch/dev/github-actions
+   (```b2d9179`` <https://github.com/ActivityWatch/aw-core/commit/b2d9179>`__)
+
+.. raw:: html
+
+   </p></details>
+
+media
+-----
+
+.. raw:: html
+
+   <details><summary><b>🔨 Misc (1)</b></summary>
+   <p>
+
+-  Remove unnecessary logo after automatic dark mode recoloration
+   (```cb597f7`` <https://github.com/ActivityWatch/media/commit/cb597f7>`__)
+
+.. raw:: html
+
+   </p></details>
