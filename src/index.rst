@@ -1,10 +1,18 @@
-.. image:: banner.png
+.. image:: ../media/banners/banner.png
+
+|
+
+.. include:: badges.rst
+
+|
 
 Welcome to the ActivityWatch documentation!
 ===========================================
 
 If you are new to ActivityWatch, check out the :ref:`Getting started guide <getting-started>`.
 
+Table of contents
+-----------------
 
 .. _user-docs:
 .. toctree::
@@ -38,12 +46,13 @@ If you are new to ActivityWatch, check out the :ref:`Getting started guide <gett
    examples
    api
    security
+   server-compare
    development
    changelog
 
 
 Indices and tables
-==================
+------------------
 
 * :ref:`genindex`
 * :ref:`modindex`

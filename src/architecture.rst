@@ -34,8 +34,8 @@ User interfaces
 
 ActivityWatch currently has two user interfaces, aw-qt and aw-webui.
 
- - :gh-aw:`aw-qt` - Manages the server and watchers to make ActivityWatch easy to use for end-users.
- - :gh-aw:`aw-webui` - Offers visualization and an overview of the database. Hosted by aw-server in the bundle.
+- :gh-aw:`aw-qt` - Manages the server and watchers to make ActivityWatch easy to use for end-users.
+- :gh-aw:`aw-webui` - Offers visualization and an overview of the database. Hosted by aw-server in the bundle.
 
 Libraries
 ---------
@@ -47,10 +47,10 @@ aw-core
 
 The aw-core library contains many of the essential parts of ActivityWatch, notably:
 
- - The `buckets-and-events`
- - The datastore layer
- - Event transformation and queries
- - Utilities (configuration, logging, decorators)
+- The `buckets-and-events`
+- The datastore layer
+- Event transformation and queries
+- Utilities (configuration, logging, decorators)
 
 aw-client
 ^^^^^^^^^
@@ -60,9 +60,9 @@ A client could both be a watcher which sends data as well as a visualizer which 
 
 Currently the primary client library is written in Python (known simply as aw-client) but a client library written in JavaScript is on the way and is expected to have the same level of support in the future.
 
- - :gh-aw:`aw-client` (Python)
- - :gh-aw:`aw-client-js` (TypeScript/JavaScript, beta)
- - :gh-aw:`aw-client-rust` (Rust, work in progress)
+- :gh-aw:`aw-client` (Python)
+- :gh-aw:`aw-client-js` (TypeScript/JavaScript, beta)
+- :gh-aw:`aw-client-rust` (Rust, work in progress)
 
 aw-analysis
 ^^^^^^^^^^^

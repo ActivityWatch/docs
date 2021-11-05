@@ -8,14 +8,21 @@ packages = [{ include = "src/" }]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-sphinx = "^4.0"
-sphinx-autobuild = "*"
-sphinx_rtd_theme = "*"
-recommonmark = "^0.7.0"
+
+# Packages to document
 aw-core = {git = "https://github.com/ActivityWatch/aw-core.git", rev = "master"}
 aw-server = {git = "https://github.com/ActivityWatch/aw-server.git", rev = "master"}
 aw-client = {git = "https://github.com/ActivityWatch/aw-client.git", rev = "master"}
+
+# Doc build deps
+sphinx = "^4.0"
+sphinx-autobuild = "*"
+sphinx_rtd_theme = "*"
+sphinx-book-theme = "*"
 sphinx-tabs = "^3.0"
+m2r2 = "*"
+myst-parser = "*"
+recommonmark = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 
