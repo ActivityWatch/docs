@@ -4,7 +4,7 @@
 Changelog
 =========
 
-.. note:: These changelogs are badly formatted and may be incomplete (especially for old versions).
+.. note:: These changelogs are badly formatted and may be incomplete (especially for old versions). They are generated semi-automatically `using commit history <https://github.com/ActivityWatch/activitywatch/blob/master/scripts/build_changelog.py>`_ and manual modifications.
 
 You may find more information about a release on the `releases page <https://github.com/ActivityWatch/activitywatch/releases>`_.
 

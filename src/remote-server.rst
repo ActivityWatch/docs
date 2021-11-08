@@ -63,6 +63,8 @@ Previous discussions
 
 Links to discussions on the topic:
 
+- `"Multiple instance Activitywatch remote server setup for time tracking" <https://wsdookadr.github.io/posts/p6/>`_ by :gh-user:`wsdookadr`
 - https://forum.activitywatch.net/t/activitywatch-as-employee-monitoring-software/499/2
 - https://forum.activitywatch.net/t/oauth2-or-pretty-much-any-authentication/75/6
-- There is more written about this in issues, on the forum, and on the Discord server. Use the search, Luke.
+
+There is more written about this in issues, on the forum, and on the Discord server. Use the search, Luke.
