@@ -22,6 +22,8 @@ How can I use ActivityWatch with my own code?
 
 See the `Examples` for different ways to use ActivityWatch programmatically.
 
+.. _how-does-aw-know-when-im-afk:
+
 How does ActivityWatch know when I am AFK?
 ------------------------------------------
 
@@ -32,6 +34,8 @@ On Linux, we monitor all mouse and keyboard activity to calculate the time
 since last input. We do not store what that activity was, just that it happened.
 
 Using this data (seconds since last input) we check if more than 3 minutes have passed without any input. If that is the case, we assume that you've been AFK since the last input was received. You'll be assumed to be active again on next input.
+
+If the browser watcher is running, the user will also by default be considered to not be AFK when the active browser tab has sound playing from it. This helps when the user for example watches a video or is in a video/audio meeting.
 
 Why is the active window logged as "unknown" when using Wayland?
 ----------------------------------------------------------------
@@ -45,6 +49,19 @@ Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all
 *Solution:* Switch to using X11 (the best option), and if you can't: bother the developer of your Wayland compositor.
 
 You can see the general status of the ability of `getting the active window in Wayland on StackOverflow <https://stackoverflow.com/questions/45465016/how-do-i-get-the-active-window-on-gnome-wayland>`_ or follow `the issue for ActivityWatch tracking the problem <https://github.com/ActivityWatch/activitywatch/issues/92>`_.
+
+How accurate is ActivityWatch?
+------------------------------
+
+The design of ActivityWatch is that it consists of multiple watchers which reports different types of activity.
+Each watcher has its different flaws in accuracy for different reasons.
+An example for the window watcher could be reporting that your activity is on a certain window, while the user is looking at another window than the one currently being focused.
+Another example but for the AFK watcher would be that the user might be engaged in something on the computer without using the mouse or keyboard (see :ref:`How does ActivityWatch know when I am AFK? <how-does-aw-know-when-im-afk>`).
+These examples are not an comprehensive list of all flaws in the accuracy of these watchers.
+
+The data that ActivityWatch collects and the stats it can present can only be seen as an estimate.
+The accuracy will vary depending on use-case and depending on what data you are looking at.
+Even if the tracking was perfect, what should be considered being "active" is subjective.
 
 What happens if it is down or crashes?
 --------------------------------------
