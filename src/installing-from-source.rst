@@ -22,6 +22,12 @@ Or, if you've already cloned normally, you can clone the submodules using:
 
    git submodule update --init --recursive
 
+If you want to ensure you have the latest version of all submodules, preserving any feature branches you have:
+
+.. code-block:: sh
+
+   git submodule foreach --recursive git pull
+
 Checking dependencies
 ---------------------
 
