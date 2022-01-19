@@ -22,6 +22,12 @@ Or, if you've already cloned normally, you can clone the submodules using:
 
    git submodule update --init --recursive
 
+If you want to ensure you have the latest version of all submodules, preserving any feature branches you have:
+
+.. code-block:: sh
+
+   git submodule foreach --recursive git pull
+
 Checking dependencies
 ---------------------
 
@@ -31,7 +37,7 @@ You need:
 - `Python 3.7 to 3.9 <https://www.python.org/downloads/>`_, check with :code:`python3 -V` (required to build the core components)
 - `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
 - `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
-- `Rust nightly <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_ (nightly can be installed using :code:`rustup`), check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
+- `Rust nightly <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_ (nightly can be installed using :code:`rustup update`), check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
 
 **For Windows users:**
 
@@ -73,6 +79,8 @@ Now activate the virtualenv in your current shell session:
 
 All the modules need to be installed in the same env in order to avoid build issues. This is why creating a single venv for all activitywatch repos is important and why relying on poetry to setup a per-folder venv is not an option.
 
+The watchers all use the published versions of :code:`aw-client`. If you want to use a development version of this client, you'll need to override the definition in the :code:`pyproject.toml` file via :code:`aw-client = {path = "../aw-client" }`.
+
 Building and installing
 -----------------------
 
@@ -96,6 +104,7 @@ There are two ways to run ActivityWatch:
 2. Start each module separately (Recommended for developing)
 
    - Run from your terminal with: :code:`aw-server`, :code:`aw-watcher-afk`, and :code:`aw-watcher-window`
+   - For the rust server, run with: :code:`aw-server-rust/target/package/aw-server-rust`
 
 Both methods take the :code:`--testing` flag as a command line parameter to run in testing mode. This runs the server on a different port (5666) and uses a separate database file to avoid mixing your important data with your testing data.
 
