@@ -17,4 +17,5 @@ For the ones who believe they can adequately protect their data, they should be 
 While we figure out how to best implement this feature, here are some options:
 
 - Manually `pausing logging <./pausing-logging.html>`_.
-- Redacting sensitive events from the database using the ``redact_events.py`` example in :gh-aw:`aw-client`.
+- Redacting sensitive events from the database using the ``redact_sensitive.py`` example in :gh-aw:`aw-client` (https://github.com/ActivityWatch/aw-client/tree/master/examples).
+- Open the sqlite database, search and delete the events manually.
