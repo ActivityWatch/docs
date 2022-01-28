@@ -41,7 +41,7 @@ Why is the active window logged as "unknown" when using Wayland?
 ----------------------------------------------------------------
 
 The Wayland protocol does not have a notion of an active window, and it is unlikely to ever have.
-Wayland is also developed in security in mind, so access should be handed out on an app-by-app basis.
+Wayland is also developed with security in mind, so access should be handed out on an app-by-app basis.
 This is a good idea, any application shouldn't just give that privacy-sensitive information away freely.
 
 Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all to get the current window, this leaves the window watcher completely disabled in Wayland.
@@ -53,11 +53,11 @@ You can see the general status of the ability of `getting the active window in W
 How accurate is ActivityWatch?
 ------------------------------
 
-The design of ActivityWatch is that it consists of multiple watchers which reports different types of activity.
-Each watcher has its different flaws in accuracy for different reasons.
-An example for the window watcher could be reporting that your activity is on a certain window, while the user is looking at another window than the one currently being focused.
-Another example but for the AFK watcher would be that the user might be engaged in something on the computer without using the mouse or keyboard (see :ref:`How does ActivityWatch know when I am AFK? <how-does-aw-know-when-im-afk>`).
-These examples are not an comprehensive list of all flaws in the accuracy of these watchers.
+The design of ActivityWatch is that it consists of multiple watchers which report different types of activities.
+Each watcher has its own flaws in accuracy for different reasons.
+An example is the window watcher, which could be reporting that the user's activity is on a certain window, while the user is looking at another window and not the one that is currently in focus.
+Another example, but for the AFK watcher would be that the user might be engaged in something on the computer without using the mouse or keyboard (see :ref:`How does ActivityWatch know when I am AFK? <how-does-aw-know-when-im-afk>`).
+These examples are not a comprehensive list of all flaws in the accuracy of these watchers.
 
 The data that ActivityWatch collects and the stats it can present can only be seen as an estimate.
 The accuracy will vary depending on use-case and depending on what data you are looking at.
@@ -82,7 +82,7 @@ Some events have 0 duration. What does this mean?
 -------------------------------------------------
 
 `Watchers` most commonly use a polling method called `heartbeats` in order to store information on the server.
-Heartbeats are received regularly with some data, and when two consecutive heartbeats have identical data they get merged and the duration of the new one becomes the time difference between the previous two.
+Heartbeats are received regularly with some data, and when two consecutive heartbeats have identical data, they get merged and the duration of the new one becomes the time difference between the previous two.
 Sometimes, a single heartbeat doesn't get a following event with identical data. It is then impossible to know the exact duration of that event, so the assumption about when it really started/ended will be postponed until the analysis stage (usually handled with :py:func:`flooding <aw_transform.flood>`).
 
 The assumption could be made to consider all zero-duration events actually have a duration equal to the time of the next event, but all such assumptions are left to the analysis stage.
