@@ -5,7 +5,7 @@
       <b>
         <a href="https://activitywatch.net/">Website</a>
         — <a href="https://forum.activitywatch.net/">Forum</a>
-        — <a href="https://activitywatch.readthedocs.io">Documentation</a>
+        — <a href="https://docs.activitywatch.net/">Documentation</a>
         — <a href="https://github.com/ActivityWatch/activitywatch/releases">Releases</a>
       </b>
 
