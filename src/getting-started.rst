@@ -18,7 +18,7 @@ Installation
    .. group-tab:: macOS
 
       .. note::
-         macOS 10.15 (Catalina) introduced some complications for running ActivityWatch, see :issue:`334`.
+         macOS >10.15 (Catalina) introduced some complications for running ActivityWatch (privacy and application permissions), see :issue:`334` for post install steps needed to allow ActivityWatch to read the current active window / application (ActivityWatch shows window name and application name as `unknown` without these steps.
 
       Download the ``.dmg`` for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_ and drag the ``.app`` to your Applications folder as usual, then add it to your autostart applications.
 
