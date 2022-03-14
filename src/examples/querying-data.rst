@@ -49,13 +49,11 @@ Example combining window and AFK events:
 
     .. code-block:: bash
 
-        window_events = query_bucket("window_bucket");
-        not_afk_events = query_bucket("afk_bucket");
-        not_afk_events = filter_keyvals(not_afk_events, "status", ["not-afk"]);
-        window_events = filter_period_intersect(window_events, not_afk_events);
-        events = merge_events_by_keys(window_events, "appname");
-        events = sort_by_duration(events);
-        RETURN = events;
+        afk_events = query_bucket(find_bucket("aw-watcher-afk_"));
+        window_events = query_bucket(find_bucket("aw-watcher-window_"));
+        window_events = filter_period_intersect(window_events, filter_keyvals(afk_events, "status", ["not-afk"]));
+        merged_events = merge_events_by_keys(window_events, ["app", "title"]);
+        RETURN = sort_by_duration(merged_events);
 
 Example including aw-client:
     This is an example of how you can do analysis and aggregation with the query method in Python with aw-client.
