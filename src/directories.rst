@@ -9,7 +9,7 @@ Data
 ----
 
 - Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
-- macOS: ``~/Library/Application Support/activitywatch``
+- macOS: ``~/Library/Application\ Support/activitywatch``
 - Linux: ``~/.local/share/activitywatch``
 
 .. _config-directory:
