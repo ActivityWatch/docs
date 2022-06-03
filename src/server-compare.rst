@@ -9,6 +9,7 @@ The are two server implementations:
 These two are almost at feature parity. Here we've documented some differences:
 
 - aw-server-rust does not serve the API browser (provided by Swagger/OpenAPI) at ``/api/``
+- aw-server-rust does not support the experimental ``custom_static`` feature (see :gh-aw:`aw-server PR #83 <aw-server/pull/83>`).
 
 Transforms
 ----------

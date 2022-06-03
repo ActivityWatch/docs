@@ -1,7 +1,7 @@
 Remote server
 =============
 
-Some users ask us if they can run the ActivityWatch server on a separate machine and have other machines report to it, resulting in data from multiple devices on a single ActivityWatch instance. 
+Some users ask us if they can run the ActivityWatch server on a separate machine and have other machines report to it, resulting in data from multiple devices on a single ActivityWatch instance.
 
 While this is technically possible, it is **not supported** and **strongly discouraged**.
 
@@ -46,6 +46,9 @@ I know what I'm doing, how can I set it up anyway?
 
 .. note:: This is intentionally incomplete documentation, you're expected to figure the rest out yourself (and if you can't, you probably shouldn't try).
 
+SSH tunnel
+^^^^^^^^^^
+
 If you against these warnings decide to run a remote server that watchers report to, there is **only one** somewhat secure way of doing it: Use an SSH tunnel.
 
 The benefits of using an SSH tunnel is that you don't need to expose aw-server directly to the network, and you don't need to change any of the default watcher configuration (although you do need to disable autostarting aw-server in aw-qt, if you use it).
@@ -57,6 +60,28 @@ Known issues:
 - Not possible with ActivityWatch for Android, as it does not use the REST API to report events.
 - You can't have web watchers from multiple machines stored on the same server (non-unique bucket IDs, no hostname/device ID set)
 
+Opening the server to the network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. warning:: This is unsafe! (unless you *really* know what you are doing)
+
+If you decide to not heed our warning, you can open the server to the network by setting the following `configuration`:
+
+.. highlight:: toml
+aw-server.toml::
+
+    [server]
+    address = "0.0.0.0"   # or the IP address of your network interface of choice
+    cors_origins = "*"    # or a list of allowed origins, e.g. "http://<remote IP>:5600"
+    # leave other settings as-is
+
+To then redirect events from local watchers to that server, you can use the following client configuration:
+
+aw-client.toml::
+
+        [server]
+        hostname = "http://<remote IP>:5600"
+        # leave other settings as-is
 
 Previous discussions
 --------------------
