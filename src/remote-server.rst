@@ -79,9 +79,9 @@ To then redirect events from local watchers to that server, you can use the foll
 
 aw-client.toml::
 
-        [server]
-        hostname = "http://<remote IP>:5600"
-        # leave other settings as-is
+    [server]
+    hostname = "<remote IP>"
+    # leave other settings as-is
 
 Previous discussions
 --------------------
