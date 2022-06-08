@@ -7,7 +7,28 @@ In some cases, such as in an upgrade, ActivityWatch needs to migrate data. Usual
 Migrating to aw-server-rust
 ===========================
 
-In an upcoming version, ActivityWatch will switch the default server implementation from aw-server (hereafter aw-server-python for clarity) to aw-server-rust. On aw-server-rust startup, if no database already exists, it will automatically look for an aw-server-python database (only the default peewee datastore supported) and import it into the new database. This can cause some slowness on first startup, especially if you have a large aw-server-python database.
+In an upcoming version, ActivityWatch will switch the default server implementation from aw-server (hereafter aw-server-python for clarity) to aw-server-rust. The reason for this is that aw-server-rust has far superior performance, and has almost full feature parity with aw-server-python (see `server comparison`).
+
+
+Using aw-server-rust by default
+-------------------------------
+
+To set aw-server-rust to be automatically started instead of aw-server-python, you need to go into the `Configuration` file ``aw-qt.toml`` (located in the config `Directory`) and set it to the following:
+
+.. code-block::
+
+    [aw-qt]
+    autostart_modules = ["aw-server-rust", "aw-watcher-afk", "aw-watcher-window"]
+
+Make sure you've uncommented the lines, as otherwise they won't be read.
+
+Now you should be able to just restart aw-qt, wait for the initial import from aw-server-python to happen (might take a few minutes, depending on db size), and then you should be good to go!
+
+
+Importing from aw-server-python
+-------------------------------
+
+On aw-server-rust startup, if no database already exists, it will automatically look for an aw-server-python database (only the default peewee datastore supported) and import it into the new database. This can cause some slowness on first startup, especially if you have a large aw-server-python database.
 
 If you've ran aw-server-rust before that version, but switched back, this import has already been triggered, and the import will therefore not run a second time. This can cause you to have old data in the aw-server-rust database. You can retrigger the import by stopping aw-server-rust, moving/removing your aw-server-rust database file, and then starting aw-server-rust again.
 
