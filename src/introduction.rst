@@ -45,7 +45,7 @@ It's important that we collect and store data in the highest reasonable resoluti
 data with lossy heuristics.
 
 Many services doing collection and analysis of QS data today don't actually store the raw data but instead
-store only summaries (such as only storing how long you used an applicatin during a given hour, instead of
+store only summaries (such as only storing how long you used an application during a given hour, instead of
 storing the individual uses). This is a problem with existing services: they store summarized data instead of the raw data.
 
 This is indicative of the fact that they actually lack a long-term plan. They want to provide a certain type of analysis *today* but aren't planning for an unknown future with more powerful tools. At ActivityWatch, we expect to want to do some unknown analysis in the future for which we might need the raw data, and so to prepare for that we collect data in as much granularity as we can.
