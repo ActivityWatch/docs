@@ -37,6 +37,7 @@ Table of contents
    :caption: Developer documentation
 
    installing-from-source
+   cli
    architecture
    buckets-and-events
    examples

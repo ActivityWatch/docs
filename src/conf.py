@@ -53,6 +53,10 @@ extlinks = {
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
+# True to prefix each section label with the name of the document it is in, followed by a colon.
+# For example, index:Introduction for a section called Introduction that appears in document index.rst. Useful for avoiding ambiguity when the same section heading appears in different documents.
+autosectionlabel_prefix_document = False
+
 # The parser(s) and suffix(es) of source filenames.
 # source_parsers = {
 #     ".md": CommonMarkParser,

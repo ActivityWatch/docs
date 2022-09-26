@@ -13,7 +13,7 @@ In an upcoming version, ActivityWatch will switch the default server implementat
 Using aw-server-rust by default
 -------------------------------
 
-To set aw-server-rust to be automatically started instead of aw-server-python, you need to go into the `Configuration` file ``aw-qt.toml`` (located in the config `Directory`) and set it to the following:
+To set aw-server-rust to be automatically started instead of aw-server-python, you need to go into the `Configuration` file ``aw-qt.toml`` (located in the config :doc:`directories`) and set it to the following:
 
 .. code-block::
 

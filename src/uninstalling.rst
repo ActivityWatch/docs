@@ -1,14 +1,11 @@
-.. _updating:
-
-************
 Uninstalling
-************
+============
 
 Uninstalling ActivityWatch should be straight forward
 
 If you've installed using an installer (Windows) you should be able to uninstall it like any other Windows application (through the 'Programs and Features' section in the Control Panel).
 
-If you've installed by extracting a folder (Windows/Linux) or `.app` bundle (on macOS) then you can simply remove. 
+If you've installed by extracting a folder (Windows/Linux) or ``.app`` bundle (on macOS) then you can simply remove.
 
 
 Removing data
@@ -16,4 +13,4 @@ Removing data
 
 Simply uninstalling ActivityWatch does not remove any of the data that's been collected.
 
-To remove the data too, make sure to remove the data directories as well (see `directories`).
+To remove the data too, make sure to remove the data directories as well (see :doc:`directories`).
