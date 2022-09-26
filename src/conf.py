@@ -40,6 +40,7 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx.ext.extlinks",
     "sphinx_tabs.tabs",
+    "sphinx_click",
 ]
 
 extlinks = {
