@@ -34,11 +34,17 @@
       <a href="https://github.com/ActivityWatch/activitywatch/releases">
         <img title="Total downloads (GitHub Releases)" src="https://img.shields.io/github/downloads/ActivityWatch/activitywatch/total.svg" />
       </a>
+      <a href="https://discord.gg/vDskV9q">
+        <img title="Discord" src="https://img.shields.io/discord/755040852727955476" />
+      </a>
 
       <br>
 
       <a href="https://activitywatch.net/donate/">
-        <img title="Donated" src="https://img.shields.io/badge/budget-%2487%2Fmo%20from%2040%20supporters-orange.svg" />
+        <img title="Donated" src="https://img.shields.io/badge/budget-%24201%2Fmo%20from%2040%20supporters-orange.svg" />
+      </a>
+      <a href="https://doi.org/10.5281/zenodo.4957165">
+        <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.4957165.svg" />
       </a>
 
       <br>
@@ -49,4 +55,6 @@
       <a href="https://github.com/ActivityWatch/activitywatch">
         <img title="Star on GitHub" src="https://img.shields.io/github/stars/ActivityWatch/activitywatch.svg?style=social&label=Star">
       </a>
+
+      <br>
     </p>
