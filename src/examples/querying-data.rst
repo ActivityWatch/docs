@@ -24,6 +24,23 @@ For an incomplete API reference of the transform functions, see the API referenc
 In a query you start by getting events from a bucket and assign that collection of events to a variable, then there are multiple transform functions which you can use to for example filter, limit, sort, and merge events from a bucket.
 After that you assign what you want to receive from the request to the RETURN variable.
 
+Magic Variables:
+
+    There is a 'magic' variable you can use in your queries to represent the categorization hash configured in your instance of activity watch.
+
+    Here's an example of using this variable to find all events categorized as "Web Browsing"
+
+    .. code-block:: bash
+
+        events = flood(query_bucket("aw-watcher-window_MacBook-Pro.local"));
+        not_afk = flood(query_bucket("aw-watcher-afk_MacBook-Pro.local"));
+        not_afk = filter_keyvals(not_afk, "status", ["not-afk"]);
+        browser_events = [];
+        events = filter_period_intersect(events, not_afk);
+        events = categorize(events, __CATEGORY__);
+        events = filter_keyvals(events, "$category", [["Web Browsing"]]);
+        RETURN = events;
+
 Minimal example:
     Minimal query which only gets events from a bucket and returns it:
 
