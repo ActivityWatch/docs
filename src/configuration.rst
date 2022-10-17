@@ -32,8 +32,10 @@ aw-client
 aw-watcher-afk
 --------------
 
-- :code:`timeout` Time in seconds with no activity required to become afk.
+- :code:`timeout` Time in seconds after which a period without keyboard or mouse activity is considered to be AFK (away from keyboard).
 - :code:`poll_time` Time in seconds between checks for activity.
+
+See `aw_watcher_afk/config.py <https://github.com/ActivityWatch/aw-watcher-afk/blob/master/aw_watcher_afk/config.py>`_ for the default config values.
 
 aw-watcher-window
 -----------------
