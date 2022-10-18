@@ -26,19 +26,18 @@ After that you assign what you want to receive from the request to the RETURN va
 
 Magic Variables:
 
-    There is a 'magic' variable you can use in your queries to represent the categorization hash configured in your instance of activity watch.
+    There is a magic variable `__CATEGORIES__` you can use in the web UI's Query Explorer to include your configured categories in your query.
 
-    Here's an example of using this variable to find all events categorized as "Web Browsing"
+    Here's an example of using this variable to find all events categorized as "Work"
 
-    .. code-block:: bash
+    .. code-block:: python
 
-        events = flood(query_bucket("aw-watcher-window_MacBook-Pro.local"));
-        not_afk = flood(query_bucket("aw-watcher-afk_MacBook-Pro.local"));
+        events = flood(query_bucket("aw-watcher-window_"));
+        not_afk = flood(query_bucket("aw-watcher-afk_"));
         not_afk = filter_keyvals(not_afk, "status", ["not-afk"]);
-        browser_events = [];
         events = filter_period_intersect(events, not_afk);
-        events = categorize(events, __CATEGORY__);
-        events = filter_keyvals(events, "$category", [["Web Browsing"]]);
+        events = categorize(events, __CATEGORIES__);
+        events = filter_keyvals(events, "$category", [["Work"]]);
         RETURN = events;
 
 Minimal example:
