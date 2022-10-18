@@ -5,7 +5,7 @@ Watchers are the parts of ActivityWatch that do all the data collecting.
 
 ActivityWatch comes bundled with two watchers by default:
 
-- :gh-aw:`aw-watcher-afk` - Watches for mouse & keyboard activity to detect if the user is active.
+- :gh-aw:`aw-watcher-afk` - Watches for mouse & keyboard activity to detect if the user is active (by default, an inactive period of at least 3 minutes is flagged as AFK: away from keyboard).
 - :gh-aw:`aw-watcher-window` - Watches the active window, its title, and it's url (on Chrome-based browsers & Safari).
 
 The default watchers are collecting some of the most important data.
