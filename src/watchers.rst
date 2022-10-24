@@ -52,6 +52,8 @@ Other watchers which are very useful too.
 - :gh:`akohlbecker/aw-watcher-tmux` - A plugin for tmux that allows monitoring activity in sessions and panes, by :gh-user:`akohlbecker`
 - :gh:`bcbernardo/aw-watcher-ask` - (WIP) Periodically poses questions to the user and records her answers.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
+- :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
+
 
 Custom watchers
 ---------------
