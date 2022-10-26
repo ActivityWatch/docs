@@ -21,9 +21,17 @@ Working with a fork
 
 When forking the main ActivityWatch repo, you will notice that it uses git submodules for each of the modules. You therefore need to also fork the individual modules you wish to modify, and retarget the ``git submodule`` to use your forked repo.
 
-This is a bit of a pain, but it's the only way to make sure that your forked repo can be built and run without any changes to the build system.
-
 To minimize the headache of keeping your fork up to date with the main repo, we recommend you submit as many generally-useful PRs to the main ActivityWatch project as possible, then rebase or merge in upstream changes onto your fork.
+
+
+Building on macOS
+*****************
+
+When building for macOS there are a few extra considerations, as ActivityWatch requires access to APIs that can cause great trouble for unsigned applications.
+
+To get a working build you need to sign the application with a developer certificate. This requires a paid Apple Developer ID, which costs $99/year.
+
+Once you've created a certificate, you need to set the necessary keys and certificate in your CI secrets. You can find the relevant secrets needed `here <https://github.com/ActivityWatch/activitywatch/blob/5a1b39d82ed750b6cfdd62a3921518cce045b259/.github/workflows/build.yml#L196-L202>`_.
 
 
 Updating media files
