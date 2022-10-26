@@ -13,7 +13,7 @@ ActivityWatch is licensed under the Mozilla Public License v2 (MPLv2), which mea
  - You must not use the ActivityWatch logo for your fork
  - You must clearly mention that your fork is a fork of ActivityWatch, and that it is not otherwise affiliated with the main ActivityWatch project
 
-**TL;DR: Forking is fine, but please don't use the name "ActivityWatch" for your fork, if you intend to distribute it.**
+**TL;DR: Forking is fine, but if you intend to distribute your fork, please don't use the name "ActivityWatch".**
 
 
 Working with a fork
@@ -24,6 +24,12 @@ When forking the main ActivityWatch repo, you will notice that it uses git submo
 This is a bit of a pain, but it's the only way to make sure that your forked repo can be built and run without any changes to the build system.
 
 To minimize the headache of keeping your fork up to date with the main repo, we recommend you submit as many generally-useful PRs to the main ActivityWatch project as possible, then rebase or merge in upstream changes onto your fork.
+
+
+Updating media files
+********************
+
+All logo files reside in the :gh-aw:`media` repo, which is a submodule to several repos like aw-qt and aw-webui. To change the logo, fork the ``media`` repo and update the appropriate submodules to use your fork.
 
 
 Examples of forks
