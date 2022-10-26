@@ -1,6 +1,7 @@
 _build
 .*cache
 dist
+__pycache__
 
 # generated from md by pandoc
 src/changelog/*.rst
