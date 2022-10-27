@@ -41,6 +41,7 @@ If you want to more accurately track media consumption.
 - :gh-aw:`aw-watcher-spotify` - (Beta) Uses the Spotify Web API to get the active track.
 - :gh-aw:`aw-watcher-chromecast` - (not working yet) Watches what is playing on you Chromecast device.
 - :gh-aw:`aw-watcher-openvr` - (not working yet) Watches active VR applications.
+- :gh:`RundownRhino/aw-watcher-mpv-sender` - (WIP) Watches mpv and reports the currently playing video.
 
 Other watchers
 --------------
