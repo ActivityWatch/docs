@@ -42,4 +42,4 @@ aw-watcher-window
 
 - :code:`poll_time` Time in seconds between window checks.
 - :code:`exclude_title` Don't track window titles
-- :code:`strategy_macos` The strategy to use on macOS to fetch the active window, can be "jxa" or "applescript".
+- :code:`strategy_macos` The strategy to use on macOS to fetch the active window, can be "swift", "jxa" or "applescript". Swift strategy is preferred. 
