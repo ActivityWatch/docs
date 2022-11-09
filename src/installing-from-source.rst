@@ -123,7 +123,7 @@ First pull the latest version of the repo with :code:`git pull` then get the upd
 
 If it doesn't work, you can first try to run :code:`make uninstall` and then do a fresh :code:`make build`. If that fails as well, remove the virtualenv and start over.
 
-Please report all issues you might have so we can make things easier for future users.
+Please report all issues you encounter so we can make things easier for future users.
 
 Packaging your changes
 ----------------------
