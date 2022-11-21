@@ -100,6 +100,7 @@ There are two ways to run ActivityWatch:
 1. Use the trayicon manager (Recommended for normal use)
 
    - Run from your terminal with: :code:`aw-qt`
+   - Note that you may need to run it within the server directory in order for static build files to be picked up properly. Example: :code:`cd aw-server-rust && source ../venv/bin/activate && LOG_LEVEL=debug ../venv/bin/aw-qt`
 
 2. Start each module separately (Recommended for developing)
 
