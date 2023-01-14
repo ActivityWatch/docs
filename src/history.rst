@@ -9,6 +9,10 @@ While unexpected, the similarities between brain computer interfaces and the beh
 
 So on Dec 30th, 2014, I started building a prototype. In April 2016 I started working on a rewrite (that included the client-server model) which became the foundation for what ActivityWatch is today. Some time in 2016, my brother :gh-user:`johan-bjareholt` became a regular contributor, and has since become the second largest contributor to the project by a wide margin.
 
+.. raw:: html
+
+    <iframe width="650" height="360" src="http://www.youtube.com/embed/zjIn43lZq3U?rel=0" frameborder="0" allowfullscreen></iframe>
+    <hr>
 
 Future
 ------
