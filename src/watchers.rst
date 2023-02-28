@@ -26,7 +26,7 @@ Watches the actively edited file and associated metadata like path, language, an
 - :gh-aw:`aw-watcher-vim` - vim extension, by :gh-user:`johan-bjareholt` and :gh-user:`ahnlabb`.
 - :gh-aw:`aw-watcher-vscode` - Visual Studio Code extension, by :gh-user:`Otto-AA`.
 - :gh:`pauldub/activity-watch-mode` - emacs mode forked from wakatime-mode, by :gh-user:`pauldub`.
-- :gh:`OlivierMary/aw-watcher-jetbrains` - For all JetBrains editors IDEA/Goland/Android Studio/PyCharm/WebStorm/DataGrip/RubyMine/... `See compatibility/Download <https://plugins.jetbrains.com/plugin/11361-activity-watcher/versions>`_, by :gh-user:`OlivierMary`.
+- :gh:`OlivierMary/aw-watcher-jetbrains` - For all JetBrains editors IDEA/Goland/Android Studio/PyCharm/WebStorm/DataGrip/RubyMine/... `See compatibility/Download <https://plugins.jetbrains.com/plugin/11361-activity-watcher>`_, by :gh-user:`OlivierMary`.
 - :gh:`LaggAt/ActivityWatchVS` - Visual Studio extension, by :gh-user:`LaggAt`
 - :gh:`pascalwhoop/aw-idea` - (WIP) JetBrains IntelliJ IDEA/PyCharm/WebStorm/etc extension forked from wakatime, by :gh-user:`pascalwhoop`
 - :gh:`kostasdizas/aw-watcher-sublime` - Sublime Text 3, by :gh-user:`kostasdizas`, and others
