@@ -7,7 +7,7 @@ license = "MPL-2.0"
 packages = [{ include = "src/" }]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 
 # Packages to document
 aw-core = {git = "https://github.com/ActivityWatch/aw-core.git", rev = "master"}
