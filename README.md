@@ -2,6 +2,7 @@ ActivityWatch Documentation
 ===========================
 
 [![Build](https://github.com/ActivityWatch/docs/actions/workflows/build.yml/badge.svg)](https://github.com/ActivityWatch/docs/actions/workflows/build.yml)
+[![Documentation Status](https://readthedocs.org/projects/activitywatch/badge/?version=latest)](https://docs.activitywatch.net/en/latest/?badge=latest)
 
 Documentation for [ActivityWatch](https://activitywatch.net), the free and open-source automated time tracker.
 
