@@ -13,15 +13,15 @@ Installation
 
    .. group-tab:: Windows
 
-      Download and run the Windows installer for the `latest release on GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_.
+      Download and run the Windows installer for the `latest release on GitHub <https://github.com/ActivityWatch/activitywatch/releases/latest>`_.
 
    .. group-tab:: macOS
 
-      Download the ``.dmg`` for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_ and drag the ``.app`` to your Applications folder as usual, then add it to your autostart applications.
+      Download the ``.dmg`` for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases/latest>`_ and drag the ``.app`` to your Applications folder as usual, then add it to your autostart applications.
 
    .. group-tab:: Linux
 
-      Download the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases>`_, unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
+      Download the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases/latest>`_, unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
 
       .. note::
          If you are using Arch Linux you can install ActivityWatch directly from `the AUR <https://aur.archlinux.org/packages/activitywatch-bin/>`_.
