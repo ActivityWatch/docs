@@ -55,7 +55,7 @@ Other watchers which are very useful too.
 - :gh:`bcbernardo/aw-watcher-ask` - (WIP) Periodically poses questions to the user and records her answers.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
-
+- :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
 
 Custom watchers
 ---------------
