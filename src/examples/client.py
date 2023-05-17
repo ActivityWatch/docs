@@ -41,7 +41,7 @@ with client:
         heartbeat_event = Event(timestamp=now, data=heartbeat_data)
 
         # The duration between the heartbeats will be less than pulsetime, so they will get merged.
-        # The commit_interval=4.0 means that if heartmeats with the same data has a longer duration than 4 seconds it will be fored to be sent to aw-server
+        # The commit_interval=4.0 means that if heartbeats with the same data has a longer duration than 4 seconds it will be forced to be sent to aw-server
         # TODO: Make a section with an illustration on how heartbeats work and insert a link here
         print("Sending heartbeat {}".format(i))
         client.heartbeat(bucket_id, heartbeat_event, pulsetime=sleeptime+1, queued=True, commit_interval=4.0)
