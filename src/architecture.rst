@@ -62,7 +62,7 @@ Currently the primary client library is written in Python (known simply as aw-cl
 
 - :gh-aw:`aw-client` (Python)
 - :gh-aw:`aw-client-js` (TypeScript/JavaScript, beta)
-- :gh-aw:`aw-client-rust` (Rust, work in progress)
+- :gh-aw:`aw-client-rust <aw-server-rust/tree/master/aw-client-rust>` (Rust, work in progress)
 
 aw-analysis
 ^^^^^^^^^^^
