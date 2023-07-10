@@ -16,7 +16,7 @@ Browser watchers
 
 Watches properties of the active tab like title, URL, and incognito state.
 
-- :gh-aw:`aw-watcher-web` - The official browser extension, supports Chrome, Edge (use Chrome extension) and Firefox.
+- :gh-aw:`aw-watcher-web` - The official browser extension, supports Chrome, Edge, and Firefox.
 
 Editor watchers
 ---------------
