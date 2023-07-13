@@ -13,7 +13,7 @@ What is ActivityWatch?
 
 - A set of watchers that record relevant information about what you do and what happens on your computer (such as if you are AFK or not, or which window is currently active).
 - A way of storing data collected by the watchers.
-- A dataformat accomodating most logging needs due to its flexibility.
+- A dataformat accommodating most logging needs due to its flexibility.
 - An ecosystem of tools to help users extend the software to fit their needs.
 
 Reason for existence
