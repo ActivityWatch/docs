@@ -47,7 +47,7 @@ If you want to more accurately track media consumption.
 Other watchers
 --------------
 
-Other watchers which are very useful too.
+Other watchers to collect all kinds of data.
 
 - :gh:`Alwinator/aw-watcher-table` - Monitors whether you have set your height-adjustable table to sitting or standing, by :gh-user:`Alwinator`
 - :gh-aw:`aw-watcher-input` - (WIP) Tracks the number of keypresses and distance that mouse is moved.
@@ -56,6 +56,14 @@ Other watchers which are very useful too.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
+
+Custom visualizations
+---------------------
+
+Custom watchers might not be supported by the default visualizations, but ActivityWatch offers a way for watchers to provide their own visualizations. It is currently an experimental feature, but the following watchers have experimental custom visualizations:
+
+- :gh-aw:`aw-watcher-input`
+- :gh:`Alwinator/aw-watcher-utilization`
 
 Custom watchers
 ---------------
