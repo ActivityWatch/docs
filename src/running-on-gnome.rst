@@ -10,11 +10,12 @@ As an alternative for users of GNOME 3 and other desktop environments that don't
 
   cd ~/.local/opt/activitywatch         # Put your ActivityWatch install folder here
 
-  ./aw-server/aw-server &
+
   ./aw-watcher-afk/aw-watcher-afk &
   ./aw-watcher-window/aw-watcher-window &                 # you can add --exclude-title here to exclude window title tracking for this session only
-
   notify-send "ActivityWatch started"   # Optional, sends a notification when ActivityWatch is started
+  ./aw-server/aw-server;
+
 
 
 :code:`kill.sh`:
