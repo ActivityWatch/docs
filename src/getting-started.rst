@@ -54,8 +54,28 @@ If you want more advanced ways to run ActivityWatch (including running it withou
 Autostart
 =========
 
-.. note::
-    Autostart is set up automatically by the Windows installer and for Arch Linux by the AUR package (if your desktop environment supports `XDG Autostart <https://wiki.archlinux.org/index.php/XDG_Autostart>`_).
+.. tabs::
 
-You probably want to make ActivityWatch start automatically on login using your operating system's autostart settings.
-For some installation methods (Windows installer, AUR package) this is done automatically, but if you don't use those methods you'll have to do it yourself. Searching the web for "autostart application <your operating system>" should get you some good results that don't take long. You want to start the ``aw-qt`` executable in the application directory, or the `ActivityWatch.app` on macOS.
+   .. group-tab:: Windows
+
+      .. note::
+         Autostart is set up automatically by the Windows installer.
+
+   .. group-tab:: macOS
+      You can automatically start ActivityWatch when you log in by [adding it to your Login Items](https://support.apple.com/guide/mac-help/open-items-automatically-when-you-log-in-mh15189/mac).
+      
+   .. group-tab:: Arch Linux
+
+      .. note::
+         Autostart is set up automatically for Arch Linux by the AUR package, if your desktop environment supports `XDG Autostart <https://wiki.archlinux.org/index.php/XDG_Autostart>`_.
+         
+         You can set up autostart in other environments by adding [`dex`](https://archlinux.org/packages/extra/any/dex/) (to enable XDG autostart) or simply `aw-qt` to whatever place you put your startup applications (i3 config, etc).
+
+   .. group-tab:: Ubuntu
+
+      Go to "Activities" or click the "Show Applications" button, search for "Startup Applications". Click "Add" and enter a name and optionally a comment. For the command, enter the path to the ``aw-qt`` executable in the application directory. For example, ``/home/<your username>/.local/opt/activitywatch/aw-qt``.
+
+   .. group-tab:: Other
+
+      You probably want to make ActivityWatch start automatically on login using your operating system's autostart settings.
+      Searching the web for "autostart application <your operating system>" should get you some good results that don't take long. You want to start the ``aw-qt`` executable in the application directory.
