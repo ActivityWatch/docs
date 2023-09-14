@@ -60,8 +60,10 @@ Autostart
 
       .. note::
          Autostart is set up automatically by the Windows installer.
-    .. group-tab:: macOS
-       You can automatically start ActivityWatch when you log in by [adding it to your Login Items](https://support.apple.com/guide/mac-help/open-items-automatically-when-you-log-in-mh15189/mac).
+
+   .. group-tab:: macOS
+      You can automatically start ActivityWatch when you log in by [adding it to your Login Items](https://support.apple.com/guide/mac-help/open-items-automatically-when-you-log-in-mh15189/mac).
+      
    .. group-tab:: Arch Linux
 
       .. note::
