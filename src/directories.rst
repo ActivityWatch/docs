@@ -8,7 +8,7 @@ Where things get stored depends on the platform you're using. All paths should f
 Data
 ----
 
-- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
+- Windows: ``%LocalAppData%\activitywatch\activitywatch``
 - macOS: ``~/Library/Application Support/activitywatch``
 - Linux: ``~/.local/share/activitywatch``
 
