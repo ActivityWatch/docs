@@ -13,13 +13,13 @@ Data Collected
 
 ActivityWatch collects the following types of data:
 
-- Local computer usage data
+* Local computer usage data
 
 However, it's crucial to understand that:
 
-- All data is stored locally on your device.
-- We, the developers of ActivityWatch, do not have access to your data.
-- ActivityWatch does not transmit your data to any external servers.
+* All data is stored locally on your device.
+* We, the developers of ActivityWatch, do not have access to your data.
+* ActivityWatch does not transmit your data to any external servers.
 
 Analytics
 ---------
