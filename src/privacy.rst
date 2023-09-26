@@ -34,7 +34,7 @@ ActivityWatch may perform HTTP requests to check for new releases on GitHub. Thi
 Data Protection
 ---------------
 
-All data collected by ActivityWatch is encrypted and stored locally on your device. However, we cannot guarantee the security of your data entirely due to the vulnerabilities inherent in any electronic storage method.
+All data collected by ActivityWatch is stored locally on your device. However, we cannot guarantee the security of your data entirely due to the vulnerabilities inherent in any electronic storage method.
 
 Third-party Links
 -----------------
