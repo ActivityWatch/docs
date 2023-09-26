@@ -46,6 +46,7 @@ Table of contents
    examples/extending
    api
    security
+   privacy
    server-compare
    development
    forking
