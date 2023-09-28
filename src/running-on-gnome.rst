@@ -36,7 +36,7 @@ Then you can create two desktop files for these scripts to show up among your ap
   [Desktop Entry]
   Name=Start ActivityWatch
   Comment=Start AW
-  Exec=~/.local/opt/activitywatch/start.sh
+  Exec="~/.local/opt/activitywatch/start.sh"
   Hidden=false
   Terminal=false
   Type=Application
@@ -51,7 +51,7 @@ Then you can create two desktop files for these scripts to show up among your ap
   [Desktop Entry]
   Name=Kill ActivityWatch
   Comment=Kill AW
-  Exec=~/.local/opt/activitywatch/kill.sh
+  Exec="~/.local/opt/activitywatch/kill.sh"
   Hidden=false
   Terminal=false
   Type=Application
