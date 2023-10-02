@@ -57,6 +57,7 @@ Other watchers to collect all kinds of data.
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
 - :gh:`2e3s/awatcher` - A compiled watcher for X11 and Wayland to replace the original active window and AFK watchers, with workarounds for KDE and Gnome on Wayland.
+- :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
 
 Custom visualizations
 ---------------------
