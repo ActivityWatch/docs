@@ -36,7 +36,7 @@ Magic Variables:
         not_afk = filter_keyvals(not_afk, "status", ["not-afk"]);
         events = filter_period_intersect(events, not_afk);
         events = categorize(events, __CATEGORIES__);
-        events = filter_keyvals(events, "$category", [["Web Browsing"]]);
+        events = filter_keyvals(events, "$category", [["Work"]]);
         RETURN = sort_by_duration(events);
 
 Minimal example:
