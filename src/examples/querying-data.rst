@@ -25,20 +25,19 @@ In a query you start by getting events from a bucket and assign that collection 
 After that you assign what you want to receive from the request to the RETURN variable.
 
 Magic Variables:
-
     There is a magic variable `__CATEGORIES__` you can use in the web UI's Query Explorer to include your configured categories in your query.
 
-    Here's an example of using this variable to find all events categorized as "Work"
+    Here's an example of using this variable to find all events categorized as "Web Browsing"
 
     .. code-block:: python
 
-        events = flood(query_bucket("aw-watcher-window_"));
-        not_afk = flood(query_bucket("aw-watcher-afk_"));
+        events = flood(query_bucket(find_bucket("aw-watcher-window_")));
+        not_afk = flood(query_bucket(find_bucket("aw-watcher-afk_")));
         not_afk = filter_keyvals(not_afk, "status", ["not-afk"]);
         events = filter_period_intersect(events, not_afk);
         events = categorize(events, __CATEGORIES__);
         events = filter_keyvals(events, "$category", [["Work"]]);
-        RETURN = events;
+        RETURN = sort_by_duration(events);
 
 Minimal example:
     Minimal query which only gets events from a bucket and returns it:
