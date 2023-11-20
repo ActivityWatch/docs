@@ -72,8 +72,9 @@ master_doc = "index"
 
 # General information about the project.
 project = "ActivityWatch"
-author = "Erik Bjäreholt, Johan Bjäreholt and contributors"
-copyright = f"2016-{date.today().year} by {author}"
+author = "Erik Bjäreholt, Johan Bjäreholt, and contributors"
+author_copyright = "ActivityWatch core contributors"
+copyright = f"2016-{date.today().year} {author_copyright}"
 description_short = "The free and open source automated time-tracker"
 
 # TODO: Automatically detect version (possibly using git tags)
@@ -316,7 +317,7 @@ latex_documents = [
         master_doc,
         "ActivityWatch.tex",
         "ActivityWatch Documentation",
-        "Erik Bjäreholt and contributors",
+        author,
         "manual",
     ),
 ]
