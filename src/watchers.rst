@@ -45,6 +45,8 @@ If you want to more accurately track media consumption.
 - :gh:`RundownRhino/aw-watcher-mpv-sender` - (WIP) Watches mpv and reports the currently playing video.
 - :gh:`2e3s/aw-watcher-media-player` - Watches the currently playing media which is reported by most players to the system.
 
+.. _other-watchers:
+
 Other watchers
 --------------
 
@@ -59,7 +61,6 @@ Other watchers to collect all kinds of data.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
 - :gh:`2e3s/awatcher` - A compiled watcher for X11 and Wayland to replace the original active window and AFK watchers, with workarounds for KDE and Gnome on Wayland.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
-- :gh:`flexagoon/aw-watcher-gnome` - A watcher to use ActivityWatch on GNOME with Wayland
 - :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
 
 Custom visualizations
