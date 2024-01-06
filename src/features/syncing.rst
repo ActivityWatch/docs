@@ -1,6 +1,17 @@
 Syncing
 =======
 
+Syncing is one of the most requested features for ActivityWatch. It is currently being worked on and is in a testing phase.
+
+You can read more about it, and how to try the early release, in the `aw-sync README <https://github.com/ActivityWatch/aw-server-rust/tree/master/aw-sync>`_.
+
+Here is a tweet announcing the early MVP: https://twitter.com/ErikBjare/status/1519399784234246147
+
+Old syncing prototype
+---------------------
+
+.. note:: The below details the architecture of the old syncing prototype. It is kept here for reference.
+
 There isn't much written about syncing yet since it's not yet implemented in a stable release. However, there does exist a working proof-of-concept prototype which should be easy to implement once details have been finalized. You can read what has been discussed in this issue: https://github.com/ActivityWatch/activitywatch/issues/35
 
 Here's a graph showing how data flows in the current syncing prototype:
