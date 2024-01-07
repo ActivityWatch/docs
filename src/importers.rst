@@ -1,9 +1,7 @@
 Importers
 =========
 
-ActivityWatch can't track everything, so sometimes you might want to import data into ActivityWatch from another source.
-
-There aren't many yet, but here are some attempts:
+ActivityWatch can't track everything, so sometimes you might want to import data from another source.
 
 - :gh-aw:`aw-import-ical`, supports importing from ``.ical`` files or syncing with Google Calendar.
 - :gh-aw:`aw-importer-smartertime`, imports from `smartertime`_ (Android time tracker).

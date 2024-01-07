@@ -21,7 +21,6 @@ Table of contents
    directories
    features
    watchers
-   importers
    faq
    history
    migrating

@@ -63,6 +63,12 @@ Other watchers to collect all kinds of data.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
 - :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
 
+Importers
+---------
+
+.. include:: importers.rst
+   :start-line: 2
+
 Custom visualizations
 ---------------------
 
