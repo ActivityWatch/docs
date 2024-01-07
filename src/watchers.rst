@@ -14,7 +14,7 @@ But there is more to collect, so here are some other watchers that let you do so
 Browser watchers
 ----------------
 
-Watches properties of the active tab like title, URL, and incognito state.
+Watches properties of the active browser tab like title, URL, audible and incognito state.
 
 - :gh-aw:`aw-watcher-web` - The official browser extension, supports Chrome, Edge, and Firefox.
 
@@ -70,6 +70,10 @@ Custom watchers might not be supported by the default visualizations, but Activi
 
 - :gh-aw:`aw-watcher-input`
 - :gh:`Alwinator/aw-watcher-utilization`
+
+.. note::
+
+   Looking for more than just watchers? Check out the `awesome-activitywatch <https://github.com/ActivityWatch/awesome-activitywatch>`_ list for more projects related to ActivityWatch.
 
 Custom watchers
 ---------------
