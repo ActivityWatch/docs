@@ -34,9 +34,9 @@ Checking dependencies
 You need:
 
 - `Git <https://git-scm.com/downloads>`_
-- `Python 3.7 to 3.9 <https://www.python.org/downloads/>`_, check with :code:`python3 -V` (required to build the core components)
+- `Python 3.9 <https://www.python.org/downloads/>`_, check with :code:`python3 -V` (required to build the core components)
 - `Poetry <https://python-poetry.org/docs/#installation>`_, check with :code:`poetry -V` (can be installed like this: :code:`python3 -m pip install poetry`)
-- `Node 12 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
+- `Node.js 20 or higher <https://www.npmjs.com/get-npm>`_, check with :code:`node -v` and :code:`npm -v` (required to build the web UI)
 - `Rust nightly <https://doc.rust-lang.org/cargo/getting-started/installation.html>`_ (nightly can be installed using :code:`rustup update`), check with :code:`rustc -V` and :code:`cargo -V` (for building aw-server-rust)
 
 **For Windows users:**
