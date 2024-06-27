@@ -77,7 +77,7 @@ Custom watchers might not be supported by the default visualizations, but Activi
 
 - :gh-aw:`aw-watcher-input`
 - :gh:`Alwinator/aw-watcher-utilization`
-- :gh: `2e3s/aw-watcher-media-player`
+- :gh:`2e3s/aw-watcher-media-player`
 
 .. note::
 
