@@ -20,7 +20,9 @@ aw-server-python
 aw-server-rust
 --------------
 
-TODO
+- :code:`host` Hostname to start the server on. Currently only :code:`localhost` or :code:`127.0.0.1` are supported.
+- :code:`port` Port number to start the server on.
+- :code:`cors` List of allowed origins for CORS (Cross-Origin Resource Sharing). Useful in testing and development to let other origins access the ActivityWatch API, such as aw-webui in development mode on port 27180.
 
 aw-client
 ---------

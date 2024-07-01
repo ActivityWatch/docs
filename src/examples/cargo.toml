@@ -1,0 +1,11 @@
+[package]
+name = "aw-minimal-client-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aw-client-rust = { git = "https://github.com/ActivityWatch/aw-server-rust.git", branch = "master" }
+aw-models = { git = "https://github.com/ActivityWatch/aw-server-rust.git", branch = "master" }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+chrono = "0.4.19"

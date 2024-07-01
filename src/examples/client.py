@@ -25,7 +25,7 @@ event_type = "dummydata"
 # so run this every time the clients starts up to verify that the bucket exists.
 # If the client was unable to connect to aw-server or something failed
 # during the creation of the bucket, an exception will be raised.
-client.create_bucket(bucket_id, event_type="test")
+client.create_bucket(bucket_id, event_type=event_type)
 
 # Asynchronous loop example
 # This context manager starts the queue dispatcher thread and stops it when done, always use it when setting queued=True.

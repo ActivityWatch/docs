@@ -1,5 +1,5 @@
-Writing your first watcher
-==========================
+Writing your first watcher in Python
+====================================
 
 Writing watchers for ActivityWatch is pretty easy, all you need is the :code:`aw-client` library.
 
@@ -33,4 +33,39 @@ This example will describe how to:
 * delete buckets
 
 .. literalinclude:: client.py
+
+Writing your first watcher in Rust
+==================================
+
+To get started with writing watchers in Rust, you need to add the ``aw-client-rust`` and ``aw-model`` crates to your ``Cargo.toml`` file.
+The most up-to-date versions depend directly on :gh-aw:`aw-server-rust`.
+
+.. literalinclude:: Cargo.toml
+
+Minimal client
+--------------
+
+Below is a minimal template client to quickly get started. Mirrors the python example above.
+This example will:
+
+* create a bucket
+* insert an event
+* fetch an event from an aw-server bucket
+* delete the bucket again
+
+.. literalinclude:: minimal_client.rs
+
+Reference client
+----------------
+
+Below is a example of a watcher with more in-depth comments. Mirrors the python example above.
+This example will describe how to:
+* create buckets
+* send events by heartbeats
+* insert events without heartbeats
+* do synchronous as well as asyncronous requests
+* fetch events from an aw-server bucket
+* delete buckets
+
+.. literalinclude:: client.rs
 
