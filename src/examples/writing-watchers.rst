@@ -1,4 +1,4 @@
-Writing your first watcher in python
+Writing your first watcher in Python
 ====================================
 
 Writing watchers for ActivityWatch is pretty easy, all you need is the :code:`aw-client` library.
@@ -34,11 +34,11 @@ This example will describe how to:
 
 .. literalinclude:: client.py
 
-Writing your first watcher in rust
+Writing your first watcher in Rust
 ==================================
 
-To get started with writing watchers in Rust, you need to add the `aw-client-rust` and `aw-model` crates to your `Cargo.toml` file.
-The most upto date versions depend directly on :gh-aw:`aw-server-rust`.
+To get started with writing watchers in Rust, you need to add the ``aw-client-rust`` and ``aw-model`` crates to your ``Cargo.toml`` file.
+The most up-to-date versions depend directly on :gh-aw:`aw-server-rust`.
 
 .. literalinclude:: Cargo.toml
 
