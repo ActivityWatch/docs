@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from time import sleep
 from datetime import datetime, timedelta, timezone
 
 from aw_core.models import Event
