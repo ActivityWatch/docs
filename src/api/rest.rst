@@ -95,5 +95,4 @@ The `heartbeat <heartbeats>` API is one of the most useful endpoints for writing
 
 Query API
 ~~~~~~~~~~~~~
-
-**TODO: Add link to writing queries once that page is done**
+`Writing Queries <./../examples/querying-data.html>`_

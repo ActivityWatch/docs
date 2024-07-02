@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from time import sleep
 from datetime import datetime, timedelta, timezone
 
 from aw_core.models import Event
@@ -17,7 +16,7 @@ query = "RETURN=0;"
 res = client.query(query, "1970-01-01", "2100-01-01")
 print(res) # Should print 0
 
-bucket_id = "{}_{}".format("test-client-bucket", client.hostname)
+bucket_id = "{}_{}".format("test-client-bucket", client.client_hostname)
 event_type = "dummydata"
 client.create_bucket(bucket_id, event_type="test")
 
