@@ -95,4 +95,4 @@ The `heartbeat <heartbeats>` API is one of the most useful endpoints for writing
 
 Query API
 ~~~~~~~~~~~~~
-`Bucket REST API <./../examples/querying-data.html>`_
+`Writing Queries <./../examples/querying-data.html>`_
