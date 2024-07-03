@@ -33,6 +33,7 @@ async fn main() {
     let bucket_id = format!("test-client-bucket_{}", aw_client.hostname);
     let event_type = "dummy_data".to_string();
 
+    // Note that in a real application, you would want to handle these errors
     create_bucket(&aw_client, bucket_id.clone(), event_type)
         .await
         .unwrap();
@@ -60,6 +61,7 @@ async fn main() {
             .unwrap();
 
         // Sleep a second until next heartbeat (eventually drifts due to time spent in the loop)
+        // You could use wait on tokio intervals to avoid drift
         tokio::time::sleep(tokio::time::Duration::from_secs_f64(sleeptime)).await;
     }
 
