@@ -84,10 +84,9 @@ It is possible to fetch the raw events from a bucket. This is useful if you want
 
 Example fetching raw events from the "aw-watcher-window_" bucket:
     This is an example that you can run in a Python to fetch raw events posted by the window watcher.
-    The scripts sums the time spent on each window title and later renames some of the titles.
+    The scripts sums the time spent on each window title and showcases a data redaction use case.
 
     .. literalinclude:: raw_events.py    
     
-    .. note:: Inserting events with the same id, will overwrite the previous event with the same id. This is useful if you want to update an event, but if you want to keep both events you should use a different id.
 
 .. TODO `Bucket REST API <./rest.html#get-events>`_
