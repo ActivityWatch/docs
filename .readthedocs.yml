@@ -12,9 +12,8 @@ build:
   jobs:
     post_create_environment:
       - pip install poetry
-      - poetry config virtualenvs.create false
     post_install:
-      - poetry install
+      - VIRTUAL_ENV=$READTHEDOCS_VIRTUALENV_PATH poetry install
   apt_packages:
     - graphviz
 
