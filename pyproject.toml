@@ -24,6 +24,7 @@ sphinx-click = "^4.3.0"
 m2r2 = "*"
 myst-parser = "*"
 recommonmark = "^0.7.0"
+setuptools = "*"  # needed in Python 3.12+: https://github.com/CrossNox/m2r2/issues/72
 
 [build-system]
 requires = ["poetry-core"]
