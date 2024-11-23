@@ -3,13 +3,22 @@ Watchers
 
 Watchers are the parts of ActivityWatch that do all the data collecting.
 
-ActivityWatch comes bundled with two watchers by default:
+ActivityWatch comes with two watchers enabled by default:
 
 - :gh-aw:`aw-watcher-afk` - Watches for mouse & keyboard activity to detect if the user is active (by default, an inactive period of at least 3 minutes is flagged as AFK: away from keyboard).
 - :gh-aw:`aw-watcher-window` - Watches the active window, its title, and it's url (on Chrome-based browsers & Safari).
 
-The default watchers are collecting some of the most important data.
+These default watchers are collecting some of the most important data.
 But there is more to collect, so here are some other watchers that let you do so.
+
+Window watchers
+---------------
+
+Watches the active window, its title, and application name.
+
+- :gh-aw:`aw-watcher-window` - The official window watcher, supports Windows, macOS, and Linux (X11 only).
+- :gh-aw:`aw-watcher-window-wayland` - A window watcher for Wayland, by :gh-user:`johan-bjareholt`.
+- :gh:`2e3s/aw-awatcher` - A compiled watcher for X11 and Wayland to replace default window and AFK watchers, by :gh-user:`2e3s`.
 
 Browser watchers
 ----------------
@@ -53,14 +62,13 @@ Other watchers
 
 Other watchers to collect all kinds of data.
 
+- :gh-aw:`aw-watcher-input` - Tracks the number of keypresses and distance that mouse is moved.
 - :gh:`Alwinator/aw-watcher-table` - Monitors whether you have set your height-adjustable table to sitting or standing, by :gh-user:`Alwinator`
-- :gh-aw:`aw-watcher-input` - (WIP) Tracks the number of keypresses and distance that mouse is moved.
 - :gh:`akohlbecker/aw-watcher-tmux` - A plugin for tmux that allows monitoring activity in sessions and panes, by :gh-user:`akohlbecker`
 - :gh:`bcbernardo/aw-watcher-ask` - (WIP) Periodically poses questions to the user and records her answers.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
-- :gh:`2e3s/awatcher` - A compiled watcher for X11 and Wayland to replace the original active window and AFK watchers, with workarounds for KDE and Gnome on Wayland.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
 - :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
