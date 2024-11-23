@@ -69,5 +69,5 @@ This example will describe how to:
 
 .. literalinclude:: client.rs
 
-It is recommend to follow conventions and use the `aw-watcher-<name>` naming scheme for your watcher.
-It is also recommended for watchers to accept a `--testing` flag and a `--port <port>` flag to allow users to specify the port to connect to.
+It is recommend to follow conventions and use the ``aw-watcher-<name>`` naming scheme for your watcher.
+It is also recommended for watchers to accept a ``--testing`` flag and a ``--port <port>`` flag to allow users to specify the port to connect to.

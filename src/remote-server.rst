@@ -65,9 +65,8 @@ Opening the server to the network
 
 .. warning:: This is unsafe! (unless you *really* know what you are doing)
 
-If you decide to not heed our warning, you can open the server to the network by setting the following `configuration`:
+If you decide to not heed our warning, you can open the server to the network by setting the following :doc:`configuration`:
 
-.. highlight:: toml
 aw-server.toml::
 
     [server]

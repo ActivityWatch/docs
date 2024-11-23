@@ -63,13 +63,13 @@ Autostart
 
    .. group-tab:: macOS
       You can automatically start ActivityWatch when you log in by [adding it to your Login Items](https://support.apple.com/guide/mac-help/open-items-automatically-when-you-log-in-mh15189/mac).
-      
+
    .. group-tab:: Arch Linux
 
       .. note::
          Autostart is set up automatically for Arch Linux by the AUR package, if your desktop environment supports `XDG Autostart <https://wiki.archlinux.org/index.php/XDG_Autostart>`_.
-         
-         You can set up autostart in other environments by adding [`dex`](https://archlinux.org/packages/extra/any/dex/) (to enable XDG autostart) or simply `aw-qt` to whatever place you put your startup applications (i3 config, etc).
+
+         You can set up autostart in other environments by adding [``dex``](https://archlinux.org/packages/extra/any/dex/) (to enable XDG autostart) or simply ``aw-qt`` to whatever place you put your startup applications (i3 config, etc).
 
    .. group-tab:: Ubuntu
 

@@ -25,7 +25,7 @@ In a query you start by getting events from a bucket and assign that collection 
 After that you assign what you want to receive from the request to the RETURN variable.
 
 Magic Variables:
-    There is a magic variable `__CATEGORIES__` you can use in the web UI's Query Explorer to include your configured categories in your query.
+    There is a magic variable ``__CATEGORIES__`` you can use in the web UI's Query Explorer to include your configured categories in your query.
 
     Here's an example of using this variable to find all events categorized as "Web Browsing"
 
@@ -86,7 +86,7 @@ Example fetching raw events from the "aw-watcher-window_" bucket:
     This is an example that you can run in a Python to fetch raw events posted by the window watcher.
     The scripts sums the time spent on each window title and showcases a data redaction use case.
 
-    .. literalinclude:: raw_events.py    
-    
+    .. literalinclude:: raw_events.py
+
 
 .. TODO `Bucket REST API <./rest.html#get-events>`_

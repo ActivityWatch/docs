@@ -11,6 +11,8 @@ ActivityWatch comes with two watchers enabled by default:
 These default watchers are collecting some of the most important data.
 But there is more to collect, so here are some other watchers that let you do so.
 
+.. _window-watchers:
+
 Window watchers
 ---------------
 
