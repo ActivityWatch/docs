@@ -18,9 +18,9 @@ Window watchers
 
 Watches the active window, its title, and application name.
 
-- :gh-aw:`aw-watcher-window` - The official window watcher, supports Windows, macOS, and Linux (X11 only).
+- :gh-aw:`aw-watcher-window` - The official window watcher for Windows, macOS, and Linux (X11 only).
 - :gh-aw:`aw-watcher-window-wayland` - A window watcher for Wayland, by :gh-user:`johan-bjareholt`.
-- :gh:`2e3s/aw-awatcher` - A compiled watcher for X11 and Wayland to replace default window and AFK watchers, by :gh-user:`2e3s`.
+- :gh:`2e3s/awatcher` - A compiled watcher for X11 and Wayland to replace default window and AFK watchers, by :gh-user:`2e3s`.
 
 Browser watchers
 ----------------
