@@ -55,7 +55,7 @@ If you want to more accurately track media consumption.
 - :gh-aw:`aw-watcher-openvr` - (not working yet) Watches active VR applications.
 - :gh:`RundownRhino/aw-watcher-mpv-sender` - (WIP) Watches mpv and reports the currently playing video.
 - :gh:`2e3s/aw-watcher-media-player` - Watches the currently playing media which is reported by most players to the system.
-- :gh:`brayo-pip/aw-watcher-lastfm` - Watches the currently playing track on Last.fm(supports most streaming services including Apple Music).
+- :gh:`0xbrayo/aw-watcher-lastfm` - Watches the currently playing track on Last.fm(supports most streaming services including Apple Music).
 
 .. _other-watchers:
 
