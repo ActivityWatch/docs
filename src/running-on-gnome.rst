@@ -28,7 +28,7 @@ As an alternative for users of GNOME 3 and other desktop environments that don't
 
 Don't forget to :code:`chmod +x start.sh` and :code:`chmod +x kill.sh`.
 
-Then you can create two desktop files for these scripts to show up among your apps:
+Then you can create two desktop files for these scripts to show up among your apps. Be sure to substitute `user` for your own username:
 
 :code:`~/.local/share/applications/aw-start.desktop`:
 ::
@@ -36,7 +36,7 @@ Then you can create two desktop files for these scripts to show up among your ap
   [Desktop Entry]
   Name=Start ActivityWatch
   Comment=Start AW
-  Exec="~/.local/opt/activitywatch/start.sh"
+  Exec="/home/user/.local/opt/activitywatch/start.sh"
   Hidden=false
   Terminal=false
   Type=Application
@@ -51,7 +51,7 @@ Then you can create two desktop files for these scripts to show up among your ap
   [Desktop Entry]
   Name=Kill ActivityWatch
   Comment=Kill AW
-  Exec="~/.local/opt/activitywatch/kill.sh"
+  Exec="/home/user/.local/opt/activitywatch/kill.sh"
   Hidden=false
   Terminal=false
   Type=Application
