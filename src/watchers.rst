@@ -44,6 +44,7 @@ Watches the actively edited file and associated metadata like path, language, an
 - :gh:`NicoWeio/aw-watcher-atom` - Atom, by :gh-user:`NicoWeio`
 - :gh:`pytlus93/AwWatcherNetBeans82` - NetBeans 8.2, by :gh-user:`pytlus93`
 - :gh:`LordGrimmauld/aw-watcher-obsidian` - Obsidian.md extension, by :gh-user:`LordGrimmauld`
+- :gh:`lowitea/aw-watcher.nvim` - neovim extension, by :gh-user:`lowitea`.
 
 Media watchers
 --------------
