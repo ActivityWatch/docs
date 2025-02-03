@@ -33,6 +33,9 @@ Installation
       .. note::
          Getting it to F-droid is a work-in-progress, see `this PR <https://gitlab.com/fdroid/fdroiddata/-/merge_requests/5502>`_.
 
+   .. group-tab:: Source
+
+      If you prefer to build ActivityWatch from source, check out :doc:`this guide <installing-from-source>` instead.
 
 Usage
 =====
