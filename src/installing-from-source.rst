@@ -28,6 +28,9 @@ If you want to ensure you have the latest version of all submodules, preserving 
 
    git submodule foreach --recursive git pull
 
+.. note::
+   If your Linux system is using Wayland rather than X11, the default watchers will not work. Read :ref:`window and idle watchers for Wayland<wayland-watchers>` for replacement modules supporting Wayland.
+
 Checking dependencies
 ---------------------
 
