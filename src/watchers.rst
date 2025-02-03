@@ -3,7 +3,7 @@ Watchers
 
 Watchers are the parts of ActivityWatch that do all the data collecting.
 
-ActivityWatch comes with two watchers enabled by default:
+ActivityWatch comes with two watchers enabled by default supporting Windows, macOS and Linux (X11 only):
 
 - :gh-aw:`aw-watcher-afk` - Watches for mouse & keyboard activity to detect if the user is active (by default, an inactive period of at least 3 minutes is flagged as AFK: away from keyboard).
 - :gh-aw:`aw-watcher-window` - Watches the active window, its title, and it's url (on Chrome-based browsers & Safari).
@@ -11,16 +11,19 @@ ActivityWatch comes with two watchers enabled by default:
 These default watchers are collecting some of the most important data.
 But there is more to collect, so here are some other watchers that let you do so.
 
-.. _window-watchers:
+.. note::
+   For Wayland, see :ref:`wayland-watchers`.
 
-Window watchers
----------------
+.. _wayland-watchers:
 
-Watches the active window, its title, and application name.
+Window and idle watchers for Wayland
+-------------------------------------------
 
-- :gh-aw:`aw-watcher-window` - The official window watcher for Windows, macOS, and Linux (X11 only).
-- :gh-aw:`aw-watcher-window-wayland` - A window watcher for Wayland, by :gh-user:`johan-bjareholt`.
-- :gh:`2e3s/awatcher` - A compiled watcher for X11 and Wayland to replace default window and AFK watchers, by :gh-user:`2e3s`.
+Replaces :gh-aw:`aw-watcher-window` and :gh-aw:`aw-watcher-afk` to support Wayland, see issue :issue:`92`.
+
+- :gh-aw:`aw-watcher-window-wayland` - A window and idle watcher for Wayland, by :gh-user:`johan-bjareholt`, supports Posh, Sway.
+- :gh:`2e3s/awatcher` - A compiled window and idle watcher for X11 and Wayland to replace default window and AFK watchers,
+  by :gh-user:`2e3s`, supports Sway, Hyprland, KDE, GNOME, and X11.
 
 Browser watchers
 ----------------

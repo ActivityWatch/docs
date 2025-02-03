@@ -37,6 +37,7 @@ Installation
 
       If you prefer to build ActivityWatch from source, check out :doc:`this guide <installing-from-source>` instead.
 
+
 Usage
 =====
 
@@ -50,6 +51,9 @@ If you want more advanced ways to run ActivityWatch (including running it withou
 
 .. note::
    If you are running GNOME 3 or another desktop environment that does not support system trays, or if for some reason Qt can't be used on your machine, read `Running on GNOME`.
+
+.. note::
+   If your Linux system is using Wayland rather than X11, the default watchers will not work. Read :ref:`window and idle watchers for Wayland<wayland-watchers>`.
 
 .. note::
    If you are using a proxy ActivityWatch might not work out of the box. To fix this you can set the environment variable ``NO_PROXY`` to include ``127.0.0.1`` before starting aw-qt. How to set an environment variable depends on your operating system; use Google if you are unsure how to do this.
