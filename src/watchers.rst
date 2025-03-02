@@ -43,7 +43,11 @@ Watches the actively edited file and associated metadata like path, language, an
 - :gh:`kostasdizas/aw-watcher-sublime` - Sublime Text 3, by :gh-user:`kostasdizas`, and others
 - :gh:`NicoWeio/aw-watcher-atom` - Atom, by :gh-user:`NicoWeio`
 - :gh:`pytlus93/AwWatcherNetBeans82` - NetBeans 8.2, by :gh-user:`pytlus93`
-- :gh:`LordGrimmauld/aw-watcher-obsidian` - Obsidian.md extension, by :gh-user:`LordGrimmauld`
+- .. raw:: html
+
+     <s>:gh:`LordGrimmauld/aw-watcher-obsidian` - Obsidian.md extension, by :gh-user:`LordGrimmauld`</s> (Deprecated, use the modern method below)
+
+  - **Recommended**: Install the ActivityWatch community plugin for Obsidian
 - :gh:`lowitea/aw-watcher.nvim` - neovim extension, by :gh-user:`lowitea`.
 - :gh:`sachk/aw-watcher-zed` - Zed extension, by :gh-user:`sachk`.
 
