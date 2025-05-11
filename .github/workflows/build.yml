@@ -17,7 +17,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8
+        python-version: 3.12
     - name: Install APT dependencies
       run: |
         sudo apt-get install -y git build-essential apt-utils wget libfreetype6 libpng-dev libopenblas-dev gcc gfortran libsnappy-dev
