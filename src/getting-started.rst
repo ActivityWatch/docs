@@ -24,7 +24,7 @@ Installation
       Download the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases/latest>`_, unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
 
       .. note::
-         If you are using Arch Linux you can install ActivityWatch directly from `the AUR <https://aur.archlinux.org/packages/activitywatch-bin/>`_.
+         If you are using Arch Linux you can install using the official ``activitywatch-bin`` package in `the AUR <https://aur.archlinux.org/packages/activitywatch-bin/>`_.
 
    .. group-tab:: Android
 
