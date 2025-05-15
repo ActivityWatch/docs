@@ -3,6 +3,12 @@ Watchers
 
 Watchers are the parts of ActivityWatch that do all the data collecting.
 
+
+.. _window-watchers:
+
+Window watchers
+-------------------------------------------
+
 ActivityWatch comes with two watchers enabled by default supporting Windows, macOS and Linux (X11 only):
 
 - :gh-aw:`aw-watcher-afk` - Watches for mouse & keyboard activity to detect if the user is active (by default, an inactive period of at least 3 minutes is flagged as AFK: away from keyboard).
@@ -11,9 +17,9 @@ ActivityWatch comes with two watchers enabled by default supporting Windows, mac
 These default watchers are collecting some of the most important data.
 But there is more to collect, so here are some other watchers that let you do so.
 
-.. _window-watchers:
+.. _wayland-watchers:
 
-Window watchers
+Wayland watchers
 -------------------------------------------
 
 Replaces :gh-aw:`aw-watcher-window` and :gh-aw:`aw-watcher-afk` to support Wayland, see issue :issue:`92`.
