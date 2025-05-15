@@ -11,12 +11,9 @@ ActivityWatch comes with two watchers enabled by default supporting Windows, mac
 These default watchers are collecting some of the most important data.
 But there is more to collect, so here are some other watchers that let you do so.
 
-.. note::
-   For Wayland, see :ref:`wayland-watchers`.
+.. _window-watchers:
 
-.. _wayland-watchers:
-
-Window and idle watchers for Wayland
+Window watchers
 -------------------------------------------
 
 Replaces :gh-aw:`aw-watcher-window` and :gh-aw:`aw-watcher-afk` to support Wayland, see issue :issue:`92`.
