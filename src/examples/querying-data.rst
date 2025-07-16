@@ -15,6 +15,7 @@ Writing a Query
 .. note::
     This section is still WIP.
     There is still no documentation of all the transform functions, but for most simple queries these examples should be enough.
+    For complex queries, you can see all available functions here: https://github.com/ActivityWatch/aw-server-rust/blob/master/aw-query/src/functions.rs
 
 Queries are the easiest yet advanced way to get events from aw-server buckets in a format which fits most needs.
 Queries can be done by doing a POST request to aw-server either manually or with the aw-client library.
