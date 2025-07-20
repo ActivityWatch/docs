@@ -22,13 +22,12 @@ Table of contents
    features
    watchers
    faq
-   history
+   syncing
    migrating
    running-on-gnome
    remote-server
    updating
    uninstalling
-
 
 .. _dev-docs:
 .. toctree::
@@ -45,12 +44,18 @@ Table of contents
    examples/extending
    api
    security
-   privacy
    server-compare
    development
    forking
-   changelog
 
+.. _meta-docs:
+.. toctree::
+   :maxdepth: 3
+   :caption: Meta
+
+   privacy
+   history
+   changelog
 
 Indices and tables
 ------------------
