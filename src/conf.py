@@ -41,6 +41,7 @@ extensions = [
     "sphinx.ext.extlinks",
     "sphinx_tabs.tabs",
     "sphinx_click",
+    "sphinxext.rediraffe",
 ]
 
 extlinks = {
@@ -49,6 +50,10 @@ extlinks = {
     "gh-user": ("https://github.com/%s", "@"),
     "gh-aw": ("https://github.com/ActivityWatch/%s", ""),
 }
+
+# Redirects for moved pages
+rediraffe_redirects = "redirects.txt"
+rediraffe_branch = "HEAD~1"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
