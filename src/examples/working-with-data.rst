@@ -123,6 +123,44 @@ The web UI provides special variables you can use:
 * ``__CATEGORIES__`` - Your configured categorization rules
 * ``find_bucket(pattern)`` - Find bucket names matching a pattern
 
+Example using categories to filter work activities:
+
+.. code-block:: javascript
+
+    events = flood(query_bucket(find_bucket("aw-watcher-window_")));
+    not_afk = flood(query_bucket(find_bucket("aw-watcher-afk_")));
+    not_afk = filter_keyvals(not_afk, "status", ["not-afk"]);
+    events = filter_period_intersect(events, not_afk);
+    events = categorize(events, __CATEGORIES__);
+    events = filter_keyvals(events, "$category", [["Work"]]);
+    RETURN = sort_by_duration(events);
+
+Query Examples
+~~~~~~~~~~~~~~
+
+**Minimal example** - Get events from a bucket:
+
+.. code-block:: javascript
+
+    events = query_bucket("my_bucket");
+    RETURN = events;
+
+**Hierarchy example** - Create app→title hierarchy:
+
+.. code-block:: javascript
+
+    events = query_bucket("my_bucket");
+    events = merge_events_by_keys(events, ["app", "title"]);
+    RETURN = events;
+
+**Practical Python example** - The `query_client.py <query_client.py>`_ file demonstrates:
+
+* Creating test buckets and data
+* Writing queries with transformations  
+* Using merge_events_by_keys for grouping
+* Time period filtering
+* Safe cleanup with testing mode
+
 Complete Example
 ~~~~~~~~~~~~~~~~
 
