@@ -1,0 +1,2 @@
+# Redirects for moved/deleted pages
+examples/extending.rst examples.rst

@@ -39,9 +39,6 @@ Table of contents
    architecture
    buckets-and-events
    examples
-   examples/querying-data
-   examples/writing-watchers
-   examples/extending
    api
    security
    server-compare
@@ -63,4 +60,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

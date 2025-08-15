@@ -25,6 +25,7 @@ m2r2 = "*"
 myst-parser = "*"
 recommonmark = "^0.7.0"
 setuptools = "*"  # needed in Python 3.12+: https://github.com/CrossNox/m2r2/issues/72
+sphinxext-rediraffe = "^0.2.7"
 
 [build-system]
 requires = ["poetry-core"]
