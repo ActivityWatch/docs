@@ -77,6 +77,7 @@ Other watchers to collect all kinds of data.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
 - :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
+- :gh:`Oxbrayo/aw-watcher-network-rs` - A watcher for tracking network activity and wifi SSIDs, connected and broadcasting by :gh-user:`Oxbrayo`
 
 Importers
 ---------
