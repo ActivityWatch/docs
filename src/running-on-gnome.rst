@@ -60,7 +60,7 @@ Then you can create two desktop files for these scripts to show up among your ap
   Categories=Utility;
 
 .. tip::
-  You will most likely have to replace the :code:`Exec` relative path with an absolute one. 
+  You will most likely have to replace the :code:`Exec` path using the `~` shorthand with a full absolute path, as `~` is not expanded in desktop files.
   That is:
 
   :code:`Exec="~/.local/opt/activitywatch/kill.sh"`
