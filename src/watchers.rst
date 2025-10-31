@@ -84,6 +84,8 @@ Importers
 .. include:: importers.rst
    :start-line: 2
 
+.. _custom-visualizations:
+
 Custom visualizations
 ---------------------
 
