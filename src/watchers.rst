@@ -71,11 +71,13 @@ Other watchers to collect all kinds of data.
 - :gh:`Alwinator/aw-watcher-table` - Monitors whether you have set your height-adjustable table to sitting or standing, by :gh-user:`Alwinator`
 - :gh:`akohlbecker/aw-watcher-tmux` - A plugin for tmux that allows monitoring activity in sessions and panes, by :gh-user:`akohlbecker`
 - :gh:`bcbernardo/aw-watcher-ask` - (WIP) Periodically poses questions to the user and records her answers.
+- :gh:`tobixen/aw-watcher-afk-prompt` - Poses questions to the user after an AFK period.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
-- :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
+- :gh:`sameersismail/aw-watcher-netstatus` - Boolean online/offline monitoring.  Simple and mature project.
+- :gh:`0xbrayo/aw-watcher-network-rs` - Network status watcher.  More feature-rich than aw-watcher-netstatus.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
 - :gh:`tobixen/aw-watcher-lid` - A watcher watching the lid status, suspend status and power-off status for a laptop
 
@@ -84,6 +86,11 @@ Importers
 
 .. include:: importers.rst
    :start-line: 2
+
+Exporters
+---------
+
+- :gh:`tobixen/aw-exporter-timewarrior` - an attempt on rule-based categorization and tagging of activities, then exporting the tags to Timewarrior.  (The plan is to rename it to aw-tagger and let it support other backends, including to feed the tags back to ActivityWatch).
 
 Custom visualizations
 ---------------------
