@@ -182,6 +182,13 @@ elif THEME_RTD:
 
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
     html_theme_options = {"collapse_navigation": False, "navigation_depth": 4}
+    html_context = {
+        "display_github": True,
+        "github_user": "ActivityWatch",
+        "github_repo": "docs",
+        "github_version": "master",
+        "conf_py_path": "/src/",
+    }
     using_rtd_theme = True
 
 # The name for this set of Sphinx documents.
