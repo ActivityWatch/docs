@@ -1,41 +1,50 @@
 Directories
 ===========
 
-Where things get stored depends on the platform you're using. All paths should follow standard directories on their platforms, and to accomplish this we use `appdirs <https://pypi.org/project/appdirs/>`_ in Python code and `appdirs-rs <https://crates.io/crates/appdirs/>`_ in Rust code.
+Where things get stored depends on the platform you're using. All paths should follow standard directories on their platforms, and to accomplish this we use `appdirs <https://pypi.org/project/appdirs/>`_ in Python code and the `dirs <https://crates.io/crates/dirs/>`_ crate in Rust code.
+
+Each ActivityWatch component stores its data in a subdirectory named after itself. For example, ``aw-server-rust`` stores its database in the data directory under ``aw-server-rust/``, and ``aw-watcher-afk`` stores its config under ``aw-watcher-afk/``.
+
+Since v0.12, the default server is ``aw-server-rust``, so the paths below use that as the example.
 
 .. _data-directory:
 
 Data
 ----
 
-- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
-- macOS: ``~/Library/Application\ Support/activitywatch``
-- Linux: ``~/.local/share/activitywatch``
+This is where the SQLite database and other persistent data is stored.
+
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\aw-server-rust``
+- macOS: ``~/Library/Application Support/activitywatch/aw-server-rust``
+- Linux: ``~/.local/share/activitywatch/aw-server-rust``
 
 .. _config-directory:
 
 Config
 ------
 
+Configuration files for each component.
 
-- Windows: ``%LocalAppData%\activitywatch\activitywatch``
-- macOS: ``~/Library/Application\ Support/activitywatch/``
-- Linux: ``~/.config/activitywatch``, or the path defined by the :code:`$XDG_CONFIG_HOME` environment variable.
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\aw-server-rust``
+- macOS: ``~/Library/Application Support/activitywatch/aw-server-rust``
+- Linux: ``~/.config/activitywatch/aw-server-rust``, or the path defined by the :code:`$XDG_CONFIG_HOME` environment variable.
+
+Other components have their own config directories, e.g. ``aw-watcher-afk``, ``aw-watcher-window``.
 
 .. _logs-directory:
 
 Logs
 ----
 
-- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch``
-- macOS: ``~/Library/Logs/activitywatch``
-- Linux: ``~/.cache/activitywatch/log`` 
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\aw-server-rust\logs``
+- macOS: ``~/Library/Logs/activitywatch/aw-server-rust``
+- Linux: ``~/.cache/activitywatch/log/aw-server-rust``
 
 .. _cache-directory:
 
 Cache
 -----
 
-- Windows: TODO
-- macOS: TODO
-- Linux: ``~/.cache/activitywatch``
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\aw-server-rust\cache``
+- macOS: ``~/Library/Caches/activitywatch/aw-server-rust``
+- Linux: ``~/.cache/activitywatch/aw-server-rust``
