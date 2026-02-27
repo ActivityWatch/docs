@@ -15,7 +15,7 @@ aw-server = {git = "https://github.com/ActivityWatch/aw-server.git", rev = "mast
 aw-client = {git = "https://github.com/ActivityWatch/aw-client.git", rev = "master"}
 
 # Doc build deps
-sphinx = ">=7.0"
+sphinx = ">=7.0,<9.0"
 sphinx-autobuild = "*"
 sphinx_rtd_theme = ">=2.0"
 sphinx-book-theme = "*"
