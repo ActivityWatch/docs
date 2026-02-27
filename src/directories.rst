@@ -3,9 +3,9 @@ Directories
 
 Where things get stored depends on the platform you're using. All paths should follow standard directories on their platforms, and to accomplish this we use `appdirs <https://pypi.org/project/appdirs/>`_ in Python code and the `dirs <https://crates.io/crates/dirs/>`_ crate in Rust code.
 
-Each ActivityWatch component stores its data in a subdirectory named after itself. For example, ``aw-server-rust`` stores its database in the data directory under ``aw-server-rust/``, and ``aw-watcher-afk`` stores its config under ``aw-watcher-afk/``.
+Each ActivityWatch component stores its data in a subdirectory named after itself.
 
-Since v0.12, the default server is ``aw-server-rust``, so the paths below use that as the example.
+The paths below use ``aw-server-rust`` as an example component.
 
 .. _data-directory:
 
