@@ -183,6 +183,15 @@ elif THEME_RTD:
     html_theme_options = {"collapse_navigation": False, "navigation_depth": 4}
     using_rtd_theme = True
 
+    # Enable "Edit on GitHub" links (fixes #158)
+    html_context = {
+        "display_github": True,
+        "github_user": "ActivityWatch",
+        "github_repo": "docs",
+        "github_version": "master",
+        "conf_py_path": "/src/",
+    }
+
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
