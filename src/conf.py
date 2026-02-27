@@ -44,10 +44,10 @@ extensions = [
 ]
 
 extlinks = {
-    "issue": ("https://github.com/ActivityWatch/activitywatch/issues/%s", "issue #"),
-    "gh": ("https://github.com/%s", ""),
-    "gh-user": ("https://github.com/%s", "@"),
-    "gh-aw": ("https://github.com/ActivityWatch/%s", ""),
+    "issue": ("https://github.com/ActivityWatch/activitywatch/issues/%s", "issue #%s"),
+    "gh": ("https://github.com/%s", "%s"),
+    "gh-user": ("https://github.com/%s", "@%s"),
+    "gh-aw": ("https://github.com/ActivityWatch/%s", "%s"),
 }
 
 # Redirects for moved pages
@@ -98,7 +98,7 @@ release = "v0.13.1"
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = "en"
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -112,7 +112,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "changelog/*.md"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
