@@ -45,7 +45,7 @@ For a detailed comparison, see the `ActivityWatch vs RescueTime <https://activit
 Can I extend ActivityWatch with custom tracking?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes! ActivityWatch has a modular architecture built around "watchers" — small programs that track different things and report to a central server. You can write your own watchers using the REST API. The community has built watchers for VS Code, JetBrains IDEs, Spotify, and more. See the :ref:`Examples <examples>` for how to interact with ActivityWatch programmatically.
+Yes! ActivityWatch has a modular architecture built around "watchers" — small programs that track different things and report to a central server. You can write your own watchers using the REST API. The community has built watchers for VS Code, JetBrains IDEs, Spotify, and more. See the :doc:`examples` for how to interact with ActivityWatch programmatically.
 
 
 Technical
