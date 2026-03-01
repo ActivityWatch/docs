@@ -1,31 +1,70 @@
 FAQ
 ===
 
-..
-   Some of this should probably be moved to a development FAQ.
+General
+-------
 
-.. note::
-   Some of these questions are technically not frequently asked.
+What is ActivityWatch?
+~~~~~~~~~~~~~~~~~~~~~~
+
+ActivityWatch is a free, open-source, automated time tracker that runs on your computer and monitors which applications and websites you use. It works on Windows, macOS, Linux, and Android. Unlike cloud-based time trackers, all data is stored locally on your device for maximum privacy.
+
+Is ActivityWatch really free?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. ActivityWatch is completely free and open-source software, licensed under the MPL-2.0 license. There are no premium tiers, no usage limits, and no ads. It is developed and maintained by volunteers and community contributors.
+
+What platforms does ActivityWatch support?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ActivityWatch runs on **Windows** (10 and later), **macOS** (10.15+), **Linux** (most distributions), and **Android**. Browser extensions are available for Chrome, Firefox, and Edge to track your web activity.
+
+Does ActivityWatch track my data privately?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. ActivityWatch follows a `local-first <https://www.inkandswitch.com/local-first.html>`_ approach — all your time tracking data is stored on your own device and is never sent to any server. You have full control over your data and can export, delete, or back it up at any time.
 
 Where is my data stored?
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-All your data is stored in a SQLite database in the :ref:`data directory <data-directory>`.
+All your data is stored in a SQLite database in the :ref:`data directory <data-directory>`. Nothing is sent to any cloud service.
+
+How does ActivityWatch compare to RescueTime?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ActivityWatch is a privacy-first, open-source alternative to RescueTime. Key differences:
+
+- **Data storage**: ActivityWatch keeps everything local on your device, while RescueTime sends data to their cloud servers.
+- **Platform support**: ActivityWatch supports Linux (which RescueTime dropped support for in 2024), plus Windows, macOS, and Android.
+- **Price**: ActivityWatch is completely free. RescueTime charges $12/month for their premium tier.
+- **Extensibility**: ActivityWatch lets you write custom watchers and integrations. RescueTime is a closed system.
+- **Data access**: All your ActivityWatch data is always accessible. RescueTime's free tier limits how far back you can see.
+
+For a detailed comparison, see the `ActivityWatch vs RescueTime <https://activitywatch.net/blog/activitywatch-vs-rescuetime/>`_ blog post and the `general time tracker comparison <https://activitywatch.net/blog/comparing-time-trackers/>`_.
+
+Can I extend ActivityWatch with custom tracking?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes! ActivityWatch has a modular architecture built around "watchers" — small programs that track different things and report to a central server. You can write your own watchers using the REST API. The community has built watchers for VS Code, JetBrains IDEs, Spotify, and more. See the :doc:`examples` for how to interact with ActivityWatch programmatically.
+
+
+Technical
+---------
 
 How do I interpret the raw data?
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, familiarize yourself with the `data model <buckets-and-events>`. After that, you might want to have a look at the `Examples`.
 
 How can I use ActivityWatch with my own code?
----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See the `Examples` for different ways to use ActivityWatch programmatically.
 
 .. _how-does-aw-know-when-im-afk:
 
 How does ActivityWatch know when I am AFK?
-------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On Windows and macOS, we use functionality offered by those platforms to give us the
 time since last input.
@@ -38,7 +77,7 @@ Using this data (seconds since last input) we check if more than 3 minutes have 
 If the browser watcher is running, the user will also by default be considered to not be AFK when the active browser tab has sound playing from it. This helps when the user for example watches a video or is in a video/audio meeting.
 
 Why is the active window logged as "unknown" when using Wayland?
-----------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Wayland protocol does not have a notion of an active window, and it is unlikely to ever have.
 Wayland is also developed with security in mind, so access should be handed out on an app-by-app basis.
@@ -54,7 +93,7 @@ Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all
 You can see the general status of the ability of `getting the active window in Wayland on StackOverflow <https://stackoverflow.com/questions/45465016/how-do-i-get-the-active-window-on-gnome-wayland>`_ or follow `the issue for ActivityWatch tracking the problem <https://github.com/ActivityWatch/activitywatch/issues/92>`_.
 
 How accurate is ActivityWatch?
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The design of ActivityWatch is that it consists of multiple watchers which report different types of activities.
 Each watcher has its own flaws in accuracy for different reasons.
@@ -67,7 +106,7 @@ The accuracy will vary depending on use-case and depending on what data you are 
 Even if the tracking was perfect, what should be considered being "active" is subjective.
 
 What happens if it is down or crashes?
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ActivityWatch consists of several processes running independently, so one thing crashing will have limited impact on the rest of the system.
 
@@ -77,12 +116,12 @@ If a watcher crashes, its bucket will simply remain untouched until it is restar
 
 ..
     What happens when my computer is off or asleep?
-    -----------------------------------------------
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     If your computer is off or asleep, watchers will usually record nothing. i.e. one events ending (:code:`timestamp + duration`) will not match up with the following event's beginning (:code:`timestamp`).
 
 Some events have 0 duration. What does this mean?
--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Watchers` most commonly use a polling method called `heartbeats` in order to store information on the server.
 Heartbeats are received regularly with some data, and when two consecutive heartbeats have identical data, they get merged and the duration of the new one becomes the time difference between the previous two.
