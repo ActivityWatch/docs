@@ -79,10 +79,11 @@ If the browser watcher is running, the user will also by default be considered t
 Can I change when ActivityWatch marks me as AFK?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. The default AFK timeout is 3 minutes. To change it, open the ActivityWatch tray menu, choose the option to open the config folder, then edit the ``aw-watcher-afk`` config file. Set ``timeout`` to the number of seconds without keyboard or mouse activity before ActivityWatch should mark you as AFK.
+Yes. The default AFK timeout is 3 minutes. To change it, open the ActivityWatch tray menu, choose the option to open the config folder, then edit ``aw-watcher-afk/aw-watcher-afk.toml``. Set ``timeout`` to the number of seconds without keyboard or mouse activity before ActivityWatch should mark you as AFK.
 For example, ``timeout = 300`` marks you as AFK after 5 minutes.
 
-The file is named ``aw-watcher-afk.toml``. If the setting is commented out, remove the leading ``#`` before saving.
+If the setting is commented out, remove the leading ``#`` before saving.
+After saving the file, restart ActivityWatch or ``aw-watcher-afk`` for the change to take effect.
 
 If idle or locked-screen time is still counted as active time, first check that ``aw-watcher-afk`` is running and that the Timeline view shows an ``afk`` period while you are away.
 See :doc:`configuration` for the related ``aw-watcher-afk`` options.

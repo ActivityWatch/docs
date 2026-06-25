@@ -38,9 +38,10 @@ aw-watcher-afk
 - ``timeout`` Time in seconds after which a period without keyboard or mouse activity is considered to be AFK (away from keyboard). The default is ``180`` seconds.
 - ``poll_time`` Time in seconds between checks for activity. The default is ``5`` seconds.
 
-These settings live in ``aw-watcher-afk.toml``, the config file for the ``aw-watcher-afk`` component, not in the ActivityWatch web UI settings page.
+These settings live in ``aw-watcher-afk/aw-watcher-afk.toml``, the config file for the ``aw-watcher-afk`` component, not in the ActivityWatch web UI settings page.
 You can open the config folder from the ActivityWatch tray menu, or use the :ref:`config directory <config-directory>` for your platform.
 If a setting is commented out in the file, remove the leading ``#`` before changing it.
+After saving the file, restart ActivityWatch or ``aw-watcher-afk`` for the change to take effect.
 
 See `aw_watcher_afk/config.py <https://github.com/ActivityWatch/aw-watcher-afk/blob/master/aw_watcher_afk/config.py>`_ for the source of the default config values.
 
