@@ -74,6 +74,7 @@ Other watchers to collect all kinds of data.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
+- :gh:`0xbrayo/aw-watcher-ps` - Tracks time spent per game on PS5/PS4 by polling your own PlayStation Network presence, by :gh-user:`0xbrayo`.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
 - :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
