@@ -21,7 +21,7 @@ Watches the active window, its title, and application name.
 - :gh-aw:`aw-watcher-window` - The official window watcher for Windows, macOS, and Linux (X11 only).
 - :gh-aw:`aw-watcher-window-wayland` - A window watcher for Wayland, by :gh-user:`johan-bjareholt`.
 - :gh:`2e3s/awatcher` - A compiled watcher for X11 and Wayland to replace default window and AFK watchers, by :gh-user:`2e3s`.
-- :gh-aw:`aw-watcher-window-hyprland` - A window watcher for Hyprland, by :gh-user:`bobvanderlinden`.
+- :gh:`bobvanderlinden/aw-watcher-window-hyprland` - A window watcher for Hyprland, by :gh-user:`bobvanderlinden`.
 
 Browser watchers
 ----------------
@@ -74,10 +74,12 @@ Other watchers to collect all kinds of data.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
+- :gh:`0xbrayo/aw-watcher-ps` - Tracks time spent per game on PS5/PS4 by polling your own PlayStation Network presence, by :gh-user:`0xbrayo`.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
 - :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
 - :gh:`Oxbrayo/aw-watcher-network-rs` - A watcher for tracking network activity and wifi SSIDs, connected and broadcasting by :gh-user:`Oxbrayo`
+- :gh:`tobixen/aw-watcher-lid` - A watcher watching the lid status, suspend status and power-off status for a laptop
 
 Importers
 ---------
