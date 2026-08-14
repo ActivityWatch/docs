@@ -15,6 +15,10 @@ code {
     color: rgb(51, 51, 51);
 }
 
+.rst-content code.literal, .rst-content tt.literal {
+    color: #a34400;
+}
+
 .rst-content .section ul p {
     margin-bottom: 0px !important;
 }
