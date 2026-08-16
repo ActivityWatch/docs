@@ -6,8 +6,10 @@ ActivityWatch Documentation
 
 Documentation for [ActivityWatch](https://activitywatch.net), the free and open-source automated time tracker.
 
-The docs are hosted at [docs.activitywatch.net](https://docs.activitywatch.net/) (by [Read the Docs](https://readthedocs.org/)).
+Hosted by [Read the Docs](https://readthedocs.org/).
 
+https://activitywatch.net/ ➝ [ActivityWatch/activitywatch.github.io](https://github.com/ActivityWatch/activitywatch.github.io)  
+https://docs.activitywatch.net/ ➝ this repo
 
 # Build
 
