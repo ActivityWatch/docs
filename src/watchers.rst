@@ -71,6 +71,8 @@ Other watchers to collect all kinds of data.
 - :gh:`Alwinator/aw-watcher-table` - Monitors whether you have set your height-adjustable table to sitting or standing, by :gh-user:`Alwinator`
 - :gh:`akohlbecker/aw-watcher-tmux` - A plugin for tmux that allows monitoring activity in sessions and panes, by :gh-user:`akohlbecker`
 - :gh:`bcbernardo/aw-watcher-ask` - (WIP) Periodically poses questions to the user and records her answers.
+- :gh:`Jeremiah-England/aw-watcher-ask-away` - Asks what you were doing when you return from an AFK break, and logs it as the AFK period, by :gh-user:`Jeremiah-England`.
+- :gh-aw:`aw-watcher-checkin` - (WIP) Adopted from :gh:`Jeremiah-England/aw-watcher-ask-away` with full history, by :gh-user:`Jeremiah-England`. Currently the AFK-return prompt; context-switch and long-block check-ins are planned.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
