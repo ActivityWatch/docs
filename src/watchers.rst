@@ -6,7 +6,7 @@ Watchers are the parts of ActivityWatch that do all the data collecting.
 ActivityWatch comes with two watchers enabled by default:
 
 - :gh-aw:`aw-watcher-afk` - Watches for mouse & keyboard activity to detect if the user is active (by default, an inactive period of at least 3 minutes is flagged as AFK: away from keyboard).
-- :gh-aw:`aw-watcher-window` - Watches the active window, its title, and it's url (on Chrome-based browsers & Safari).
+- :gh-aw:`aw-watcher-window` - Watches the active window, its title, and its url (on Chrome-based browsers & Safari).
 
 These default watchers are collecting some of the most important data.
 But there is more to collect, so here are some other watchers that let you do so.
@@ -54,7 +54,7 @@ Media watchers
 If you want to more accurately track media consumption.
 
 - :gh-aw:`aw-watcher-spotify` - (Beta) Uses the Spotify Web API to get the active track.
-- :gh-aw:`aw-watcher-chromecast` - (not working yet) Watches what is playing on you Chromecast device.
+- :gh-aw:`aw-watcher-chromecast` - (not working yet) Watches what is playing on your Chromecast device.
 - :gh-aw:`aw-watcher-openvr` - (not working yet) Watches active VR applications.
 - :gh:`RundownRhino/aw-watcher-mpv-sender` - (WIP) Watches mpv and reports the currently playing video.
 - :gh:`2e3s/aw-watcher-media-player` - Watches the currently playing media which is reported by most players to the system.
@@ -80,7 +80,7 @@ Other watchers to collect all kinds of data.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
 - :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
-- :gh:`Oxbrayo/aw-watcher-network-rs` - A watcher for tracking network activity and wifi SSIDs, connected and broadcasting by :gh-user:`Oxbrayo`
+- :gh:`0xbrayo/aw-watcher-network-rs` - A watcher for tracking network activity and wifi SSIDs, connected and broadcasting by :gh-user:`0xbrayo`
 - :gh:`tobixen/aw-watcher-lid` - A watcher watching the lid status, suspend status and power-off status for a laptop
 
 Importers
