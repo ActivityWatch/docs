@@ -47,5 +47,6 @@ These are just to serve as reference, and to keep track of forks.
 
  - :gh:`doubledashio/activitywatch` - Fork of ActivityWatch with internationalization support (French) among other changes, likely for some research purpose.
  - :gh:`simonperneel/activitywatch` - Fork used by a `EU-funded study on digital wellbeing <https://cordis.europa.eu/project/id/950635>`_.
+ - :gh:`CODEX-cpp/TrackFlow` - Windows desktop fork rewritten in Rust/Tauri (single in-process server, no network port), with a redesigned UI, project/stopwatch tracking, category tagging, custom notifications, and an extensible custom-watcher system.
 
 If you fork ActivityWatch, please add your fork to this list.
