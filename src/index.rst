@@ -21,6 +21,7 @@ Table of contents
    directories
    features
    watchers
+   activity-frames
    faq
    syncing
    migrating
