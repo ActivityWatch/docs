@@ -45,6 +45,13 @@ Table of contents
    development
    forking
 
+.. _research-docs:
+.. toctree::
+   :maxdepth: 2
+   :caption: Research
+
+   research/index
+
 .. _meta-docs:
 .. toctree::
    :maxdepth: 3
