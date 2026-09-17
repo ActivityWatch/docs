@@ -51,6 +51,7 @@ Table of contents
    :caption: Meta
 
    privacy
+   citing
    history
    changelog
 
