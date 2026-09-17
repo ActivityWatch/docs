@@ -86,3 +86,4 @@ instrument, and we keep a list of studies that have used ActivityWatch.
    :maxdepth: 2
 
    participant-instructions
+   participant-instructions-android
