@@ -96,9 +96,25 @@ Notes for researchers
 
 A few things that reliably cause support questions:
 
-- **Two buckets is correct**, not a symptom of a double installation: one window watcher and
-  one AFK watcher. Four rows would mean the participant opened the standard dashboard on port
-  5600 instead.
+- **Filtering happens at capture, not at export.** The watcher classifies browser titles
+  into study categories and strips URLs *before* the event is recorded, so live Raw Data
+  already shows categories rather than real titles. What live Raw Data still shows is the
+  **real hostname**: that is rewritten to ``research-participant`` on export only. A
+  researcher comparing the dashboard to an export will see the hostname change, and nothing
+  else.
+- **The export fails closed, and that is the alarming one.** If the Research Edition was
+  installed over an existing ActivityWatch database, the old unfiltered events are still
+  there, and the export refuses rather than shipping them. The message says to reinstall on
+  a clean profile. Tell participants to install the Research Edition on a machine that has
+  no prior ActivityWatch database, or expect this at the end of the study, when there is no
+  time left to re-collect.
+- **Two buckets is the default**, not a double installation: one window watcher and one AFK
+  watcher. Do not use the row count to tell the Research Edition from a standard install --
+  a standard installation also shows two buckets, and the two run as separate servers, so
+  opening port 5600 does not add rows to the 5667 view. Diagnose by the **Research Edition**
+  badge and port **5667**. Buckets are created per watcher and per host
+  (see :doc:`the data model </buckets-and-events>`), so extra watchers or a hostname
+  change can add rows on either server.
 - **Use "Export all buckets as JSON", not the per-row menu.** The three-dot menu on a row
   exports a single bucket. Participants following that route upload two files, or silently
   omit AFK data.
@@ -115,5 +131,3 @@ A few things that reliably cause support questions:
   their screen does not show.
 - **The exported filename is fixed.** It cannot carry a participant number, so your upload
   form needs a field or a per-participant link.
-- **Live Raw Data is unsanitised by design.** The rewriting to ``research-participant``
-  happens in the export.

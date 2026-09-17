@@ -39,29 +39,45 @@ If you use ActivityWatch in published work, please cite the software:
 The repository also contains a ``CITATION.cff``, which GitHub renders as a
 "Cite this repository" button.
 
-Studies using ActivityWatch
----------------------------
+Studies and publications
+------------------------
 
 An incomplete list, maintained so that researchers choosing an instrument can see prior use.
 ActivityWatch typically appears in methods sections rather than titles or abstracts, so it is
-largely invisible to citation indexes — if you have used it and are not listed, please tell us.
+largely invisible to citation indexes — if you have used it and are not listed, please
+tell us.
+
+Used as a data-collection instrument
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Psychological Wellbeing, Sleep, and Video Gaming: Analyses of Comprehensive Digital
-  Traces** — Oxford Internet Institute (Ballou, Földes, Hakman, Vuorre, Magnusson, Przybylski),
-  Stage 1 Registered Report, 2025. ActivityWatch used as the Android data-collection channel
-  for 2,000+ participants over three months.
+  Traces** — Oxford Internet Institute (Ballou, Földes, Hakman, Vuorre, Magnusson,
+  Przybylski), Stage 1 Registered Report, 2025. ActivityWatch is the Android data-collection
+  channel for 2,000+ participants over three months, alongside console and storefront
+  telemetry.
 - **On/Off** — imec-mict-UGent (Vanden Abeele, Perneel, Van Gaeveren), the DISCONNECT ERC
-  citizen-science panel. ActivityWatch used for opt-in laptop and PC collection, documented in
-  the study's participant information and privacy materials.
-- **Traces as Data** — Parry & Klingelhoefer, handbook chapter, 2025. Named as an exemplar
-  desktop-logging tool.
-- **Sabermetrics for Cyber** — Rivera, Booz & Hammerstein, ECCWS 2025. Used as an instrument.
-- **Activity Frames** — Iyamu, 2026 (arXiv:2608.05784).
-- Theses: Kroček (University of South Bohemia, 2020), Kraus (Czech Technical University in
-  Prague, 2021), Panchuk (NURE Kharkiv, 2026).
+  citizen-science panel. Used for opt-in laptop and PC collection, documented in the study's
+  participant information and privacy materials.
+- **Sabermetrics for Cyber** — Rivera, Booz & Hammerstein (CMU SEI), ECCWS 2025.
 
-Further deployments are known but unpublished or not yet listed here, including at the
-University of Maryland iSchool, MIT Media Lab, Clemson University, and Lund University's IIIEE.
+Discussed, compared or built upon
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These cite ActivityWatch without using it to collect their data.
+
+- **Traces as Data** — Parry & Klingelhoefer, handbook chapter, 2025. Names ActivityWatch as
+  an exemplar desktop-logging tool.
+- **Activity Frames** — Iyamu, 2026 (`arXiv:2608.05784 <https://arxiv.org/abs/2608.05784>`_).
+  Cites ActivityWatch once as related work, and runs its own capture pipeline.
+- Student theses building on or integrating ActivityWatch: Kroček (University of South
+  Bohemia, 2020), Kraus (Czech Technical University in Prague, 2021), Panchuk (NURE Kharkiv,
+  2026).
+
+Unpublished or unlisted deployments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Known deployments that have not produced a listed publication, including the University of
+Maryland iSchool, MIT Media Lab, Clemson University, and Lund University's IIIEE.
 
 If you are running or planning a study, please get in touch. We are glad to help scope the
 instrument, and we keep a list of studies that have used ActivityWatch.
