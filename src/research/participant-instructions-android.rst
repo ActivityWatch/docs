@@ -104,16 +104,19 @@ It takes a couple of minutes.
    ``aw-watcher-android_…`` and ``aw-watcher-afk_…``. That is normal.
 3. Scroll down to **Import and export buckets**.
 4. Under **Export buckets**, tap **Export all buckets as JSON**.
-5. Android will ask where to save the file or which app to share it with. Save it to
-   Downloads, or share it directly to your researcher's upload link if they provided one.
+5. Your browser will either ask where to save the file or send it straight to your
+   **Downloads** folder without asking. Both are normal, and the export has succeeded as
+   soon as the file exists. If you are not shown a chooser, open your browser's downloads
+   list (or the **Files** app → **Downloads**) and the file will be there.
 6. The file is named ``aw-bucket-export.json``. Upload it where your researcher has asked
-   you to.
+   you to, or use the share sheet to send it to the researcher's upload link if they
+   provided one.
 
 If something looks wrong, contact your researcher rather than searching online. The study
 version behaves differently from the public ActivityWatch.
 
-Notes for researchers
----------------------
+Notes for researchers (Android)
+-------------------------------
 
 A few things specific to the Android Research Edition:
 
@@ -124,10 +127,19 @@ A few things specific to the Android Research Edition:
   may kill background services on low-battery or power-save modes. Ask participants to
   add ActivityWatch Research to their battery optimisation exemptions: Settings → Battery
   → Battery optimisation → All apps → ActivityWatch Research → Don't optimise.
-- **The export fails closed if unfiltered data is present.** The same rule as the desktop
-  build applies: if the Research Edition was installed over an existing ActivityWatch
-  database, the export refuses rather than shipping unfiltered data. Tell participants to
-  install on a device (or fresh profile) with no prior ActivityWatch data.
+- **The Research Edition has its own data store, not a shared one.** It has its own
+  application ID (``net.activitywatch.android.research``) and its own app data directory,
+  so installing it next to a standard ActivityWatch installation does not mix the two
+  databases and does not require a fresh device. A participant who already uses
+  ActivityWatch keeps their own install and data untouched.
+- **Pre-existing data can still reach the Research database through an import.** The
+  reachable path is not a shared database but an import or restore: if anyone imports an
+  exported database into the Research app, those events land in the Research database and
+  are exported with everything else. The desktop Research Edition refuses to export a
+  database containing unfiltered events; the Android build does not implement that guard,
+  so the only protection here is not importing in the first place. Do not ask participants
+  to import or restore anything into the Research app, and do not re-use a standard
+  ActivityWatch export file as study data.
 - **Sideloading on Oculus / Meta Quest requires Developer Mode** (see Step 1 above).
   If your study uses VR headsets, confirm with each participant that Developer Mode is on
   before the study period begins, not at export time.
