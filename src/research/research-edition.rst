@@ -59,12 +59,10 @@ Data size
 ---------
 
 The JSON export from a default Research Edition install is small, on the order of 1-5 MB
-per participant per week of collection (an estimate, not a guarantee):
-window and AFK events with titles and URLs already dropped, so the file is
-mostly short category strings. Extra watchers connected to port 5667 add their
-own buckets to the same export. Studies that need a number for a data-protection
-review should measure a pilot-week export rather than plan around a published
-range.
+per participant per week of collection (an estimate, not a guarantee). It holds window and
+AFK events with titles and URLs already dropped, so most of it is short category strings.
+Extra watchers connected to port 5667 add their own buckets to the same export. Studies that
+need a firm number for a data-protection review should measure a pilot-week export.
 
 Making a variant for your study
 -------------------------------
