@@ -58,7 +58,8 @@ changed. The dashboard shows a **Research Edition** badge.
 Data size
 ---------
 
-The JSON export from a default Research Edition install is typically small:
+The JSON export from a default Research Edition install is small, on the order of 1-5 MB
+per participant per week of collection (an estimate, not a guarantee):
 window and AFK events with titles and URLs already dropped, so the file is
 mostly short category strings. Extra watchers connected to port 5667 add their
 own buckets to the same export. Studies that need a number for a data-protection
@@ -83,8 +84,10 @@ end-of-study export. A variant is therefore mostly:
    :doc:`participant instructions <participant-instructions>` and add your study name,
    contact details and upload location.
 
-The design is intended to fit an ethics review, but your committee decides that for your
-study. Bring its requirements when you get in touch.
+Ethics committees decide for themselves, but the design is built around data
+minimisation: titles and URLs are not stored, nothing is sent live, and the participant
+exports a single file they can inspect. Bring your committee's requirements when you get
+in touch and the variant can be adjusted to them.
 
 To request a variant, contact Erik Bjäreholt, the ActivityWatch maintainer, at
 erik@bjareho.lt.
