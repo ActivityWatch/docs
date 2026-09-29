@@ -58,8 +58,12 @@ changed. The dashboard shows a **Research Edition** badge.
 Data size
 ---------
 
-The export is small: roughly 1-5 MB per participant per week of collection, as an
-estimate.
+The JSON export from a default Research Edition install is typically small:
+window and AFK events with titles and URLs already dropped, so the file is
+mostly short category strings. Extra watchers connected to port 5667 add their
+own buckets to the same export. Studies that need a number for a data-protection
+review should measure a pilot-week export rather than plan around a published
+range.
 
 Making a variant for your study
 -------------------------------
