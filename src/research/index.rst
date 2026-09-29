@@ -16,9 +16,9 @@ Why researchers use it
   makes the data flow easy to describe in an ethics application.
 - **Open source.** The collection logic can be read, audited and cited by reviewers.
 - **Cross-platform.** Windows, macOS and Linux today; Android is in development.
-- **No titles or URLs.** The Research Edition converts browser activity into predefined
-  categories and discards window titles and URLs before storing anything.
-  See :doc:`research-edition`.
+- **Filtered titles and URLs.** The bundled window watcher converts browser activity into
+  predefined categories and discards window titles and URLs before storing them.
+  Additional watchers are outside that guarantee. See :doc:`research-edition`.
 
 Self-reported computer use is a poor measure of actual computer use. The canonical validity
 study found that self-report agreed with software registration for only 18% of participants,

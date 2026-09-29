@@ -4,10 +4,10 @@ Research Edition
 ================
 
 The **Research Edition** is a separate build of ActivityWatch for research studies. It
-records which applications participants use and for how long, converts browser activity into
-categories defined by the study, and discards window titles and URLs before anything is
-written to disk. Data stays on the participant's computer until they export it and send it
-to the study team.
+records which applications participants use and for how long. The bundled window watcher
+converts browser activity into categories defined by the study and discards window titles
+and URLs before those events are written to disk. Data stays on the participant's computer
+until they export it and send it to the study team.
 
 This page is for researchers deciding whether it fits their study. Participants should use
 the :doc:`participant instructions <participant-instructions>`.
@@ -34,8 +34,15 @@ The desktop Research Edition turns on a privacy filter in ``aw-watcher-window``
   export refuses to run if the database contains unfiltered events, for example when the
   Research Edition was installed over an existing ActivityWatch database.
 
-What is *not* collected: page titles, URLs, document names and window titles. What *is*
-visible in the current build: application names, including which browser was used.
+On the ``aw-watcher-window`` path, page titles, URLs, document names and window titles
+are not stored. What *is* visible in the current build: application names, including
+which browser was used.
+
+That guarantee does not cover other watchers. The Research Edition server stores whatever
+is sent to it. A default install does not ship ``aw-watcher-web``, but if a participant
+connects it (or any other URL-bearing watcher) to port 5667, those events keep titles and
+URLs and sit in the same export. Studies should tell participants not to add extra
+watchers.
 
 There is no telemetry and no study server. The participant exports one JSON file from the
 dashboard and uploads it where the study team asks.
@@ -60,8 +67,11 @@ Making a variant for your study
 Studies tend to want the same thing: categorized time, no raw titles or URLs, a simple
 end-of-study export. A variant is therefore mostly:
 
-1. **A category map**: which sites and apps belong to which of your categories, with
-   everything else excluded. This is the part only the study can define.
+1. **Category maps**: a browser map that defines which sites belong to the study's
+   categories (unmatched browser windows are stored as ``excluded``). Application names
+   are kept by default. To replace them with categories and mark unmapped apps as
+   ``Excluded``, configure the optional ``research_app_category_map``. This is the part
+   only the study can define.
 2. **A tagged build**: research builds are published as GitHub prereleases with a
    ``-research`` tag, which gives participants a stable download link you can cite in a
    methods section.
