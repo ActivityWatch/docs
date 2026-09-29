@@ -59,10 +59,11 @@ Data size
 ---------
 
 The JSON export from a default Research Edition install is typically small. It
-holds window and AFK events with titles and URLs already dropped, so most of it
-is short category strings. Extra watchers connected to port 5667 add their own
-buckets to the same export. Studies that need a firm number for a
-data-protection review should measure a pilot-week export.
+is an all-bucket export of filtered window events and AFK events. Each event
+has a timestamp and duration; window events keep the application name and the
+study category, with titles and URLs already dropped. Extra watchers connected
+to port 5667 add their own buckets to the same export. Studies that need a
+firm number for a data-protection review should measure a pilot-week export.
 
 Making a variant for your study
 -------------------------------
