@@ -48,6 +48,12 @@ The Research Edition has its own app identity, its own data folder and its own s
 ActivityWatch can run both side by side, and the standard install's data is not read or
 changed. The dashboard shows a **Research Edition** badge.
 
+Data size
+---------
+
+The export is small: roughly 1-5 MB per participant per week of collection, as an
+estimate.
+
 Making a variant for your study
 -------------------------------
 
