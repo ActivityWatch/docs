@@ -71,11 +71,11 @@ Now activate the virtualenv in your current shell session:
 .. code-block:: sh
 
     # For bash/zsh users:
-    source ./venv/bin/activate
+    source ~/.venv/bin/activate
     # For Windows git bash users:
-    source ./venv/Scripts/activate
+    source ~/.venv/Scripts/activate
     # For fish users:
-    source ./venv/bin/activate.fish
+    source ~/.venv/bin/activate.fish
 
 All the modules need to be installed in the same env in order to avoid build issues. This is why creating a single venv for all activitywatch repos is important and why relying on poetry to setup a per-folder venv is not an option.
 
