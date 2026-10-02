@@ -79,3 +79,7 @@ Autostart
 
       You probably want to make ActivityWatch start automatically on login using your operating system's autostart settings.
       Searching the web for "autostart application <your operating system>" should get you some good results that don't take long. You want to start the ``aw-qt`` executable in the application directory.
+
+      On Linux with systemd, you can instead run the server and watchers as
+      :doc:`user services <systemd-autostart>`. This also covers a reliable
+      GNOME/Wayland setup without ``aw-qt``.

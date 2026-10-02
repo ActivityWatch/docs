@@ -1,6 +1,10 @@
 Running on GNOME
 ================
 
+For GNOME/Wayland, prefer the :doc:`systemd setup <systemd-autostart>`, which
+waits for the required D-Bus interface instead of relying on a fixed startup
+delay.
+
 As an alternative for users of GNOME 3 and other desktop environments that don't support app trays, or simply to avoid depending on Qt, you can place two simple workaround scripts in your ActivityWatch install folder:
 
 :code:`start.sh`:
