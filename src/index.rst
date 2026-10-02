@@ -26,6 +26,7 @@ Table of contents
    directories
    features
    watchers
+   systemd-autostart
    faq
    syncing
    migrating

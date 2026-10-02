@@ -23,6 +23,9 @@ Watches the active window, its title, and application name.
 - :gh:`2e3s/awatcher` - A compiled watcher for X11 and Wayland to replace default window and AFK watchers, by :gh-user:`2e3s`.
 - :gh:`bobvanderlinden/aw-watcher-window-hyprland` - A window watcher for Hyprland, by :gh-user:`bobvanderlinden`.
 
+For a systemd-managed X11 setup or a GNOME/Wayland setup using the awatcher
+bundle, see :doc:`systemd-autostart`.
+
 Browser watchers
 ----------------
 
