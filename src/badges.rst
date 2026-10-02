@@ -20,7 +20,7 @@
       <br>
 
       <a href="https://github.com/ActivityWatch/activitywatch/actions?query=branch%3Amaster">
-        <img title="Build Status GitHub" src="https://github.com/ActivityWatch/activitywatch/workflows/Build/badge.svg?branch=master" />
+        <img title="Build Status GitHub" src="https://github.com/ActivityWatch/activitywatch/actions/workflows/test.yml/badge.svg?branch=master" />
       </a>
       <a href="http://docs.activitywatch.net">
         <img title="Documentation" src="https://readthedocs.org/projects/activitywatch/badge/?version=latest" />
