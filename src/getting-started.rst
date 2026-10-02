@@ -41,7 +41,7 @@ The aw-qt application is the easiest way to use ActivityWatch. It creates a tray
 
 If you've installed by extracting a zip archive, simply run the ``./aw-qt`` binary in the installation directory (either from your terminal or on Windows by double-clicking). You now should see an icon appear in your system tray.
 
-You should now also have the web interface running at `<localhost:5600>`_ and within a few minutes be able to view your data in the Activity view!
+You should now also have the web interface running at `<http://localhost:5600>`_ and within a few minutes be able to view your data in the Activity view!
 
 If you want more advanced ways to run ActivityWatch (including running it without aw-qt), check out the "Running" section of `installing-from-source`.
 
