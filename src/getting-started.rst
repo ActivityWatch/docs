@@ -149,3 +149,7 @@ A duplicate entry is harmless on its own: both apps only allow one running insta
 
       Window managers and desktop environments that don't support `XDG Autostart <https://wiki.archlinux.org/title/XDG_Autostart>`_ ignore ``~/.config/autostart``.
       There, start ``aw-qt`` (or ``aw-tauri``) from wherever you keep your startup commands, or use `dex <https://github.com/jceb/dex>`_ to run XDG autostart entries.
+
+      On Linux with systemd, you can instead run the server and watchers as
+      :doc:`user services <systemd-autostart>`. This also covers a reliable
+      GNOME/Wayland setup without ``aw-qt``.
