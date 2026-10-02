@@ -126,6 +126,31 @@ If the server crashes or is unavailable, watchers which use the `heartbeat <hear
 
 If a watcher crashes, its bucket will simply remain untouched until it is restarted.
 
+.. _port-already-in-use:
+
+The server fails to start: "Address already in use" or "Port 5600 is in use"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This error usually means an ActivityWatch instance is already running — for example from a previous session that was not shut down cleanly, or because ActivityWatch launched automatically at login while you were starting it manually.
+
+**Check if ActivityWatch is already running:**
+
+Open ``http://localhost:5600`` in your browser. If the ActivityWatch web interface loads, the server is already running and you can use it as-is. You can also close the duplicate launch.
+
+**If the web interface does not load**, another program has taken port 5600.
+Find it with the appropriate command for your operating system:
+
+* **Linux:** ``ss -ltnp | grep :5600`` or ``lsof -i :5600``
+* **macOS:** ``lsof -i :5600``
+* **Windows (Command Prompt):** ``netstat -ano | findstr :5600``
+
+Once you identify the process, stop it and start ActivityWatch again.
+
+.. note::
+   As of aw-server-rust 0.14, the server detects when another ActivityWatch
+   instance is already listening on the port and prints a clearer message
+   instead of a generic ``Address already in use`` error.
+
 ..
     What happens when my computer is off or asleep?
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
