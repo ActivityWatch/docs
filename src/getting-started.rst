@@ -6,6 +6,16 @@ Getting started
 
 Getting started with ActivityWatch is as easy as installing, starting it, and setting up autostart (if your installation method doesn't do it for you).
 
+System requirements
+===================
+
+The release builds are produced and tested on the following platforms. Older systems may work, but are not tested.
+
+- **Windows**: Windows 10 or later (x64; ARM64 builds are available for Windows 11).
+- **macOS**: macOS 12 (Monterey) or later. Releases are built with a deployment target of 12.0, so older versions fail at launch with errors such as ``dyld: Library not loaded: libswift_Concurrency.dylib``.
+- **Linux**: a distribution with glibc 2.35 or newer (the release is built on Ubuntu 22.04, so e.g. Ubuntu 22.04+, Debian 12+, Fedora 36+). Older distributions fail with ``GLIBC_2.xx not found`` errors; use a newer distribution or `build from source <installing-from-source>`_.
+- **Android**: see the `Play Store listing <https://play.google.com/store/apps/details?id=net.activitywatch.android>`_ for the supported Android versions.
+
 Installation
 ============
 
@@ -46,7 +56,7 @@ You should now also have the web interface running at `<localhost:5600>`_ and wi
 If you want more advanced ways to run ActivityWatch (including running it without aw-qt), check out the "Running" section of `installing-from-source`.
 
 .. note::
-   If you are running GNOME 3 or another desktop environment that does not support system trays, or if for some reason Qt can't be used on your machine, read `Running on GNOME`.
+   If you are running GNOME or another desktop environment that does not show system tray icons, install the `AppIndicator and KStatusNotifierItem Support <https://extensions.gnome.org/extension/615/appindicator-support/>`_ extension to get the tray icon back. If that is not an option, or if for some reason Qt can't be used on your machine, read `Running on GNOME`.
 
 .. note::
    If you are using a proxy ActivityWatch might not work out of the box. To fix this you can set the environment variable ``NO_PROXY`` to include ``127.0.0.1`` before starting aw-qt. How to set an environment variable depends on your operating system; use Google if you are unsure how to do this.
