@@ -7,6 +7,8 @@ Syncing
 
 ActivityWatch has basic support for syncing your data across multiple devices using the ``aw-sync`` module since ``v0.13.0``. It works by creating a "staging" database file in a device-specific folder in the sync directory (default is ``~/ActivityWatchSync``), which is then synced to the other devices using a file syncing tool of your choice (like Syncthing, rsync, Dropbox, or Google Drive). So ``aw-sync`` does not itself send data over the network, but instead relies on you using a file syncing tool to do that.
 
+Starting with ``v0.14``, the ``aw-sync`` daemon only pushes this device's data to the sync directory by default. To also import data from your other devices, set ``pull = true`` in ``aw-sync/config.toml`` in the :ref:`config directory <config-directory>` (the file is created with commented-out defaults the first time the daemon runs). Running ``aw-sync sync`` manually still both pulls and pushes.
+
 Android
 -------
 

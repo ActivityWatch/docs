@@ -32,9 +32,10 @@ For a list of watchers, see :doc:`watchers`. For a list of importers see :doc:`i
 User interfaces
 ---------------
 
-ActivityWatch currently has two user interfaces, aw-qt and aw-webui.
+ActivityWatch has the following user interfaces:
 
 - :gh-aw:`aw-qt` - Manages the server and watchers to make ActivityWatch easy to use for end-users.
+- :gh-aw:`aw-tauri` - An experimental alternative to aw-qt built with Tauri, which embeds aw-server-rust. Offered as a separate download starting with ``v0.14``.
 - :gh-aw:`aw-webui` - Offers visualization and an overview of the database. Hosted by aw-server in the bundle.
 
 Libraries
@@ -58,14 +59,14 @@ aw-client
 Writing these clients is something we've tried to make as easy as possible by creating client libraries with a clear API.
 A client could both be a watcher which sends data as well as a visualizer which fetches and presents data from the aw-server.
 
-Currently the primary client library is written in Python (known simply as aw-client) but a client library written in JavaScript is on the way and is expected to have the same level of support in the future.
+The primary client library is written in Python (known simply as aw-client), and there are also client libraries for JavaScript/TypeScript (used by aw-webui and aw-watcher-web) and Rust (used by aw-sync).
 
 - :gh-aw:`aw-client` (Python)
-- :gh-aw:`aw-client-js` (TypeScript/JavaScript, beta)
-- :gh-aw:`aw-client-rust <aw-server-rust/tree/master/aw-client-rust>` (Rust, work in progress)
+- :gh-aw:`aw-client-js` (TypeScript/JavaScript)
+- :gh-aw:`aw-client-rust <aw-server-rust/tree/master/aw-client-rust>` (Rust)
 
-aw-analysis
+aw-research
 ^^^^^^^^^^^
 
-There are also plans to create a library called :gh-aw:`aw-analysis` to aid in
-different types of analysis and transformation one might want to make using ActivityWatch data.
+:gh-aw:`aw-research` (formerly aw-analysis) contains tools to analyse and experiment with ActivityWatch data.
+Some of what is developed there may later become ActivityWatch features.

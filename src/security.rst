@@ -26,9 +26,11 @@ This is actually :issue:`1` in the ActivityWatch repository. See `filtering data
 Encrypting data
 ---------------
 
-Encrypting old data with a password would minimize the amount of sensitive data that would be leaked in case of a breach.
+Encrypting data at rest minimizes the amount of sensitive data that would be leaked if the database file is copied or stolen.
 
-The easiest way to build this would be to write a client that takes all events older than some duration and moves it into a encrypted container. This way it wouldn't add complexity to the server code.
+``aw-server-rust`` has opt-in support for encrypting its database with `SQLCipher <https://www.zetetic.net/sqlcipher/>`_. It is not included in release builds: you need to build ``aw-server-rust`` yourself with the ``encryption`` (or ``encryption-vendored``) Cargo feature, then provide the key with the ``AW_DB_PASSWORD`` environment variable or the ``--db-password`` flag. Prefer the environment variable, since command-line arguments may be visible in process listings.
+
+Encryption at rest does not protect against anything that can access the running server's API.
 
 
 Reproducible builds
