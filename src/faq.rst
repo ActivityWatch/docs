@@ -101,6 +101,7 @@ Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all
 
 - Switch to using X11.
 - Try an alternative AFK and window :ref:`watcher <window-watchers>` which supports Wayland.
+- Try the experimental Tauri distribution (starting with ``v0.14``), which bundles `awatcher <https://github.com/2e3s/awatcher>`_ on Linux for Wayland support. See :doc:`getting-started`.
 
 You can see the general status of the ability of `getting the active window in Wayland on StackOverflow <https://stackoverflow.com/questions/45465016/how-do-i-get-the-active-window-on-gnome-wayland>`_ or follow `the issue for ActivityWatch tracking the problem <https://github.com/ActivityWatch/activitywatch/issues/92>`_.
 
