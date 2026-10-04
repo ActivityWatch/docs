@@ -35,7 +35,7 @@ But then how do I get all my data in one place?
 
 Your options are:
 
-- Using the :docs:`syncing` feature
+- Using the :doc:`syncing` feature
 - Manually export & import buckets (recommended)
 - Find other time tracking software that's more suitable for your usecase
 - Keep reading...

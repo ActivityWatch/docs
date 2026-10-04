@@ -96,7 +96,7 @@ aw-webui
 .. _-features-26:
 
 ✨ Features (26)
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 -  feat: added link in category settings to the 'category rules' section
    on the forum
@@ -243,7 +243,7 @@ aw-webui
 -  fix: switched from node-sass to dart-sass
    (```5fa757e`` <https://github.com/ActivityWatch/aw-webui/commit/5fa757e>`__)
 -  fix: support Edge browser on macOS
-   (closes[`#61 <https://github.com/ActivityWatch/aw-webui/issues/61>`__](https://github.com/ActivityWatch/aw-watcher-web/issues/61))
+   (closes `#61 <https://github.com/ActivityWatch/aw-watcher-web/issues/61>`__)
    (```6acb378`` <https://github.com/ActivityWatch/aw-webui/commit/6acb378>`__)
 -  fix: changed 'file an issue' URL to show the issue template chooser
    (```0ba820d`` <https://github.com/ActivityWatch/aw-webui/commit/0ba820d>`__)
@@ -338,7 +338,7 @@ aw-client
 .. _-features-5:
 
 ✨ Features (5)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat!: switched config format to toml
    (`#58 <https://github.com/ActivityWatch/aw-client/issues/58>`__)
@@ -418,7 +418,7 @@ aw-core
 .. _-features-2:
 
 ✨ Features (2)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat: added union_no_overlap from aw-research
    (```d6f783d`` <https://github.com/ActivityWatch/aw-core/commit/d6f783d>`__)
@@ -483,7 +483,7 @@ aw-qt
 .. _-features-1:
 
 ✨ Features (1)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat!: switched config format to toml
    (`#75 <https://github.com/ActivityWatch/aw-qt/issues/75>`__)
@@ -539,7 +539,7 @@ aw-server
 .. _-features-1-1:
 
 ✨ Features (1)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat!: switched config format to toml
    (```92452af`` <https://github.com/ActivityWatch/aw-server/commit/92452af>`__)
@@ -582,7 +582,7 @@ aw-server-rust
 .. _-features-10:
 
 ✨ Features (10)
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 -  feat: added exclude_keyvals transform
    (```e8cc25a`` <https://github.com/ActivityWatch/aw-server-rust/commit/e8cc25a>`__)
@@ -670,7 +670,7 @@ aw-watcher-afk
 .. _-features-2-1:
 
 ✨ Features (2)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat!: switched config format to toml
    (`#49 <https://github.com/ActivityWatch/aw-watcher-afk/issues/49>`__)
@@ -725,7 +725,7 @@ aw-watcher-window
 .. _-features-1-2:
 
 ✨ Features (1)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat!: switched config format to toml
    (`#57 <https://github.com/ActivityWatch/aw-watcher-window/issues/57>`__)

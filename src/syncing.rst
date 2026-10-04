@@ -34,6 +34,6 @@ How to set up syncing
 
 .. note::
 
-    We recommend you've switched to ``aw-server-rust`` before using the syncing feature, as it has better performance which will help with syncing large amounts of data. If you are still using the legacy ``aw-server`` (Python), you can find the documentation for switching to the Rust server in :docs:`migrating`.
+    We recommend you've switched to ``aw-server-rust`` before using the syncing feature, as it has better performance which will help with syncing large amounts of data. If you are still using the legacy ``aw-server`` (Python), you can find the documentation for switching to the Rust server in :doc:`migrating`.
 
 For detailed instructions on how to use syncing, see the `aw-sync README <https://github.com/ActivityWatch/aw-server-rust/blob/master/aw-sync/README.md>`_.
