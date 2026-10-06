@@ -13,6 +13,9 @@ The paths below use ``aw-server-rust`` as an example component.
 .. note::
     ``v0.14.0`` on Windows mistakenly stored ``aw-server-rust`` data and config under ``AppData\Roaming`` instead of ``AppData\Local``. Later versions move it back automatically on startup, without overwriting anything already in ``AppData\Local``.
 
+.. note::
+    These paths are pinned by tests on every platform: ``tests/test_dirs_pinned.py`` in aw-core (Python), ``test_default_paths_are_pinned`` in aw-server-rust and aw-tauri, and ``test_legacy_dbfile_path_is_pinned`` in aw-server-rust (where the Python database is looked for when migrating). If you change a path, change this page and those tests together, and add a migration for existing installs.
+
 .. _data-directory:
 
 Data
