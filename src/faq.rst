@@ -88,6 +88,21 @@ After saving the file, restart ActivityWatch or ``aw-watcher-afk`` for the chang
 If idle or locked-screen time is still counted as active time, first check that ``aw-watcher-afk`` is running and that the Timeline view shows an ``afk`` period while you are away.
 See :doc:`configuration` for the related ``aw-watcher-afk`` options.
 
+.. _macos-permissions:
+
+What macOS permissions does ActivityWatch need?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The core install asks for as little as possible:
+
+- **Accessibility**: required by ``aw-watcher-window`` to read the active window's title. macOS prompts for it on first run; grant it in *System Settings → Privacy & Security → Accessibility*.
+- **Screen Recording**: not used. The window watcher does not capture your screen.
+- **Full Disk Access**: not used by ActivityWatch or any of its bundled watchers.
+
+The one exception is the optional, separately installed `aw-import-screentime <https://github.com/ActivityWatch/aw-import-screentime>`_ importer, which reads Apple's Screen Time data store and therefore needs Full Disk Access for the terminal or app that runs it.
+Apple has said that future macOS versions will only grant Full Disk Access with "very explicit user action", so expect an extra confirmation step there.
+You can revoke the permission again at any time in *System Settings → Privacy & Security → Full Disk Access*.
+
 Why is the active window logged as "unknown" when using Wayland?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
