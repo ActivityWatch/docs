@@ -24,7 +24,7 @@ REST Security
 -------------
 
 .. note::
-    Our current security consists only of not allowing non-localhost connections, this is likely to be the case for quite a while.
+    By default, the server only listens on localhost and the API requires no authentication. aw-server-rust supports opt-in API key authentication: when enabled, requests must include an ``Authorization: Bearer <api_key>`` header. See :doc:`../security` for details.
 
 Clients might in the future be able to have read-only or append-only access to buckets, providing additional security and preventing compromised clients from being able to cause a severe security breach.
 All clients will probably also encrypt data in transit.

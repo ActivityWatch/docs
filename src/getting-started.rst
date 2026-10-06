@@ -44,10 +44,7 @@ Installation
 
    .. group-tab:: Android
 
-      Install it from the `Play Store <https://play.google.com/store/apps/details?id=net.activitywatch.android>`_ or using the APK from the `aw-android releases page <https://github.com/ActivityWatch/aw-android/releases>`_.
-
-      .. note::
-         Getting it to F-droid is a work-in-progress, see `this PR <https://gitlab.com/fdroid/fdroiddata/-/merge_requests/5502>`_.
+      Install it from the `Play Store <https://play.google.com/store/apps/details?id=net.activitywatch.android>`_, `F-Droid <https://f-droid.org/packages/net.activitywatch.android/>`_, or using the APK from the `aw-android releases page <https://github.com/ActivityWatch/aw-android/releases>`_.
 
 
 .. note::
