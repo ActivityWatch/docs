@@ -8,7 +8,7 @@ Each ActivityWatch component stores its data in a subdirectory named after itsel
 The paths below use ``aw-server-rust`` as an example component.
 
 .. note::
-    On Windows, Python components (``aw-server``, ``aw-qt``, ``aw-watcher-afk``, ``aw-watcher-window``, ...) use one extra ``activitywatch`` level, e.g. ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch\aw-server`` for data and ``...\Local\activitywatch\activitywatch\Logs\aw-watcher-window`` for logs. Rust components (``aw-server-rust``, ``aw-sync``, ``aw-tauri``) use the paths listed below.
+    On Windows, Python components (``aw-server``, ``aw-qt``, ``aw-watcher-afk``, ``aw-watcher-window``, ...) use one extra ``activitywatch`` level, e.g. ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch\aw-server`` for data and ``...\Local\activitywatch\activitywatch\Logs\aw-watcher-window`` for logs. Rust components (``aw-server-rust``, ``aw-sync``) use the paths listed below; ``aw-tauri`` follows them for its own config and data from the release after ``v0.14.0`` (`aw-tauri#280 <https://github.com/ActivityWatch/aw-tauri/pull/280>`_).
 
 .. note::
     ``v0.14.0`` on Windows mistakenly stored ``aw-server-rust`` data and config, and ``aw-sync`` config, under ``AppData\Roaming`` (``%APPDATA%``) instead of ``AppData\Local`` (``%LOCALAPPDATA%``). The release after ``v0.14.0`` fixes this and migrates automatically on startup:
@@ -18,7 +18,7 @@ The paths below use ``aw-server-rust`` as an example component.
     - If the copy cannot be completed safely, the ``Roaming`` folder keeps being used and the migration is retried on the next start.
 
 .. note::
-    These paths are pinned by tests on every platform: ``tests/test_dirs_pinned.py`` in aw-core (Python), ``test_default_paths_are_pinned`` in aw-server-rust and aw-tauri, and ``test_legacy_dbfile_path_is_pinned`` in aw-server-rust (where the Python database is looked for when migrating). If you change a path, change this page and those tests together, and add a migration for existing installs.
+    These paths are pinned by tests on every platform: ``tests/test_dirs_pinned.py`` in aw-core (Python), ``test_default_paths_are_pinned`` in aw-server-rust (and aw-tauri once #280 lands), and ``test_legacy_dbfile_path_is_pinned`` in aw-server-rust (where the Python database is looked for when migrating). If you change a path, change this page and those tests together, and add a migration for existing installs.
 
 .. _data-directory:
 
