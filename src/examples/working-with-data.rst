@@ -156,7 +156,7 @@ Query Examples
     events = merge_events_by_keys(events, ["app", "title"]);
     RETURN = events;
 
-**Practical Python example** - The `query_client.py <query_client.py>`_ file demonstrates:
+**Practical Python example** - The `query_client.py <https://github.com/ActivityWatch/docs/blob/master/src/examples/query_client.py>`_ file demonstrates:
 
 * Creating test buckets and data
 * Writing queries with transformations  
