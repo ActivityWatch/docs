@@ -2803,7 +2803,7 @@ Changes since
    </details>
 
 *(excluded 76 less relevant*
-`commits <https://github.com/ActivityWatch/aw-tauri/compare/...>`__\ *)*
+`commits <https://github.com/ActivityWatch/aw-tauri/commits/1d52445e74cb4c68136488905bc318f14e0afa1c>`__\ *)*
 
 .. _package-aw-core:
 
