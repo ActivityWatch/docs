@@ -30,7 +30,9 @@ Summary
   ActivityWatch server, no account. Point it at a folder you already
   sync with Syncthing, Dropbox or anything else, and each device's data
   shows up on the others. It is still rough in places (it takes more
-  disk space than it should, and setup is manual), so it is opt-in
+  disk space than it should, and setup is manual), so it is opt-in (`how
+  to set it
+  up <https://docs.activitywatch.net/en/latest/syncing.html>`__)
 - 👀 See all your devices together: the Activity view can now merge any
   set of devices into one view
 - 📱 Android caught up: `ActivityWatch for Android
@@ -54,7 +56,8 @@ Summary
   builds
 - 🤖 For the AI crowd: one canonical query that returns clean,
   categorized events, so an assistant can answer questions about your
-  time without a custom integration
+  time without a custom integration (`agents and
+  AI <https://docs.activitywatch.net/en/latest/examples/agents-and-ai.html>`__)
 - And a lot more...
 
 Honorable mentions
@@ -141,8 +144,9 @@ More reliable
 - Data safety: heartbeats are rejected cleanly under load instead of
   risking corruption, a damaged database recovers on startup, and
   imports merge into existing buckets instead of failing
-- The Python and Rust servers now return identical query results,
-  checked by a new parity test suite
+- The Python and Rust servers now return the same query results, checked
+  by a new parity test suite (`server
+  comparison <https://docs.activitywatch.net/en/latest/server-compare.html>`__)
 
 The new app (Tauri)
 ^^^^^^^^^^^^^^^^^^^
