@@ -8,6 +8,8 @@ documents the **Research Edition**, a purpose-built variant for that use, and ma
 participant-facing instructions so that studies can link to a canonical, versioned page
 rather than circulating copies over email.
 
+For an introduction to the Research Edition and why it exists, see the announcement post `ActivityWatch Research Edition for other researchers <https://activitywatch.net/blog/activitywatch-research-edition/>`_.
+
 Why researchers use it
 ----------------------
 
