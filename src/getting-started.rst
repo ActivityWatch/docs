@@ -19,9 +19,15 @@ Installation
 
       Download the ``.dmg`` for the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases/latest>`_ and drag the ``.app`` to your Applications folder as usual, then add it to your autostart applications.
 
+      Starting with ``v0.14``, there are separate downloads for Apple Silicon (``arm64``) and Intel (``x86_64``) Macs. Pick the one matching your Mac.
+
    .. group-tab:: Linux
 
-      Download the `latest release from GitHub <https://github.com/ActivityWatch/activitywatch/releases/latest>`_, unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
+      The `latest release on GitHub <https://github.com/ActivityWatch/activitywatch/releases/latest>`_ is available in several formats:
+
+      - ``.zip``: unzip the archive into an appropriate directory, and add the ``aw-qt`` executable to your autostart applications.
+      - ``.AppImage``: make the file executable (``chmod +x``) and run it.
+      - ``.deb`` (Debian, Ubuntu, and derivatives): install it with your package manager, e.g. ``sudo apt install ./activitywatch-<version>-linux-x86_64.deb``.
 
       .. note::
          If you are using Arch Linux you can install using the official ``activitywatch-bin`` package in `the AUR <https://aur.archlinux.org/packages/activitywatch-bin/>`_.
@@ -32,6 +38,10 @@ Installation
 
       .. note::
          Getting it to F-droid is a work-in-progress, see `this PR <https://gitlab.com/fdroid/fdroiddata/-/merge_requests/5502>`_.
+
+
+.. note::
+   Starting with ``v0.14``, each release also offers an experimental Tauri distribution (files named ``activitywatch-tauri-*``). It replaces the ``aw-qt`` tray app, embeds ``aw-server-rust``, and on Linux bundles `awatcher <https://github.com/2e3s/awatcher>`_ for native Wayland support. The classic distribution remains the default.
 
 
 Usage

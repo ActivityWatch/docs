@@ -108,6 +108,8 @@ There are two ways to run ActivityWatch:
 
 Both methods take the :code:`--testing` flag as a command line parameter to run in testing mode. This runs the server on a different port (5666) and uses a separate database file to avoid mixing your important data with your testing data.
 
+To run another isolated instance alongside your normal one, use a named profile instead, see :ref:`profiles`.
+
 Now everything should be running!
 Check out the web UI at http://localhost:5600/
 
