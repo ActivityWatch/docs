@@ -5,8 +5,13 @@ Huzzah! v0.14.0 is finally here! 🎉
 
 Almost two years since v0.13.2, and eight betas later. This is a big
 one: faster, steadier, a new desktop app, and an Android app that has
-caught up. Syncing between your devices works, local-first, with
-whatever sync tool you already use. More than 30 people contributed.
+caught up. And syncing between your devices works, local-first, with
+whatever sync tool you already use: it's still early and opt-in, with a
+few rough edges (see the
+`announcement <https://activitywatch.net/blog/activitywatch-v0-14-0/#your-devices-together>`__
+and the `sync
+docs <https://docs.activitywatch.net/en/latest/syncing.html>`__). More
+than 30 people contributed.
 
 Since the last stable release, ActivityWatch also `passed 1 million
 downloads <https://activitywatch.net/blog/one-million-downloads/>`__,
