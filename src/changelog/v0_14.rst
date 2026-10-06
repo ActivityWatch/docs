@@ -8,6 +8,10 @@ one: faster, steadier, a new desktop app, and an Android app that has
 caught up. Syncing between your devices works, local-first, with
 whatever sync tool you already use. 32 people contributed.
 
+Since the last stable release, ActivityWatch also `passed 1 million
+downloads <https://activitywatch.net/blog/one-million-downloads/>`__,
+and it's now downloaded over 10,000 times a week. Thank you!
+
 **Read more:** the
 `announcement <https://activitywatch.net/blog/activitywatch-v0-14-0/>`__
 · the `full
