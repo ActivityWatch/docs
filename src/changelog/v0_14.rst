@@ -1,7 +1,7 @@
 Released 2026-10-06. `Release page and
 downloads <https://github.com/ActivityWatch/activitywatch/releases/tag/v0.14.0>`__
-· `Announcement: A lighter, faster ActivityWatch with
-Tauri <https://activitywatch.net/blog/introducing-tauri/>`__
+·
+`Announcement <https://activitywatch.net/blog/activitywatch-v0-14-0/>`__
 
 The biggest ActivityWatch release in years: about 1,000 commits across
 13 repositories since v0.13.2. It is **much faster on large databases**,
