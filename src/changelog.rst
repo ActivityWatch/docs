@@ -9,6 +9,12 @@ Changelog
 You may find more information about a release on the `releases page <https://github.com/ActivityWatch/activitywatch/releases>`_.
 
 -------
+v0.14.0
+-------
+
+.. include:: changelog/v0_14.rst
+
+-------
 v0.11.0
 -------
 
