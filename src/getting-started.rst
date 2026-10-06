@@ -68,6 +68,9 @@ Both desktop apps, aw-qt and the newer aw-tauri, have a **Start at login** check
 Ticking it registers ActivityWatch with your operating system so it starts when you log in; unticking it removes that registration.
 The change takes effect from your next login.
 
+.. note::
+   The checkbox was added in v0.14.0. On older versions, add ActivityWatch to your system's startup applications yourself: the Windows installer's "Start ActivityWatch when Windows starts" option, *Login Items* on macOS, or your desktop environment's startup settings on Linux (pointing at the ``aw-qt`` executable).
+
 .. list-table:: What the "Start at login" checkbox creates
    :header-rows: 1
 
