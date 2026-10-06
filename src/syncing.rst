@@ -39,8 +39,6 @@ Use a custom sync directory with ``--sync-dir`` or the ``AW_SYNC_DIR`` environme
 
     Use ``aw-server-rust`` (the server in the Tauri app, also bundled with the classic app) for syncing. It handles large amounts of synced data better. See :doc:`migrating` to switch.
 
-Starting with ``v0.14``, the ``aw-sync`` daemon only pushes this device's data to the sync directory by default. To also import data from your other devices, set ``pull = true`` in ``aw-sync/config.toml`` in the :ref:`config directory <config-directory>` (the file is created with commented-out defaults the first time the daemon runs). Running ``aw-sync sync`` manually still both pulls and pushes.
-
 Android
 -------
 
