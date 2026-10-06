@@ -24,14 +24,14 @@ Setting up sync on desktop
 2. On each device, run a sync pass. Either:
 
    - **One-shot:** ``aw-sync sync`` pushes this device's data and pulls everyone else's, then exits. Run it by hand, or on a timer (cron, systemd, launchd).
-   - **In the background:** start ``aw-sync`` from the modules menu in aw-qt or aw-tauri (or run ``aw-sync daemon``). By default the background daemon only **pushes** this device's data. To also pull the other devices' data on every pass, edit aw-sync's ``config.toml`` (created on the daemon's first start, in ``~/.config/activitywatch/aw-sync/`` on Linux, ``~/Library/Application Support/activitywatch/aw-sync/`` on macOS and ``%APPDATA%\activitywatch\aw-sync\`` on Windows):
+   - **In the background:** start ``aw-sync`` from the modules menu in aw-qt or aw-tauri (or run ``aw-sync daemon``). By default the background daemon only **pushes** this device's data. To also pull the other devices' data on every pass, edit aw-sync's ``config.toml`` (created on the daemon's first start, in ``~/.config/activitywatch/aw-sync/`` on Linux, ``~/Library/Application Support/activitywatch/aw-sync/`` on macOS and ``%LOCALAPPDATA%\activitywatch\aw-sync\`` on Windows, see :doc:`directories`):
 
      .. code-block:: toml
 
         [daemon]
         pull = true
 
-3. Check what is happening with ``aw-sync status``. It lists the devices found in the sync folder, what each has synced, the daemon's effective mode and which config file it read.
+3. Check what is happening with ``aw-sync status``. It lists the devices found in the sync folder, what each has synced, the daemon's effective mode and which config file it read (the same file the daemon uses).
 
 Use a custom sync directory with ``--sync-dir`` or the ``AW_SYNC_DIR`` environment variable. Restrict which buckets are synced with ``--buckets``. See ``aw-sync --help`` and the `aw-sync README <https://github.com/ActivityWatch/aw-server-rust/blob/master/aw-sync/README.md>`_ for all options.
 
