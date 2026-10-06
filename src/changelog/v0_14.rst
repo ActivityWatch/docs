@@ -63,11 +63,40 @@ Summary
 Honorable mentions
 ------------------
 
-- @0xbrayo for aw-tauri, from prototype to a release-ready app
+Many of this release's features came from the community. Thank you:
+
+- @0xbrayo for aw-tauri, from prototype to a release-ready app, and for
+  aw-notify-rs and the Rust side of Android sync
+- @BohdanRykush for the Ukrainian, German and Russian translations, and
+  the original i18n setup and language picker
+  (ActivityWatch/aw-webui#855)
+- @JhihJian for the Simplified Chinese translation
+  (ActivityWatch/aw-webui#865)
+- @NickWick13 for the Swedish translation (ActivityWatch/aw-webui#947)
+- @BelKed for rewriting the browser extension for Manifest V3
+  (ActivityWatch/aw-watcher-web#152), plus theme detection and top
+  browser titles in the web UI
 - @2e3s for awatcher, which gives the new app native Wayland support
+- @nerumo for timeline swimlanes and the duration filter
+  (ActivityWatch/aw-webui#679)
+- @rrogerc for capturing URLs from Firefox-based browsers on macOS
+  (ActivityWatch/aw-watcher-window#134)
 - @hawai-i for the macOS Apple Events entitlement, which brought native
   browser URL capture back (#1411)
-- @NickWick13 for the Swedish translation
+- @FractalMachinist for browser tracking on Android
+  (ActivityWatch/aw-android#151)
+- @Lorite for fixes to Android's folder-picker sync
+  (ActivityWatch/aw-android#221, ActivityWatch/aw-android#222)
+- @wind-mask for the Tauri app's headless ``--daemon`` and ``--mini``
+  modes
+- @Q-Ze for fixing the multi-device view with synced data
+  (ActivityWatch/aw-webui#969)
+- @RTnhN for the universal columns visualization
+  (ActivityWatch/aw-webui#733)
+- @behdadmansouri for clearer import feedback
+  (ActivityWatch/aw-webui#874)
+- @fanxing11 for a string of fixes across the watchers, client and
+  notifications
 
 More detail
 -----------
@@ -245,12 +274,12 @@ Contributors
 
 Thanks to everyone who contributed to this release:
 
-@0xbrayo, @2e3s, @almirb, @amsam0, @BelKed, @brayo-pip, @deancureton,
-@erikbjare, @fanxing11, @Game4Move78, @hawai-i, @HomeArchbishop,
-@istudyatuni, @kenoma-hld, @luisgerhorst, @matt-seb-ho, @MBK-fr,
-@moodyhunter, @mrienstra, @musicinmybrain, @nerumo, @NickWick13,
-@Noorts, @petrroll, @powellnorma, @Q-Ze, @reddaisyy, @rrogerc, @RTnhN,
-@Senophyx, @TiberiusNemesis, @yuhldr
+@0xbrayo, @2e3s, @almirb, @amsam0, @BelKed, @deancureton, @erikbjare,
+@fanxing11, @Game4Move78, @hawai-i, @HomeArchbishop, @istudyatuni,
+@kenoma-hld, @luisgerhorst, @matt-seb-ho, @MBK-fr, @moodyhunter,
+@mrienstra, @musicinmybrain, @nerumo, @NickWick13, @Noorts, @petrroll,
+@powellnorma, @Q-Ze, @reddaisyy, @rrogerc, @RTnhN, @Senophyx,
+@TiberiusNemesis, @yuhldr
 
 Changelog
 ---------
