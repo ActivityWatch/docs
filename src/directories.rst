@@ -1,11 +1,17 @@
 Directories
 ===========
 
-Where things get stored depends on the platform you're using. All paths should follow standard directories on their platforms, and to accomplish this we use `appdirs <https://pypi.org/project/appdirs/>`_ in Python code and the `dirs <https://crates.io/crates/dirs/>`_ crate in Rust code.
+Where things get stored depends on the platform you're using. All paths should follow standard directories on their platforms, and to accomplish this we use `platformdirs <https://pypi.org/project/platformdirs/>`_ in Python code and the `dirs <https://crates.io/crates/dirs/>`_ crate in Rust code.
 
 Each ActivityWatch component stores its data in a subdirectory named after itself.
 
 The paths below use ``aw-server-rust`` as an example component.
+
+.. note::
+    On Windows, Python components (``aw-server``, ``aw-qt``, ``aw-watcher-afk``, ``aw-watcher-window``, ...) use one extra ``activitywatch`` level, e.g. ``C:\Users\<USER>\AppData\Local\activitywatch\activitywatch\aw-server`` for data and ``...\Local\activitywatch\activitywatch\Logs\aw-watcher-window`` for logs. Rust components (``aw-server-rust``, ``aw-sync``, ``aw-tauri``) use the paths listed below.
+
+.. note::
+    ``v0.14.0`` on Windows mistakenly stored ``aw-server-rust`` data and config under ``AppData\Roaming`` instead of ``AppData\Local``. Later versions move it back automatically on startup, without overwriting anything already in ``AppData\Local``.
 
 .. _data-directory:
 
@@ -36,7 +42,7 @@ Other components have their own config directories, e.g. ``aw-watcher-afk``, ``a
 Logs
 ----
 
-- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\aw-server-rust\logs``
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\Logs\aw-server-rust``
 - macOS: ``~/Library/Logs/activitywatch/aw-server-rust``
 - Linux: ``~/.cache/activitywatch/log/aw-server-rust``
 
@@ -45,7 +51,7 @@ Logs
 Cache
 -----
 
-- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\aw-server-rust\cache``
+- Windows: ``C:\Users\<USER>\AppData\Local\activitywatch\Cache\aw-server-rust``
 - macOS: ``~/Library/Caches/activitywatch/aw-server-rust``
 - Linux: ``~/.cache/activitywatch/aw-server-rust``
 
