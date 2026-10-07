@@ -71,13 +71,17 @@ CORS is configured such that origins can only be ``localhost:5600`` or match the
 
 This is due to that on Chrome, the origin of a WebExtension is always a fixed URL. In Firefox however the URL changes for each install, in order to prevent fingerprinting which extensions are installed. It's mentioned here: :gh-aw:`aw-server-rust/issues/24#issuecomment-520802579`.
 
-This means that on Firefox, a malware WebExtension could easily fetch the entire datastore and do what it wants with it.
+Before v0.14.0 this meant that on Firefox, a malware WebExtension could fetch the entire datastore and do what it wants with it.
 
-Ways to solve this:
+Since v0.14.0, both servers restrict what those Firefox extension origins can do (:gh-aw:`aw-server/pull/166`, :gh-aw:`aw-server-rust/pull/637`). They can only:
 
- - Short term: Restrict what we let those origins do (i.e. only send heartbeats, maybe even only to a certain bucket)
+ - read ``/api/0/info``
+ - create an ``aw-watcher-web-*`` bucket
+ - send heartbeats to an ``aw-watcher-web-*`` bucket
 
- - Long term: Use an OAuth2 authentication flow when first installing the extension (this also adds many opportunities for integrations)
+Everything else, including export, import, queries, settings and reading events, returns ``403``. Origins you allow yourself in the server's CORS configuration are not restricted this way.
+
+What remains is that any Firefox extension can still create or write heartbeats to ``aw-watcher-web-*`` buckets. A long-term fix would be an OAuth2 authentication flow when first installing the extension (this also adds many opportunities for integrations).
 
 More?
 -----
