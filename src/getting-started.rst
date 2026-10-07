@@ -11,9 +11,9 @@ System requirements
 
 The release builds are produced and tested on the following platforms. Older systems may work, but are not tested.
 
-- **Windows**: Windows 10 or later (x64; ARM64 builds are available for Windows 11).
+- **Windows**: Windows 10 or later (x64).
 - **macOS**: macOS 12 (Monterey) or later. Releases are built with a deployment target of 12.0, so older versions fail at launch with errors such as ``dyld: Library not loaded: libswift_Concurrency.dylib``.
-- **Linux**: a distribution with glibc 2.35 or newer (the release is built on Ubuntu 22.04, so e.g. Ubuntu 22.04+, Debian 12+, Fedora 36+). Older distributions fail with ``GLIBC_2.xx not found`` errors; use a newer distribution or `build from source <installing-from-source>`_.
+- **Linux**: a distribution with glibc 2.35 or newer (the release is built on Ubuntu 22.04, so e.g. Ubuntu 22.04+, Debian 12+, Fedora 36+). Older distributions fail with ``GLIBC_2.xx not found`` errors; use a newer distribution or :doc:`build from source <installing-from-source>`.
 - **Android**: see the `Play Store listing <https://play.google.com/store/apps/details?id=net.activitywatch.android>`_ for the supported Android versions.
 
 Installation
