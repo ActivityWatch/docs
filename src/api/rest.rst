@@ -41,7 +41,7 @@ Timestamps must be RFC 3339 with a timezone (``2026-10-01T10:00:00Z``).
 Durations are in seconds.
 
 .. note::
-    There are two server implementations: ``aw-server-rust`` (the default) and ``aw-server`` (Python).
+    There are two server implementations: ``aw-server`` (Python, the default in the classic app) and ``aw-server-rust`` (used by the Tauri app).
     They agree on the happy path but differ on error handling. Differences are called out below.
     Do not rely on error response bodies: aw-server-rust returns an HTML page for 400/422 errors,
     and some invalid inputs cause a 500 on the Python server.
@@ -137,7 +137,7 @@ Body: a JSON **list** of events, each with ``timestamp``, ``duration`` and ``dat
     [{"timestamp": "2026-10-01T10:00:00Z", "duration": 10, "data": {"app": "firefox"}}]
 
 Always send a list, even for a single event. aw-server-rust rejects a bare object with ``422``,
-while the Python server accepts it, so a client tested only against the Python server can break on the default one.
+while the Python server accepts it, so a client tested only against the Python server can break on aw-server-rust.
 
 Status codes: ``200``, ``404`` if the bucket does not exist, ``422`` for an invalid body (aw-server-rust).
 
