@@ -72,22 +72,29 @@ Other watchers to collect all kinds of data.
 - :gh:`akohlbecker/aw-watcher-tmux` - A plugin for tmux that allows monitoring activity in sessions and panes, by :gh-user:`akohlbecker`
 - :gh:`bcbernardo/aw-watcher-ask` - (WIP) Periodically poses questions to the user and records her answers.
 - :gh:`Jeremiah-England/aw-watcher-ask-away` - Asks what you were doing when you return from an AFK break, and logs it as the AFK period, by :gh-user:`Jeremiah-England`.
+- :gh:`tobixen/aw-watcher-afk-prompt` - Poses questions to the user after an AFK period.  (Fork of the inactive :gh:`Jeremiah-England/aw-watcher-ask-away`)
 - :gh-aw:`aw-watcher-checkin` - (WIP) Adopted from :gh:`Jeremiah-England/aw-watcher-ask-away` with full history, by :gh-user:`Jeremiah-England`. Currently the AFK-return prompt; context-switch and long-block check-ins are planned.
 - :gh:`Alwinator/aw-watcher-utilization` - Monitors CPU, RAM, disk, network, and sensor usage, by :gh-user:`Alwinator`
 - :gh:`abdnh/aw-watcher-anki` - An add-on for Anki that tracks time spent reviewing cards.
 - :gh:`Edwardsoen/aw-watcher-steam` - A Watcher to monitor current game being played.
 - :gh:`0xbrayo/aw-watcher-ps` - Tracks time spent per game on PS5/PS4 by polling your own PlayStation Network presence, by :gh-user:`0xbrayo`.
 - :gh:`RTnhN/aw-watcher-toggl` - A Watcher to import time entries from Toggl.
-- :gh:`sameersismail/aw-watcher-netstatus` - Monitors if you're connected to a network, by :gh-user:`sameersismail`.
+- :gh:`sameersismail/aw-watcher-netstatus` - Boolean online/offline monitoring.  Simple and mature project.
+- :gh:`0xbrayo/aw-watcher-network-rs` - Network status watcher.  More feature-rich than aw-watcher-netstatus, includes things like WiFi SSID.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
 - :gh:`0xbrayo/aw-watcher-network-rs` - A watcher for tracking network activity and wifi SSIDs, connected and broadcasting by :gh-user:`0xbrayo`
-- :gh:`tobixen/aw-watcher-lid` - A watcher watching the lid status, suspend status and power-off status for a laptop
+- :gh:`tobixen/aw-watcher-lid` - Watches the laptop's lid status, suspend status and power-off status.
 
 Importers
 ---------
 
 .. include:: importers.rst
    :start-line: 2
+
+Exporters
+---------
+
+- :gh:`tobixen/aw-exporter-timewarrior` - Rule-based categorization and tagging of activities, then exporting the tags to Timewarrior.  (The plan is to rename it to aw-tagger and let it support other backends, including to feed the tags back to ActivityWatch).
 
 Custom visualizations
 ---------------------
