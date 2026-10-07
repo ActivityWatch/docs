@@ -31,23 +31,32 @@ The easiest way to get canonical events is using the Python client:
 
 .. code-block:: python
 
-    from aw_client import ActivityWatchClient
-    from aw_client.queries import canonicalEvents
+    import socket
     from datetime import datetime, timedelta
-    
+
+    from aw_client import ActivityWatchClient
+    from aw_client.queries import DesktopQueryParams, canonicalEvents
+
     # Connect to ActivityWatch (use testing=True for safety during development)
     client = ActivityWatchClient("my-analysis", testing=False)
-    
+
     # Get canonical events for today
-    start = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    start = datetime.now().astimezone().replace(hour=0, minute=0, second=0, microsecond=0)
     end = start + timedelta(days=1)
-    
-    # Get processed activity data (same as web UI)
-    events = canonicalEvents(client, start, end)
-    
+
+    # canonicalEvents builds the query the web UI uses; the server runs it
+    hostname = socket.gethostname()
+    query = canonicalEvents(
+        DesktopQueryParams(
+            bid_window=f"aw-watcher-window_{hostname}",
+            bid_afk=f"aw-watcher-afk_{hostname}",
+        )
+    )
+    events = client.query(f"{query}\nRETURN = events;", [(start, end)])[0]
+
     # events now contains categorized activity data with durations
     for event in events:
-        print(f"{event.data['app']}: {event.duration.total_seconds()/3600:.1f} hours")
+        print(f"{event['data']['app']}: {event['duration']:.0f} seconds")
 
 Reference Implementations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
