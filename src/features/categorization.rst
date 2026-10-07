@@ -5,6 +5,11 @@ When you look at the "Activity" view in the ActivityWatch UI you will see that t
 
 Categories are used to group together multiple events, which create more easily understandable labels for the data such as "Work", "Gaming" or "Social Media".
 
+Categorized summaries are also the safest starting point for AI-assisted
+analysis. See :doc:`../examples/agents-and-ai` for a workflow that shares
+category and app totals with an assistant while avoiding raw titles and URLs by
+default.
+
 Each category has a title, a parent category (optional), child categories (optional), and a categorization rule which is used to match events on window titles and application names.
 
 A category can have child categories ("Work" might have "Mail", "Gaming" might have "Minecraft", etc). Child categories have independent categorization rules, but the time attributed to the children of a parent category is often added to the parent category in visualizations.

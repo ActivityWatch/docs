@@ -20,7 +20,7 @@ activitywatch (bundle repo)
 .. _-features-1:
 
 ✨ Features (1)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat: improved generation of changelog
    (```7e6acf2`` <https://github.com/ActivityWatch/activitywatch/commit/7e6acf2>`__)
@@ -88,12 +88,12 @@ aw-webui
 .. _-features-22:
 
 ✨ Features (22)
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 -  feat: made timeline view full-width
    (```bba8b35`` <https://github.com/ActivityWatch/aw-webui/commit/bba8b35>`__)
 -  feat: added stop time to timeline tooltip
-   (fixes[`#200 <https://github.com/ActivityWatch/aw-webui/issues/200>`__](https://github.com/ActivityWatch/aw-webui/issues/200)#issuecomment-674582218)
+   (fixes `#200 <https://github.com/ActivityWatch/aw-webui/issues/200#issuecomment-674582218>`__)
    (```f0e8b4c`` <https://github.com/ActivityWatch/aw-webui/commit/f0e8b4c>`__)
 -  feat: refactored ActivityEditor into ActivityView, added better info
    when missing data
@@ -147,7 +147,7 @@ aw-webui
    <p>
 
 -  fix: added chromium.exe to browser appnames
-   (fixes[`#503 <https://github.com/ActivityWatch/aw-webui/issues/503>`__](https://github.com/ActivityWatch/activitywatch/issues/503))
+   (fixes `#503 <https://github.com/ActivityWatch/activitywatch/issues/503>`__)
    (```541e99c`` <https://github.com/ActivityWatch/aw-webui/commit/541e99c>`__)
 -  fix: improved border-color of events in timeline visualization
    (```935354a`` <https://github.com/ActivityWatch/aw-webui/commit/935354a>`__)
@@ -478,7 +478,7 @@ aw-qt
 .. _-features-1-1:
 
 ✨ Features (1)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat: switched to using click for the CLI, fixed bugs
    (```682a73f`` <https://github.com/ActivityWatch/aw-qt/commit/682a73f>`__)
@@ -501,7 +501,7 @@ aw-qt
 -  fix: minor cleanup
    (```f6d26c7`` <https://github.com/ActivityWatch/aw-qt/commit/f6d26c7>`__)
 -  fix: made sip an explicit dependency
-   (see[`#433 <https://github.com/ActivityWatch/aw-qt/issues/433>`__](https://github.com/ActivityWatch/activitywatch/issues/433))
+   (see `#433 <https://github.com/ActivityWatch/activitywatch/issues/433>`__)
    (```56cc28c`` <https://github.com/ActivityWatch/aw-qt/commit/56cc28c>`__)
 -  fix: replace webbrowser.open with xdg-open with original
    LD_LIBRARY_PATH
@@ -867,7 +867,7 @@ aw-client
 .. _-features-2:
 
 ✨ Features (2)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat: added better output when overlapping events found
    (```52937c4`` <https://github.com/ActivityWatch/aw-client/commit/52937c4>`__)
@@ -909,7 +909,7 @@ aw-core
 .. _-features-1-2:
 
 ✨ Features (1)
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 -  feat: log unhandled exceptions
    (```6ba8f97`` <https://github.com/ActivityWatch/aw-core/commit/6ba8f97>`__)

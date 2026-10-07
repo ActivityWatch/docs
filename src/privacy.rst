@@ -19,7 +19,7 @@ However, it's crucial to understand that:
 
 * All data is stored locally on your device.
 * We, the developers of ActivityWatch, do not have access to your data.
-* ActivityWatch does not transmit your data to any external servers.
+* ActivityWatch does not transmit your data to any external servers, unless you choose to use an optional feature that does so (see `Optional AI Summary`_).
 
 Analytics
 ---------
@@ -30,6 +30,15 @@ Software Updates
 ----------------
 
 ActivityWatch may perform HTTP requests to check for new releases on GitHub. This functionality can be disabled in the application settings.
+
+Optional AI Summary
+-------------------
+
+Starting with v0.14, the web UI includes an optional AI Summary page. It does nothing unless you enter your own API key for a third-party AI provider (currently OpenAI or Anthropic) and choose to generate a summary.
+
+When you generate a summary, a compact overview of your activity is sent from your browser directly to the provider you selected. It includes application names, browser domains, your category names, device hostnames, and time totals. Window titles, full URLs, and individual event timestamps are never included. You can also exclude uncategorized activity and categories you have marked as private.
+
+This data is handled according to the selected provider's privacy policy. We, the developers of ActivityWatch, never receive it.
 
 Data Protection
 ---------------

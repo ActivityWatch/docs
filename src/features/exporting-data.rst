@@ -5,6 +5,10 @@ If you go to the "Raw Data" page in the ActivityWatch webui you can download any
 If running on localhost with the default port, then you can find this at http://localhost:5600/#/buckets.
 Each bucket can be exported individually, or all of the buckets can be exported by clicking the "Export all buckets as JSON" button at the bottom.
 
+If you plan to use exported data with an AI assistant or third-party model, first
+read :doc:`../examples/agents-and-ai`. In most cases you should aggregate and
+redact ActivityWatch data locally instead of uploading raw bucket exports.
+
 To export programatically, you can make a simple GET request via the REST API.
 If for example, you want to export all of the buckets with ``wget`` you could call
 

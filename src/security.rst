@@ -12,7 +12,30 @@ ActivityWatch is only as secure as your system
 
 Some things we can't protect against. Examples are malware running on the same host and anything that can access the database file.
 
-As an example, ActivityWatch is not secure on systems with multiple users (due to there being no API authentication).
+As an example, ActivityWatch is not secure on systems with multiple users, since the API is unauthenticated by default (see `API authentication`_ below).
+
+
+API authentication
+------------------
+
+By default, the ActivityWatch API requires no authentication: any process that can reach the server (normally only processes on the same machine, since it listens on ``localhost``) can read, write, and delete all data.
+
+``aw-server-rust`` supports **opt-in** API key authentication. To enable it, set an API key under the ``[auth]`` section of the server's ``config.toml`` (see `directories <config-directory>` for its location) and restart the server:
+
+.. code-block:: toml
+
+    [auth]
+    api_key = "your-secret-key-here"
+
+When an API key is set, every request to ``/api/*`` (except ``GET /api/0/info``) must include the header ``Authorization: Bearer <api_key>``, otherwise the server responds with ``401 Unauthorized``. An empty ``api_key`` leaves authentication disabled.
+
+Things to keep in mind:
+
+- Authentication is disabled by default on desktop, so existing setups keep working unchanged.
+- It is only supported by ``aw-server-rust``. ``aw-server`` (Python) does not support it.
+- Every client must send the key. ``aw-sync`` reads it from the server config automatically, and ``aw-client-rust`` accepts one via ``AwClient::new_with_api_key``, but other clients and watchers may not support it yet and will fail with ``401`` once it's enabled.
+- The key protects the API, not the data at rest: anything that can read the config file or the database file can still access your data.
+- Authentication does not make it safe to expose the server on a network. The API is served over plain HTTP, so see `remote-server` before doing so.
 
 
 Deleting sensitive data
@@ -26,9 +49,11 @@ This is actually :issue:`1` in the ActivityWatch repository. See `filtering data
 Encrypting data
 ---------------
 
-Encrypting old data with a password would minimize the amount of sensitive data that would be leaked in case of a breach.
+Encrypting data at rest minimizes the amount of sensitive data that would be leaked if the database file is copied or stolen.
 
-The easiest way to build this would be to write a client that takes all events older than some duration and moves it into a encrypted container. This way it wouldn't add complexity to the server code.
+``aw-server-rust`` has opt-in support for encrypting its database with `SQLCipher <https://www.zetetic.net/sqlcipher/>`_. It is not included in release builds: you need to build ``aw-server-rust`` yourself with the ``encryption`` (or ``encryption-vendored``) Cargo feature, then provide the key with the ``AW_DB_PASSWORD`` environment variable or the ``--db-password`` flag. Prefer the environment variable, since command-line arguments may be visible in process listings.
+
+Encryption at rest does not protect against anything that can access the running server's API.
 
 
 Reproducible builds
@@ -46,13 +71,17 @@ CORS is configured such that origins can only be ``localhost:5600`` or match the
 
 This is due to that on Chrome, the origin of a WebExtension is always a fixed URL. In Firefox however the URL changes for each install, in order to prevent fingerprinting which extensions are installed. It's mentioned here: :gh-aw:`aw-server-rust/issues/24#issuecomment-520802579`.
 
-This means that on Firefox, a malware WebExtension could easily fetch the entire datastore and do what it wants with it.
+Before v0.14.0 this meant that on Firefox, a malware WebExtension could fetch the entire datastore and do what it wants with it.
 
-Ways to solve this:
+Since v0.14.0, both servers restrict what those Firefox extension origins can do (:gh-aw:`aw-server/pull/166`, :gh-aw:`aw-server-rust/pull/637`). They can only:
 
- - Short term: Restrict what we let those origins do (i.e. only send heartbeats, maybe even only to a certain bucket)
+ - read ``/api/0/info``
+ - create an ``aw-watcher-web-*`` bucket
+ - send heartbeats to an ``aw-watcher-web-*`` bucket
 
- - Long term: Use an OAuth2 authentication flow when first installing the extension (this also adds many opportunities for integrations)
+Everything else, including export, import, queries, settings and reading events, returns ``403``. Origins you allow yourself in the server's CORS configuration are not restricted this way.
+
+What remains is that any Firefox extension can still create or write heartbeats to ``aw-watcher-web-*`` buckets. A long-term fix would be an OAuth2 authentication flow when first installing the extension (this also adds many opportunities for integrations).
 
 More?
 -----

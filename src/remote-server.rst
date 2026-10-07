@@ -20,7 +20,7 @@ There are several reasons why we won't support and strongly discourage this:
 
 - It is **not secure**.
 
-  - There is no API security, so exposing the server on the network will let *anyone* on the network read, write, or delete **all data**.
+  - The API is unauthenticated by default, so exposing the server on the network will let *anyone* on the network read, write, or delete **all data**. aw-server-rust supports an opt-in API key (see :doc:`security`), but it is sent in plain text along with everything else.
   - There is no HTTPS support, so all data would be sent unencrypted.
 
 - We want ActivityWatch to be **user-first**: something people use of their own will, not something forced on them by others (bosses, colleagues).
@@ -35,7 +35,7 @@ But then how do I get all my data in one place?
 
 Your options are:
 
-- Using the :docs:`syncing` feature
+- Using the :doc:`syncing` feature
 - Manually export & import buckets (recommended)
 - Find other time tracking software that's more suitable for your usecase
 - Keep reading...
@@ -67,11 +67,17 @@ Opening the server to the network
 
 If you decide to not heed our warning, you can open the server to the network by setting the following :doc:`configuration`:
 
-aw-server.toml::
+For aw-server-python, ``aw-server/aw-server.toml``::
 
     [server]
-    address = "0.0.0.0"   # or the IP address of your network interface of choice
-    cors_origins = "*"    # or a list of allowed origins, e.g. "http://<remote IP>:5600"
+    host = "0.0.0.0"      # or the IP address of your network interface of choice
+    cors_origins = "*"    # or a comma-separated list of allowed origins, e.g. "http://<remote IP>:5600"
+    # leave other settings as-is
+
+For aw-server-rust, ``aw-server-rust/config.toml`` (top-level keys, no ``[server]`` section)::
+
+    address = "0.0.0.0"                   # or the IP address of your network interface of choice
+    cors = ["http://<remote IP>:5600"]    # exact allowed origins
     # leave other settings as-is
 
 To then redirect events from local watchers to that server, you can use the following client configuration:
@@ -87,7 +93,7 @@ Previous discussions
 
 Links to discussions on the topic:
 
-- `"Multiple instance Activitywatch remote server setup for time tracking" <https://wsdookadr.github.io/posts/p6/>`_ by :gh-user:`wsdookadr`
+- `"Multiple instance Activitywatch remote server setup for time tracking" <https://web.archive.org/web/2024/https://wsdookadr.github.io/posts/p6/>`_ by :gh-user:`wsdookadr`
 - https://forum.activitywatch.net/t/activitywatch-as-employee-monitoring-software/499/2
 - https://forum.activitywatch.net/t/oauth2-or-pretty-much-any-authentication/75/6
 

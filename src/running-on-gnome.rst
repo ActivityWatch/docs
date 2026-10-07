@@ -1,6 +1,8 @@
 Running on GNOME
 ================
 
+The ``aw-qt`` tray icon works on GNOME if you install the `AppIndicator and KStatusNotifierItem Support <https://extensions.gnome.org/extension/615/appindicator-support/>`_ extension (it ships by default in some distributions such as Ubuntu). If you can't or don't want to use it, read on.
+
 As an alternative for users of GNOME 3 and other desktop environments that don't support app trays, or simply to avoid depending on Qt, you can place two simple workaround scripts in your ActivityWatch install folder:
 
 :code:`start.sh`:

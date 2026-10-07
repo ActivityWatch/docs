@@ -1,31 +1,70 @@
 FAQ
 ===
 
-..
-   Some of this should probably be moved to a development FAQ.
+General
+-------
 
-.. note::
-   Some of these questions are technically not frequently asked.
+What is ActivityWatch?
+~~~~~~~~~~~~~~~~~~~~~~
+
+ActivityWatch is a free, open-source, automated time tracker that runs on your computer and monitors which applications and websites you use. It works on Windows, macOS, Linux, and Android. Unlike cloud-based time trackers, all data is stored locally on your device for maximum privacy.
+
+Is ActivityWatch really free?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. ActivityWatch is completely free and open-source software, licensed under the MPL-2.0 license. There are no premium tiers, no usage limits, and no ads. It is developed and maintained by volunteers and community contributors.
+
+What platforms does ActivityWatch support?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ActivityWatch runs on **Windows**, **macOS**, **Linux**, and **Android**. Browser extensions are available for Chrome, Firefox, and Edge to track your web activity. macOS version and architecture support varies by release, so if you need a specific macOS build check the `downloads page <https://activitywatch.net/downloads/>`_ or the `GitHub release assets <https://github.com/ActivityWatch/activitywatch/releases>`_.
+
+Does ActivityWatch track my data privately?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. ActivityWatch follows a `local-first <https://www.inkandswitch.com/local-first.html>`_ approach — all your time tracking data is stored on your own device and is never sent to any server. You have full control over your data and can export, delete, or back it up at any time.
 
 Where is my data stored?
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-All your data is stored in a SQLite database in the :ref:`data directory <data-directory>`.
+All your data is stored in a SQLite database in the :ref:`data directory <data-directory>`. Nothing is sent to any cloud service.
+
+How does ActivityWatch compare to RescueTime?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ActivityWatch is a privacy-first, open-source alternative to RescueTime. Key differences:
+
+- **Data storage**: ActivityWatch keeps everything local on your device, while RescueTime sends data to their cloud servers.
+- **Platform support**: ActivityWatch supports Linux (which RescueTime dropped support for around 2021), plus Windows, macOS, and Android.
+- **Price**: ActivityWatch is completely free. RescueTime charges $12/month for their premium tier.
+- **Extensibility**: ActivityWatch lets you write custom watchers and integrations. RescueTime is a closed system.
+- **Data access**: All your ActivityWatch data is always accessible. RescueTime's free tier limits how far back you can see.
+
+For a detailed comparison, see the `ActivityWatch vs RescueTime <https://activitywatch.net/blog/activitywatch-vs-rescuetime/>`_ blog post and the `general time tracker comparison <https://activitywatch.net/blog/comparing-time-trackers/>`_.
+
+Can I extend ActivityWatch with custom tracking?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes! ActivityWatch has a modular architecture built around "watchers" — small programs that track different things and report to a local server. You can write your own watchers using the REST API. The community has built watchers for VS Code, JetBrains IDEs, Spotify, and more. See the :doc:`examples` for how to interact with ActivityWatch programmatically.
+
+
+Technical
+---------
 
 How do I interpret the raw data?
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, familiarize yourself with the `data model <buckets-and-events>`. After that, you might want to have a look at the `Examples`.
 
 How can I use ActivityWatch with my own code?
----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See the `Examples` for different ways to use ActivityWatch programmatically.
 
 .. _how-does-aw-know-when-im-afk:
 
 How does ActivityWatch know when I am AFK?
-------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On Windows and macOS, we use functionality offered by those platforms to give us the
 time since last input.
@@ -37,8 +76,35 @@ Using this data (seconds since last input) we check if more than 3 minutes have 
 
 If the browser watcher is running, the user will also by default be considered to not be AFK when the active browser tab has sound playing from it. This helps when the user for example watches a video or is in a video/audio meeting.
 
+Can I change when ActivityWatch marks me as AFK?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. The default AFK timeout is 3 minutes. To change it, open the ActivityWatch tray menu, choose the option to open the config folder, then edit ``aw-watcher-afk/aw-watcher-afk.toml``. Set ``timeout`` to the number of seconds without keyboard or mouse activity before ActivityWatch should mark you as AFK.
+For example, ``timeout = 300`` marks you as AFK after 5 minutes.
+
+If the setting is commented out, remove the leading ``#`` before saving.
+After saving the file, restart ActivityWatch or ``aw-watcher-afk`` for the change to take effect.
+
+If idle or locked-screen time is still counted as active time, first check that ``aw-watcher-afk`` is running and that the Timeline view shows an ``afk`` period while you are away.
+See :doc:`configuration` for the related ``aw-watcher-afk`` options.
+
+.. _macos-permissions:
+
+What macOS permissions does ActivityWatch need?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The core install asks for as little as possible:
+
+- **Accessibility**: required by ``aw-watcher-window`` to read the active window's title. macOS prompts for it on first run; grant it in *System Settings → Privacy & Security → Accessibility*.
+- **Screen Recording**: not used. The window watcher does not capture your screen.
+- **Full Disk Access**: not used by ActivityWatch or any of its bundled watchers.
+
+The one exception is the optional, separately installed `aw-import-screentime <https://github.com/ActivityWatch/aw-import-screentime>`_ importer, which reads Apple's Screen Time data store and therefore needs Full Disk Access for the terminal or app that runs it.
+Apple has said that future macOS versions will only grant Full Disk Access with "very explicit user action", so expect an extra confirmation step there.
+You can revoke the permission again at any time in *System Settings → Privacy & Security → Full Disk Access*.
+
 Why is the active window logged as "unknown" when using Wayland?
-----------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Wayland protocol does not have a notion of an active window, and it is unlikely to ever have.
 Wayland is also developed with security in mind, so access should be handed out on an app-by-app basis.
@@ -50,11 +116,12 @@ Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all
 
 - Switch to using X11.
 - Try an alternative AFK and window :ref:`watcher <window-watchers>` which supports Wayland.
+- Try the experimental Tauri distribution (starting with ``v0.14``), which bundles `awatcher <https://github.com/2e3s/awatcher>`_ on Linux for Wayland support. See :doc:`getting-started`.
 
 You can see the general status of the ability of `getting the active window in Wayland on StackOverflow <https://stackoverflow.com/questions/45465016/how-do-i-get-the-active-window-on-gnome-wayland>`_ or follow `the issue for ActivityWatch tracking the problem <https://github.com/ActivityWatch/activitywatch/issues/92>`_.
 
 How accurate is ActivityWatch?
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The design of ActivityWatch is that it consists of multiple watchers which report different types of activities.
 Each watcher has its own flaws in accuracy for different reasons.
@@ -67,7 +134,7 @@ The accuracy will vary depending on use-case and depending on what data you are 
 Even if the tracking was perfect, what should be considered being "active" is subjective.
 
 What happens if it is down or crashes?
---------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ActivityWatch consists of several processes running independently, so one thing crashing will have limited impact on the rest of the system.
 
@@ -75,14 +142,39 @@ If the server crashes or is unavailable, watchers which use the `heartbeat <hear
 
 If a watcher crashes, its bucket will simply remain untouched until it is restarted.
 
+.. _port-already-in-use:
+
+The server fails to start: "Address already in use" or "Port 5600 is in use"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This error usually means an ActivityWatch instance is already running — for example from a previous session that was not shut down cleanly, or because ActivityWatch launched automatically at login while you were starting it manually.
+
+**Check if ActivityWatch is already running:**
+
+Open ``http://localhost:5600`` in your browser. If the ActivityWatch web interface loads, the server is already running and you can use it as-is. You can also close the duplicate launch.
+
+**If the web interface does not load**, another program has taken port 5600.
+Find it with the appropriate command for your operating system:
+
+* **Linux:** ``ss -ltnp | grep :5600`` or ``lsof -i :5600``
+* **macOS:** ``lsof -i :5600``
+* **Windows (Command Prompt):** ``netstat -ano | findstr :5600``
+
+Once you identify the process, stop it and start ActivityWatch again.
+
+.. note::
+   As of aw-server-rust 0.14, the server detects when another ActivityWatch
+   instance is already listening on the port and prints a clearer message
+   instead of a generic ``Address already in use`` error.
+
 ..
     What happens when my computer is off or asleep?
-    -----------------------------------------------
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     If your computer is off or asleep, watchers will usually record nothing. i.e. one events ending (:code:`timestamp + duration`) will not match up with the following event's beginning (:code:`timestamp`).
 
 Some events have 0 duration. What does this mean?
--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `Watchers` most commonly use a polling method called `heartbeats` in order to store information on the server.
 Heartbeats are received regularly with some data, and when two consecutive heartbeats have identical data, they get merged and the duration of the new one becomes the time difference between the previous two.

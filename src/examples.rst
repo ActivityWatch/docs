@@ -12,10 +12,12 @@ Getting Your Data Out
     :maxdepth: 1
 
     examples/working-with-data
+    examples/agents-and-ai
 
 This comprehensive guide covers:
 
 * **Canonical Events** - Get processed activity data (what the web UI uses)
+* **Agents and AI** - Share bounded, reviewed ActivityWatch summaries with assistants
 * **Custom Queries** - Write your own analysis using the query language
 * **Raw Events** - Advanced direct access to bucket data
 * **Safety Best Practices** - Avoiding data corruption with proper testing and dry-run modes
