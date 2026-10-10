@@ -71,6 +71,11 @@ If you want more advanced ways to run ActivityWatch (including running it withou
 Autostart
 =========
 
+.. toctree::
+   :hidden:
+
+   systemd-autostart
+
 Both desktop apps, aw-qt and the newer aw-tauri, have a **Start at login** checkbox in their tray menu.
 Ticking it registers ActivityWatch with your operating system so it starts when you log in; unticking it removes that registration.
 The change takes effect from your next login.
