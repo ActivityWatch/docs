@@ -35,7 +35,7 @@ The automatic import only runs when the aw-server-rust database is first created
 Running the import manually
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Newer versions of aw-server-rust (released after v0.14.0) can re-run the import explicitly. Stop the running aw-server-rust (e.g. quit aw-qt), then start it once with ``--import-legacy``:
+ActivityWatch v0.14.1 and newer can re-run the import explicitly. Stop the running aw-server-rust (e.g. quit aw-qt), then start it once with ``--import-legacy``:
 
 .. code-block:: sh
 
@@ -53,7 +53,7 @@ By default the legacy database is looked up at ``<data dir>/activitywatch/aw-ser
 
 Setting a custom ``--dbpath`` disables the automatic import; add ``--import-legacy`` to run it anyway.
 
-On older versions without ``--import-legacy``, you can retrigger the import by stopping aw-server-rust, moving/removing your aw-server-rust database file, and then starting aw-server-rust again.
+On v0.14.0 and older, which lack ``--import-legacy``, you can retrigger the import by stopping aw-server-rust, moving/removing your aw-server-rust database file, and then starting aw-server-rust again.
 
 Another option for migrating is to use the "Export all"/"Import all" buttons under the "Raw data" menu in the web UI. This should work with all datastores in aw-server-python.
 
