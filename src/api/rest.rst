@@ -108,7 +108,7 @@ Status codes: ``200``, ``404`` if the bucket does not exist.
 Events API
 ~~~~~~~~~~
 
-The events API provides read and append access to `Events <../buckets-and-events>` in a bucket.
+The events API provides read, append and delete access to `Events <../buckets-and-events>` in a bucket.
 
 Get events
 ^^^^^^^^^^
@@ -160,6 +160,23 @@ Get / delete a single event
 
 ``GET`` returns ``404`` for an unknown id on the Python server but ``500`` on aw-server-rust.
 ``DELETE`` returns ``200`` even if no event with that id exists.
+
+Delete many events
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: shell
+
+    POST /api/0/buckets/<bucket_id>/events/delete
+
+Body: ``{"ids": [1, 2, 3]}``. Deletes the listed events in one request and returns the number
+of events that existed and were deleted, as a bare JSON number. Unknown and duplicate ids are
+ignored, and an empty list returns ``0``. At most 10,000 ids are accepted per request.
+
+Status codes: ``200``, ``404`` if the bucket does not exist, ``413`` for more than 10,000 ids,
+``400`` (Python server) or ``422`` (aw-server-rust) for a body without an integer ``ids`` list.
+
+This endpoint is newer than the single-event ``DELETE``; servers released before it reject the request.
+Client helpers: ``ActivityWatchClient.delete_events`` (aw-client) and ``AwClient::delete_events`` (aw-client-rust).
 
 Heartbeat API
 ~~~~~~~~~~~~~
