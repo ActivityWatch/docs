@@ -96,6 +96,8 @@ Exporters
 
 - :gh:`tobixen/aw-exporter-timewarrior` - Rule-based categorization and tagging of activities, then exporting the tags to Timewarrior.  (The plan is to rename it to aw-tagger and let it support other backends, including to feed the tags back to ActivityWatch).
 
+.. _custom-visualizations:
+
 Custom visualizations
 ---------------------
 
