@@ -158,7 +158,7 @@ Get / delete a single event
     GET    /api/0/buckets/<bucket_id>/events/<event_id>
     DELETE /api/0/buckets/<bucket_id>/events/<event_id>
 
-``GET`` returns ``404`` for an unknown id on the Python server but ``500`` on aw-server-rust.
+``GET`` returns ``404`` for an unknown id (aw-server-rust before v0.14.0 returned ``500``).
 ``DELETE`` returns ``200`` even if no event with that id exists.
 
 Delete many events
