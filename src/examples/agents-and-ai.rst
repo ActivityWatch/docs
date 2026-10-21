@@ -191,6 +191,134 @@ ActivityWatch workflow. Before uploading data:
 * keep the exact sent payload in your own notes if you need auditability
 * use a shorter time range than you would use for local analysis
 
+AI-generated local interfaces
+-----------------------------
+
+ActivityWatch's REST API lets you build custom dashboards and visualizations
+without changing the core UI. An AI assistant can generate the code; your data
+stays local throughout.
+
+**What to ask for.** Use a prompt like the one below. It starts from a synthetic
+event schema so the generated page works before you connect real data, and it
+restricts all network access to the local ActivityWatch server:
+
+.. code-block:: text
+
+   Build a single-file HTML dashboard that reads ActivityWatch data.
+
+   Constraints — follow these exactly:
+   - All network requests MUST go to http://localhost:5666/api/0/ only.
+     No CDN imports, no analytics, no external fonts, no telemetry.
+   - All JavaScript must be inline in the HTML file. No npm, no build step.
+   - The page must work with SYNTHETIC data first (hardcoded fixture below)
+     and optionally connect to the live API via a checkbox or button.
+   - Use only read-only API operations (GET requests). No POST, PUT, or DELETE.
+   - Do not store, forward, or log any real ActivityWatch events.
+
+   Synthetic fixture (use this until the user enables live data):
+   {
+     "hostname": "my-machine",
+     "start": "2024-01-15T08:00:00",
+     "end": "2024-01-15T12:00:00",
+     "categories": [
+       {"name": ["Coding"], "seconds": 7200},
+       {"name": ["Communication"], "seconds": 1800},
+       {"name": ["Uncategorized"], "seconds": 600}
+     ],
+     "apps": [
+       {"app": "Code", "seconds": 5400},
+       {"app": "Firefox", "seconds": 2400}
+     ],
+     "active_seconds": 10200,
+     "afk_seconds": 600
+   }
+
+   When live data is enabled, read `hostname`, `start`, `end` from the URL
+   query parameters (?hostname=…&start=…&end=…) and fetch from:
+     GET http://localhost:5666/api/0/buckets/
+   to discover bucket IDs, then query the canonical activity endpoint at:
+     POST http://localhost:5666/api/0/query/
+   with the time range. Show totals by category and by app, active time,
+   and AFK time. Show a note that "read-only" is not a server-enforced
+   boundary — it is a convention this page follows.
+
+This generates a page that:
+
+* renders against known data immediately (no ActivityWatch dependency at first)
+* fetches from ``localhost:5666`` when live mode is enabled
+* makes no outbound requests during code generation or when run
+* handles empty responses, AFK filtering, and timezone-aware timestamps
+
+.. note::
+
+   Code generation and data access are separate. When you ask an AI to write
+   this page, the model only sees your prompt and synthetic fixture — not your
+   real ActivityWatch data. Real data is only accessed later, locally, when
+   *you* open the generated file in a browser pointed at your running AW server.
+
+Testing the generated page
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before using real data, verify the generated page against its synthetic fixture:
+
+1. Open the file directly in a browser (``file://``). It should render the
+   fixture categories and totals without any network requests.
+2. Open browser DevTools → Network. Reload. Confirm no requests go outside
+   ``localhost:5666``.
+3. Enable live mode. DevTools should show only requests to ``localhost:5666``.
+4. Try an empty time range (start = end). The page should show zero totals, not
+   an error.
+
+Using the page as a custom visualization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ActivityWatch's web UI can embed custom pages as an iframe tab. This feature is
+**experimental**. To use it:
+
+1. Place the generated HTML file in ``<aw-data-dir>/custom_vis/<name>/``.
+2. Open ActivityWatch at ``http://localhost:5666``.
+3. Navigate to the custom visualizations tab and select ``<name>``.
+
+The iframe receives ``hostname``, ``start``, and ``end`` as URL parameters so it
+automatically follows the selected time range.
+
+.. warning::
+
+   Custom visualizations run in the ActivityWatch server's origin. A malicious
+   page could read your data or make API calls. Only use pages you wrote or
+   reviewed.
+
+Capability map
+--------------
+
+ActivityWatch covers the local data collection layer. Before building a custom
+interface, confirm which features are available in your installed version:
+
+.. list-table::
+   :widths: 40 60
+   :header-rows: 1
+
+   * - Feature
+     - Notes
+   * - Desktop activity (window titles, app names)
+     - Collected by ``aw-watcher-window``; titles available but sensitive
+   * - AFK / active time
+     - Collected by ``aw-watcher-afk``; used in canonical queries
+   * - Rule-based categories
+     - Set in the web UI; applied at query time; not automatic AI inference
+   * - Android activity
+     - Collected by the Android app; synced via :doc:`../features/syncing`
+   * - iOS activity
+     - Not available
+   * - Automatic project attribution
+     - Not built-in; rule-based only unless you add custom processing
+   * - Seamless multi-device sync
+     - Sync is manual/scheduled; see :doc:`../features/syncing` for current status
+
+Rule-based categories are not AI-generated labels. They match patterns you
+define against app names and window titles. Describing them as automatic
+AI understanding overstates what is collected.
+
 Related docs
 ------------
 
