@@ -194,93 +194,154 @@ ActivityWatch workflow. Before uploading data:
 AI-generated local interfaces
 -----------------------------
 
-ActivityWatch's REST API lets you build custom dashboards and visualizations
-without changing the core UI. An AI assistant can generate the code; your data
-stays local throughout.
+ActivityWatch's existing collection and query tools can support a different
+presentation without rebuilding the tracker. Customization complements improving
+the default UI; it should not be necessary to get a usable activity summary.
 
-**What to ask for.** Use a prompt like the one below. It starts from a synthetic
-event schema so the generated page works before you connect real data, and it
-restricts all network access to the local ActivityWatch server:
+The smallest integration is an **offline HTML viewer of a local summary**.
+Generate code from synthetic data, test it, then optionally load a bounded summary
+from your own server. The viewer needs no API connection, CORS changes or build
+step. This is a desktop, single-host example, not a multi-device timeline merger.
+
+**What to ask for.** Give your assistant only this prompt and synthetic fixture,
+not access to real ActivityWatch events. A locally running agent can still use a
+cloud model or tools that upload files; inspect its configuration first:
 
 .. code-block:: text
 
-   Build a single-file HTML dashboard that reads ActivityWatch data.
+   Build a single-file HTML dashboard with inline JavaScript and CSS.
+   Render the synthetic summary below first. Add a local JSON file picker
+   (FileReader) for another summary in the same schema, never an API fetch.
+   Show categories, apps, active/AFK/tracked seconds, hostname and the range
+   with its explicit timezone offsets. Show zero totals for empty data.
+   Keep hosts separate; never sum overlapping devices as personal active time.
+   Reject negative/nonfinite durations and invalid/reversed/offset-free dates.
+   Treat loaded labels as untrusted text, not HTML.
+   No network requests, imports, CDN, external fonts, analytics or telemetry.
+   No storage, forwarding or logging of loaded data. No npm or build step.
+   Add a CSP meta tag with default-src 'none'; connect-src 'none';
+   script-src 'unsafe-inline'; style-src 'unsafe-inline'.
 
-   Constraints — follow these exactly:
-   - All network requests MUST go to http://localhost:5666/api/0/ only.
-     No CDN imports, no analytics, no external fonts, no telemetry.
-   - All JavaScript must be inline in the HTML file. No npm, no build step.
-   - The page must work with SYNTHETIC data first (hardcoded fixture below)
-     and optionally connect to the live API via a checkbox or button.
-   - Use only read-only API operations (GET requests). No POST, PUT, or DELETE.
-   - Do not store, forward, or log any real ActivityWatch events.
-
-   Synthetic fixture (use this until the user enables live data):
+   Synthetic fixture (use this before loading a local summary):
    {
      "hostname": "my-machine",
-     "start": "2024-01-15T08:00:00",
-     "end": "2024-01-15T12:00:00",
+     "start": "2024-01-15T08:00:00+00:00",
+     "end": "2024-01-15T12:00:00+00:00",
      "categories": [
        {"name": ["Coding"], "seconds": 7200},
        {"name": ["Communication"], "seconds": 1800},
        {"name": ["Uncategorized"], "seconds": 600}
      ],
      "apps": [
-       {"app": "Code", "seconds": 5400},
-       {"app": "Firefox", "seconds": 2400}
+       {"app": "Code", "seconds": 7200},
+       {"app": "Firefox", "seconds": 1800},
+       {"app": "Terminal", "seconds": 600}
      ],
-     "active_seconds": 10200,
-     "afk_seconds": 600
+     "active_seconds": 9600,
+     "afk_seconds": 600,
+     "tracked_seconds": 10200
    }
 
-   When live data is enabled, read `hostname`, `start`, `end` from the URL
-   query parameters (?hostname=…&start=…&end=…) and fetch from:
-     GET http://localhost:5666/api/0/buckets/
-   to discover bucket IDs, then query the canonical activity endpoint at:
-     POST http://localhost:5666/api/0/query/
-   with the time range. Show totals by category and by app, active time,
-   and AFK time. Show a note that "read-only" is not a server-enforced
-   boundary — it is a convention this page follows.
+Download the :download:`tested example HTML <ai-dashboard.html>` for a reference
+implementation. Save it locally and open it with your browser (``file://``).
+The initial sample is synthetic; it does not describe your actual activity.
+A prompt is not a guarantee: review and test any newly generated variation too.
 
-This generates a page that:
+Optional: load your own local summary
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* renders against known data immediately (no ActivityWatch dependency at first)
-* fetches from ``localhost:5666`` when live mode is enabled
-* makes no outbound requests during code generation or when run
-* handles empty responses, AFK filtering, and timezone-aware timestamps
+Use Python 3.11 or newer and install ``aw-client``, then download
+:download:`ai-dashboard-summary.py <ai-dashboard-summary.py>` to that environment.
+Discover your bucket suffix with ``aw-client buckets`` and select **one desktop
+hostname** with both ``aw-watcher-window_HOSTNAME`` and
+``aw-watcher-afk_HOSTNAME`` buckets. With your existing AW server listening on
+loopback port 5666, run:
 
-.. note::
+.. code-block:: sh
 
-   Code generation and data access are separate. When you ask an AI to write
-   this page, the model only sees your prompt and synthetic fixture — not your
-   real ActivityWatch data. Real data is only accessed later, locally, when
-   *you* open the generated file in a browser pointed at your running AW server.
+   python3 ai-dashboard-summary.py HOSTNAME \
+     2024-01-15T08:00:00+00:00 2024-01-15T12:00:00+00:00 > summary.json
+
+Replace the sample dates and hostname. Use explicit offsets (or ``Z``); for a
+local day across a daylight-saving transition, the two offsets can differ.
+The exporter applies canonical desktop AFK filtering and category rules from
+that server (or the client's bundled defaults if no rules are configured), then
+clips intervals to the requested range before aggregation.
+It does not export titles or URLs. Category/app names can still be sensitive;
+review ``summary.json`` locally and load it using the HTML file picker, **not by
+pasting it back into the code-generation chat**.
+
+``tracked_seconds`` means observed window-event duration, not the entire selected
+wall-clock range. AFK is observed AFK overlapping those windows. A gap in AFK
+coverage is unknown, not automatically active or AFK; ``unknown_seconds`` in the
+JSON records the nonnegative remainder. For a non-empty range, missing buckets
+produce an error rather than a misleading zero. This assumes normal,
+nonoverlapping window events per host. Canonical processing can bridge short
+heartbeat gaps; do not treat these estimates as precise time accounting.
+Synced buckets for other hosts are not included: compare hosts separately, do not
+add their active durations without a separately defined overlap/precedence policy.
+
+The exporter uses GET for bucket/settings discovery and ``POST /api/0/query/``
+for read-only calculations. POST is required by the query API; it does not imply
+an event write. The script does not call mutation endpoints. **Read-only is a
+client convention, not a server-enforced permission boundary.** Keep the server
+on loopback and do not loosen CORS or give unreviewed generated code API access.
 
 Testing the generated page
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Before using real data, verify the generated page against its synthetic fixture:
+Before using real data:
 
-1. Open the file directly in a browser (``file://``). It should render the
-   fixture categories and totals without any network requests.
-2. Open browser DevTools → Network. Reload. Confirm no requests go outside
-   ``localhost:5666``.
-3. Enable live mode. DevTools should show only requests to ``localhost:5666``.
-4. Try an empty time range (start = end). The page should show zero totals, not
-   an error.
+1. Open the HTML file directly. Check Coding = 7200 s, Communication = 1800 s,
+   Uncategorized = 600 s, active = 9600 s, AFK = 600 s, tracked = 10200 s.
+   Category and app totals both equal active time, not active plus AFK.
+2. Open browser DevTools → Network and reload. Loading the document itself is
+   expected; it must make no HTTP(S), WebSocket, telemetry or model requests,
+   including when choosing a local JSON file. CSP is defense in depth, not a
+   substitute for reviewing the page.
+3. Load a summary with empty category/app arrays and zero durations. Expect
+   zero totals and a clear no-activity state. Try invalid JSON and a reversed
+   range: expect a visible error, not a silent stale-data success.
+4. Test the exporter on synthetic window/AFK events before trusting changed
+   aggregation code. Check events straddling range boundaries, equivalent times
+   with different UTC offsets, unknown AFK gaps, and two overlapping devices.
+
+The reproducible :download:`verification script <verify-ai-dashboard.py>` starts
+an isolated in-memory Python ``aw-server`` on a random loopback port; it never
+connects to your normal server. In a disposable Python environment with
+``aw-client``, ``aw-server`` and ``playwright`` installed, place it beside the
+exporter and HTML file, install Playwright Chromium, then run
+``python3 verify-ai-dashboard.py``. The reference was checked on Python 3.12 with
+aw-client 0.5.15, aw-core 0.5.17 and aw-server 0.13.2 source (with Flask 2.2);
+this is not a compatibility claim for all installed versions. It checks the known fixture, canonical query
+results, range boundaries and browser file loading, and records attempted
+network destinations. It does not prove that arbitrary future generated code or
+every released server implementation behaves identically.
 
 Using the page as a custom visualization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ActivityWatch's web UI can embed custom pages as an iframe tab. This feature is
-**experimental**. To use it:
+This is **experimental and not required for the offline recipe above**. There
+is no automatic ``<aw-data-dir>/custom_vis/`` discovery path. The Python server
+can explicitly serve a directory (containing ``index.html``), for example:
 
-1. Place the generated HTML file in ``<aw-data-dir>/custom_vis/<name>/``.
-2. Open ActivityWatch at ``http://localhost:5666``.
-3. Navigate to the custom visualizations tab and select ``<name>``.
+.. code-block:: sh
 
-The iframe receives ``hostname``, ``start``, and ``end`` as URL parameters so it
-automatically follows the selected time range.
+   aw-server --host 127.0.0.1 --port 5666 \
+     --custom-static dashboard=/absolute/path/to/reviewed-page
+
+Use this when configuring your server, not while another server already owns
+that port. The page is then at ``http://127.0.0.1:5666/pages/dashboard/``.
+The equivalent persistent Python-server setting is a ``dashboard`` path entry
+under ``[server.custom_static]`` in ``aw-server.toml``. Check the installed
+server's help/config; do not assume Python CLI flags apply to the Rust server.
+The Python-server path is covered by the verification script.
+
+The web UI's custom visualization selector can embed configured pages and passes
+``hostname``, ``start`` and ``end`` URL parameters. The offline reference viewer
+**does not consume those parameters or automatically follow the selected range**;
+its displayed range is the loaded summary. Building a live embedded viewer would
+require separate query and security review, not just copying this HTML.
 
 .. warning::
 
