@@ -15,16 +15,23 @@ The illustration below is a graph of the fundamental dependencies between projec
 Server
 ------
 
-Known as :gh-aw:`aw-server`, it handles storage and retrieval of all activities/entries in buckets. Usually there exists one bucket per watcher.
+ActivityWatch has two server implementations (see :doc:`server-compare`):
+
+- :gh-aw:`aw-server` - The Python implementation, started by default by aw-qt.
+- :gh-aw:`aw-server-rust` - The Rust implementation, embedded in aw-tauri and also bundled with aw-qt. It is planned to become the default in aw-qt as well, see :doc:`migrating`.
+
+The server handles storage and retrieval of all activities/entries in buckets. Usually there exists one bucket per watcher.
 
 The server also hosts the Web UI (aw-webui) which does all communication with the server using the REST API.
 
-Clients (watchers, importers, and observers)
---------------------------------------------
+Clients (watchers and importers)
+--------------------------------
 
-Since aw-server doesn't do any data collection on it's own, we need watchers that observe the world and sent the data off to aw-server for storage.
+Since the server doesn't do any data collection on its own, we need watchers that observe the world and send the data off to the server for storage.
 
-These utilize the aw-client library for making requests to the aw-server.
+These utilize the aw-client library for making requests to the server.
+
+ActivityWatch can't track everything, so sometimes you might want to import data from another source. That's where importers come in.
 
 For a list of watchers, see :doc:`watchers`. For a list of importers see :doc:`importers`.
 
@@ -36,7 +43,7 @@ ActivityWatch has the following user interfaces:
 
 - :gh-aw:`aw-qt` - Manages the server and watchers to make ActivityWatch easy to use for end-users.
 - :gh-aw:`aw-tauri` - An experimental alternative to aw-qt built with Tauri, which embeds aw-server-rust. Offered as a separate download starting with ``v0.14``.
-- :gh-aw:`aw-webui` - Offers visualization and an overview of the database. Hosted by aw-server in the bundle.
+- :gh-aw:`aw-webui` - Offers visualization and an overview of the database. Hosted by the server in the bundle.
 
 Libraries
 ---------
@@ -57,7 +64,7 @@ aw-client
 ^^^^^^^^^
 
 Writing these clients is something we've tried to make as easy as possible by creating client libraries with a clear API.
-A client could both be a watcher which sends data as well as a visualizer which fetches and presents data from the aw-server.
+A client could both be a watcher which sends data as well as a visualizer which fetches and presents data from the server.
 
 The primary client library is written in Python (known simply as aw-client), and there are also client libraries for JavaScript/TypeScript (used by aw-webui and aw-watcher-web) and Rust (used by aw-sync).
 
