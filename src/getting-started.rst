@@ -48,7 +48,7 @@ Installation
 
 
 .. note::
-   Starting with ``v0.14``, each release also offers an experimental Tauri distribution (files named ``activitywatch-tauri-*``). It replaces the ``aw-qt`` tray app, embeds ``aw-server-rust``, and on Linux bundles `awatcher <https://github.com/2e3s/awatcher>`_ for native Wayland support. The classic distribution remains the default.
+   Starting with ``v0.14``, each release also offers an experimental Tauri distribution (files named ``activitywatch-tauri-*``). It replaces the ``aw-qt`` tray app, embeds ``aw-server-rust``, and on Linux bundles `awatcher <https://github.com/2e3s/awatcher>`_ for native Wayland support. The classic distribution remains the default. From ``v0.14.2``, the classic Linux distribution also bundles awatcher and starts it automatically on Wayland sessions (see :ref:`the Wayland FAQ entry <wayland>`).
 
 
 Usage

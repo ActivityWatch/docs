@@ -103,6 +103,8 @@ The one exception is the optional, separately installed `aw-import-screentime <h
 Apple has said that future macOS versions will only grant Full Disk Access with "very explicit user action", so expect an extra confirmation step there.
 You can revoke the permission again at any time in *System Settings → Privacy & Security → Full Disk Access*.
 
+.. _wayland:
+
 Why is the active window logged as "unknown" when using Wayland?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -117,6 +119,7 @@ Unfortunately, in Wayland compositors like Gnome's Mutter there is no way at all
 - Switch to using X11.
 - Try an alternative AFK and window :ref:`watcher <window-watchers>` which supports Wayland.
 - Try the experimental Tauri distribution (starting with ``v0.14``), which bundles `awatcher <https://github.com/2e3s/awatcher>`_ on Linux for Wayland support. See :doc:`getting-started`.
+- Use the classic Linux distribution from ``v0.14.2`` onwards. It bundles `awatcher <https://github.com/2e3s/awatcher>`_ as ``aw-awatcher``, and on a Wayland session ``aw-qt`` automatically starts it in place of ``aw-watcher-window`` and ``aw-watcher-afk``. Compositor support follows `awatcher's supported environments <https://github.com/2e3s/awatcher#supported-environments>`_: wlroots compositors such as Sway and Hyprland work out of the box, KDE uses a built-in KWin script, and GNOME needs the `Focused Window D-Bus <https://extensions.gnome.org/extension/5592/focused-window-d-bus/>`_ extension for active-window tracking.
 
 You can see the general status of the ability of `getting the active window in Wayland on StackOverflow <https://stackoverflow.com/questions/45465016/how-do-i-get-the-active-window-on-gnome-wayland>`_ or follow `the issue for ActivityWatch tracking the problem <https://github.com/ActivityWatch/activitywatch/issues/92>`_.
 
