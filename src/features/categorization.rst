@@ -19,13 +19,13 @@ Adding and editing categories
 
 If you go to the "Settings" page in the ActivityWatch UI, there is a section called "Categorization" which lists all the current categories and its respective sub-categories.
 You can add new categories and edit existing categories in this view.
-When editing categories you have the option to name them, change their parent category, and set a rule for them.
+When editing categories you have the option to name them, change their parent category, set a rule for them, and (for regex rules) set an optional priority.
 
 Rules
 -----
 
 A rule decides what text will match in an event.
-If there are multiple categories matching the same event then the deepest sub-category will be chosen.
+If several rules match the same event, the highest-ranking one is chosen (see `Priority`_ below). When no priority is set, that is the deepest matching subcategory.
 
 Currently there are only two rule options for categories: "Regex" or "No rule".
 
@@ -59,3 +59,25 @@ No rule
 "No rule" simply means that the category will not match anything (but its child categories still might). You can use this to create category groups which won't get matched themselves, but only be used as 'folders' for child categories.
 
 In the future we might take a look at adding some other rule type to more easily express text patterns.
+
+Priority
+********
+
+When more than one regex rule matches the same event, ActivityWatch picks the highest-ranking match.
+
+A rule's rank is:
+
+- the **Priority** field, if you set one (an integer; higher wins)
+- otherwise ``10 × depth``, where a top-level category has depth 1 (rank 10) and a child has depth 2 (rank 20)
+
+Leaving Priority blank keeps the historical "deepest matching subcategory wins" behavior. An explicit value *replaces* that default; it does not add to it.
+
+To deprioritize a fallback or catch-all relative to unprioritized rules, set its Priority to ``0``. That ranks below every default (the smallest default is 10). You do not need a negative priority for that.
+
+Examples:
+
+- Unprioritized ``Work`` (rank 10) loses to unprioritized ``Work > Programming`` (rank 20).
+- A catch-all with Priority ``0`` loses to both of those.
+- A shallow override with Priority ``25`` beats an unprioritized child (20).
+
+The editor accepts a blank default or a non-negative integer. Negative priorities are understood by the categorization engine but are not offered in the editor, and older servers fail to parse them (see :issue:`1539`).
