@@ -167,6 +167,35 @@ Once you identify the process, stop it and start ActivityWatch again.
    instance is already listening on the port and prints a clearer message
    instead of a generic ``Address already in use`` error.
 
+.. _recovering-a-corrupted-database:
+
+The server fails to start: "database disk image is malformed"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The SQLite database was damaged, usually by a crash or power loss mid-write. You can usually rebuild it with the ``sqlite3`` command-line tool:
+
+1. Quit ActivityWatch completely (including the tray icon), so nothing writes to the database.
+2. Open the :ref:`data directory <data-directory>` and back up ``sqlite.db`` together with any ``sqlite.db-wal`` and ``sqlite.db-shm`` files next to it.
+3. Note the schema version of the original database::
+
+       sqlite3 sqlite.db 'PRAGMA user_version;'
+
+4. Rebuild it into a new file::
+
+       sqlite3 sqlite.db .recover | sqlite3 restored.db
+
+   ``.recover`` salvages more from a badly damaged file than ``.dump``. Some ``sqlite3`` builds lack it and print ``no such table: sqlite_dbpage``; in that case delete ``restored.db`` and use ``sqlite3 sqlite.db .dump | sqlite3 restored.db`` instead.
+
+5. ``.dump`` does not copy the schema version. Check it on the new file with ``sqlite3 restored.db 'PRAGMA user_version;'``, and if it prints ``0``, set it to the number from step 3::
+
+       sqlite3 restored.db 'PRAGMA user_version = N;'
+
+   Without this, aw-server-rust releases before the fix in `aw-server-rust#776 <https://github.com/ActivityWatch/aw-server-rust/pull/776>`_ re-run every migration on startup and crash with a duplicate-column error. Newer releases infer the version and log a warning, but setting it is harmless.
+
+6. Move the damaged ``sqlite.db`` (and its ``-wal``/``-shm`` files) out of the way, rename ``restored.db`` to ``sqlite.db``, and start ActivityWatch again.
+
+Events that sat on damaged pages are lost; everything else comes back. Background and reports: `aw-server#89 <https://github.com/ActivityWatch/aw-server/issues/89>`_.
+
 ..
     What happens when my computer is off or asleep?
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
