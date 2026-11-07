@@ -68,6 +68,53 @@ If you want more advanced ways to run ActivityWatch (including running it withou
 .. note::
    If you are using a proxy ActivityWatch might not work out of the box. To fix this you can set the environment variable ``NO_PROXY`` to include ``127.0.0.1`` before starting aw-qt. How to set an environment variable depends on your operating system; use Google if you are unsure how to do this.
 
+Next steps after installing
+===========================
+
+Once ActivityWatch is running and you can see your tray icon, there are a few extra things worth doing to get useful data right away.
+
+Install the browser extension
+-----------------------------
+
+The default :doc:`watchers` track the active *application* (e.g. ``Firefox``, ``Slack``), but the browser extension — :gh-aw:`aw-watcher-web` — adds the **title and URL of the active tab**. Without it, your browsing history inside the browser shows up as plain ``Firefox`` with no further detail.
+
+The extension is available for the major browsers:
+
+- `Chrome / Edge / Brave <https://chromewebstore.google.com/detail/activitywatch-web-watcher/nglaklfkpbjkhcdbgdkkfkgnjjlfpjcg>`_
+- `Firefox <https://addons.mozilla.org/en-US/firefox/addon/aw-watcher-web/>`_
+
+After installing, pin the extension and reload any tabs you have open so it can start logging.
+
+.. note::
+   The browser extension only runs while its toolbar icon is enabled. If you don't see events from it, click the extension's icon to confirm it is on (its badge colour tells you whether it is currently logging).
+
+Install an editor watcher
+-------------------------
+
+If you spend a meaningful amount of time in a code or text editor, install the matching editor watcher. Without one, every "coding" minute shows up as the editor's binary name only, with no file, project or language breakdown.
+
+See the *Editor watchers* section in :doc:`watchers` for the full list (VS Code, Vim/Neovim, JetBrains, Emacs, Sublime, Zed, Obsidian, …).
+
+Set up categories
+-----------------
+
+ActivityWatch records *what* you were doing but doesn't know what to call it. Categories let you map raw app or window titles onto your own labels (e.g. ``github.com → Coding``, ``Slack → Communication``) so the dashboard can roll activity up by purpose.
+
+There are two ways to set them up:
+
+- From the web UI: open ``http://localhost:5600`` → **Settings → Categories** and create a rule.
+- From the config file: edit ``categories.yaml`` in your user data directory (see :doc:`directories`); the schema is documented in :doc:`configuration`.
+
+A useful starter set covers the apps you spend most of your day in; you can always refine later.
+
+Where your data lives
+----------------------
+
+Everything ActivityWatch has recorded lives in a per-user directory and survives reinstalls and updates. See :doc:`directories` for the exact paths on Windows, macOS and Linux, and where to find the logs if something goes wrong.
+
+.. note::
+   To back up your data, copy that directory. To start fresh, stop ActivityWatch, delete the directory, and start ActivityWatch again — all your watchers will begin logging from a clean slate.
+
 Autostart
 =========
 
