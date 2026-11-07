@@ -38,6 +38,75 @@ Things to keep in mind:
 - Authentication does not make it safe to expose the server on a network. The API is served over plain HTTP, so see `remote-server` before doing so.
 
 
+Shared computers and multiple users
+-----------------------------------
+
+Separate OS accounts already have separate ActivityWatch data directories. That
+alone does not isolate the HTTP API: all users on a machine can normally reach
+its loopback ports. A second user connecting to ``localhost:5600`` can therefore
+reach the first user's server instead of their own.
+
+There are two independent requirements:
+
+1. **Avoid port collisions.** Give each user's server a different unused port,
+   and configure that user's clients to use the same port. Ports are shared
+   across OS accounts; they are not allocated separately for each login.
+2. **Restrict API access.** Use a different secret API key for each user's
+   ``aw-server-rust`` instance. Different ports, hostnames, bucket names, or
+   instance profiles are not an access-control boundary. The Python server
+   does not implement API key authentication.
+
+For example, after stopping ActivityWatch, one user can configure port ``5601``
+and another port ``5602``. In each user's own config directory, edit
+``aw-server-rust/config.toml`` (top-level server settings, not ``[server]``):
+
+.. code-block:: toml
+
+    address = "127.0.0.1"
+    port = 5601
+
+    [auth]
+    api_key = "replace-with-a-long-random-secret-unique-to-this-user"
+
+Then edit ``aw-client/aw-client.toml`` for watchers using the Python client:
+
+.. code-block:: toml
+
+    [server]
+    hostname = "127.0.0.1"
+    port = "5601"
+
+Use ``5602`` and a different secret for the other account. Keep the server
+bound to loopback. Protect the config and data directories with OS permissions
+so other ordinary users cannot read the API key or database; authentication
+cannot protect a key stored in a world-readable file, or defend against an
+administrator or malware running as you.
+
+Restart with **only the intended server backend** enabled. When using ``aw-qt``,
+select ``aw-server-rust`` rather than also starting ``aw-server``. Verify that
+all watchers and the dashboard use the selected port; third-party watchers and
+browser extensions may need separate configuration or may not support this
+setup. Python ``aw-client`` versions with local key discovery read the key from
+the current user's Rust-server config only when the configured port matches.
+Do not assume every installed client supports authentication.
+
+A dashboard opened without a token cannot read an authenticated API. The web UI
+supports an initial ``?token=`` URL parameter, stores it for that browser tab,
+and removes it from the address bar. Treat such a URL as a credential: do not
+share it, put it in screenshots, or assume every launcher supplies it. The
+server's static dashboard assets are not themselves protected by the API key.
+
+Before trusting the setup, check both instances: a bucket-list request with no
+key or the other user's key must return ``401``; the correct key must permit
+access to that instance's data. ``GET /api/0/info`` remains public, so a successful
+health check does not prove either authentication or user isolation. Also check
+that each watcher writes to its intended instance after login and restart.
+
+This is a manual workaround, not automatic multiuser setup. It does not resolve
+all launcher, browser-extension, or login-session behavior tracked in
+:issue:`75`.
+
+
 Deleting sensitive data
 -----------------------
 
