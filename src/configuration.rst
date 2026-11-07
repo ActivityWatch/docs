@@ -20,7 +20,9 @@ These settings go under the ``[server]`` section of ``aw-server/aw-server.toml``
 - ``storage`` Type of storage for holding buckets and events. Supported types are ``peewee`` (the default), ``sqlite``, or ``memory`` (useful in testing).
 - ``cors_origins`` Comma-separated list of allowed origins for CORS (Cross-Origin Resource Sharing). Useful in testing and development to let other origins access the ActivityWatch API, such as aw-webui in development mode on port 27180.
 - ``query_cache`` Whether to cache query results for finished past periods in memory. The default is ``true``.
-- ``custom_static`` A table under ``[server.custom_static]`` mapping watcher names to directories containing their :doc:`custom visualizations <watchers>`.
+- ``custom_static`` A table under ``[server.custom_static]`` mapping watcher names to directories containing their :ref:`custom visualizations <custom-visualizations>`.
+
+See `aw_server/config.py <https://github.com/ActivityWatch/aw-server/blob/master/aw_server/config.py>`_ for the source of the default config values.
 
 aw-server-rust
 --------------
@@ -31,8 +33,10 @@ These settings go at the top level of ``aw-server-rust/config.toml`` (there is n
 - ``port`` Port number to start the server on.
 - ``cors`` List of allowed origins for CORS (Cross-Origin Resource Sharing). Useful in testing and development to let other origins access the ActivityWatch API, such as aw-webui in development mode on port 27180.
 - ``cors_regex`` List of regular expressions matching additional allowed CORS origins.
-- ``custom_static`` A table mapping watcher names to directories containing their :doc:`custom visualizations <watchers>`.
+- ``custom_static`` A table mapping watcher names to directories containing their :ref:`custom visualizations <custom-visualizations>`.
 - ``api_key`` Under an ``[auth]`` section: an optional API key that clients must send to access the API. Authentication is disabled when it is unset, see :doc:`security`.
+
+See `aw-server/src/config.rs <https://github.com/ActivityWatch/aw-server-rust/blob/master/aw-server/src/config.rs>`_ for the source of the default config values.
 
 aw-client
 ---------
@@ -40,6 +44,8 @@ aw-client
 - ``server.hostname`` Hostname of the server to connect to.
 - ``server.port`` Port number of the server to connect to.
 - ``client.commit_interval`` How often to commit events to the server (in seconds).
+
+See `aw_client/config.py <https://github.com/ActivityWatch/aw-client/blob/master/aw_client/config.py>`_ for the source of the default config values.
 
 aw-watcher-afk
 --------------
@@ -59,4 +65,7 @@ aw-watcher-window
 
 - ``poll_time`` Time in seconds between window checks.
 - ``exclude_title`` Don't track window titles
-- ``strategy_macos`` The strategy to use on macOS to fetch the active window, can be "swift", "jxa" or "applescript". Swift strategy is preferred.
+- ``exclude_titles`` List of regular expressions. Window titles matching any of them (anywhere in the title, case-insensitive) are replaced with ``excluded``.
+- ``strategy_macos`` The strategy to use on macOS to fetch the active window, can be ``swift``, ``jxa`` or ``applescript``. Swift strategy is preferred.
+
+See `aw_watcher_window/config.py <https://github.com/ActivityWatch/aw-watcher-window/blob/master/aw_watcher_window/config.py>`_ for the source of the default config values.
