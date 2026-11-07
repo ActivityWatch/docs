@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'">
+<title>ActivityWatch summary dashboard</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --ink: #1d2330;
+    --muted: #5b6474;
+    --line: #d9dde5;
+    /* Okabe-Ito blue: colorblind-safe single series colour */
+    --bar: #0072B2;
+    --bar-track: #e8ecf2;
+    --err: #b3261e;
+    --err-bg: #fdecea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14171c;
+      --surface: #1d2229;
+      --ink: #e7eaf0;
+      --muted: #a3acba;
+      --line: #333b47;
+      --bar: #56B4E9;
+      --bar-track: #2a313b;
+      --err: #ff8a80;
+      --err-bg: #3a1f1d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 16px;
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  main { max-width: 960px; margin: 0 auto; display: grid; gap: 16px; }
+  header h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .meta { color: var(--muted); margin: 0; font-size: 0.9rem; overflow-wrap: anywhere; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .card h2 { font-size: 1.05rem; margin: 0 0 12px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .controls label { font-weight: 600; }
+  #error {
+    background: var(--err-bg);
+    color: var(--err);
+    border: 1px solid var(--err);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+  .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .stat { display: grid; gap: 2px; }
+  .stat .label { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .stat strong { font-size: 1.8rem; font-variant-numeric: tabular-nums; }
+  .stat .unit, .stat .fmt { color: var(--muted); font-size: 0.85rem; }
+  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .row { display: grid; grid-template-columns: minmax(90px, 1fr) 2fr auto; gap: 10px; align-items: center; margin: 8px 0; }
+  .row .name { overflow-wrap: anywhere; }
+  .track { background: var(--bar-track); border-radius: 4px; height: 12px; overflow: hidden; }
+  .fill { background: var(--bar); height: 100%; border-radius: 4px; }
+  .value { font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; font-size: 0.9rem; }
+  .empty { color: var(--muted); font-style: italic; margin: 0; }
+  .privacy ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 0.9rem; }
+  .badge { display: inline-block; font-size: 0.8rem; border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; color: var(--muted); }
+  @media (max-width: 480px) {
+    .row { grid-template-columns: 1fr; gap: 4px; }
+    .value { white-space: normal; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>ActivityWatch summary</h1>
+    <p class="meta"><span class="badge" id="source">Synthetic sample data</span></p>
+    <p class="meta">Host: <span id="host">my-machine</span> (one explicit host; not a combined view across devices)</p>
+    <p class="meta">Range: <span id="range">2024-01-15T08:00:00+00:00 → 2024-01-15T12:00:00+00:00</span></p>
+    <p class="meta">Timezone offsets: <span id="offsets">start +00:00, end +00:00</span></p>
+  </header>
+
+  <section class="card controls" aria-label="Load summary">
+    <label for="summary-file">Load a summary JSON file</label>
+    <input type="file" id="summary-file" accept=".json,application/json">
+  </section>
+
+  <p id="error" role="alert" hidden></p>
+
+  <section class="card" aria-label="Totals">
+    <div class="totals">
+      <div class="stat">
+        <span class="label">Active</span>
+        <strong id="active-seconds">9600</strong>
+        <span class="unit">seconds</span>
+        <span class="fmt" id="active-fmt">2h 40m 00s</span>
+      </div>
+      <div class="stat">
+        <span class="label">AFK</span>
+        <strong id="afk-seconds">600</strong>
+        <span class="unit">seconds</span>
+        <span class="fmt" id="afk-fmt">10m 00s</span>
+      </div>
+      <div class="stat">
+        <span class="label">Tracked</span>
+        <strong id="tracked-seconds">10200</strong>
+        <span class="unit">seconds</span>
+        <span class="fmt" id="tracked-fmt">2h 50m 00s</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="panels">
+    <section class="card" aria-labelledby="cat-title">
+      <h2 id="cat-title">Categories</h2>
+      <div id="categories"></div>
+    </section>
+    <section class="card" aria-labelledby="app-title">
+      <h2 id="app-title">Apps</h2>
+      <div id="apps"></div>
+    </section>
+  </div>
+
+  <section class="card privacy" aria-labelledby="privacy-title">
+    <h2 id="privacy-title">About this data</h2>
+    <ul>
+      <li>The summary is read locally in this browser. Nothing is uploaded, stored, or downloaded.</li>
+      <li>It covers one explicit host. It does not combine data from multiple devices.</li>
+      <li>Categories are rule-based groupings, not AI inference.</li>
+      <li>This page is generated code. Review it before relying on it.</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  var MAX_BYTES = 5 * 1024 * 1024;
+  var TS_RE = /(Z|[+-]\d{2}:\d{2})$/;
+
+  var SAMPLE = {
+    hostname: 'my-machine',
+    start: '2024-01-15T08:00:00+00:00',
+    end: '2024-01-15T12:00:00+00:00',
+    categories: [
+      { name: ['Coding'], seconds: 7200 },
+      { name: ['Communication'], seconds: 1800 },
+      { name: ['Uncategorized'], seconds: 600 }
+    ],
+    apps: [
+      { app: 'Code', seconds: 7200 },
+      { app: 'Firefox', seconds: 1800 },
+      { app: 'Terminal', seconds: 600 }
+    ],
+    active_seconds: 9600,
+    afk_seconds: 600,
+    tracked_seconds: 10200
+  };
+
+  function $(id) { return document.getElementById(id); }
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function fmtDuration(s) {
+    s = Math.round(s);
+    var h = Math.floor(s / 3600);
+    var m = Math.floor((s % 3600) / 60);
+    var sec = Math.round(s % 60);
+    return h + 'h ' + pad(m) + 'm ' + pad(sec) + 's';
+  }
+
+  function fail(msg) { throw new Error(msg); }
+
+  function checkDuration(v, label) {
+    if (typeof v !== 'number' || !isFinite(v) || v < 0) {
+      fail(label + ' must be a finite, nonnegative number of seconds.');
+    }
+    return v;
+  }
+
+  // Requires an explicit offset so the dashboard can label it.
+  function checkTimestamp(v, label) {
+    if (typeof v !== 'string' || !TS_RE.test(v) || isNaN(Date.parse(v))) {
+      fail(label + ' must be an ISO 8601 timestamp with an explicit offset (e.g. 2024-01-15T08:00:00+00:00).');
+    }
+    var off = v.match(TS_RE)[1];
+    return { text: v, time: Date.parse(v), offset: off === 'Z' ? '+00:00' : off };
+  }
+
+  function validate(d) {
+    if (!d || typeof d !== 'object' || Array.isArray(d)) fail('Summary must be a JSON object.');
+    if (typeof d.hostname !== 'string' || d.hostname === '') fail('hostname must be a non-empty string.');
+    var start = checkTimestamp(d.start, 'start');
+    var end = checkTimestamp(d.end, 'end');
+    if (end.time < start.time) fail('end is before start.');
+    checkDuration(d.active_seconds, 'active_seconds');
+    checkDuration(d.afk_seconds, 'afk_seconds');
+    checkDuration(d.tracked_seconds, 'tracked_seconds');
+    if (!Array.isArray(d.categories)) fail('categories must be an array.');
+    if (!Array.isArray(d.apps)) fail('apps must be an array.');
+
+    d.categories.forEach(function (c, i) {
+      var where = 'categories[' + i + ']';
+      if (!c || typeof c !== 'object' || !Array.isArray(c.name) || c.name.length === 0 ||
+          !c.name.every(function (p) { return typeof p === 'string'; })) {
+        fail(where + '.name must be a non-empty array of strings.');
+      }
+      checkDuration(c.seconds, where + '.seconds');
+    });
+    d.apps.forEach(function (a, i) {
+      var where = 'apps[' + i + ']';
+      if (!a || typeof a !== 'object' || typeof a.app !== 'string') fail(where + '.app must be a string.');
+      checkDuration(a.seconds, where + '.seconds');
+    });
+
+    return { data: d, start: start, end: end };
+  }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = String(text);
+    return n;
+  }
+
+  function renderRows(container, items, labelOf) {
+    container.textContent = '';
+    if (items.length === 0) {
+      container.appendChild(el('p', 'empty', 'No activity'));
+      return;
+    }
+    var sorted = items.slice().sort(function (a, b) { return b.seconds - a.seconds; });
+    var max = sorted[0].seconds || 1;
+    sorted.forEach(function (item) {
+      var row = el('div', 'row');
+      row.appendChild(el('span', 'name', labelOf(item)));
+      var track = el('div', 'track');
+      var fill = el('div', 'fill');
+      fill.style.width = (item.seconds / max * 100).toFixed(1) + '%';
+      track.appendChild(fill);
+      row.appendChild(track);
+      row.appendChild(el('span', 'value', item.seconds + ' s · ' + fmtDuration(item.seconds)));
+      container.appendChild(row);
+    });
+  }
+
+  function render(parsed, sourceLabel) {
+    var d = parsed.data;
+    $('source').textContent = sourceLabel;
+    $('host').textContent = d.hostname;
+    $('range').textContent = parsed.start.text + ' → ' + parsed.end.text;
+    $('offsets').textContent = 'start ' + parsed.start.offset + ', end ' + parsed.end.offset;
+
+    [['active', d.active_seconds], ['afk', d.afk_seconds], ['tracked', d.tracked_seconds]].forEach(function (pair) {
+      $(pair[0] + '-seconds').textContent = String(pair[1]);
+      $(pair[0] + '-fmt').textContent = fmtDuration(pair[1]);
+    });
+
+    renderRows($('categories'), d.categories, function (c) { return c.name.join(' › '); });
+    renderRows($('apps'), d.apps, function (a) { return a.app; });
+  }
+
+  function showError(msg) {
+    var box = $('error');
+    box.textContent = msg;
+    box.hidden = false;
+  }
+
+  function clearError() {
+    $('error').textContent = '';
+    $('error').hidden = true;
+  }
+
+  // Initial render: synthetic sample, not real activity data.
+  render(validate(SAMPLE), 'Synthetic sample data');
+
+  $('summary-file').addEventListener('change', function (ev) {
+    var input = ev.target;
+    var file = input.files && input.files[0];
+    clearError();
+    if (!file) return;
+    if (file.size > MAX_BYTES) {
+      showError('File is larger than 5 MB and was not loaded.');
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.onerror = function () {
+      showError('Could not read the selected file.');
+    };
+    reader.onload = function () {
+      try {
+        var parsed = validate(JSON.parse(String(reader.result)));
+        render(parsed, 'Loaded from local file: ' + file.name);
+      } catch (e) {
+        showError('Summary not loaded: ' + e.message);
+      }
+    };
+    reader.readAsText(file);
+  });
+})();
+</script>
+</body>
+</html>
