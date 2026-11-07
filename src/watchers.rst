@@ -43,7 +43,9 @@ Watches the actively edited file and associated metadata like path, language, an
 - :gh:`pascalwhoop/aw-idea` - (WIP) JetBrains IntelliJ IDEA/PyCharm/WebStorm/etc extension forked from wakatime, by :gh-user:`pascalwhoop`
 - :gh:`kostasdizas/aw-watcher-sublime` - Sublime Text 3, by :gh-user:`kostasdizas`, and others
 - :gh:`NicoWeio/aw-watcher-atom` - Atom, by :gh-user:`NicoWeio`
-- :gh:`pytlus93/AwWatcherNetBeans82` - NetBeans 8.2, by :gh-user:`pytlus93`
+- :gh:`pytlus93/aw-watcher-netbeans` - NetBeans 18, by :gh-user:`pytlus93`.
+- :gh:`pytlus93/aw-watcher-notepadpp` - Notepad++ plugin for Windows, by :gh-user:`pytlus93`.
+- :gh:`pytlus93/aw-watcher-plsql-developer` - PL/SQL Developer plugin for Windows, by :gh-user:`pytlus93`.
 - :gh:`LordGrimmauld/aw-watcher-obsidian` - Obsidian.md extension, by :gh-user:`LordGrimmauld`
 - :gh:`lowitea/aw-watcher.nvim` - neovim extension, by :gh-user:`lowitea`.
 - :gh:`sachk/aw-watcher-zed` - Zed extension, by :gh-user:`sachk`.
@@ -84,6 +86,9 @@ Other watchers to collect all kinds of data.
 - :gh:`RTnhN/aw-watcher-buttons` - (WIP) A watcher for tracking external hardware buttons based on an Arduino used for working state.
 - :gh:`0xbrayo/aw-watcher-network-rs` - A watcher for tracking network activity and wifi SSIDs, connected and broadcasting by :gh-user:`0xbrayo`
 - :gh:`tobixen/aw-watcher-lid` - Watches the laptop's lid status, suspend status and power-off status.
+- :gh:`pytlus93/aw-watcher-calendars` - ActivityWatch-managed Windows module that continuously syncs scheduled events from multiple iCalendar files and HTTPS feeds, by :gh-user:`pytlus93`.
+- :gh:`pytlus93/aw-watcher-teams` - Infers Microsoft Teams call intervals from window controls on Windows; does not measure attention or verify attendance, by :gh-user:`pytlus93`.
+- :gh:`pytlus93/aw-watcher-vpn` - Tracks VPN network context on Windows using configurable customer profiles, by :gh-user:`pytlus93`.
 
 Importers
 ---------
