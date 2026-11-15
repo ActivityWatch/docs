@@ -89,6 +89,7 @@ Other watchers to collect all kinds of data.
 - :gh:`pytlus93/aw-watcher-calendars` - ActivityWatch-managed Windows module that continuously syncs scheduled events from multiple iCalendar files and HTTPS feeds, by :gh-user:`pytlus93`.
 - :gh:`pytlus93/aw-watcher-teams` - Infers Microsoft Teams call intervals from window controls on Windows; does not measure attention or verify attendance, by :gh-user:`pytlus93`.
 - :gh:`pytlus93/aw-watcher-vpn` - Tracks VPN network context on Windows using configurable customer profiles, by :gh-user:`pytlus93`.
+- :gh:`gptme/gptme-contrib` - ``aw-watcher-agent`` (``pipx install aw-watcher-agent``): logs AI coding assistant sessions (gptme, Claude Code, Codex) to your local aw-server so agent work shows up in the Timeline instead of looking like idle time. Alpha; source under ``packages/aw-watcher-agent``, by :gh-user:`TimeToBuildBob`.
 
 Importers
 ---------
