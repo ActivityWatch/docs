@@ -1,3 +1,8 @@
+:og:description: Documentation for ActivityWatch, the free and open source automated time-tracker: installation, configuration, watchers, syncing, the REST API and more.
+
+.. meta::
+   :description: Documentation for ActivityWatch, the free and open source automated time-tracker: installation, configuration, watchers, syncing, the REST API and more.
+
 .. image:: ../media/banners/banner.png
 
 .. include:: badges.rst
