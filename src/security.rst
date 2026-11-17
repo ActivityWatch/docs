@@ -86,7 +86,14 @@ Restart with **only the intended server backend** enabled. When using ``aw-qt``,
 select ``aw-server-rust`` rather than also starting ``aw-server``. Verify that
 all watchers and the dashboard use the selected port; third-party watchers and
 browser extensions may need separate configuration or may not support this
-setup. Python ``aw-client`` versions with local key discovery read the key from
+setup. In particular, the published browser extension (``aw-watcher-web``)
+always sends to port 5600 and has no port setting
+(`aw-watcher-web#79 <https://github.com/ActivityWatch/aw-watcher-web/issues/79>`_).
+For any user whose instance runs on another port, browser activity either fails
+to upload (with authentication enabled) or, if another user's unauthenticated
+server is listening on 5600, is written into *that* user's database. Disable the
+extension for those users until it supports a configurable port.
+Python ``aw-client`` versions with local key discovery read the key from
 the current user's Rust-server config only when the configured port matches.
 Do not assume every installed client supports authentication.
 
