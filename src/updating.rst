@@ -22,15 +22,7 @@ How to stop it depends on how you started it:
 
       Right-click the ActivityWatch tray icon and choose **Quit** (on macOS the tray lives in the menu bar). This stops ``aw-qt`` and the ``aw-server`` it launched.
 
-   .. group-tab:: Linux / systemd --user
-
-      If you started ActivityWatch as a systemd user service, stop it with::
-
-          systemctl --user stop activitywatch.target
-
-      (or whatever unit name you used; ``systemctl --user list-units | grep activitywatch`` will list them).
-
-   .. group-tab:: Linux / manual
+   .. group-tab:: Linux
 
       From a terminal::
 
