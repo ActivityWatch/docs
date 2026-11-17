@@ -80,7 +80,7 @@ The default :doc:`watchers` track the active *application* (e.g. ``Firefox``, ``
 
 The extension is available for the major browsers:
 
-- `Chrome / Edge / Brave <https://chromewebstore.google.com/detail/activitywatch-web-watcher/nglaklfkpbjkhcdbgdkkfkgnjjlfpjcg>`_
+- `Chrome / Edge / Brave <https://chromewebstore.google.com/detail/activitywatch-web-watcher/nglaklhklhcoonedhgnpgddginnjdadi>`_
 - `Firefox <https://addons.mozilla.org/en-US/firefox/addon/aw-watcher-web/>`_
 
 After installing, pin the extension and reload any tabs you have open so it can start logging.
@@ -100,10 +100,7 @@ Set up categories
 
 ActivityWatch records *what* you were doing but doesn't know what to call it. Categories let you map raw app or window titles onto your own labels (e.g. ``github.com → Coding``, ``Slack → Communication``) so the dashboard can roll activity up by purpose.
 
-There are two ways to set them up:
-
-- From the web UI: open ``http://localhost:5600`` → **Settings → Categories** and create a rule.
-- From the config file: edit ``categories.yaml`` in your user data directory (see :doc:`directories`); the schema is documented in :doc:`configuration`.
+Open ``http://localhost:5600`` → **Settings → Categorization** and add a rule. See :doc:`features/categorization` for how rules and child categories work.
 
 A useful starter set covers the apps you spend most of your day in; you can always refine later.
 
