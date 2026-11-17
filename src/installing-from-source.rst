@@ -104,7 +104,7 @@ There are two ways to run ActivityWatch:
 2. Start each module separately (Recommended for developing)
 
    - Run from your terminal with: :code:`aw-server`, :code:`aw-watcher-afk`, and :code:`aw-watcher-window`
-   - For the rust server, run with: :code:`aw-server-rust/target/package/aw-server-rust`
+   - For the rust server, run with: :code:`aw-server-rust/target/release/aw-server`
 
 Both methods take the :code:`--testing` flag as a command line parameter to run in testing mode. This runs the server on a different port (5666) and uses a separate database file to avoid mixing your important data with your testing data.
 
