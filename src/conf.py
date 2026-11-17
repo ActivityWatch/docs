@@ -44,6 +44,9 @@ extensions = [
     "sphinxcontrib.jquery",
 ]
 
+# aw_qt.main imports PyQt6, which is not installed for the docs build
+sphinx_click_mock_imports = ["PyQt6"]
+
 extlinks = {
     "issue": ("https://github.com/ActivityWatch/activitywatch/issues/%s", "issue #%s"),
     "gh": ("https://github.com/%s", "%s"),
