@@ -19,6 +19,7 @@
 
 # import os
 # import sys
+import json
 from datetime import date
 
 # -- General configuration ------------------------------------------------
@@ -413,3 +414,33 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #
 # texinfo_no_detailmenu = False
+
+
+# schema.org structured data for the landing page, so crawlers and validators
+# see what the site is without running JS. Injected into the theme's
+# {{ metatags }} slot (the RTD theme renders it inside <head>).
+def _landing_jsonld() -> str:
+    data = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": f"{project} Documentation",
+        "url": "https://docs.activitywatch.net/",
+        "description": f"Documentation for {project}, the {description_short}.",
+        "publisher": {
+            "@type": "Organization",
+            "name": project,
+            "url": "https://activitywatch.net/",
+        },
+    }
+    # "<" is escaped so no field value can close the script element.
+    body = json.dumps(data).replace("<", "\\u003c")
+    return f'<script type="application/ld+json">{body}</script>\n'
+
+
+def _add_landing_jsonld(app, pagename, templatename, context, doctree):
+    if pagename == master_doc:
+        context["metatags"] = context.get("metatags", "") + _landing_jsonld()
+
+
+def setup(app):
+    app.connect("html-page-context", _add_landing_jsonld)
