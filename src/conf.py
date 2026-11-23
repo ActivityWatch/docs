@@ -43,6 +43,7 @@ extensions = [
     "sphinx_click",
     "sphinxext.rediraffe",
     "sphinxcontrib.jquery",
+    "sphinxext.opengraph",
 ]
 
 extlinks = {
@@ -82,6 +83,13 @@ author = "Erik Bjäreholt, Johan Bjäreholt, and contributors"
 author_copyright = "ActivityWatch core contributors"
 copyright = f"2016-{date.today().year} {author_copyright}"
 description_short = "The free and open source automated time-tracker"
+
+# OpenGraph and <meta name="description"> tags for link previews.
+# On Read the Docs, og:url is derived from READTHEDOCS_CANONICAL_URL.
+ogp_site_name = project
+ogp_image = "https://activitywatch.net/img/banner.png"
+ogp_image_alt = f"{project}: {description_short}"
+ogp_social_cards = {"enable": False}
 
 # TODO: Automatically detect version (possibly using git tags)
 # The version info for the project you're documenting, acts as replacement for
