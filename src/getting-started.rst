@@ -83,10 +83,8 @@ The extension is available for the major browsers:
 - `Chrome / Edge / Brave <https://chromewebstore.google.com/detail/activitywatch-web-watcher/nglaklhklhcoonedhgnpgddginnjdadi>`_
 - `Firefox <https://addons.mozilla.org/en-US/firefox/addon/aw-watcher-web/>`_
 
-After installing, pin the extension and reload any tabs you have open so it can start logging.
-
 .. note::
-   The browser extension only runs while its toolbar icon is enabled. If you don't see events from it, click the extension's icon to confirm it is on (its badge colour tells you whether it is currently logging).
+   If you don't see browser events, click the extension's toolbar icon: the popup shows whether it is enabled and connected to the server. On Firefox, the extension first asks for consent to collect data and does nothing until you accept.
 
 Install an editor watcher
 -------------------------

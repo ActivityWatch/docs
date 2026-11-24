@@ -12,7 +12,7 @@ You do not need to worry about your data disappearing, as it's stored in a separ
 Stop ActivityWatch before updating
 ----------------------------------
 
-Always quit ActivityWatch **before** replacing any files. The bundled ``aw-server`` is a running process that holds the SQLite database open; overwriting its binary or library files while it is running will, on most operating systems, fail silently (or worse, leave you with a half-updated install that crashes on next start).
+Always quit ActivityWatch **before** replacing any files. The bundled ``aw-server`` is a running process that holds the SQLite database open; overwriting its binary or library files while it is running can fail (Windows locks running executables) or leave a half-updated install that crashes on the next start.
 
 How to stop it depends on how you started it:
 
