@@ -43,8 +43,9 @@ Durations are in seconds.
 .. note::
     There are two server implementations: ``aw-server`` (Python, the default in the classic app) and ``aw-server-rust`` (used by the Tauri app).
     They agree on the happy path but differ on error handling. Differences are called out below.
-    Both return JSON error bodies with a ``message`` field, but the status codes and messages differ,
-    so do not rely on the exact error response.
+    In v0.14.3, the errors checked for this reference returned JSON with a ``message`` field on both servers,
+    but status codes and messages differ. Check the HTTP status first, and handle a body that is not JSON
+    or has no ``message``.
 
 Server info
 ~~~~~~~~~~~
@@ -217,7 +218,7 @@ Export and import
 Per-bucket export returns ``{"buckets": {<bucket_id>: {..., "events": [...]}}}``, or ``404`` for an unknown bucket.
 ``/api/0/import`` takes that same format (JSON body, or a multipart file upload as the web UI does)
 and returns ``400`` for invalid JSON. For well-formed JSON of the wrong shape, aw-server-rust returns ``422``
-and the Python server ``400``. On aw-server-rust, a multipart upload must name its file field ``buckets.json``.
+and the Python server ``400``. On aw-server-rust, a multipart upload returns ``422`` if its file field is not named ``buckets.json``.
 Importing into a bucket that already exists is not consistent between servers: aw-server-rust (master) merges
 the events, while the Python server rejects it with ``400`` (``Bucket '<id>' already exists``).
 
