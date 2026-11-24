@@ -98,6 +98,8 @@ Query Language Basics
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Queries use a simple scripting language for server-side data processing.
+Before running this example, replace both sample bucket IDs with the full window and AFK bucket IDs
+for the same device (listed on the web UI's Raw Data page).
 This one gets the window events, keeps only the periods where you were not AFK,
 groups them by application and sorts them by time spent:
 
