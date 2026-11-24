@@ -38,7 +38,7 @@ point:
 
 .. code-block:: sh
 
-   aw-client canonical HOSTNAME --start 2026-08-03T08:00:00 --stop 2026-08-03T12:00:00 --cache
+   aw-client canonical HOSTNAME --start 2026-08-03T08:00:00 --stop 2026-08-03T12:00:00
 
 Replace ``HOSTNAME`` with the hostname suffix used in your buckets. Canonical
 events use the same kind of processing as the ActivityWatch web UI: active time
