@@ -65,7 +65,7 @@ For more advanced usage, see the actual canonical query implementations:
 
 * `Python canonical queries <https://github.com/ActivityWatch/aw-client/blob/master/aw_client/queries.py>`_ - Production-ready functions
 * `Web UI implementation <https://github.com/ActivityWatch/aw-webui/blob/master/src/queries.ts>`_ - TypeScript version used by the interface
-* `Query examples <https://github.com/ActivityWatch/aw-webui/blob/master/test/unit/__snapshots__/queries.test.node.js.snap>`_ - Human-readable query snapshots
+* `Query examples <https://github.com/ActivityWatch/aw-webui/blob/master/test/unit/__snapshots__/queriesSnapshot.test.node.ts.snap>`_ - Human-readable query snapshots
 
 
 Comprehensive Examples
@@ -97,23 +97,22 @@ For specialized analysis beyond canonical events, you can write custom queries u
 Query Language Basics
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Queries use a simple scripting language for server-side data processing:
+Queries use a simple scripting language for server-side data processing.
+This one gets the window events, keeps only the periods where you were not AFK,
+groups them by application and sorts them by time spent:
 
 .. code-block:: javascript
 
-    // Get events from a bucket
     events = query_bucket("aw-watcher-window_hostname");
-    
-    // Filter to only active periods  
     afk_events = query_bucket("aw-watcher-afk_hostname");
     not_afk = filter_keyvals(afk_events, "status", ["not-afk"]);
     events = filter_period_intersect(events, not_afk);
-    
-    // Group by application
     events = merge_events_by_keys(events, ["app"]);
-    
-    // Sort by time spent
     RETURN = sort_by_duration(events);
+
+.. note::
+    Query statements must not contain ``//`` comments: both servers reject them with a ``400`` parse error.
+    The Python aw-server accepts no comments at all, and aw-server-rust accepts only ``#`` comments.
 
 Key Transform Functions
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,12 +129,12 @@ Common query functions include:
 Magic Variables
 ~~~~~~~~~~~~~~~
 
-The web UI provides special variables you can use:
+* ``__CATEGORIES__`` - Your configured categorization rules. Only the web UI's Query page substitutes this
+  variable. Sent to ``/api/0/query/`` directly (for example via ``aw-client``), it fails with an
+  undefined-variable error, so pass the category rules to ``categorize`` yourself.
+* ``find_bucket(pattern)`` - A server-side function that returns the first bucket id matching a pattern.
 
-* ``__CATEGORIES__`` - Your configured categorization rules
-* ``find_bucket(pattern)`` - Find bucket names matching a pattern
-
-Example using categories to filter work activities:
+Example using categories to filter work activities (run it from the web UI's Query page):
 
 .. code-block:: javascript
 
@@ -176,25 +175,18 @@ Query Examples
 Complete Example
 ~~~~~~~~~~~~~~~~
 
-Here's a complete custom query for analyzing productivity:
+Here's a complete custom query for analyzing productivity. It counts only active (not-AFK) time,
+applies your categories, keeps the ``Work`` category and groups by application.
+Because it uses ``__CATEGORIES__``, run it from the web UI's Query page:
 
 .. code-block:: javascript
 
-    // Get window and AFK events
     events = flood(query_bucket(find_bucket("aw-watcher-window_")));
     not_afk = flood(query_bucket(find_bucket("aw-watcher-afk_")));
     not_afk = filter_keyvals(not_afk, "status", ["not-afk"]);
-    
-    // Only count active time
     events = filter_period_intersect(events, not_afk);
-    
-    // Apply categories
     events = categorize(events, __CATEGORIES__);
-    
-    // Filter to work categories only
     events = filter_keyvals(events, "$category", [["Work"]]);
-    
-    // Group by application and sort
     events = merge_events_by_keys(events, ["app"]);
     RETURN = sort_by_duration(events);
 
