@@ -86,6 +86,10 @@ Then validate and start the units::
    systemctl --user daemon-reload
    systemctl --user enable --now activitywatch-server.service activitywatch-afk.service activitywatch-window.service
 
+The watchers need ``DISPLAY`` (and usually ``XAUTHORITY``) in the user manager's
+environment. If they keep restarting, run the environment check described in the
+GNOME/Wayland section below; it applies to X11 as well.
+
 GNOME/Wayland: awatcher bundle
 ================================
 
