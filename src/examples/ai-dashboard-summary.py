@@ -111,7 +111,7 @@ def main():
     parser.add_argument("hostname")
     parser.add_argument("start", type=datetime.fromisoformat)
     parser.add_argument("end", type=datetime.fromisoformat)
-    parser.add_argument("--port", type=int, default=5666)
+    parser.add_argument("--port", type=int, default=5600)
     args = parser.parse_args()
     client = ActivityWatchClient("local-dashboard", host="127.0.0.1", port=args.port)
     print(json.dumps(summarize(client, args.hostname, args.start, args.end), indent=2))

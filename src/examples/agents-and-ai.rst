@@ -255,7 +255,7 @@ Use Python 3.11 or newer and install ``aw-client``, then download
 Discover your bucket suffix with ``aw-client buckets`` and select **one desktop
 hostname** with both ``aw-watcher-window_HOSTNAME`` and
 ``aw-watcher-afk_HOSTNAME`` buckets. With your existing AW server listening on
-loopback port 5666, run:
+its default loopback port 5600 (pass ``--port`` otherwise), run:
 
 .. code-block:: sh
 
