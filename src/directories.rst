@@ -36,30 +36,67 @@ This is where the SQLite database and other persistent data is stored.
 Changing the database location
 ------------------------------
 
-``aw-server-rust`` accepts ``--dbpath <directory>`` to keep its SQLite database
-somewhere else, for example on an external drive shared between machines::
+``aw-server-rust`` accepts ``--dbpath <file>`` to keep its SQLite database
+somewhere else, for example on an external drive that you move between
+machines::
 
-    aw-server-rust --dbpath "E:\ActivityWatchData"
+    aw-server-rust --dbpath "E:\ActivityWatchData\sqlite.db"
+
+The value is the path of the database **file**, not of a directory, and the
+folder containing it must already exist. If either is wrong, the server cannot
+open the database.
 
 The flag is only available on the command line: it is not a setting in the
 config file or the web UI, and ``aw-qt`` starts the server without extra
-arguments. To run ``aw-server-rust`` with ``--dbpath``, start it yourself (a
-``.bat`` file or shortcut works well) and stop ``aw-qt`` from starting its own
-copy, otherwise two servers compete for port 5600. Remove ``aw-server-rust``
-from ``autostart_modules`` in ``aw-qt.toml`` (in the ``aw-qt`` config
-directory); the tray's **Modules** menu only stops it for the current session.
+arguments. The Tauri app embeds the server and has no equivalent option. Note
+also that the classic app starts ``aw-server`` (the Python server) by default,
+not ``aw-server-rust``. To use ``--dbpath`` with the classic app:
+
+1. Quit ActivityWatch.
+2. Stop ``aw-qt`` from starting a server of its own, otherwise two servers
+   compete for port 5600. In ``aw-qt.toml`` (in the ``aw-qt``
+   :ref:`config directory <config-directory>`), remove whichever server is listed
+   in ``autostart_modules``: ``aw-server``, or ``aw-server-rust`` if you have
+   :doc:`switched to it <migrating>`. Make sure the lines are uncommented. With
+   the default watchers this gives::
+
+       [aw-qt]
+       autostart_modules = ["aw-watcher-afk", "aw-watcher-window"]
+
+   The tray's **Modules** menu is not enough, as it only stops a server for the
+   current session.
+3. Create the destination folder and bring along any existing history (see
+   below).
+4. Start ``aw-server-rust`` with ``--dbpath`` yourself (a ``.bat`` file or
+   shortcut works well), then start ActivityWatch.
 
 Notes:
 
 - A shared database is **not** syncing. Only one process may write to it at a
   time, so do not run ActivityWatch on two machines against the same database
-  simultaneously. To combine separate per-machine databases, use
-  :doc:`syncing` instead.
+  simultaneously. Do not put it on a network share either, since SQLite's
+  write-ahead log does not work over network filesystems. To combine separate
+  per-machine databases, use :doc:`syncing` instead.
 - Installing ActivityWatch to a different drive and leaving the default data
   directory alone keeps the database on the system drive; the data directory is
   independent of the install location.
 - ``aw-server`` (the Python server) has no ``--dbpath``; it only supports
   ``--profile`` to isolate a named instance under the default data directory.
+
+Moving existing history
+~~~~~~~~~~~~~~~~~~~~~~~
+
+``--dbpath`` only selects which file to use. It does not move any data, and a
+path where no file exists yet starts as an empty database.
+
+- If your history is in ``aw-server-rust``: with the server stopped, copy
+  ``sqlite.db`` from its :ref:`data directory <data-directory>` to the new
+  folder, along with ``sqlite.db-wal`` and ``sqlite.db-shm`` if they exist.
+- If your history is in ``aw-server`` (Python): add ``--import-legacy``
+  (``v0.14.1`` or later) the first time you start with the new file. It imports
+  buckets and events from the Python database in its default location. Web UI
+  settings such as categories are not imported, so first export your categories
+  under **Settings** and import them again afterwards.
 
 .. _config-directory:
 
