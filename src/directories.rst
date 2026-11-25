@@ -31,6 +31,36 @@ This is where the SQLite database and other persistent data is stored.
 - macOS: ``~/Library/Application Support/activitywatch/aw-server-rust``
 - Linux: ``~/.local/share/activitywatch/aw-server-rust``
 
+.. _relocating-the-database:
+
+Changing the database location
+------------------------------
+
+``aw-server-rust`` accepts ``--dbpath <directory>`` to keep its SQLite database
+somewhere else, for example on an external drive shared between machines::
+
+    aw-server-rust --dbpath "E:\ActivityWatchData"
+
+The flag is only available on the command line: it is not a setting in the
+config file or the web UI, and ``aw-qt`` starts the server without extra
+arguments. To run ``aw-server-rust`` with ``--dbpath``, start it yourself (a
+``.bat`` file or shortcut works well) and stop ``aw-qt`` from starting its own
+copy, otherwise two servers compete for port 5600. Remove ``aw-server-rust``
+from ``autostart_modules`` in ``aw-qt.toml`` (in the ``aw-qt`` config
+directory); the tray's **Modules** menu only stops it for the current session.
+
+Notes:
+
+- A shared database is **not** syncing. Only one process may write to it at a
+  time, so do not run ActivityWatch on two machines against the same database
+  simultaneously. To combine separate per-machine databases, use
+  :doc:`syncing` instead.
+- Installing ActivityWatch to a different drive and leaving the default data
+  directory alone keeps the database on the system drive; the data directory is
+  independent of the install location.
+- ``aw-server`` (the Python server) has no ``--dbpath``; it only supports
+  ``--profile`` to isolate a named instance under the default data directory.
+
 .. _config-directory:
 
 Config
