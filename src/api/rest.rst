@@ -15,7 +15,7 @@ event access.
 
 .. note::
     Part of the documentation might be outdated, you can get up-to-date API documentation
-    in the API browser available from the web UI of your aw-server instance.
+    in the API browser available from the web UI of the Python aw-server (aw-server-rust does not serve it).
 
 .. contents::
 
@@ -34,7 +34,7 @@ REST Reference
 --------------
 
 .. note::
-    This reference covers the endpoints watchers and clients use most. For an interactive view of the API, try out the API playground running on your local server at: http://localhost:5600/api/
+    This reference covers the endpoints watchers and clients use most. For an interactive view of the API, try out the API playground running on your local server at: http://localhost:5600/api/ (Python aw-server only; aw-server-rust returns ``404`` there)
 
 All endpoints live under ``/api/0/``. Request and response bodies are JSON unless noted.
 Timestamps must be RFC 3339 with a timezone (``2026-10-01T10:00:00Z``).
@@ -43,8 +43,9 @@ Durations are in seconds.
 .. note::
     There are two server implementations: ``aw-server`` (Python, the default in the classic app) and ``aw-server-rust`` (used by the Tauri app).
     They agree on the happy path but differ on error handling. Differences are called out below.
-    Do not rely on error response bodies: aw-server-rust returns an HTML page for 400/422 errors,
-    and some invalid inputs cause a 500 on the Python server.
+    In v0.14.3, the errors checked for this reference returned JSON with a ``message`` field on both servers,
+    but status codes and messages differ. Check the HTTP status first, and handle a body that is not JSON
+    or has no ``message``.
 
 Server info
 ~~~~~~~~~~~
@@ -93,7 +94,7 @@ Body (all three fields are required):
     {"client": "aw-watcher-example", "type": "app.example", "hostname": "my-host"}
 
 Status codes: ``200`` created, ``304`` if the bucket already exists (the existing bucket is left unchanged),
-``400`` for malformed JSON, ``422`` for missing fields (aw-server-rust; the Python server returns ``500``).
+``400`` for malformed JSON, ``422`` for missing fields (aw-server-rust; the Python server returns ``400``).
 
 Delete
 ^^^^^^
@@ -189,7 +190,7 @@ The `heartbeat <heartbeats>` API is one of the most useful endpoints for writing
 
 The ``pulsetime`` query parameter is **required** and must be a number: it is the maximum gap, in seconds,
 between two heartbeats with identical ``data`` for them to be merged into one event.
-Requests without it are rejected (``400`` on the Python server, an HTML ``422`` on aw-server-rust).
+Requests without it are rejected (``400`` on the Python server, ``422`` on aw-server-rust).
 
 Body: a single event object (not a list), with ``timestamp``, ``duration`` (usually ``0``) and ``data``:
 
@@ -219,8 +220,8 @@ See `Writing Queries <./../examples/querying-data.html>`_ for the query language
 ``timeperiods`` is a list of ``start/end`` RFC 3339 intervals and ``query`` is a list of statements
 (a single string is rejected). The response is a list with one result per time period.
 
-Status codes: ``200``, ``422`` for a malformed request body (aw-server-rust), ``400`` for a query that fails to parse (Python server).
-aw-server-rust reports query errors (syntax errors, undefined variables, unknown buckets) as ``500`` with a JSON ``message``.
+Status codes: ``200``, ``422`` for a malformed request body (aw-server-rust),
+``400`` for query errors (syntax errors, undefined variables, unknown buckets) on both servers.
 
 Export and import
 ~~~~~~~~~~~~~~~~~
@@ -233,9 +234,10 @@ Export and import
 
 Per-bucket export returns ``{"buckets": {<bucket_id>: {..., "events": [...]}}}``, or ``404`` for an unknown bucket.
 ``/api/0/import`` takes that same format (JSON body, or a multipart file upload as the web UI does)
-and returns ``400`` for malformed input.
+and returns ``400`` for invalid JSON. For well-formed JSON of the wrong shape, aw-server-rust returns ``422``
+and the Python server ``400``. On aw-server-rust, a multipart upload returns ``422`` if its file field is not named ``buckets.json``.
 Importing into a bucket that already exists is not consistent between servers: aw-server-rust (master) merges
-the events, while the Python server fails with ``500``.
+the events, while the Python server rejects it with ``400`` (``Bucket '<id>' already exists``).
 
 Settings API
 ~~~~~~~~~~~~
