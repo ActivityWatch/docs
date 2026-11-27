@@ -30,6 +30,8 @@ The default AFK and window watchers support X11. Create
    PartOf=graphical-session.target
 
    [Service]
+   # aw-server-rust sends READY=1 via sd_notify, so Type=notify is correct:
+   # the unit becomes active only once the HTTP server is actually listening.
    Type=notify
    ExecStart=%h/.local/opt/activitywatch/aw-server-rust/aw-server-rust
    Restart=on-failure
@@ -117,10 +119,11 @@ Create ``~/.config/systemd/user/activitywatch-wayland.service``:
 
    [Service]
    Type=simple
-   # Wait up to 30 seconds for the GNOME extension's D-Bus interface.
-   # This is reliable across machines; a fixed sleep is not.
-   ExecStartPre=/bin/sh -c 'i=0; while [ $$i -lt 30 ]; do /usr/bin/busctl --user introspect org.gnome.Shell /org/gnome/shell/extensions/FocusedWindow org.gnome.shell.extensions.FocusedWindow >/dev/null 2>&1 && exit 0; i=$$((i + 1)); sleep 1; done; exit 1'
-   ExecStart=/usr/bin/awatcher -vv --no-tray
+   # Wait up to 30 seconds for the GNOME extension's D-Bus interface, then
+   # exec the watcher. The wait lives in ExecStart, not ExecStartPre: a failed
+   # ExecStartPre leaves the unit failed and is NOT retried by Restart=, while
+   # a main-process failure is.
+   ExecStart=/bin/sh -c 'i=0; while [ $$i -lt 30 ]; do /usr/bin/busctl --user introspect org.gnome.Shell /org/gnome/shell/extensions/FocusedWindow org.gnome.shell.extensions.FocusedWindow >/dev/null 2>&1 && break; i=$$((i + 1)); sleep 1; done; exec /usr/bin/awatcher -vv --no-tray'
    Restart=on-failure
    RestartSec=10
 
