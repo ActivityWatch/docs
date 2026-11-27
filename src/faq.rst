@@ -183,9 +183,12 @@ The SQLite database was damaged, usually by a crash or power loss mid-write. You
 
        sqlite3 sqlite.db 'PRAGMA user_version;'
 
-4. Rebuild it into a new file::
+4. Reclaim anything still sitting in the write-ahead log, then rebuild into a new file::
 
+       sqlite3 sqlite.db 'PRAGMA wal_checkpoint(TRUNCATE);'
        sqlite3 sqlite.db .recover | sqlite3 restored.db
+
+   ``.recover`` reads only the main database file and does not apply uncheckpointed frames from ``sqlite.db-wal``. Without the checkpoint, heartbeats committed just before the crash but never checkpointed would be silently dropped. If the checkpoint itself errors because the file is malformed, those WAL-only events cannot be recovered; the rest of the file still can.
 
    ``.recover`` salvages more from a badly damaged file than ``.dump``. Some ``sqlite3`` builds lack it and print ``no such table: sqlite_dbpage``; in that case delete ``restored.db`` and use ``sqlite3 sqlite.db .dump | sqlite3 restored.db`` instead.
 
